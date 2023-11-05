@@ -39,7 +39,7 @@ public class CheckpointSystem : MonoBehaviour
             {
                 float distance = Vector3.Distance(transform.position, cars[i].controller.playerRB.position);
                 cars[i].distance = distance;
-                cars[i].lap = cars[i].controller.laps;
+                //cars[i].lap = cars[i].controller.laps;
                 distanceArray.Add(cars[i]);
             }
 
