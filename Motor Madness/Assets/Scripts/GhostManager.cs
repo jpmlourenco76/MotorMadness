@@ -10,6 +10,7 @@ public class GhostManager : MonoBehaviour
     private Vector3 startPosition;
     private Quaternion startRotation;
 
+    [SerializeField]
     private float playbackSpeed = 1.0f;
 
 
@@ -30,16 +31,16 @@ public class GhostManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (lapdata == null || currentDataIndex >= lapData.positions.Count)
+        if (lapData == null || currentDataIndex >= lapData.positions.Count)
         {
             return;
         }
 
         float currentTime = Time.time - startTime;
 
-        Vector3 targetPosition = lapdata.positions[currentDataIndex];
-        Quaternion targetRotation = lapdata.rotation[currentDataIndex];
-        float timestamp = lapdata.timestamp[currentDataIndex];
+        Vector3 targetPosition = lapData.positions[currentDataIndex];
+        Quaternion targetRotation = lapData.rotations[currentDataIndex];
+        float timestamp = lapData.timestamps[currentDataIndex];
 
         float interpolationTime = (currentTime - timestamp) * playbackSpeed;
 

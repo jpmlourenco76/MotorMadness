@@ -26,6 +26,9 @@ public class LapManager : MonoBehaviour
     private List<Quaternion> rotations = new List<Quaternion> ();
     private List<float> timestamps = new List<float> ();
 
+    private Vector3 startPosition;
+    private Quaternion startRotation;
+
     private bool finalLapTriggered = false;
 
 
@@ -92,7 +95,7 @@ public class LapManager : MonoBehaviour
             lapTime += Time.deltaTime;
         }
 
-        Vector3 currentPosition = tansform.position;
+        Vector3 currentPosition = transform.position;
         Quaternion currentRotation = transform.rotation;
 
         positions.Add(currentPosition);
