@@ -310,7 +310,7 @@ public class AIInput : MonoBehaviour
         // Right Sensor
         if (Physics.Raycast(rightSensor.position, frontSensor.transform.forward, out hit, avoidDistance))
         {
-            if (!hit.collider.GetComponent<CompetitiveDrivingCheck>() && !hit.collider.CompareTag("terrain"))
+            if (!hit.collider.GetComponent<CompetitiveDrivingCheck>() && hit.collider.CompareTag("Car"))
             {
                 Debug.DrawLine(rightSensor.position, hit.point, Color.yellow);
                 avoidingObstacle = true;
@@ -321,7 +321,7 @@ public class AIInput : MonoBehaviour
         // Right Angle Sensor
         else if (Physics.Raycast(rightSensor.position, Quaternion.AngleAxis(sensorsAngle, rightSensor.up) * rightSensor.forward, out hit, avoidDistance) && avoidObstacleMultiplier > 0)
         {
-            if (!hit.collider.GetComponent<CompetitiveDrivingCheck>() && !hit.collider.CompareTag("terrain"))
+            if (!hit.collider.GetComponent<CompetitiveDrivingCheck>() && hit.collider.CompareTag("Car"))
             {
                 Debug.DrawLine(rightSensor.position, hit.point, Color.yellow);
                 avoidingObstacle = true;
@@ -332,7 +332,7 @@ public class AIInput : MonoBehaviour
         // Left Sensor
         if (Physics.Raycast(leftSensor.position, frontSensor.forward, out hit, avoidDistance))
         {
-            if (!hit.collider.GetComponent<CompetitiveDrivingCheck>() && !hit.collider.CompareTag("terrain"))
+            if (!hit.collider.GetComponent<CompetitiveDrivingCheck>() && hit.collider.CompareTag("Car"))
             {
                 Debug.DrawLine(leftSensor.position, hit.point, Color.yellow);
                 avoidingObstacle = true;
@@ -344,7 +344,7 @@ public class AIInput : MonoBehaviour
         // Left Angle Sensor
         else if (Physics.Raycast(leftSensor.position, Quaternion.AngleAxis(-sensorsAngle, leftSensor.up) * leftSensor.forward, out hit, avoidDistance) && avoidObstacleMultiplier < 0)
         {
-            if (!hit.collider.GetComponent<CompetitiveDrivingCheck>() && !hit.collider.CompareTag("terrain"))
+            if (!hit.collider.GetComponent<CompetitiveDrivingCheck>() && hit.collider.CompareTag("Car"))
             {
                 Debug.DrawLine(leftSensor.position, hit.point, Color.yellow);
                 avoidingObstacle = true;
@@ -357,7 +357,7 @@ public class AIInput : MonoBehaviour
             //front center sensor
             if (Physics.Raycast(frontSensor.position, frontSensor.forward, out hit, avoidDistance))
             {
-                if (!hit.collider.GetComponent<CompetitiveDrivingCheck>() && !hit.collider.CompareTag("terrain"))
+                if (!hit.collider.GetComponent<CompetitiveDrivingCheck>() && hit.collider.CompareTag("Car"))
                 {
                     Debug.DrawLine(frontSensor.position, hit.point, Color.yellow);
                     avoidingObstacle = true;
@@ -399,7 +399,7 @@ public class AIInput : MonoBehaviour
         // Right Sensor
         if (Physics.Raycast(rightSensor.position, frontSensor.forward, out hit, brakeDistance))
         {
-            if (!hit.collider.GetComponent<CompetitiveDrivingCheck>() && !hit.collider.CompareTag("terrain"))
+            if (!hit.collider.GetComponent<CompetitiveDrivingCheck>() && hit.collider.CompareTag("Car"))
             {
                 Debug.DrawLine(rightSensor.position, hit.point, Color.magenta);
                 isBraking = true;
@@ -409,7 +409,7 @@ public class AIInput : MonoBehaviour
         // Left Sensor
         if (Physics.Raycast(leftSensor.position, frontSensor.forward, out hit, brakeDistance))
         {
-            if (!hit.collider.GetComponent<CompetitiveDrivingCheck>() && !hit.collider.CompareTag("terrain"))
+            if (!hit.collider.GetComponent<CompetitiveDrivingCheck>() && hit.collider.CompareTag("Car"))
             {
                 Debug.DrawLine(leftSensor.position, hit.point, Color.magenta);
                 isBraking = true;
@@ -427,7 +427,7 @@ public class AIInput : MonoBehaviour
         // Right Sensor
         if (Physics.Raycast(rightSensor.position, frontSensor.forward, out hit, reverseDistance))
         {
-            if (!hit.collider.GetComponent<CompetitiveDrivingCheck>() && !hit.collider.CompareTag("terrain"))
+            if (!hit.collider.GetComponent<CompetitiveDrivingCheck>() && hit.collider.CompareTag("Car"))
             {
                 Debug.DrawLine(rightSensor.position, hit.point, Color.blue);
                 reverseGearOn = true;
@@ -437,7 +437,7 @@ public class AIInput : MonoBehaviour
         // Left Sensor
         if (Physics.Raycast(leftSensor.position, frontSensor.forward, out hit, reverseDistance))
         {
-            if (!hit.collider.GetComponent<CompetitiveDrivingCheck>() && !hit.collider.CompareTag("terrain"))
+            if (!hit.collider.GetComponent<CompetitiveDrivingCheck>() && hit.collider.CompareTag("Car"))
             {
                 Debug.DrawLine(leftSensor.position, hit.point, Color.blue);
                 reverseGearOn = true;

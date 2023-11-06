@@ -23,7 +23,7 @@ public class CheckpointSystem : MonoBehaviour
     private float timeSinceLastExecution = 0f;
     private float executionInterval = 0.5f; // 0.2 seconds interval
 
- 
+
 
     private void Update()
     {
@@ -38,8 +38,14 @@ public class CheckpointSystem : MonoBehaviour
             for (int i = 0; i < cars.Count; i++)
             {
                 float distance = Vector3.Distance(transform.position, cars[i].controller.playerRB.position);
+                if (distance < 25f)
+                {
+                    nextCheckPoint.SetActive(true);
+                    gameObject.SetActive(false);
+                }
+
                 cars[i].distance = distance;
-                //cars[i].lap = cars[i].controller.laps;
+                cars[i].lap = cars[i].controller.laps;
                 distanceArray.Add(cars[i]);
             }
 
@@ -58,17 +64,10 @@ public class CheckpointSystem : MonoBehaviour
             // Reset the timer
             timeSinceLastExecution = 0f;
         }
-        
+
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Car"))
-        {
-            nextCheckPoint.SetActive(true);
-            gameObject.SetActive(false);
-        }
-    }
+
 
     public class CarDataComparer : IComparer<CarData>
     {
@@ -82,8 +81,8 @@ public class CheckpointSystem : MonoBehaviour
 
             // If lap is the same, compare by distance in ascending order
             return x.distance.CompareTo(y.distance);
-        
-    }
+
+        }
 
     }
 

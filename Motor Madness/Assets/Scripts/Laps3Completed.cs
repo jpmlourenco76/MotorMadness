@@ -6,8 +6,6 @@ using TMPro;
 
 public class Laps3Completed : MonoBehaviour
 {
-    public GameObject FinishTrig;
-    public GameObject HalfLapTrig;
 
     public GameObject CurrentMinDisplay;
     public GameObject CurrentSecDisplay;
@@ -34,7 +32,8 @@ public class Laps3Completed : MonoBehaviour
 
     void OnTriggerEnter()
     {
-        LapsDone += 1;
+
+
 
         // Display the current lap time
         CurrentMinDisplay.GetComponent<TextMeshProUGUI>().text = lapTimeManager.MinuteCount.ToString("D2") + ".";
@@ -50,18 +49,24 @@ public class Laps3Completed : MonoBehaviour
         // Reset lap timer
         lapTimeManager.ResetLapTime();
 
-        LapCounter.GetComponent<TextMeshProUGUI>().text = "" + LapsDone;
 
-        HalfLapTrig.SetActive(true);
-        FinishTrig.GetComponent<Collider>().enabled = false;
+
+
+
 
         // Check if the required number of laps (e.g., 2 laps) has been completed
-        if (LapsDone >= 3)
+        if (carController.laps >= 3)
         {
             // End the race and display the finish panel
             EndRace();
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        LapCounter.GetComponent<TextMeshProUGUI>().text = "" + carController.laps;
+    }
+
+
 
     void EndRace()
     {

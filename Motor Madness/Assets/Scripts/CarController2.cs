@@ -14,7 +14,8 @@ public class CarController2 : MonoBehaviour
     [SerializeField] driver driveController;
 
     public SpawnPointManager _spawnPointManager;
-
+    public int laps = 0;
+    public bool halfpointtrigger = false;
     public bool AION = false;
     public AIInput aIInput;
     private CarAgent carAgent;
@@ -746,6 +747,21 @@ public class CarController2 : MonoBehaviour
 
         transform.position = pos - new Vector3(0, 0.4f, 0);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("HPT"))
+        {
+            halfpointtrigger = true;
+        }
+
+        if (other.CompareTag("FINISHLINE") && halfpointtrigger == true)
+        {
+            laps++;
+            halfpointtrigger = false;
+        }
+    }
+
 
 
     [System.Serializable]
