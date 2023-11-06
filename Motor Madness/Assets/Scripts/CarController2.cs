@@ -8,12 +8,16 @@ public class CarController2 : MonoBehaviour
     internal enum driver
     {
         AI,
+        AIML,
         Human
     }
     [SerializeField] driver driveController;
 
+    public SpawnPointManager _spawnPointManager;
+
     public bool AION = false;
     public AIInput aIInput;
+    private CarAgent carAgent;
     public PlayerCarInput carinput;
     [Header("Car")]
 
@@ -21,7 +25,8 @@ public class CarController2 : MonoBehaviour
     private GameObject wheelColliders;
     private GameObject[] wheelMesh = new GameObject[4];
     private wheelsManager[] wheels = new wheelsManager[4];
-    public float throttleinputt, breakinpuu;
+    public float throttleinputt, breakinpuu, steerin;
+    public bool handbrakeinnn;
     public Transform _centerOfMass;
     public string carID;
     public Rigidbody playerRB { get; private set; }
@@ -95,15 +100,19 @@ public class CarController2 : MonoBehaviour
     bool InCutOff;
 
     public float CurrentAcceleration { get; private set; }
-    public bool InHandBrake { get
+    public bool InHandBrake
+    {
+        get
         {
             switch (driveController)
             {
                 case driver.AI:
                     AION = true;
                     return aIInput != null ? aIInput.handBrakeInput : false;
+                case driver.AIML:
+                    return carAgent != null ? carAgent.handBrakeInput : false;
                 case driver.Human:
-                    return carinput != null ? carinput.handBrakeInput: false;
+                    return carinput != null ? carinput.handBrakeInput : false;
                 default: return false;
             }
         }
@@ -124,16 +133,21 @@ public class CarController2 : MonoBehaviour
     protected float CurrentSteerAngle;
     protected float WheelMaxSteerAngle;
     protected wheelsManager[] SteeringWheels;
-    protected float HorizontalControl { get {
+    protected float HorizontalControl
+    {
+        get
+        {
             switch (driveController)
             {
                 case driver.AI:
                     return aIInput != null ? aIInput.steeringInput : 0;
+                case driver.AIML:
+                    return carAgent != null ? carAgent.steeringInput : 0;
                 case driver.Human:
                     return carinput != null ? carinput.steeringInput : 0;
                 default: return 0;
-            }        
-        } 
+            }
+        }
     }
     public bool ABSIsActive { get; private set; }
     [Space(10)]
@@ -152,9 +166,14 @@ public class CarController2 : MonoBehaviour
 
     private void Awake()
     {
+
+        _spawnPointManager = FindObjectOfType<SpawnPointManager>();
+
+
         carID = "Car_" + GetInstanceID();
         carinput = GetComponent<PlayerCarInput>();
         aIInput = GetComponent<AIInput>();
+        carAgent = GetComponent<CarAgent>();
         AwakeCar();
         AwakeTransmition();
         AwakeEngine();
@@ -235,16 +254,15 @@ public class CarController2 : MonoBehaviour
         SteeringWheels = steeringWheels.ToArray();
 
     }
-    private void Start()
-    {
-       
-    }
+   
 
     private void FixedUpdate()
     {
         throttleinputt = CurrentAcceleration;
         breakinpuu = CurrentBrake;
-        
+        handbrakeinnn = InHandBrake;
+        steerin = HorizontalControl;
+
         UpdateCar();
         UpdateEngine();
         UpdateTransmission();
@@ -252,7 +270,7 @@ public class CarController2 : MonoBehaviour
         UpdateSteer();
         ApplyWheelPositions();
     }
-    void UpdateCar()
+    public void UpdateCar()
     {
         CurrentSpeed = playerRB.velocity.magnitude;
         KPH = CurrentSpeed * 3.6f;
@@ -276,15 +294,15 @@ public class CarController2 : MonoBehaviour
             VehicleIsGrounded |= wheels[i].IsGrounded;
         }
     }
-    void UpdateEngine()
+    public void UpdateEngine()
     {
         if (!isEngineRunning)
         {
             return;
         }
-            switch (driveController)
-            {
-                case driver.AI:
+        switch (driveController)
+        {
+            case driver.AI:
                 if (aIInput == null)
                 {
                     CurrentAcceleration = 0;
@@ -301,8 +319,27 @@ public class CarController2 : MonoBehaviour
                     CurrentBrake = aIInput.throttleInput;
                 }
                 break;
+            case driver.AIML:
+                if (carAgent == null)
+                {
+                    CurrentAcceleration = 0;
+                    CurrentBrake = 0;
+                }
+                else if (!Gearbox.AutomaticGearBox || CurrentGear >= 0)
+                {
+                    CurrentAcceleration = carAgent.throttleInput;
+                    CurrentBrake = carAgent.BrakeReverse;
+                }
+                else if (CurrentGear < 0)
+                {
+                    CurrentAcceleration = carAgent.BrakeReverse;
+                    CurrentBrake = carAgent.throttleInput;
+                }
+                break;
+
+
             case driver.Human:
-                
+
                 if (carinput == null)
                 {
                     CurrentAcceleration = 0;
@@ -319,9 +356,9 @@ public class CarController2 : MonoBehaviour
                     CurrentBrake = carinput.throttleInput;
                 }
                 break;
-            
-            }
-    
+
+        }
+
         //TCS Logic
         if (Steer.TCS > 0 && CurrentAcceleration > 0.1f)
         {
@@ -404,8 +441,8 @@ public class CarController2 : MonoBehaviour
             CutOffTimer = Engine.CutOffTime;
         }
 
-    } 
-    void UpdateTransmission()
+    }
+    public void UpdateTransmission()
     {
 
         if (!Mathf.Approximately(CurrentAcceleration, 0) && (Gearbox.HasRGear || CurrentGear >= 0))
@@ -498,7 +535,7 @@ public class CarController2 : MonoBehaviour
             }
         }
     }
-    void UpdateSteer()
+    public void UpdateSteer()
     {
         var needHelp = Mathf.Abs(VelocityAngle) > 0.001f && Mathf.Abs(VelocityAngle) < Steer.MaxVelocityAngleForHelp && CurrentSpeed > Steer.MinSpeedForHelp && CurrentGear > 0;
         float helpAngle = 0;
@@ -558,7 +595,7 @@ public class CarController2 : MonoBehaviour
         }
 
     }
-    void UpdateBrake()
+    public void UpdateBrake()
     {
         ABSIsActive = false;
         //HandBrake
@@ -607,7 +644,7 @@ public class CarController2 : MonoBehaviour
             }
         }
     }
-    void HelpAngularVelocity()
+    public void HelpAngularVelocity()
     {
         var angularVelocity = playerRB.angularVelocity;
 
@@ -646,7 +683,7 @@ public class CarController2 : MonoBehaviour
 
         angularVelocity.y += angularHelp;
         playerRB.angularVelocity = angularVelocity;
-    }  
+    }
     public void NextGear()
     {
         if (!InChangeGear && CurrentGear < (AllGearsRatio.Length - 2))
@@ -689,7 +726,7 @@ public class CarController2 : MonoBehaviour
         StartEngineCoroutine = null;
     }
 
-    void ApplyWheelPositions()
+    public void ApplyWheelPositions()
     {
         Vector3 wheelPosition = Vector3.zero;
         Quaternion wheelRotation = Quaternion.identity;
@@ -700,6 +737,14 @@ public class CarController2 : MonoBehaviour
             wheelMesh[i].transform.position = wheelPosition;
             wheelMesh[i].transform.rotation = wheelRotation;
         }
+    }
+
+    public void Respawn()
+    {
+        Vector3 pos = _spawnPointManager.SelectRandomSpawnpoint();
+        transform.rotation = Quaternion.LookRotation(Vector3.forward);
+
+        transform.position = pos - new Vector3(0, 0.4f, 0);
     }
 
 
