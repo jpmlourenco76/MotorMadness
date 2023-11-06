@@ -10,8 +10,8 @@ public class HalfPointTrigger : MonoBehaviour
 
     void OnTriggerEnter()
     {
-        FinishTrig.GetComponent<Collider>().enabled = true;
-        HalfLapTrig.SetActive(false);
+        
     }
+
 
 }
