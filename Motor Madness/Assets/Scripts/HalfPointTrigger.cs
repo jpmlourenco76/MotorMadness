@@ -14,4 +14,5 @@ public class HalfPointTrigger : MonoBehaviour
         HalfLapTrig.SetActive(false);
     }
 
+
 }
