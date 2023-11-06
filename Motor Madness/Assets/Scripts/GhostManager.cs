@@ -13,6 +13,8 @@ public class GhostManager : MonoBehaviour
     [SerializeField]
     private float playbackSpeed = 1.0f;
 
+    private float timeOffset = -0.3f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +27,7 @@ public class GhostManager : MonoBehaviour
     {
         this.lapData = lapData;
         currentDataIndex = 0;
-        startTime = Time.time;
+        startTime = Time.time - timeOffset;
     }
 
     // Update is called once per frame
