@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 101570067}
   - component: {fileID: 101570066}
   - component: {fileID: 101570065}
+  - component: {fileID: 101570068}
   m_Layer: 0
   m_Name: CP (1)
   m_TagString: Untagged
@@ -225,6 +226,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101570063}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &101570068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101570063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1 &145748069
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,6 +264,7 @@ GameObject:
   - component: {fileID: 145748073}
   - component: {fileID: 145748072}
   - component: {fileID: 145748071}
+  - component: {fileID: 145748074}
   m_Layer: 0
   m_Name: CP (24)
   m_TagString: Untagged
@@ -322,6 +350,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 145748069}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &145748074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145748069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1 &158936931
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,6 +388,7 @@ GameObject:
   - component: {fileID: 158936935}
   - component: {fileID: 158936934}
   - component: {fileID: 158936933}
+  - component: {fileID: 158936936}
   m_Layer: 0
   m_Name: CP (14)
   m_TagString: Untagged
@@ -419,6 +474,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158936931}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &158936936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158936931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1 &163161631
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,6 +512,7 @@ GameObject:
   - component: {fileID: 163161635}
   - component: {fileID: 163161634}
   - component: {fileID: 163161633}
+  - component: {fileID: 163161636}
   m_Layer: 0
   m_Name: CP (18)
   m_TagString: Untagged
@@ -516,6 +598,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 163161631}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &163161636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163161631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1 &167242956
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,6 +764,7 @@ GameObject:
   - component: {fileID: 170097124}
   - component: {fileID: 170097123}
   - component: {fileID: 170097122}
+  - component: {fileID: 170097125}
   m_Layer: 0
   m_Name: CP (20)
   m_TagString: Untagged
@@ -741,6 +850,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170097120}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &170097125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170097120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1 &203640077
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,6 +888,7 @@ GameObject:
   - component: {fileID: 203640081}
   - component: {fileID: 203640080}
   - component: {fileID: 203640079}
+  - component: {fileID: 203640082}
   m_Layer: 0
   m_Name: CP (23)
   m_TagString: Untagged
@@ -838,6 +974,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 203640077}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &203640082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203640077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1 &246512597
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,6 +1012,7 @@ GameObject:
   - component: {fileID: 246512601}
   - component: {fileID: 246512600}
   - component: {fileID: 246512599}
+  - component: {fileID: 246512602}
   m_Layer: 0
   m_Name: CP (31)
   m_TagString: Untagged
@@ -935,6 +1098,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246512597}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &246512602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246512597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!114 &247023681 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2023005570754860928, guid: 1276291b9a1371743992b4240c99cb89, type: 3}
@@ -958,6 +1147,7 @@ GameObject:
   - component: {fileID: 259677153}
   - component: {fileID: 259677152}
   - component: {fileID: 259677151}
+  - component: {fileID: 259677154}
   m_Layer: 0
   m_Name: CP (5)
   m_TagString: Untagged
@@ -1043,6 +1233,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 259677149}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &259677154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259677149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1 &312106354
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,6 +1271,7 @@ GameObject:
   - component: {fileID: 312106358}
   - component: {fileID: 312106357}
   - component: {fileID: 312106356}
+  - component: {fileID: 312106359}
   m_Layer: 0
   m_Name: CP (8)
   m_TagString: Untagged
@@ -1140,6 +1357,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 312106354}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &312106359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312106354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1 &373792284
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,8 +1392,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 373792285}
+  - component: {fileID: 373792286}
   m_Layer: 0
-  m_Name: CPS
+  m_Name: Checkpoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1203,8 +1447,21 @@ Transform:
   - {fileID: 1307628581}
   - {fileID: 1359839433}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &373792286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373792284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e63ee898a2806649a4132e6e3ac6aaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpoints: []
 --- !u!1 &379386494
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,6 +1474,7 @@ GameObject:
   - component: {fileID: 379386498}
   - component: {fileID: 379386497}
   - component: {fileID: 379386496}
+  - component: {fileID: 379386499}
   m_Layer: 0
   m_Name: CP (26)
   m_TagString: Untagged
@@ -1302,6 +1560,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 379386494}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &379386499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379386494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1 &403827753 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1642319170551221665, guid: 8ab52f0e65b0e3642a408af5218da669, type: 3}
@@ -1319,6 +1603,7 @@ GameObject:
   - component: {fileID: 429550848}
   - component: {fileID: 429550847}
   - component: {fileID: 429550846}
+  - component: {fileID: 429550849}
   m_Layer: 0
   m_Name: CP (29)
   m_TagString: Untagged
@@ -1404,48 +1689,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429550844}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &429550849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429550844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!4 &432088363 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8518157942355248628, guid: 1276291b9a1371743992b4240c99cb89, type: 3}
   m_PrefabInstance: {fileID: 770312736}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &449748761
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 283
-  m_Height: 257
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 4
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &453959163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1529,6 +1803,7 @@ GameObject:
   - component: {fileID: 478021264}
   - component: {fileID: 478021263}
   - component: {fileID: 478021262}
+  - component: {fileID: 478021265}
   m_Layer: 0
   m_Name: CP (19)
   m_TagString: Untagged
@@ -1614,6 +1889,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 478021260}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &478021265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478021260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1 &493174932
 GameObject:
   m_ObjectHideFlags: 3
@@ -1707,6 +2008,7 @@ GameObject:
   - component: {fileID: 515310423}
   - component: {fileID: 515310422}
   - component: {fileID: 515310421}
+  - component: {fileID: 515310424}
   m_Layer: 0
   m_Name: CP (11)
   m_TagString: Untagged
@@ -1792,6 +2094,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515310419}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &515310424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515310419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1 &543629546 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 181440, guid: 1276291b9a1371743992b4240c99cb89, type: 3}
@@ -1809,6 +2137,7 @@ GameObject:
   - component: {fileID: 554883408}
   - component: {fileID: 554883407}
   - component: {fileID: 554883406}
+  - component: {fileID: 554883409}
   m_Layer: 0
   m_Name: CP (16)
   m_TagString: Untagged
@@ -1894,6 +2223,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554883404}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &554883409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554883404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1001 &557777031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2029,6 +2384,7 @@ GameObject:
   - component: {fileID: 615297893}
   - component: {fileID: 615297892}
   - component: {fileID: 615297891}
+  - component: {fileID: 615297894}
   m_Layer: 0
   m_Name: CP (30)
   m_TagString: Untagged
@@ -2114,6 +2470,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615297889}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &615297894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615297889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!114 &669150803 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1642319171070365659, guid: 8ab52f0e65b0e3642a408af5218da669, type: 3}
@@ -2493,6 +2875,7 @@ GameObject:
   - component: {fileID: 812600028}
   - component: {fileID: 812600027}
   - component: {fileID: 812600026}
+  - component: {fileID: 812600029}
   m_Layer: 0
   m_Name: CP (17)
   m_TagString: Untagged
@@ -2578,6 +2961,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812600024}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &812600029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812600024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1 &881949161
 GameObject:
   m_ObjectHideFlags: 0
@@ -2590,6 +2999,7 @@ GameObject:
   - component: {fileID: 881949165}
   - component: {fileID: 881949164}
   - component: {fileID: 881949163}
+  - component: {fileID: 881949166}
   m_Layer: 0
   m_Name: CP (7)
   m_TagString: Untagged
@@ -2675,6 +3085,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881949161}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &881949166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881949161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -3112,6 +3548,7 @@ GameObject:
   - component: {fileID: 1124769058}
   - component: {fileID: 1124769057}
   - component: {fileID: 1124769056}
+  - component: {fileID: 1124769059}
   m_Layer: 0
   m_Name: CP (13)
   m_TagString: Untagged
@@ -3197,6 +3634,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124769054}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1124769059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124769054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1 &1128077591
 GameObject:
   m_ObjectHideFlags: 0
@@ -3209,6 +3672,7 @@ GameObject:
   - component: {fileID: 1128077595}
   - component: {fileID: 1128077594}
   - component: {fileID: 1128077593}
+  - component: {fileID: 1128077596}
   m_Layer: 0
   m_Name: CP (6)
   m_TagString: Untagged
@@ -3294,6 +3758,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128077591}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1128077596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128077591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!114 &1161361134 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9124566735326938419, guid: 210872c9b112e1d4286a6f4cb15eefb2, type: 3}
@@ -3317,6 +3807,7 @@ GameObject:
   - component: {fileID: 1233166704}
   - component: {fileID: 1233166703}
   - component: {fileID: 1233166702}
+  - component: {fileID: 1233166705}
   m_Layer: 0
   m_Name: CP (9)
   m_TagString: Untagged
@@ -3402,6 +3893,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1233166700}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1233166705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233166700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1 &1266458531
 GameObject:
   m_ObjectHideFlags: 0
@@ -3670,6 +4187,7 @@ GameObject:
   - component: {fileID: 1295311240}
   - component: {fileID: 1295311239}
   - component: {fileID: 1295311238}
+  - component: {fileID: 1295311241}
   m_Layer: 0
   m_Name: CP (15)
   m_TagString: Untagged
@@ -3755,6 +4273,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1295311236}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1295311241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295311236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1 &1300341765
 GameObject:
   m_ObjectHideFlags: 0
@@ -3895,6 +4439,7 @@ GameObject:
   - component: {fileID: 1307628584}
   - component: {fileID: 1307628583}
   - component: {fileID: 1307628582}
+  - component: {fileID: 1307628585}
   m_Layer: 0
   m_Name: CP (32)
   m_TagString: Untagged
@@ -3980,6 +4525,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307628580}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1307628585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307628580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1 &1330378381
 GameObject:
   m_ObjectHideFlags: 0
@@ -3992,6 +4563,7 @@ GameObject:
   - component: {fileID: 1330378385}
   - component: {fileID: 1330378384}
   - component: {fileID: 1330378383}
+  - component: {fileID: 1330378386}
   m_Layer: 0
   m_Name: CP (4)
   m_TagString: Untagged
@@ -4077,6 +4649,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330378381}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1330378386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330378381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1 &1353076966 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1642319171753783662, guid: 8ab52f0e65b0e3642a408af5218da669, type: 3}
@@ -4094,6 +4692,7 @@ GameObject:
   - component: {fileID: 1359839436}
   - component: {fileID: 1359839435}
   - component: {fileID: 1359839434}
+  - component: {fileID: 1359839437}
   m_Layer: 0
   m_Name: CP (33)
   m_TagString: Untagged
@@ -4179,6 +4778,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359839432}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1359839437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359839432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1 &1384176159
 GameObject:
   m_ObjectHideFlags: 0
@@ -4191,6 +4816,7 @@ GameObject:
   - component: {fileID: 1384176163}
   - component: {fileID: 1384176162}
   - component: {fileID: 1384176161}
+  - component: {fileID: 1384176164}
   m_Layer: 0
   m_Name: CP (28)
   m_TagString: Untagged
@@ -4276,6 +4902,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384176159}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1384176164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384176159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!114 &1425747666 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 838230894727670761, guid: e627b02a08f7eb5449b8948181346a99, type: 3}
@@ -4299,6 +4951,7 @@ GameObject:
   - component: {fileID: 1466596429}
   - component: {fileID: 1466596428}
   - component: {fileID: 1466596427}
+  - component: {fileID: 1466596430}
   m_Layer: 0
   m_Name: CP (27)
   m_TagString: Untagged
@@ -4384,6 +5037,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466596425}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1466596430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466596425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1 &1466784500
 GameObject:
   m_ObjectHideFlags: 0
@@ -4659,6 +5338,7 @@ GameObject:
   - component: {fileID: 1542773283}
   - component: {fileID: 1542773282}
   - component: {fileID: 1542773281}
+  - component: {fileID: 1542773284}
   m_Layer: 0
   m_Name: CP (2)
   m_TagString: Untagged
@@ -4744,6 +5424,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542773279}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1542773284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542773279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1 &1546361309
 GameObject:
   m_ObjectHideFlags: 0
@@ -4756,6 +5462,7 @@ GameObject:
   - component: {fileID: 1546361313}
   - component: {fileID: 1546361312}
   - component: {fileID: 1546361311}
+  - component: {fileID: 1546361314}
   m_Layer: 0
   m_Name: CP (25)
   m_TagString: Untagged
@@ -4841,6 +5548,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546361309}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1546361314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546361309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1 &1550168121 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1642319171699167665, guid: 8ab52f0e65b0e3642a408af5218da669, type: 3}
@@ -4858,6 +5591,7 @@ GameObject:
   - component: {fileID: 1584739797}
   - component: {fileID: 1584739796}
   - component: {fileID: 1584739795}
+  - component: {fileID: 1584739798}
   m_Layer: 0
   m_Name: CP (10)
   m_TagString: Untagged
@@ -4943,11 +5677,111 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1584739793}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1584739798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584739793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1 &1613961415 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1642319172029905231, guid: 8ab52f0e65b0e3642a408af5218da669, type: 3}
   m_PrefabInstance: {fileID: 1642319170418041224}
   m_PrefabAsset: {fileID: 0}
+--- !u!84 &1619731830
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 283
+  m_Height: 257
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 94
+  m_ColorFormat: 4
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 1
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
+--- !u!84 &1694371919
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 283
+  m_Height: 257
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 94
+  m_ColorFormat: 4
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 1
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &1730355685
 GameObject:
   m_ObjectHideFlags: 3
@@ -5056,15 +5890,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 478136, guid: 98e2b8a7d6de642f8ae08a3cbb957b7a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1237.2651
+      value: -1369.7048
       objectReference: {fileID: 0}
     - target: {fileID: 478136, guid: 98e2b8a7d6de642f8ae08a3cbb957b7a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -528.51514
+      value: -526.59705
       objectReference: {fileID: 0}
     - target: {fileID: 478136, guid: 98e2b8a7d6de642f8ae08a3cbb957b7a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 29.915215
+      value: 34.911625
       objectReference: {fileID: 0}
     - target: {fileID: 478136, guid: 98e2b8a7d6de642f8ae08a3cbb957b7a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5085,7 +5919,7 @@ PrefabInstance:
     - target: {fileID: 2057960, guid: 98e2b8a7d6de642f8ae08a3cbb957b7a, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 449748761}
+      objectReference: {fileID: 1694371919}
     - target: {fileID: 2057960, guid: 98e2b8a7d6de642f8ae08a3cbb957b7a, type: 3}
       propertyPath: orthographic size
       value: 100
@@ -5117,7 +5951,7 @@ PrefabInstance:
     - target: {fileID: 11488608, guid: 98e2b8a7d6de642f8ae08a3cbb957b7a, type: 3}
       propertyPath: renderTex
       value: 
-      objectReference: {fileID: 1901875239}
+      objectReference: {fileID: 1619731830}
     - target: {fileID: 11488608, guid: 98e2b8a7d6de642f8ae08a3cbb957b7a, type: 3}
       propertyPath: miniMapMask
       value: 
@@ -5272,6 +6106,7 @@ GameObject:
   - component: {fileID: 1890222272}
   - component: {fileID: 1890222271}
   - component: {fileID: 1890222270}
+  - component: {fileID: 1890222273}
   m_Layer: 0
   m_Name: CP (3)
   m_TagString: Untagged
@@ -5357,7 +6192,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890222268}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!84 &1901875239
+--- !u!114 &1890222273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890222268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
+--- !u!84 &1956806419
 RenderTexture:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5534,6 +6395,7 @@ GameObject:
   - component: {fileID: 1961227406}
   - component: {fileID: 1961227405}
   - component: {fileID: 1961227404}
+  - component: {fileID: 1961227407}
   m_Layer: 0
   m_Name: CP (12)
   m_TagString: Untagged
@@ -5619,6 +6481,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1961227402}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1961227407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961227402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1 &2099055101
 GameObject:
   m_ObjectHideFlags: 0
@@ -5631,6 +6519,7 @@ GameObject:
   - component: {fileID: 2099055105}
   - component: {fileID: 2099055104}
   - component: {fileID: 2099055103}
+  - component: {fileID: 2099055106}
   m_Layer: 0
   m_Name: CP (22)
   m_TagString: Untagged
@@ -5716,6 +6605,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099055101}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2099055106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099055101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1 &2100293096 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1642319172249259104, guid: 8ab52f0e65b0e3642a408af5218da669, type: 3}
@@ -5733,6 +6648,7 @@ GameObject:
   - component: {fileID: 2105053942}
   - component: {fileID: 2105053941}
   - component: {fileID: 2105053940}
+  - component: {fileID: 2105053943}
   m_Layer: 0
   m_Name: CP (21)
   m_TagString: Untagged
@@ -5818,6 +6734,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2105053938}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2105053943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105053938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1001 &838230894005912891
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5827,7 +6769,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 838230894727670760, guid: e627b02a08f7eb5449b8948181346a99, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 838230894727670760, guid: e627b02a08f7eb5449b8948181346a99, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5886,6 +6828,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1642319170610008146, guid: 8ab52f0e65b0e3642a408af5218da669, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1642319171070365657, guid: 8ab52f0e65b0e3642a408af5218da669, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1642319171692231361, guid: 8ab52f0e65b0e3642a408af5218da669, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -5900,7 +6850,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1642319171692231365, guid: 8ab52f0e65b0e3642a408af5218da669, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1642319171692231365, guid: 8ab52f0e65b0e3642a408af5218da669, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6003,6 +6953,7 @@ GameObject:
   - component: {fileID: 2006754456681086773}
   - component: {fileID: 2006754456681086774}
   - component: {fileID: 2006754456681086775}
+  - component: {fileID: 2006754456681086776}
   m_Layer: 0
   m_Name: CP
   m_TagString: Untagged
@@ -6073,6 +7024,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2006754456681086776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006754456681086769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01317e8ab8ada4dae9e8518e70fbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cars:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  - controller: {fileID: 1161361134}
+    distance: 0
+    lap: 0
+  distanceArray:
+  - controller: {fileID: 247023681}
+    distance: 0
+    lap: 0
+  carText: {fileID: 669150803}
+  nextCheckPoint: {fileID: 0}
+  isFinishLine: 0
 --- !u!1001 &3497216723352124343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6283,67 +7260,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 641de99540a72854bbf0ffa63c9d6eef, type: 3}
---- !u!1001 &6616818663442297696
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6616818662270934307, guid: 7daff2c4644bd7e428c5f3248a42ffb1, type: 3}
-      propertyPath: m_Name
-      value: PositionManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616818662270934308, guid: 7daff2c4644bd7e428c5f3248a42ffb1, type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616818662270934308, guid: 7daff2c4644bd7e428c5f3248a42ffb1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1126.0975
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616818662270934308, guid: 7daff2c4644bd7e428c5f3248a42ffb1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 117.79969
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616818662270934308, guid: 7daff2c4644bd7e428c5f3248a42ffb1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -52.90821
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616818662270934308, guid: 7daff2c4644bd7e428c5f3248a42ffb1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616818662270934308, guid: 7daff2c4644bd7e428c5f3248a42ffb1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616818662270934308, guid: 7daff2c4644bd7e428c5f3248a42ffb1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616818662270934308, guid: 7daff2c4644bd7e428c5f3248a42ffb1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616818662270934308, guid: 7daff2c4644bd7e428c5f3248a42ffb1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616818662270934308, guid: 7daff2c4644bd7e428c5f3248a42ffb1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616818662270934308, guid: 7daff2c4644bd7e428c5f3248a42ffb1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616818662270934309, guid: 7daff2c4644bd7e428c5f3248a42ffb1, type: 3}
-      propertyPath: positionDisplay
-      value: 
-      objectReference: {fileID: 669150803}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7daff2c4644bd7e428c5f3248a42ffb1, type: 3}
 --- !u!1001 &7126879205804188537
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6351,6 +7267,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7126879206477833170, guid: 15c18275999ec3a41bc8d97dc911a11f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7126879206477833170, guid: 15c18275999ec3a41bc8d97dc911a11f, type: 3}
       propertyPath: FinishTrig
       value: 
@@ -6371,6 +7291,18 @@ PrefabInstance:
       propertyPath: carController
       value: 
       objectReference: {fileID: 247023681}
+    - target: {fileID: 7126879206477833170, guid: 15c18275999ec3a41bc8d97dc911a11f, type: 3}
+      propertyPath: BestMilDisplayObj
+      value: 
+      objectReference: {fileID: 744254872}
+    - target: {fileID: 7126879206477833170, guid: 15c18275999ec3a41bc8d97dc911a11f, type: 3}
+      propertyPath: BestMinDisplayObj
+      value: 
+      objectReference: {fileID: 794935645}
+    - target: {fileID: 7126879206477833170, guid: 15c18275999ec3a41bc8d97dc911a11f, type: 3}
+      propertyPath: BestSecDisplayObj
+      value: 
+      objectReference: {fileID: 1613961415}
     - target: {fileID: 7126879206477833171, guid: 15c18275999ec3a41bc8d97dc911a11f, type: 3}
       propertyPath: m_Name
       value: LapTimeManager
@@ -6434,7 +7366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7400063237454501598, guid: fb91b781095f0bd4b83e523c77cb6394, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7400063237454501598, guid: fb91b781095f0bd4b83e523c77cb6394, type: 3}
       propertyPath: m_LocalPosition.x
