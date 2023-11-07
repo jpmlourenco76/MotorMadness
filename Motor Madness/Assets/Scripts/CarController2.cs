@@ -15,6 +15,7 @@ public class CarController2 : MonoBehaviour
 
     public SpawnPointManager _spawnPointManager;
     public int laps = 0;
+    public bool human;
     public bool halfpointtrigger = false;
     public bool AION = false;
     public AIInput aIInput;
@@ -340,7 +341,7 @@ public class CarController2 : MonoBehaviour
 
 
             case driver.Human:
-
+                
                 if (carinput == null)
                 {
                     CurrentAcceleration = 0;
@@ -759,6 +760,14 @@ public class CarController2 : MonoBehaviour
         {
             laps++;
             halfpointtrigger = false;
+
+
+            switch (driveController)
+            {
+                case driver.Human:
+                    human = true;
+                    break;
+            }
         }
     }
 
