@@ -33,27 +33,6 @@ public class Laps3Completed : MonoBehaviour
     void OnTriggerEnter()
     {
 
-
-
-        // Display the current lap time
-        CurrentMinDisplay.GetComponent<TextMeshProUGUI>().text = lapTimeManager.MinuteCount.ToString("D2") + ".";
-        CurrentSecDisplay.GetComponent<TextMeshProUGUI>().text = lapTimeManager.SecondCount.ToString("D2") + ".";
-        CurrentMilDisplay.GetComponent<TextMeshProUGUI>().text = lapTimeManager.MilliCount.ToString("F0");
-
-        // Display the best lap time
-        BestMinDisplay.GetComponent<TextMeshProUGUI>().text = lapTimeManager.BestMinDisplay.ToString("D2") + ".";
-        BestSecDisplay.GetComponent<TextMeshProUGUI>().text = lapTimeManager.BestSecDisplay.ToString("D2") + ".";
-        BestMilDisplay.GetComponent<TextMeshProUGUI>().text = lapTimeManager.BestMiliDisplay.ToString("F0");
-
-        lapTimeManager.UpdateBestLapTime();
-        // Reset lap timer
-        lapTimeManager.ResetLapTime();
-
-
-
-
-
-
         // Check if the required number of laps (e.g., 2 laps) has been completed
         if (carController.laps >= 3)
         {
@@ -63,7 +42,30 @@ public class Laps3Completed : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
+
+
         LapCounter.GetComponent<TextMeshProUGUI>().text = "" + carController.laps;
+        if (carController.laps > 0  && carController.human)
+        {
+            lapTimeManager.UpdateBestLapTime();
+
+            // Display the current lap time
+            CurrentMinDisplay.GetComponent<TextMeshProUGUI>().text = lapTimeManager.MinuteCount.ToString("D2") + ".";
+            CurrentSecDisplay.GetComponent<TextMeshProUGUI>().text = lapTimeManager.SecondCount.ToString("D2") + ".";
+            CurrentMilDisplay.GetComponent<TextMeshProUGUI>().text = lapTimeManager.MilliCount.ToString("F0");
+            // Display the best lap time
+            BestMinDisplay.GetComponent<TextMeshProUGUI>().text = lapTimeManager.BestMinDisplay.ToString("D2") + ".";
+            BestSecDisplay.GetComponent<TextMeshProUGUI>().text = lapTimeManager.BestSecDisplay.ToString("D2") + ".";
+            BestMilDisplay.GetComponent<TextMeshProUGUI>().text = lapTimeManager.BestMiliDisplay.ToString("F0");
+
+
+
+            // Reset lap timer
+            lapTimeManager.ResetLapTime();
+            carController.human =false;
+        }
+
+        
     }
 
 
