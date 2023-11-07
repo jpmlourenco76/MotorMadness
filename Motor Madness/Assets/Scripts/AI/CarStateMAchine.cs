@@ -16,6 +16,8 @@ public class CarStateMAchine : MonoBehaviour
     private float wanderamount;
     private bool timerRunning = false;
     private float timer = 0.0f;
+    public bool followpath;
+    public float timepath;
 
     [HideInInspector] public bool hit;
 
@@ -49,12 +51,20 @@ public class CarStateMAchine : MonoBehaviour
 
                 if(timerRunning) {
                     timer += Time.deltaTime;
-                    if (timer > 5f)
+                    if (followpath)
                     {
-                        aICarController.persuitAiOn = true;
-                        aICarController.persuitDistance = 2;
-                        
-                    }
+                        if (timer >  timepath)
+                        {
+                            aICarController.persuitAiOn = true;
+                            aICarController.persuitDistance = 2;
+
+                        }
+                    } 
+                      else
+                        {
+                            aICarController.persuitAiOn = true;
+                            aICarController.persuitDistance = 2;
+                        }
 
                 }
 
@@ -67,17 +77,25 @@ public class CarStateMAchine : MonoBehaviour
 
                 if (timerRunning)
                 {
-                    timer += Time.deltaTime;
-                    if (timer > 5f)
+                   
+                    if (followpath)
+                    {
+                        if (timer > timepath)
+                        {
+                            aICarController.persuitAiOn = true;
+                            aICarController.persuitDistance = 0;
+
+                        }
+                    }
+                    else
                     {
                         aICarController.persuitAiOn = true;
-                        aICarController.persuitDistance = 2;
-
+                        aICarController.persuitDistance = 0;
                     }
 
                 }
                 aIInput.wanderAmount = wanderamount*1.3f;
-                aICarController.persuitDistance = 0;
+               
                 hit = true;
                 break;
         }
