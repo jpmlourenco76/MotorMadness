@@ -903,11 +903,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   driveController: 0
+  _spawnPointManager: {fileID: 0}
+  laps: 0
+  human: 0
+  halfpointtrigger: 0
   AION: 0
   aIInput: {fileID: 0}
   carinput: {fileID: 0}
   throttleinputt: 0
   breakinpuu: 0
+  steerin: 0
+  handbrakeinnn: 0
   _centerOfMass: {fileID: 0}
   carID: 
   KPH: 0
@@ -2096,19 +2102,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1079174475655704398, guid: de3aeff7f27d8eb41a797bdebbf7632e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.98483336
+      value: 0.9819564
       objectReference: {fileID: 0}
     - target: {fileID: 1079174475655704398, guid: de3aeff7f27d8eb41a797bdebbf7632e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.17350298
+      value: 0.18910751
       objectReference: {fileID: 0}
     - target: {fileID: 1079174475655704398, guid: de3aeff7f27d8eb41a797bdebbf7632e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000008940697
+      value: 0.0000000084479606
       objectReference: {fileID: 0}
     - target: {fileID: 1079174475655704398, guid: de3aeff7f27d8eb41a797bdebbf7632e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000007450581
+      value: -0.0000000016269286
       objectReference: {fileID: 0}
     - target: {fileID: 1079174475655704398, guid: de3aeff7f27d8eb41a797bdebbf7632e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
