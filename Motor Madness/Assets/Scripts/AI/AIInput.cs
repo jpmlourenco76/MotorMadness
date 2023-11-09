@@ -92,7 +92,7 @@ public class AIInput : MonoBehaviour
         leftSensor = this.transform.GetChild(0).GetChild(0).GetChild(2);
 
         persuitAiOn = AICarController.persuitAiOn;
-
+        AIcircuit = GameObject.Find("Waypoints").GetComponent<WaypointPath>();
 
 
         randomValue = Random.value * 100;

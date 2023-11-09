@@ -10,20 +10,28 @@ using UnityEngine.InputSystem.XR;
 
 public class CheckpointSystem : MonoBehaviour
 {
-    [SerializeField] // This attribute makes the field visible in the Inspector
-    public List<CarData> cars = new List<CarData>();
+
+    public List<CarData> cars;
 
     public List<CarData> distanceArray = new List<CarData>();
 
     public TextMeshProUGUI carText;
 
     public GameObject nextCheckPoint;
+    private GameObject GameLogic;
+    private LevelManager levelManager;
 
     public bool isFinishLine = false;
     private float timeSinceLastExecution = 0f;
     private float executionInterval = 0.5f; // 0.2 seconds interval
 
-
+    private void Awake()
+    {
+        GameLogic = GameObject.Find("GameLogic");
+        levelManager = GameLogic.GetComponent<LevelManager>();
+        cars = levelManager.cars;
+        
+    }
 
     private void Update()
     {
@@ -58,13 +66,14 @@ public class CheckpointSystem : MonoBehaviour
                 if (Vector3.Distance(transform.position, cars[0].controller.playerRB.position) == distanceArray[i].distance)
                 {
                     carText.text = $"{i + 1}/{cars.Count}";
+                    
                 }
             }
 
             // Reset the timer
             timeSinceLastExecution = 0f;
         }
-
+        levelManager.distanceArray = distanceArray;
     }
 
 
@@ -91,11 +100,7 @@ public class CheckpointSystem : MonoBehaviour
         nextCheckPoint = nextCheckpointSystem.gameObject;
     }
 
-    [System.Serializable]
-    public class CarData
-    {
-        public CarController2 controller;
-        public float distance;
-        public float lap;
-    }
+   
+
+    
 }
