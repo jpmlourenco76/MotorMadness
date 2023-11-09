@@ -55,6 +55,8 @@ public class CheckpointSystem : MonoBehaviour
                 cars[i].distance = distance;
                 cars[i].lap = cars[i].controller.laps;
                 distanceArray.Add(cars[i]);
+                levelManager.distanceArray = distanceArray;
+
             }
 
             // Sort distances
@@ -73,10 +75,12 @@ public class CheckpointSystem : MonoBehaviour
             // Reset the timer
             timeSinceLastExecution = 0f;
         }
-        levelManager.distanceArray = distanceArray;
     }
 
+    private void FixedUpdate()
+    {
 
+    }
 
     public class CarDataComparer : IComparer<CarData>
     {
