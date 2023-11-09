@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CarController2 : MonoBehaviour
 {
-    internal enum driver
+    public enum driver
     {
         AI,
         AIML,
@@ -749,6 +749,13 @@ public class CarController2 : MonoBehaviour
         transform.position = pos - new Vector3(0, 0.4f, 0);
     }
 
+
+
+    public void SetDriverType(driver newDriver)
+    {
+        driveController = newDriver;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("HPT"))
@@ -770,6 +777,9 @@ public class CarController2 : MonoBehaviour
             }
         }
     }
+
+
+    
 
 
 

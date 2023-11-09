@@ -6,17 +6,18 @@ using TMPro;
 
 public class LapTimeManager : MonoBehaviour
 {
-    public GameObject FinishTrig;
+    [HideInInspector] public GameObject FinishTrig;
 
-    public int MinuteCount;
-    public int SecondCount;
-    public float MilliCount;
+    [HideInInspector] public int MinuteCount;
+    [HideInInspector] public int SecondCount;
+    [HideInInspector] public float MilliCount;
 
-    public string MilliDisplay;
-    public int BestSecDisplay;
-    public int BestMinDisplay;
-    public float BestMiliDisplay;
+    [HideInInspector] public string MilliDisplay;
+    [HideInInspector] public int BestSecDisplay;
+    [HideInInspector] public int BestMinDisplay;
+    [HideInInspector] public float BestMiliDisplay;
 
+    
     public GameObject MinDisplay;
     public GameObject SecDisplay;
     public GameObject MilDisplay;
@@ -28,6 +29,19 @@ public class LapTimeManager : MonoBehaviour
     private float bestLapTime = float.MaxValue; // Initialize best lap time to a high value
 
     private bool lapCompleted = false;
+
+    private void Awake()
+    {
+        FinishTrig = GameObject.Find("FinishTrigger");
+
+        MinDisplay = GameObject.Find("MinDisplay");
+        SecDisplay = GameObject.Find("SecDisplay");
+        MilDisplay = GameObject.Find("MilDisplay");
+        BestMinDisplayObj = GameObject.Find("BestMinDisplay");
+        BestSecDisplayObj = GameObject.Find("BestSecDisplay");
+        BestMilDisplayObj = GameObject.Find("BestMilliDisplay");
+    }
+
 
     void Update()
     {

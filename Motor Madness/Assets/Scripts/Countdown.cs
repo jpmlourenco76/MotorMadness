@@ -6,15 +6,30 @@ using TMPro;
 
 public class Countdown : MonoBehaviour
 {
-    public GameObject CountDown;
-    public AudioSource Three;
-    public AudioSource Two;
-    public AudioSource One;
-    public AudioSource Go;
-    public GameObject LapTimer;
+    private GameObject CountDown;
+    private AudioSource Three;
+    private AudioSource Two;
+    private AudioSource One;
+    private AudioSource Go;
+    private GameObject LapTimer;
    
 public CarController2 carController;
     public List<CarController2> AIcarControllers;
+
+    private void Awake()
+    {
+        CountDown = GameObject.Find("CountDownUI");
+        Three = GameObject.Find("Three").GetComponent<AudioSource>();
+        Two = GameObject.Find("Two").GetComponent<AudioSource>();
+        One = GameObject.Find("One").GetComponent<AudioSource>();
+        Go = GameObject.Find("Go").GetComponent<AudioSource>();
+        LapTimer = GameObject.Find("FinishTrigger");
+
+
+
+    }
+
+
     void Start()
     {
        
