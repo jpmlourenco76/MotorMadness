@@ -923,7 +923,7 @@ MeshCollider:
   m_GameObject: {fileID: 146258}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -943,7 +943,7 @@ GameObject:
   - component: {fileID: 5683351181823297920}
   m_Layer: 0
   m_Name: Car1
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -984,7 +984,7 @@ Rigidbody:
   m_Mass: 1500
   m_Drag: 0.02
   m_AngularDrag: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
@@ -996,7 +996,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146260}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 357c860648c89274ca626b7909a957ac, type: 3}
   m_Name: 
@@ -1657,7 +1657,7 @@ WheelCollider:
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 1.9
     m_Stiffness: 1
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &6972760506455962088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1665,7 +1665,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 893868884513245789}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 639c04cdf3862534bb3525fc6812263f, type: 3}
   m_Name: 
@@ -1834,7 +1834,7 @@ WheelCollider:
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 2.8
     m_Stiffness: 1
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &5245904505146375130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1842,7 +1842,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5827550883025745252}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 639c04cdf3862534bb3525fc6812263f, type: 3}
   m_Name: 
@@ -1985,7 +1985,7 @@ WheelCollider:
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 1.9
     m_Stiffness: 1
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &6820080929286781455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1993,7 +1993,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8329273892944946704}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 639c04cdf3862534bb3525fc6812263f, type: 3}
   m_Name: 
@@ -2137,7 +2137,7 @@ WheelCollider:
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 2.8
     m_Stiffness: 1
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &743096081384726325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2145,7 +2145,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8813283116925270959}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 639c04cdf3862534bb3525fc6812263f, type: 3}
   m_Name: 

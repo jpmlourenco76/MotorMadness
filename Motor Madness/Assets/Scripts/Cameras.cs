@@ -12,8 +12,10 @@ public class Cameras : MonoBehaviour
 
     void Start()
     {
-        // Initially, set the normal view camera as active.
-        ActivateCamera(normalViewCamera);
+       if(normalViewCamera !=null){
+            // Initially, set the normal view camera as active.
+            ActivateCamera(normalViewCamera);
+        }
     }
 
     void Update()

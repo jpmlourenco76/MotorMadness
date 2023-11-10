@@ -18,21 +18,21 @@ public class LevelManager : MonoBehaviour
     private Canvas MiniMap;
     private Canvas Canvas;
 
-    public GameObject stPlaceDisplay;
-    public GameObject ndPlaceDisplay;
-    public GameObject rdPlaceDisplay;
-    public GameObject thPlaceDisplay;
+    private GameObject stPlaceDisplay;
+    private GameObject ndPlaceDisplay;
+    private GameObject rdPlaceDisplay;
+    private GameObject thPlaceDisplay;
     private GameObject fthPlaceDisplay;
 
-    public GameObject stPlaceDisplayR;
-    public GameObject ndPlaceDisplayR;
+    private GameObject stPlaceDisplayR;
+    private GameObject ndPlaceDisplayR;
     private GameObject rdPlaceDisplayR;
-    public GameObject thPlaceDisplayR;
+    private GameObject thPlaceDisplayR;
     private GameObject fthPlaceDisplayR;
 
-    public GameObject stPointsR;
-    public GameObject ndPointsR;
-    public GameObject rdPointsR;
+    private GameObject stPointsR;
+    private GameObject ndPointsR;
+    private GameObject rdPointsR;
     private GameObject thPointsR;
     private GameObject fthPointsR;
 
@@ -45,8 +45,8 @@ public class LevelManager : MonoBehaviour
     public List<CarData> cars = new List<CarData>();
    
     [HideInInspector] public bool finished = false;
-     public List<CarData> finishplacements = new List<CarData>();
-     public List<CarData> Rank = new List<CarData>();
+    [HideInInspector] public List<CarData> finishplacements = new List<CarData>();
+    [HideInInspector] public List<CarData> Rank = new List<CarData>();
     public List<CarData> distanceArray;
 
     private void Awake()
