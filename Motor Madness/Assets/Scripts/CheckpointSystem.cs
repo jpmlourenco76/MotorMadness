@@ -45,7 +45,7 @@ public class CheckpointSystem : MonoBehaviour
 
             for (int i = 0; i < cars.Count; i++)
             {
-                float distance = Vector3.Distance(transform.position, cars[i].controller.playerRB.position);
+                float distance = Vector3.Distance(transform.position, cars[i].CarPrefab.GetComponent<CarController2>().playerRB.position);
                 if (distance < 25f)
                 {
                     nextCheckPoint.SetActive(true);
@@ -53,7 +53,7 @@ public class CheckpointSystem : MonoBehaviour
                 }
 
                 cars[i].distance = distance;
-                cars[i].lap = cars[i].controller.laps;
+                cars[i].lap = cars[i].CarPrefab.GetComponent<CarController2>().laps;
                 distanceArray.Add(cars[i]);
                 levelManager.distanceArray = distanceArray;
 
@@ -65,7 +65,7 @@ public class CheckpointSystem : MonoBehaviour
             // Update car text based on distance
             for (int i = 0; i < cars.Count; i++)
             {
-                if (Vector3.Distance(transform.position, cars[0].controller.playerRB.position) == distanceArray[i].distance)
+                if (Vector3.Distance(transform.position, cars[0].CarPrefab.GetComponent<CarController2>().playerRB.position) == distanceArray[i].distance)
                 {
                     carText.text = $"{i + 1}/{cars.Count}";
                     
