@@ -11,15 +11,24 @@ public class LevelUI : MonoBehaviour
     private float desiredPosition;
     private TMPro.TextMeshProUGUI gear;
     private TMPro.TextMeshProUGUI kph;
+    private GameManager gameManager;
+
 
     // Start is called before the first frame update
     private void Awake()
     {
+        gameManager = GameManager.Instance;
+
         gear = GameObject.Find("Gear").GetComponent<TextMeshProUGUI>();
         kph = GameObject.Find("Speed").GetComponent<TextMeshProUGUI>();
         neeedle = GameObject.Find("needle");
     }
 
+
+    private void Start()
+    {
+        carController = gameManager.playerCarController;
+    }
     // Update is called once per frame
     private void FixedUpdate()
     {

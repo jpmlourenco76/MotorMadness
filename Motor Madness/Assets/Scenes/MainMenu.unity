@@ -123,6 +123,157 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &38039736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 38039738}
+  - component: {fileID: 38039737}
+  m_Layer: 0
+  m_Name: Waypoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &38039737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38039736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b8a9a2da08518418f2de57be5c8639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 125152381}
+  - {fileID: 747827097}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  smoothRoute: 1
+  editorVisualisationSubsteps: 200
+--- !u!4 &38039738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38039736}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -222.6, y: -0.145, z: -147.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 125152381}
+  - {fileID: 747827097}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &47110719
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,6 +518,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80256524}
   m_CullTransparentMesh: 1
+--- !u!1 &125152380
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 125152381}
+  m_Layer: 0
+  m_Name: Waypoint (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &125152381
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125152380}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 72.5, y: 1, z: 114.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 38039738}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &162845775
 GameObject:
   m_ObjectHideFlags: 0
@@ -3441,6 +3623,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738783453}
   m_CullTransparentMesh: 1
+--- !u!1 &747827096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 747827097}
+  m_Layer: 0
+  m_Name: Waypoint (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &747827097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747827096}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 106.5, y: 1, z: 114.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 38039738}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &873161075
 GameObject:
   m_ObjectHideFlags: 0
@@ -5413,6 +5626,187 @@ MonoBehaviour:
     - characterName: AHZCorp
       currentLevel: 1
       money: 10000
+      position: 5
+      OwnedCars:
+      - CarID: 1
+        CarName: A
+        RacerName: 
+        CarPrefab: {fileID: 146260, guid: 03c7ad2063d463144be3457a51359e99, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 0
+          GearUpgrade: 0
+          BreakUpgrade: 0
+          TireUpdrage: 0
+      - CarID: 2
+        CarName: b
+        RacerName: 
+        CarPrefab: {fileID: 181440, guid: 1276291b9a1371743992b4240c99cb89, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 0
+          GearUpgrade: 0
+          BreakUpgrade: 0
+          TireUpdrage: 0
+      SelectedCar:
+        CarID: 0
+        CarName: 
+        RacerName: 
+        CarPrefab: {fileID: 0}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 0
+          GearUpgrade: 0
+          BreakUpgrade: 0
+          TireUpdrage: 0
+    - characterName: 'Nitro '
+      currentLevel: 1
+      money: 10000
+      position: 1
+      OwnedCars:
+      - CarID: 1
+        CarName: A
+        RacerName: 
+        CarPrefab: {fileID: 146260, guid: 03c7ad2063d463144be3457a51359e99, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 1
+          GearUpgrade: 0
+          BreakUpgrade: 0
+          TireUpdrage: 0
+      - CarID: 2
+        CarName: b
+        RacerName: 
+        CarPrefab: {fileID: 181440, guid: 1276291b9a1371743992b4240c99cb89, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 0
+          GearUpgrade: 1
+          BreakUpgrade: 2
+          TireUpdrage: 0
+      SelectedCar:
+        CarID: 0
+        CarName: 
+        RacerName: 
+        CarPrefab: {fileID: 0}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 0
+          GearUpgrade: 0
+          BreakUpgrade: 0
+          TireUpdrage: 0
+    - characterName: 'Blaze '
+      currentLevel: 1
+      money: 10000
+      position: 2
+      OwnedCars:
+      - CarID: 1
+        CarName: A
+        RacerName: 
+        CarPrefab: {fileID: 146260, guid: 03c7ad2063d463144be3457a51359e99, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 1
+          GearUpgrade: 0
+          BreakUpgrade: 0
+          TireUpdrage: 0
+      - CarID: 2
+        CarName: b
+        RacerName: 
+        CarPrefab: {fileID: 181440, guid: 1276291b9a1371743992b4240c99cb89, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 0
+          GearUpgrade: 1
+          BreakUpgrade: 2
+          TireUpdrage: 0
+      SelectedCar:
+        CarID: 0
+        CarName: 
+        RacerName: 
+        CarPrefab: {fileID: 0}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 0
+          GearUpgrade: 0
+          BreakUpgrade: 0
+          TireUpdrage: 0
+    - characterName: 'Shadow '
+      currentLevel: 1
+      money: 10000
+      position: 3
+      OwnedCars:
+      - CarID: 1
+        CarName: A
+        RacerName: 
+        CarPrefab: {fileID: 146260, guid: 03c7ad2063d463144be3457a51359e99, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 1
+          GearUpgrade: 0
+          BreakUpgrade: 0
+          TireUpdrage: 0
+      - CarID: 2
+        CarName: b
+        RacerName: 
+        CarPrefab: {fileID: 181440, guid: 1276291b9a1371743992b4240c99cb89, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 0
+          GearUpgrade: 1
+          BreakUpgrade: 2
+          TireUpdrage: 0
+      SelectedCar:
+        CarID: 0
+        CarName: 
+        RacerName: 
+        CarPrefab: {fileID: 0}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 0
+          GearUpgrade: 0
+          BreakUpgrade: 0
+          TireUpdrage: 0
+    - characterName: 'Viper '
+      currentLevel: 1
+      money: 10000
+      position: 4
       OwnedCars:
       - CarID: 1
         CarName: A
@@ -5534,25 +5928,7 @@ MonoBehaviour:
         BreakUpgrade: 0
         TireUpdrage: 0
   currentCharacterIndex: 0
-  characterData:
-    characterName: 
-    currentLevel: 0
-    money: 0
-    OwnedCars: []
-    SelectedCar:
-      CarID: 0
-      CarName: 
-      RacerName: 
-      CarPrefab: {fileID: 0}
-      distance: 0
-      lap: 0
-      points: 0
-      price: 0
-      upgradelvls:
-        TorqueUpgrade: 0
-        GearUpgrade: 0
-        BreakUpgrade: 0
-        TireUpdrage: 0
+  playerCarController: {fileID: 0}
 --- !u!4 &1434198066
 Transform:
   m_ObjectHideFlags: 0

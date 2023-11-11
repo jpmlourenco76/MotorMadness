@@ -82,6 +82,7 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 14.82
+  GroundStiffness: 1
   AntiRollBar: 0.806
   AntiRollWheel: {fileID: 8962833906006017765}
 --- !u!1 &420299374892180400
@@ -294,6 +295,7 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 14.82
+  GroundStiffness: 1
   AntiRollBar: 0.806
   AntiRollWheel: {fileID: 4085647690648544119}
 --- !u!1 &3614057721448276149
@@ -413,6 +415,7 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 0
+  GroundStiffness: 1
   AntiRollBar: 0.9
   AntiRollWheel: {fileID: 1660723360993363667}
 --- !u!1 &5037731197770628163
@@ -629,6 +632,7 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 0
+  GroundStiffness: 1
   AntiRollBar: 0.9
   AntiRollWheel: {fileID: 6039963307722170644}
 --- !u!1 &8480943782784524329
@@ -1692,6 +1696,12 @@ MonoBehaviour:
   AION: 0
   aIInput: {fileID: 0}
   carinput: {fileID: 0}
+  race: 0
+  wheels:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   throttleinputt: 0
   breakinpuu: 0
   steerin: 0
