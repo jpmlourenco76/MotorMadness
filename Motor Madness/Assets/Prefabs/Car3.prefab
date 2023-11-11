@@ -843,6 +843,8 @@ GameObject:
   - component: {fileID: 3233234231559020979}
   - component: {fileID: 6894495100667053011}
   - component: {fileID: 6598204088910103916}
+  - component: {fileID: 1906600967367450733}
+  - component: {fileID: 7311253018160400257}
   m_Layer: 0
   m_Name: Car3
   m_TagString: Car
@@ -898,7 +900,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 135514}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 357c860648c89274ca626b7909a957ac, type: 3}
   m_Name: 
@@ -911,6 +913,12 @@ MonoBehaviour:
   AION: 0
   aIInput: {fileID: 0}
   carinput: {fileID: 0}
+  race: 0
+  wheels:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   throttleinputt: 0
   breakinpuu: 0
   steerin: 0
@@ -1046,7 +1054,7 @@ MonoBehaviour:
   StartEngineDellay: 0.5
   isEngineRunning: 0
   Steer:
-    MaxSteerAngle: 50
+    MaxSteerAngle: 35
     EnableSteerLimit: 1
     SteerLimitCurve:
       serializedVersion: 2
@@ -1228,6 +1236,67 @@ MonoBehaviour:
   hoodViewCamera: {fileID: 3097984059508269758}
   normalViewCamera: {fileID: 7616987330049688850}
   farViewCamera: {fileID: 4254975250256152500}
+--- !u!114 &1906600967367450733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135514}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be936eb89c3c5234eb82aece6727a855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  desiredSpeed: 0
+  brakeinp: 0
+  accel: 0
+  reverseGearOn: 0
+  persuitAiOn: 0
+  avoidObstacleMultiplier: 0
+  targetAngle: 0
+  brakeCondition: 0
+  cautiousSpeedFactor: 0.05
+  cautiousAngle: 50
+  cautiousDistance: 100
+  cautiousAngularVelocityFactor: 30
+  steerSensitivity: 0.05
+  accelSensitivity: 0.04
+  brakeSensitivity: 1
+  lateralWander: 3
+  lateralWanderSpeed: 0.5
+  wanderAmount: 0.1
+  accelWanderSpeed: 0.1
+  stopWhenTargetReached: 0
+  reachTargetThreshold: 2
+  sensorsAngle: 0
+  avoidDistance: 10
+  brakeDistance: 6
+  reverseDistance: 3
+  progressStyle: 0
+  AIcircuit: {fileID: 0}
+  lookAheadForTarget: 5
+  lookAheadForTargetFactor: 0.1
+  lookAheadForSpeedOffset: 10
+  lookAheadForSpeedFactor: 0.2
+  pointThreshold: 4
+  AItarget: {fileID: 0}
+--- !u!114 &7311253018160400257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135514}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bef5bcb0c7030f04b8328f5f2790aa20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  initiialpDistance: 0
+  progressDistance: 0
+  pathTransform: []
 --- !u!1 &135516
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,7 +1618,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 417407515439480839}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0, z: -1}
+  m_LocalPosition: {x: 0.97, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1638,6 +1707,7 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
+  GroundStiffness: 1
   AntiRollBar: 1
   AntiRollWheel: {fileID: 6637865675814287795}
 --- !u!1 &1920989939795826802
@@ -1729,8 +1799,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2362608395487506918}
-  m_LocalRotation: {x: 0.0000000018841937, y: -0.80956393, z: -0.0000000025199285, w: 0.5870317}
-  m_LocalPosition: {x: 417.42612, y: 0.06488535, z: -246.87909}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1793,7 +1863,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4087280167999980824}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 3.5}
+  m_LocalPosition: {x: 0, y: 1, z: -0.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1862,7 +1932,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5968245925812650793}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: 0, z: -1}
+  m_LocalPosition: {x: -0.97, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1951,6 +2021,7 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
+  GroundStiffness: 1
   AntiRollBar: 1
   AntiRollWheel: {fileID: 1086778717765451552}
 --- !u!1 &6574414263217541995
@@ -2035,6 +2106,7 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
+  GroundStiffness: 1
   AntiRollBar: 1
   AntiRollWheel: {fileID: 5215681985949106057}
 --- !u!1 &7462519577996560019
@@ -2156,6 +2228,7 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
+  GroundStiffness: 1
   AntiRollBar: 1
   AntiRollWheel: {fileID: 7407121580935564660}
 --- !u!1001 &6192184889968888010
@@ -2250,7 +2323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1079174475655704398, guid: de3aeff7f27d8eb41a797bdebbf7632e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0000018849969
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1079174475655704398, guid: de3aeff7f27d8eb41a797bdebbf7632e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2258,7 +2331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1079174475655704398, guid: de3aeff7f27d8eb41a797bdebbf7632e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.5900187
+      value: -5.59
       objectReference: {fileID: 0}
     - target: {fileID: 1079174475655704398, guid: de3aeff7f27d8eb41a797bdebbf7632e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2266,15 +2339,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1079174475655704398, guid: de3aeff7f27d8eb41a797bdebbf7632e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.18910727
+      value: 0.18910751
       objectReference: {fileID: 0}
     - target: {fileID: 1079174475655704398, guid: de3aeff7f27d8eb41a797bdebbf7632e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000038393767
+      value: 0.0000000084479606
       objectReference: {fileID: 0}
     - target: {fileID: 1079174475655704398, guid: de3aeff7f27d8eb41a797bdebbf7632e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000007404014
+      value: -0.0000000016269286
       objectReference: {fileID: 0}
     - target: {fileID: 1079174475655704398, guid: de3aeff7f27d8eb41a797bdebbf7632e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

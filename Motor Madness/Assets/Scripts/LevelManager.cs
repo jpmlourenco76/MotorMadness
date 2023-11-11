@@ -2,11 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
+using UnityEngine.Playables;
 
 public class LevelManager : MonoBehaviour
 {
     public int TotalLaps;
+
+    public enum RaceType
+    {
+        Industrial,
+        City,
+        Countryside,
+        RaceTrack,
+        Special
+    }
+    [SerializeField] RaceType raceType;
+
+
+
     private GameObject FinishTrig;
     public CarController2 carController;
     private LapsCompleted lapsCompleted;
@@ -36,21 +52,31 @@ public class LevelManager : MonoBehaviour
     private GameObject thPointsR;
     private GameObject fthPointsR;
 
+    private SpawnPointManager spawnPointManager;
+    public Transform[] spawnPoints;
+    private bool special = false;
 
+    private GameManager gameManager;
 
-
+    public int levelReward = 0;
 
 
     [SerializeField]
     public List<CarData> cars = new List<CarData>();
-   
+
     [HideInInspector] public bool finished = false;
     [HideInInspector] public List<CarData> finishplacements = new List<CarData>();
     [HideInInspector] public List<CarData> Rank = new List<CarData>();
     public List<CarData> distanceArray;
 
+    [HideInInspector]
+    public List<CarController2> AiControllers;
+
     private void Awake()
     {
+
+        gameManager = GameManager.Instance;
+
         FinishTrig = GameObject.Find("FinishTrigger");
         Finish = GameObject.Find("Finish");
         FinishPanel = GameObject.Find("FinishPanel");
@@ -61,6 +87,11 @@ public class LevelManager : MonoBehaviour
         OverallRank = GameObject.Find("OverallRank").GetComponent<Canvas>();
         MiniMap = GameObject.Find("CanvasMiniMap").GetComponent<Canvas>();
         Canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+
+
+        spawnPointManager = GameObject.Find("SpawnPoints").GetComponent<SpawnPointManager>();
+        spawnPoints = spawnPointManager.spawnPoints;
+
 
         stPlaceDisplay = GameObject.Find("1stPlaceDisplay");
         ndPlaceDisplay = GameObject.Find("2ndPlaceDisplay");
@@ -81,6 +112,7 @@ public class LevelManager : MonoBehaviour
         fthPointsR = GameObject.Find("5thPointsR");
 
 
+
     }
     bool ended;
     private void Start()
@@ -88,27 +120,163 @@ public class LevelManager : MonoBehaviour
         ended = true;
         RaceRank.enabled = false;
         OverallRank.enabled = false;
-    }
-    
 
-    
+        Spawn();
+    }
+
+    public void Spawn()
+    {
+        AiControllers.Clear();
+        cars.Clear();
+
+        for (int i = 0; i < gameManager.gameData.characters.Count; i++)
+        {
+
+            if (gameManager.gameData.characters[i].SelectedCar.CarID == 0)
+            {
+                int rnd = 0;
+                switch (raceType)
+                {
+                    case RaceType.Industrial:
+                        rnd = Random.Range(0, 1);
+                        break;
+                    case RaceType.City:
+                        rnd = Random.Range(2, 3);
+                        break;
+                    case RaceType.Countryside:
+                        rnd = Random.Range(4, 5);
+                        break;
+                    case RaceType.RaceTrack:
+                        rnd = Random.Range(6, 7);
+                        break;
+                    case RaceType.Special:
+                        
+                        break;
+                }
+
+                if(!special) {
+                    gameManager.gameData.characters[i].SelectedCar = gameManager.gameData.characters[i].OwnedCars[rnd];
+                }
+
+            }
+            switch (raceType)
+            {
+                case RaceType.Special:
+                    special = true;
+                    break;
+
+            }
+
+            if (!special)
+            {
+                Vector3 pos = spawnPointManager.spawnPoints[gameManager.gameData.characters[i].position - 1].position;
+                Quaternion rot = spawnPointManager.spawnPoints[gameManager.gameData.characters[i].position - 1].rotation;
+                GameObject Car = Instantiate(gameManager.gameData.characters[i].SelectedCar.CarPrefab, pos, rot);
+                Car.gameObject.name = "Car" + i;
+                Car.gameObject.GetComponent<Rigidbody>().useGravity = true;
+                Car.gameObject.GetComponent<CarController2>().race = true;
+                Car.gameObject.GetComponent<AIInput>().enabled = true;
+                Car.gameObject.GetComponentInChildren<MeshCollider>().enabled = true;
+                Car.gameObject.GetComponent<CarAIWaipointTracker>().enabled = true;
+
+                cars.Add(gameManager.gameData.characters[i].SelectedCar);
+                cars[i].lap = 0;
+                cars[i].distance = 0;
+
+                if (i == 0)
+                {
+                    carController = Car.GetComponent<CarController2>();
+                    carController.SetDriverType(CarController2.driver.Human);
+                    gameManager.SetPlayerCarController(Car);
+                    ApplyTorqueUpgrade(Car);
+                    ApplyGearUpgrade(Car);
+                    ApplyBreakUpgrade(Car);
+                    ApplyTireUpgrade(Car);
+                    MiniMap.GetComponent<MiniMapController>().target = Car.gameObject.transform;
+
+                }
+                else
+                {
+                    AiControllers.Add(Car.GetComponent<CarController2>());
+                    Car.gameObject.GetComponent<Cameras>().enabled = false;
+
+                    Car.gameObject.transform.GetChild(9).gameObject.SetActive(false);
+                }
+            }
+            else
+            {
+                if( i== 0) {
+
+                    Vector3 pos = spawnPointManager.spawnPoints[0].position;
+                    Quaternion rot = spawnPointManager.spawnPoints[0].rotation;
+                    GameObject Car;
+                    if (gameManager.gameData.characters[i].currentLevel == 2) {
+                        Car = Instantiate(gameManager.gameData.GameCars[2].CarPrefab, pos, rot);
+
+                    }
+                    else
+                    {
+                        Car = Instantiate(gameManager.gameData.characters[i].SelectedCar.CarPrefab, pos, rot);
+
+                    }
+
+
+                    Car.gameObject.name = "Car" + i;
+                    Car.gameObject.GetComponent<Rigidbody>().useGravity = true;
+                    Car.gameObject.GetComponent<CarController2>().race = true;
+                    Car.gameObject.GetComponentInChildren<MeshCollider>().enabled = true;
+                    Car.gameObject.GetComponent<AIInput>().enabled = true;
+                    Car.gameObject.GetComponent <CarAIWaipointTracker>().enabled = true;
+                    cars.Add(gameManager.gameData.characters[i].SelectedCar);
+                    cars[i].lap = 0;
+                    cars[i].distance = 0;
+
+                    carController = Car.GetComponent<CarController2>();
+                    carController.SetDriverType(CarController2.driver.Human);
+                    gameManager.SetPlayerCarController(Car);
+                    ApplyTorqueUpgrade(Car);
+                    ApplyGearUpgrade(Car);
+                    ApplyBreakUpgrade(Car);
+                    ApplyTireUpgrade(Car);
+                    MiniMap.GetComponent<MiniMapController>().target = Car.gameObject.transform;
+
+
+                }
+            }
+
+           
+
+        }
+
+
+        spawnPointManager.gameObject.SetActive(false);
+    }
+
+
     public void EndRace()
     {
-        
 
-        if(ended) {
+
+        if (ended)
+        {
             foreach (CarData car in distanceArray)
             {
                 CarData carClone = (CarData)car.Clone();
                 finishplacements.Add(carClone);
             }
             ended = false;
-            carController.SetDriverType(CarController2.driver.AI); 
+            carController.SetDriverType(CarController2.driver.AI);
         }
+
+
+
 
         FinishPanel.GetComponent<TextMeshProUGUI>().enabled = true;
         finish.Play();
 
+
+
+      
 
         Invoke("EnableRaceRank", 3);
 
@@ -143,25 +311,65 @@ public class LevelManager : MonoBehaviour
 
         for (int i = 0; i < finishplacements.Count; i++)
         {
-            foreach(CarData car in cars)
+            foreach (CarData car in cars)
             {
-                if(car.RacerName == finishplacements[i].RacerName)
+                if (car.RacerName == finishplacements[i].RacerName)
                 {
                     car.points += prize[i];
+                    
                 }
             }
 
+            foreach(CharacterData characterData in gameManager.gameData.characters)
+            {
+                if(characterData.characterName == finishplacements[i].RacerName)
+                {
+                    characterData.position = i + 1;
+                   
+                    if(i == 0)
+                    {
+                        characterData.money += levelReward;
+                    }
+                    else if (i == 1)
+                    {
+                        characterData.money += (int)(levelReward * 0.7f);
+                    }
+                    else if (i == 2)
+                    {
+                        characterData.money += (int)(levelReward * 0.5f);
+                    }
+                    else if (i == 3)
+                    {
+                        characterData.money += (int)(levelReward * 0.3f);
+                    }
+                    else if (i == 4)
+                    {
+                        characterData.money += (int)(levelReward * 0.1f);
+                    }
+                }
+            }
+
+            
         }
+
+        gameManager.SetPointsPerRacer();
 
         foreach (CarData car in cars)
         {
-        
+
             CarData carClone = (CarData)car.Clone();
             Rank.Add(carClone);
             Rank = Rank.OrderByDescending(carClone => carClone.points).ToList();
 
         }
-        stPlaceDisplayR.GetComponent<TextMeshProUGUI>().text = Rank[0].RacerName;
+
+        for (int i = 1; i < gameManager.gameData.characters.Count; i++)
+        {
+            gameManager.gameData.characters[i].SelectedCar.CarID = 0;
+         }
+
+
+            stPlaceDisplayR.GetComponent<TextMeshProUGUI>().text = Rank[0].RacerName;
         ndPlaceDisplayR.GetComponent<TextMeshProUGUI>().text = Rank[1].RacerName;
         rdPlaceDisplayR.GetComponent<TextMeshProUGUI>().text = Rank[2].RacerName;
         thPlaceDisplayR.GetComponent<TextMeshProUGUI>().text = Rank[3].RacerName;
@@ -174,10 +382,148 @@ public class LevelManager : MonoBehaviour
         fthPointsR.GetComponent<TextMeshProUGUI>().text = Rank[4].points.ToString();
 
 
-
-
-
         OverallRank.enabled = true;
+
+
+        if (gameManager.gameData.characters[0].currentLevel == 2)
+        {
+            gameManager.gameData.characters[0].OwnedCars.Add(gameManager.gameData.GameCars[3]);
+
+        }
+
+        Invoke("GoGarage", 3);
+
+
     }
+
+    private void GoGarage()
+    {
+        gameManager.gameData.characters[0].currentLevel++;
+        gameManager.GoGarage();
+    }
+
+
+    private void ApplyTorqueUpgrade(GameObject car)
+    {
+        float OriginalTorque = car.gameObject.GetComponent<CarController2>().Engine.MaxMotorTorque;
+        float newTorque;
+
+        switch (gameManager.gameData.characters[0].SelectedCar.upgradelvls.TorqueUpgrade)
+        {
+            case 0:
+                newTorque = OriginalTorque;
+                break;
+            case 1:
+                newTorque = OriginalTorque * 1.05f;
+                break;
+            case 2:
+                newTorque = OriginalTorque * 1.2f;
+                break;
+            case 3:
+                newTorque = OriginalTorque * 1.5f;
+                break;
+            default:
+                newTorque = OriginalTorque;
+                break;
+
+        }
+        car.gameObject.GetComponent<CarController2>().Engine.MaxMotorTorque = newTorque;
+    }
+    private void ApplyGearUpgrade(GameObject car)
+    {
+        float OriginalGear = car.gameObject.GetComponent<CarController2>().Gearbox.MainRatio;
+        float newGear;
+
+        switch (gameManager.gameData.characters[0].SelectedCar.upgradelvls.GearUpgrade)
+        {
+            case 0:
+                newGear = OriginalGear;
+                break;
+            case 1:
+                newGear = OriginalGear * 1.1f;
+                break;
+            case 2:
+                newGear = OriginalGear * 1.2f;
+                break;
+            case 3:
+                newGear = OriginalGear * 1.3f;
+                break;
+            default:
+                newGear = OriginalGear;
+                break;
+
+        }
+        car.gameObject.GetComponent<CarController2>().Gearbox.MainRatio = newGear;
+    }
+
+    private void ApplyBreakUpgrade(GameObject car)
+    {
+        float OriginalBreak = car.gameObject.GetComponent<CarController2>().wheels[0].MaxBrakeTorque;
+        float newBreak;
+
+        for (int i = 0; i < car.gameObject.GetComponent<CarController2>().wheels.Length; i++)
+        {
+
+            switch (gameManager.gameData.characters[0].SelectedCar.upgradelvls.BreakUpgrade)
+            {
+                case 0:
+                    newBreak = OriginalBreak;
+                    break;
+                case 1:
+                    newBreak = OriginalBreak * 1.25f;
+                    break;
+                case 2:
+                    newBreak = OriginalBreak * 1.75f;
+                    break;
+                case 3:
+                    newBreak = OriginalBreak * 2.50f;
+                    break;
+                default:
+                    newBreak = OriginalBreak;
+                    break;
+
+            }
+            car.gameObject.GetComponent<CarController2>().wheels[i].MaxBrakeTorque = newBreak;
+
+
+        }
+
+
+    }
+
+
+    private void ApplyTireUpgrade(GameObject car)
+    {
+        float OriginalTire = car.gameObject.GetComponent<CarController2>().wheels[0].GroundStiffness;
+        float newTire;
+
+        for (int i = 0; i < car.gameObject.GetComponent<CarController2>().wheels.Length; i++)
+        {
+
+            switch (gameManager.gameData.characters[0].SelectedCar.upgradelvls.BreakUpgrade)
+            {
+                case 0:
+                    newTire = OriginalTire;
+                    break;
+                case 1:
+                    newTire = OriginalTire * 1.1f;
+                    break;
+                case 2:
+                    newTire = OriginalTire * 1.2f;
+                    break;
+                case 3:
+                    newTire = OriginalTire * 1.35f;
+                    break;
+                default:
+                    newTire = OriginalTire;
+                    break;
+
+            }
+            car.gameObject.GetComponent<CarController2>().wheels[i].GroundStiffness = newTire;
+
+
+        }
+    }
+
 
 }

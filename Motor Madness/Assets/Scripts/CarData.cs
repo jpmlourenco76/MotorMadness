@@ -9,6 +9,7 @@ public class CharacterData
     public string characterName;
     public int currentLevel;
     public int money;
+    public int position;
     public List<CarData> OwnedCars;
     public CarData SelectedCar;
 
@@ -17,6 +18,7 @@ public class CharacterData
     {
         characterName = name;
         currentLevel = 1;
+        position = 0;
         money = 0;
         OwnedCars = new List<CarData>();
         SelectedCar = new CarData();    
@@ -28,6 +30,16 @@ public class CharacterData
         foreach (var ownedCar in OwnedCars)
         {
             ownedCar.RacerName = characterName;
+        }
+    }
+
+    public void setPoints()
+    {
+        foreach (var ownedCar in OwnedCars)
+        {
+            int maxpoints = 0;
+            if (maxpoints < ownedCar.points) { maxpoints = ownedCar.points; }
+            ownedCar.points = maxpoints;
         }
     }
 

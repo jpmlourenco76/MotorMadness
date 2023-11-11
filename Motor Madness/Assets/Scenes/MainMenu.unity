@@ -123,6 +123,157 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &38039736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 38039738}
+  - component: {fileID: 38039737}
+  m_Layer: 0
+  m_Name: Waypoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &38039737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38039736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b8a9a2da08518418f2de57be5c8639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 125152381}
+  - {fileID: 747827097}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  smoothRoute: 1
+  editorVisualisationSubsteps: 200
+--- !u!4 &38039738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38039736}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -222.6, y: -0.145, z: -147.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 125152381}
+  - {fileID: 747827097}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &47110719
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,6 +518,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80256524}
   m_CullTransparentMesh: 1
+--- !u!1 &125152380
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 125152381}
+  m_Layer: 0
+  m_Name: Waypoint (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &125152381
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125152380}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 72.5, y: 1, z: 114.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 38039738}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &162845775
 GameObject:
   m_ObjectHideFlags: 0
@@ -3441,6 +3623,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738783453}
   m_CullTransparentMesh: 1
+--- !u!1 &747827096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 747827097}
+  m_Layer: 0
+  m_Name: Waypoint (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &747827097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747827096}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 106.5, y: 1, z: 114.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 38039738}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &873161075
 GameObject:
   m_ObjectHideFlags: 0
@@ -5413,6 +5626,7 @@ MonoBehaviour:
     - characterName: AHZCorp
       currentLevel: 1
       money: 10000
+      position: 5
       OwnedCars:
       - CarID: 1
         CarName: A
@@ -5454,347 +5668,26 @@ MonoBehaviour:
           GearUpgrade: 0
           BreakUpgrade: 0
           TireUpdrage: 0
-    - characterName: Zoom Zoom
+    - characterName: 'Nitro '
       currentLevel: 1
       money: 10000
+      position: 1
       OwnedCars:
       - CarID: 1
-        CarName: 
+        CarName: A
         RacerName: 
-        CarPrefab: {fileID: 8431594025834217937, guid: cce5454d0950aa34994f1ba8eba8571a, type: 3}
+        CarPrefab: {fileID: 146260, guid: 03c7ad2063d463144be3457a51359e99, type: 3}
         distance: 0
         lap: 0
         points: 0
         price: 0
         upgradelvls:
-          TorqueUpgrade: 2
-          GearUpgrade: 3
-          BreakUpgrade: 2
-          TireUpdrage: 1
+          TorqueUpgrade: 1
+          GearUpgrade: 0
+          BreakUpgrade: 0
+          TireUpdrage: 0
       - CarID: 2
-        CarName: 
-        RacerName: 
-        CarPrefab: {fileID: 6828044430096650948, guid: 964b4f8fdb99f0f4680822fec41e273f, type: 3}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 2
-          GearUpgrade: 3
-          BreakUpgrade: 2
-          TireUpdrage: 1
-      - CarID: 3
-        CarName: 
-        RacerName: 
-        CarPrefab: {fileID: 2451892758423344883, guid: c6144f15a651168449188a3dcb9e3887, type: 3}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 1
-          GearUpgrade: 2
-          BreakUpgrade: 1
-          TireUpdrage: 0
-      - CarID: 4
-        CarName: 
-        RacerName: 
-        CarPrefab: {fileID: 692796276214261463, guid: b7f5dcc3baebea746928bbd543be8622, type: 3}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 1
-          GearUpgrade: 2
-          BreakUpgrade: 1
-          TireUpdrage: 0
-      - CarID: 5
-        CarName: 
-        RacerName: 
-        CarPrefab: {fileID: 6630330549426482226, guid: 850e08cdedc768d479f7e804cee74cbd, type: 3}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 0
-          GearUpgrade: 1
-          BreakUpgrade: 0
-          TireUpdrage: 0
-      - CarID: 6
-        CarName: 
-        RacerName: 
-        CarPrefab: {fileID: 6354262215913163060, guid: 2c89951af2428e44695479c67f785611, type: 3}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 0
-          GearUpgrade: 1
-          BreakUpgrade: 0
-          TireUpdrage: 0
-      - CarID: 7
         CarName: b
-        RacerName: 
-        CarPrefab: {fileID: 6630330549426482226, guid: 850e08cdedc768d479f7e804cee74cbd, type: 3}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 3
-          GearUpgrade: 3
-          BreakUpgrade: 3
-          TireUpdrage: 2
-      - CarID: 8
-        CarName: b
-        RacerName: 
-        CarPrefab: {fileID: 6354262215913163060, guid: 2c89951af2428e44695479c67f785611, type: 3}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 3
-          GearUpgrade: 3
-          BreakUpgrade: 3
-          TireUpdrage: 2
-      SelectedCar:
-        CarID: 0
-        CarName: 
-        RacerName: 
-        CarPrefab: {fileID: 0}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 0
-          GearUpgrade: 0
-          BreakUpgrade: 0
-          TireUpdrage: 0
-    - characterName: Turbo Torpedo
-      currentLevel: 1
-      money: 10000
-      OwnedCars:
-      - CarID: 1
-        CarName: 
-        RacerName: 
-        CarPrefab: {fileID: 3273062725713154559, guid: 969175b667a853f41828e026cb0b74b1, type: 3}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 3
-          GearUpgrade: 2
-          BreakUpgrade: 1
-          TireUpdrage: 2
-      - CarID: 2
-        CarName: 
-        RacerName: 
-        CarPrefab: {fileID: 5198965617262594025, guid: a992a8f4a4317a247a36e9a0deafc738, type: 3}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 3
-          GearUpgrade: 2
-          BreakUpgrade: 1
-          TireUpdrage: 2
-      - CarID: 3
-        CarName: 
-        RacerName: 
-        CarPrefab: {fileID: 4715407260732357937, guid: 16f85c8d98460dc4da7e60f53e0a3936, type: 3}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 2
-          GearUpgrade: 1
-          BreakUpgrade: 0
-          TireUpdrage: 1
-      - CarID: 4
-        CarName: 
-        RacerName: 
-        CarPrefab: {fileID: 5198965617262594025, guid: a992a8f4a4317a247a36e9a0deafc738, type: 3}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 2
-          GearUpgrade: 1
-          BreakUpgrade: 0
-          TireUpdrage: 1
-      - CarID: 5
-        CarName: 
-        RacerName: 
-        CarPrefab: {fileID: 4877930392385010955, guid: 4748b017317a63d4294739c657551f88, type: 3}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 1
-          GearUpgrade: 0
-          BreakUpgrade: 0
-          TireUpdrage: 0
-      - CarID: 6
-        CarName: 
-        RacerName: 
-        CarPrefab: {fileID: 5198965617262594025, guid: a992a8f4a4317a247a36e9a0deafc738, type: 3}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 1
-          GearUpgrade: 0
-          BreakUpgrade: 0
-          TireUpdrage: 0
-      - CarID: 7
-        CarName: 
-        RacerName: 
-        CarPrefab: {fileID: 8480943782784524359, guid: 495b78018631c3241a4ff40a57adc535, type: 3}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 3
-          GearUpgrade: 3
-          BreakUpgrade: 2
-          TireUpdrage: 3
-      - CarID: 8
-        CarName: 
-        RacerName: 
-        CarPrefab: {fileID: 5198965617262594025, guid: a992a8f4a4317a247a36e9a0deafc738, type: 3}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 3
-          GearUpgrade: 3
-          BreakUpgrade: 2
-          TireUpdrage: 3
-      SelectedCar:
-        CarID: 0
-        CarName: 
-        RacerName: 
-        CarPrefab: {fileID: 0}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 0
-          GearUpgrade: 0
-          BreakUpgrade: 0
-          TireUpdrage: 0
-    - characterName: Tire Twist
-      currentLevel: 1
-      money: 10000
-      OwnedCars:
-      - CarID: 1
-        CarName: 
-        RacerName: 
-        CarPrefab: {fileID: 6828044430096650948, guid: 964b4f8fdb99f0f4680822fec41e273f, type: 3}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 1
-          GearUpgrade: 2
-          BreakUpgrade: 2
-          TireUpdrage: 3
-      - CarID: 2
-        CarName: 
-        RacerName: 
-        CarPrefab: {fileID: 3273062725713154559, guid: 969175b667a853f41828e026cb0b74b1, type: 3}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 1
-          GearUpgrade: 2
-          BreakUpgrade: 2
-          TireUpdrage: 3
-      - CarID: 3
-        CarName: 
-        RacerName: 
-        CarPrefab: {fileID: 692796276214261463, guid: b7f5dcc3baebea746928bbd543be8622, type: 3}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 0
-          GearUpgrade: 1
-          BreakUpgrade: 1
-          TireUpdrage: 2
-      - CarID: 4
-        CarName: 
-        RacerName: 
-        CarPrefab: {fileID: 4715407260732357937, guid: 16f85c8d98460dc4da7e60f53e0a3936, type: 3}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 0
-          GearUpgrade: 1
-          BreakUpgrade: 1
-          TireUpdrage: 2
-      - CarID: 5
-        CarName: 
-        RacerName: 
-        CarPrefab: {fileID: 6828044430096650948, guid: 964b4f8fdb99f0f4680822fec41e273f, type: 3}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 0
-          GearUpgrade: 0
-          BreakUpgrade: 0
-          TireUpdrage: 1
-      - CarID: 6
-        CarName: 
-        RacerName: 
-        CarPrefab: {fileID: 3273062725713154559, guid: 969175b667a853f41828e026cb0b74b1, type: 3}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 0
-          GearUpgrade: 0
-          BreakUpgrade: 0
-          TireUpdrage: 1
-      - CarID: 7
-        CarName: 
-        RacerName: 
-        CarPrefab: {fileID: 6828044430096650948, guid: 964b4f8fdb99f0f4680822fec41e273f, type: 3}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 2
-          GearUpgrade: 3
-          BreakUpgrade: 3
-          TireUpdrage: 3
-      - CarID: 8
-        CarName: 
         RacerName: 
         CarPrefab: {fileID: 181440, guid: 1276291b9a1371743992b4240c99cb89, type: 3}
         distance: 0
@@ -5802,10 +5695,10 @@ MonoBehaviour:
         points: 0
         price: 0
         upgradelvls:
-          TorqueUpgrade: 2
-          GearUpgrade: 3
-          BreakUpgrade: 3
-          TireUpdrage: 3
+          TorqueUpgrade: 0
+          GearUpgrade: 1
+          BreakUpgrade: 2
+          TireUpdrage: 0
       SelectedCar:
         CarID: 0
         CarName: 
@@ -5820,66 +5713,42 @@ MonoBehaviour:
           GearUpgrade: 0
           BreakUpgrade: 0
           TireUpdrage: 0
-    - characterName: Desert Dash
+    - characterName: 'Blaze '
       currentLevel: 1
       money: 10000
+      position: 2
       OwnedCars:
       - CarID: 1
-        CarName: 
+        CarName: A
         RacerName: 
-        CarPrefab: {fileID: 5198965617262594025, guid: a992a8f4a4317a247a36e9a0deafc738, type: 3}
+        CarPrefab: {fileID: 146260, guid: 03c7ad2063d463144be3457a51359e99, type: 3}
         distance: 0
         lap: 0
         points: 0
         price: 0
         upgradelvls:
-          TorqueUpgrade: 2
-          GearUpgrade: 1
-          BreakUpgrade: 3
-          TireUpdrage: 2
+          TorqueUpgrade: 1
+          GearUpgrade: 0
+          BreakUpgrade: 0
+          TireUpdrage: 0
       - CarID: 2
-        CarName: 
+        CarName: b
         RacerName: 
-        CarPrefab: {fileID: 8431594025834217937, guid: cce5454d0950aa34994f1ba8eba8571a, type: 3}
+        CarPrefab: {fileID: 181440, guid: 1276291b9a1371743992b4240c99cb89, type: 3}
         distance: 0
         lap: 0
         points: 0
         price: 0
         upgradelvls:
-          TorqueUpgrade: 2
+          TorqueUpgrade: 0
           GearUpgrade: 1
-          BreakUpgrade: 3
-          TireUpdrage: 2
-      - CarID: 3
-        CarName: 
-        RacerName: 
-        CarPrefab: {fileID: 3407134831563034665, guid: e83557d0662d40c4683abac3f6871227, type: 3}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 1
-          GearUpgrade: 0
           BreakUpgrade: 2
-          TireUpdrage: 1
-      - CarID: 4
+          TireUpdrage: 0
+      SelectedCar:
+        CarID: 0
         CarName: 
         RacerName: 
-        CarPrefab: {fileID: 2451892758423344883, guid: c6144f15a651168449188a3dcb9e3887, type: 3}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 1
-          GearUpgrade: 0
-          BreakUpgrade: 2
-          TireUpdrage: 1
-      - CarID: 5
-        CarName: 
-        RacerName: 
-        CarPrefab: {fileID: 5206555789164094927, guid: 96821b92994e2d04e989cbc6c7288c31, type: 3}
+        CarPrefab: {fileID: 0}
         distance: 0
         lap: 0
         points: 0
@@ -5887,12 +5756,44 @@ MonoBehaviour:
         upgradelvls:
           TorqueUpgrade: 0
           GearUpgrade: 0
-          BreakUpgrade: 1
+          BreakUpgrade: 0
           TireUpdrage: 0
-      - CarID: 6
+    - characterName: 'Shadow '
+      currentLevel: 1
+      money: 10000
+      position: 3
+      OwnedCars:
+      - CarID: 1
+        CarName: A
+        RacerName: 
+        CarPrefab: {fileID: 146260, guid: 03c7ad2063d463144be3457a51359e99, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 1
+          GearUpgrade: 0
+          BreakUpgrade: 0
+          TireUpdrage: 0
+      - CarID: 2
+        CarName: b
+        RacerName: 
+        CarPrefab: {fileID: 181440, guid: 1276291b9a1371743992b4240c99cb89, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 0
+          GearUpgrade: 1
+          BreakUpgrade: 2
+          TireUpdrage: 0
+      SelectedCar:
+        CarID: 0
         CarName: 
         RacerName: 
-        CarPrefab: {fileID: 6630330549426482226, guid: 850e08cdedc768d479f7e804cee74cbd, type: 3}
+        CarPrefab: {fileID: 0}
         distance: 0
         lap: 0
         points: 0
@@ -5900,34 +5801,39 @@ MonoBehaviour:
         upgradelvls:
           TorqueUpgrade: 0
           GearUpgrade: 0
-          BreakUpgrade: 1
+          BreakUpgrade: 0
           TireUpdrage: 0
-      - CarID: 7
-        CarName: 
+    - characterName: 'Viper '
+      currentLevel: 1
+      money: 10000
+      position: 4
+      OwnedCars:
+      - CarID: 1
+        CarName: A
         RacerName: 
-        CarPrefab: {fileID: 5206555789164094927, guid: 96821b92994e2d04e989cbc6c7288c31, type: 3}
+        CarPrefab: {fileID: 146260, guid: 03c7ad2063d463144be3457a51359e99, type: 3}
         distance: 0
         lap: 0
         points: 0
         price: 0
         upgradelvls:
-          TorqueUpgrade: 3
-          GearUpgrade: 2
-          BreakUpgrade: 3
-          TireUpdrage: 3
-      - CarID: 8
-        CarName: 
+          TorqueUpgrade: 1
+          GearUpgrade: 0
+          BreakUpgrade: 0
+          TireUpdrage: 0
+      - CarID: 2
+        CarName: b
         RacerName: 
-        CarPrefab: {fileID: 6630330549426482226, guid: 850e08cdedc768d479f7e804cee74cbd, type: 3}
+        CarPrefab: {fileID: 181440, guid: 1276291b9a1371743992b4240c99cb89, type: 3}
         distance: 0
         lap: 0
         points: 0
         price: 0
         upgradelvls:
-          TorqueUpgrade: 3
-          GearUpgrade: 2
-          BreakUpgrade: 3
-          TireUpdrage: 3
+          TorqueUpgrade: 0
+          GearUpgrade: 1
+          BreakUpgrade: 2
+          TireUpdrage: 0
       SelectedCar:
         CarID: 0
         CarName: 
@@ -6022,6 +5928,7 @@ MonoBehaviour:
         BreakUpgrade: 0
         TireUpdrage: 0
   currentCharacterIndex: 0
+  playerCarController: {fileID: 0}
 --- !u!4 &1434198066
 Transform:
   m_ObjectHideFlags: 0

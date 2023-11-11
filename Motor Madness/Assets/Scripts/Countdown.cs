@@ -12,9 +12,12 @@ public class Countdown : MonoBehaviour
     private AudioSource One;
     private AudioSource Go;
     private GameObject LapTimer;
-   
-public CarController2 carController;
+    private GameManager gameManager;
+
+    public CarController2 carController;
     public List<CarController2> AIcarControllers;
+
+    public LevelManager levelManager;
 
     private void Awake()
     {
@@ -24,6 +27,8 @@ public CarController2 carController;
         One = GameObject.Find("One").GetComponent<AudioSource>();
         Go = GameObject.Find("Go").GetComponent<AudioSource>();
         LapTimer = GameObject.Find("FinishTrigger");
+        gameManager = GameManager.Instance;
+        levelManager = GetComponent<LevelManager>();
 
 
 
@@ -32,8 +37,9 @@ public CarController2 carController;
 
     void Start()
     {
-       
-        StartCoroutine (CountStart());
+        carController = gameManager.playerCarController;
+        AIcarControllers = levelManager.AiControllers;
+        StartCoroutine(CountStart());
 
         
 }

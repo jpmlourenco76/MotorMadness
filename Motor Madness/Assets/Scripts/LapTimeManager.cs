@@ -29,20 +29,43 @@ public class LapTimeManager : MonoBehaviour
     private float bestLapTime = float.MaxValue; // Initialize best lap time to a high value
 
     private bool lapCompleted = false;
+    private GameManager gameManager;
+    
 
     private void Awake()
     {
+        gameManager = GameManager.Instance;
+        if (gameManager == null)
+        {
+            Debug.LogError("GameManager is not assigned in the GameManager.Instance.");
+            return;
+        }
+
+      
+
         FinishTrig = GameObject.Find("FinishTrigger");
 
         MinDisplay = GameObject.Find("MinDisplay");
         SecDisplay = GameObject.Find("SecDisplay");
         MilDisplay = GameObject.Find("MilDisplay");
         BestMinDisplayObj = GameObject.Find("BestMinDisplay");
+
         BestSecDisplayObj = GameObject.Find("BestSecDisplay");
         BestMilDisplayObj = GameObject.Find("BestMilliDisplay");
+
     }
 
+    private void Start()
+    {
+        if (gameManager.playerCarController == null)
+        {
+            Debug.LogError("Player Car Controller is not assigned in the GameManager.");
+            return;
+        }
+        carController = gameManager.playerCarController;
 
+
+    }
     void Update()
     {
         if (carController.isEngineRunning)

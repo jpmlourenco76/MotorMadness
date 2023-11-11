@@ -21,12 +21,13 @@ public class CarController2 : MonoBehaviour
     public AIInput aIInput;
     private CarAgent carAgent;
     public PlayerCarInput carinput;
+    public bool race = false;
     [Header("Car")]
 
     private GameObject wheelMeshes;
     private GameObject wheelColliders;
     private GameObject[] wheelMesh = new GameObject[4];
-    private wheelsManager[] wheels = new wheelsManager[4];
+    [HideInInspector] public wheelsManager[] wheels = new wheelsManager[4];
     public float throttleinputt, breakinpuu, steerin;
     public bool handbrakeinnn;
     public Transform _centerOfMass;
@@ -182,6 +183,7 @@ public class CarController2 : MonoBehaviour
         AwakeSteer();
         carAItargetObj = new GameObject("WaypointsTarget");
         carAItarget = carAItargetObj.transform;
+        
 
 
     }
@@ -256,7 +258,11 @@ public class CarController2 : MonoBehaviour
         SteeringWheels = steeringWheels.ToArray();
 
     }
-   
+
+    private void Start()
+    {
+        persuitTarget = GameObject.Find("Car0");
+    }
 
     private void FixedUpdate()
     {
@@ -264,13 +270,16 @@ public class CarController2 : MonoBehaviour
         breakinpuu = CurrentBrake;
         handbrakeinnn = InHandBrake;
         steerin = HorizontalControl;
-
+       
         UpdateCar();
         UpdateEngine();
         UpdateTransmission();
         UpdateBrake();
         UpdateSteer();
-        ApplyWheelPositions();
+       
+            ApplyWheelPositions();
+       
+        
     }
     public void UpdateCar()
     {
@@ -727,7 +736,7 @@ public class CarController2 : MonoBehaviour
 
         StartEngineCoroutine = null;
     }
-
+    
     public void ApplyWheelPositions()
     {
         Vector3 wheelPosition = Vector3.zero;

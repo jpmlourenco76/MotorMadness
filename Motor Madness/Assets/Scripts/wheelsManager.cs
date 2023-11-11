@@ -37,7 +37,7 @@ public class wheelsManager : MonoBehaviour
     public float Radius { get { return WheelCollider.radius; } }
     public Vector3 LocalPositionOnAwake { get; private set; }       //For CarState
 
-     float GroundStiffness = 1f; //ASPHALT
+    [HideInInspector] public float GroundStiffness = 1f; //ASPHALT
     float BrakeSpeed = 2;
     float CurrentBrakeTorque;
 

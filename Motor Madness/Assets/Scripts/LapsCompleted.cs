@@ -24,7 +24,8 @@ public class LapsCompleted : MonoBehaviour
     public CarController2 carController;
 
     private LapTimeManager lapTimeManager;
-    
+    private GameManager gameManager;
+
 
 
     public float totallaps;
@@ -32,6 +33,7 @@ public class LapsCompleted : MonoBehaviour
 
     private void Awake()
     {
+        gameManager = GameManager.Instance;
         lapTimeManager = GetComponent<LapTimeManager>();
         gameLogic = GameObject.Find("GameLogic");
         levelManager = gameLogic.GetComponent<LevelManager>();
@@ -50,6 +52,7 @@ public class LapsCompleted : MonoBehaviour
     private void Start()
     {
         TotalLaps.GetComponent<TextMeshProUGUI>().text = "/ " + totallaps;
+        carController = gameManager.playerCarController;
 
     }
 
