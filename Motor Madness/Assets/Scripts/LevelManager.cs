@@ -137,16 +137,16 @@ public class LevelManager : MonoBehaviour
                 int rnd = 0;
                 switch (raceType)
                 {
-                    case RaceType.Industrial:
+                    case RaceType.Industrial:       //stage1
                         rnd = Random.Range(0, 1);
                         break;
-                    case RaceType.City:
+                    case RaceType.City:             //stage3
                         rnd = Random.Range(2, 3);
                         break;
-                    case RaceType.Countryside:
+                    case RaceType.Countryside:      //stage2
                         rnd = Random.Range(4, 5);
                         break;
-                    case RaceType.RaceTrack:
+                    case RaceType.RaceTrack:        //stage4
                         rnd = Random.Range(6, 7);
                         break;
                     case RaceType.Special:
