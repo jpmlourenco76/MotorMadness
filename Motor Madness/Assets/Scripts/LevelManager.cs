@@ -533,7 +533,7 @@ public class LevelManager : MonoBehaviour
         for (int i = 0; i < car.gameObject.GetComponent<CarController2>().wheels.Length; i++)
         {
 
-            switch (gameManager.gameData.characters[0].SelectedCar.upgradelvls.BreakUpgrade)
+            switch (gameManager.gameData.characters[0].SelectedCar.upgradelvls.TireUpdrage)
             {
                 case 0:
                     newTire = OriginalTire;
