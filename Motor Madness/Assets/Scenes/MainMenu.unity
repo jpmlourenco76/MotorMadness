@@ -155,106 +155,6 @@ MonoBehaviour:
   nodes:
   - {fileID: 125152381}
   - {fileID: 747827097}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   smoothRoute: 1
   editorVisualisationSubsteps: 200
 --- !u!4 &38039738
@@ -5625,11 +5525,11 @@ MonoBehaviour:
     characters:
     - characterName: AHZCorp
       currentLevel: 1
-      money: 10000
+      money: 150000
       position: 5
       OwnedCars:
       - CarID: 1
-        CarName: A
+        CarName: 
         RacerName: 
         CarPrefab: {fileID: 146260, guid: 03c7ad2063d463144be3457a51359e99, type: 3}
         distance: 0
@@ -5641,10 +5541,10 @@ MonoBehaviour:
           GearUpgrade: 0
           BreakUpgrade: 0
           TireUpdrage: 0
-      - CarID: 2
-        CarName: b
+      - CarID: 4
+        CarName: 
         RacerName: 
-        CarPrefab: {fileID: 181440, guid: 1276291b9a1371743992b4240c99cb89, type: 3}
+        CarPrefab: {fileID: 117736, guid: fb00e343dadf5774f8abf5435182a01f, type: 3}
         distance: 0
         lap: 0
         points: 0
@@ -5674,22 +5574,61 @@ MonoBehaviour:
       position: 1
       OwnedCars:
       - CarID: 1
-        CarName: A
+        CarName: N11
         RacerName: 
-        CarPrefab: {fileID: 146260, guid: 03c7ad2063d463144be3457a51359e99, type: 3}
+        CarPrefab: {fileID: 6630330549426482226, guid: 850e08cdedc768d479f7e804cee74cbd, type: 3}
         distance: 0
         lap: 0
         points: 0
         price: 0
         upgradelvls:
-          TorqueUpgrade: 1
-          GearUpgrade: 0
+          TorqueUpgrade: 0
+          GearUpgrade: 1
           BreakUpgrade: 0
           TireUpdrage: 0
       - CarID: 2
-        CarName: b
+        CarName: N13
         RacerName: 
-        CarPrefab: {fileID: 181440, guid: 1276291b9a1371743992b4240c99cb89, type: 3}
+        CarPrefab: {fileID: 6354262215913163060, guid: 2c89951af2428e44695479c67f785611, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 0
+          GearUpgrade: 1
+          BreakUpgrade: 0
+          TireUpdrage: 0
+      - CarID: 3
+        CarName: N31
+        RacerName: 
+        CarPrefab: {fileID: 8431594025834217937, guid: cce5454d0950aa34994f1ba8eba8571a, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 2
+          GearUpgrade: 3
+          BreakUpgrade: 2
+          TireUpdrage: 1
+      - CarID: 4
+        CarName: N33
+        RacerName: 
+        CarPrefab: {fileID: 6828044430096650948, guid: 964b4f8fdb99f0f4680822fec41e273f, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 2
+          GearUpgrade: 3
+          BreakUpgrade: 2
+          TireUpdrage: 1
+      - CarID: 5
+        CarName: N21
+        RacerName: 
+        CarPrefab: {fileID: 2451892758423344883, guid: c6144f15a651168449188a3dcb9e3887, type: 3}
         distance: 0
         lap: 0
         points: 0
@@ -5699,6 +5638,45 @@ MonoBehaviour:
           GearUpgrade: 1
           BreakUpgrade: 2
           TireUpdrage: 0
+      - CarID: 6
+        CarName: N23
+        RacerName: 
+        CarPrefab: {fileID: 692796276214261463, guid: b7f5dcc3baebea746928bbd543be8622, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 0
+          GearUpgrade: 1
+          BreakUpgrade: 2
+          TireUpdrage: 0
+      - CarID: 7
+        CarName: N41
+        RacerName: 
+        CarPrefab: {fileID: 4089438537926621205, guid: d786932f19e09774996cbac99fa568b2, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 3
+          GearUpgrade: 3
+          BreakUpgrade: 3
+          TireUpdrage: 2
+      - CarID: 8
+        CarName: N43
+        RacerName: 
+        CarPrefab: {fileID: 4394314076056891325, guid: 0e010c2ec37cca140855ab336153031d, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 3
+          GearUpgrade: 3
+          BreakUpgrade: 3
+          TireUpdrage: 2
       SelectedCar:
         CarID: 0
         CarName: 
@@ -5719,9 +5697,9 @@ MonoBehaviour:
       position: 2
       OwnedCars:
       - CarID: 1
-        CarName: A
+        CarName: B12
         RacerName: 
-        CarPrefab: {fileID: 146260, guid: 03c7ad2063d463144be3457a51359e99, type: 3}
+        CarPrefab: {fileID: 6630330549426482226, guid: 850e08cdedc768d479f7e804cee74cbd, type: 3}
         distance: 0
         lap: 0
         points: 0
@@ -5732,18 +5710,96 @@ MonoBehaviour:
           BreakUpgrade: 0
           TireUpdrage: 0
       - CarID: 2
-        CarName: b
+        CarName: B14
         RacerName: 
-        CarPrefab: {fileID: 181440, guid: 1276291b9a1371743992b4240c99cb89, type: 3}
+        CarPrefab: {fileID: 5206555789164094927, guid: 96821b92994e2d04e989cbc6c7288c31, type: 3}
         distance: 0
         lap: 0
         points: 0
         price: 0
         upgradelvls:
-          TorqueUpgrade: 0
-          GearUpgrade: 1
-          BreakUpgrade: 2
+          TorqueUpgrade: 1
+          GearUpgrade: 0
+          BreakUpgrade: 0
           TireUpdrage: 0
+      - CarID: 3
+        CarName: B32
+        RacerName: 
+        CarPrefab: {fileID: 3273062725713154559, guid: 969175b667a853f41828e026cb0b74b1, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 3
+          GearUpgrade: 2
+          BreakUpgrade: 1
+          TireUpdrage: 2
+      - CarID: 4
+        CarName: B34
+        RacerName: 
+        CarPrefab: {fileID: 5198965617262594025, guid: a992a8f4a4317a247a36e9a0deafc738, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 3
+          GearUpgrade: 2
+          BreakUpgrade: 1
+          TireUpdrage: 2
+      - CarID: 5
+        CarName: B22
+        RacerName: 
+        CarPrefab: {fileID: 4715407260732357937, guid: 16f85c8d98460dc4da7e60f53e0a3936, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 2
+          GearUpgrade: 1
+          BreakUpgrade: 0
+          TireUpdrage: 1
+      - CarID: 6
+        CarName: B24
+        RacerName: 
+        CarPrefab: {fileID: 3407134831563034665, guid: e83557d0662d40c4683abac3f6871227, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 2
+          GearUpgrade: 1
+          BreakUpgrade: 0
+          TireUpdrage: 1
+      - CarID: 7
+        CarName: B42
+        RacerName: 
+        CarPrefab: {fileID: 8480943782784524359, guid: 495b78018631c3241a4ff40a57adc535, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 3
+          GearUpgrade: 3
+          BreakUpgrade: 2
+          TireUpdrage: 3
+      - CarID: 8
+        CarName: B44
+        RacerName: 
+        CarPrefab: {fileID: 1306209870103805353, guid: a2598187917544747ba8079313e11e63, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 3
+          GearUpgrade: 3
+          BreakUpgrade: 2
+          TireUpdrage: 3
       SelectedCar:
         CarID: 0
         CarName: 
@@ -5764,22 +5820,61 @@ MonoBehaviour:
       position: 3
       OwnedCars:
       - CarID: 1
-        CarName: A
+        CarName: S13
         RacerName: 
-        CarPrefab: {fileID: 146260, guid: 03c7ad2063d463144be3457a51359e99, type: 3}
+        CarPrefab: {fileID: 6354262215913163060, guid: 2c89951af2428e44695479c67f785611, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 0
+          GearUpgrade: 0
+          BreakUpgrade: 0
+          TireUpdrage: 1
+      - CarID: 2
+        CarName: S12
+        RacerName: 
+        CarPrefab: {fileID: 4877930392385010955, guid: 4748b017317a63d4294739c657551f88, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 0
+          GearUpgrade: 0
+          BreakUpgrade: 0
+          TireUpdrage: 1
+      - CarID: 3
+        CarName: S33
+        RacerName: 
+        CarPrefab: {fileID: 6828044430096650948, guid: 964b4f8fdb99f0f4680822fec41e273f, type: 3}
         distance: 0
         lap: 0
         points: 0
         price: 0
         upgradelvls:
           TorqueUpgrade: 1
-          GearUpgrade: 0
-          BreakUpgrade: 0
-          TireUpdrage: 0
-      - CarID: 2
-        CarName: b
+          GearUpgrade: 2
+          BreakUpgrade: 2
+          TireUpdrage: 3
+      - CarID: 4
+        CarName: S32
         RacerName: 
-        CarPrefab: {fileID: 181440, guid: 1276291b9a1371743992b4240c99cb89, type: 3}
+        CarPrefab: {fileID: 3273062725713154559, guid: 969175b667a853f41828e026cb0b74b1, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 1
+          GearUpgrade: 2
+          BreakUpgrade: 2
+          TireUpdrage: 3
+      - CarID: 5
+        CarName: S23
+        RacerName: 
+        CarPrefab: {fileID: 692796276214261463, guid: b7f5dcc3baebea746928bbd543be8622, type: 3}
         distance: 0
         lap: 0
         points: 0
@@ -5787,8 +5882,47 @@ MonoBehaviour:
         upgradelvls:
           TorqueUpgrade: 0
           GearUpgrade: 1
-          BreakUpgrade: 2
-          TireUpdrage: 0
+          BreakUpgrade: 1
+          TireUpdrage: 2
+      - CarID: 6
+        CarName: S22
+        RacerName: 
+        CarPrefab: {fileID: 4715407260732357937, guid: 16f85c8d98460dc4da7e60f53e0a3936, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 0
+          GearUpgrade: 1
+          BreakUpgrade: 1
+          TireUpdrage: 2
+      - CarID: 7
+        CarName: S43
+        RacerName: 
+        CarPrefab: {fileID: 4394314076056891325, guid: 0e010c2ec37cca140855ab336153031d, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 2
+          GearUpgrade: 3
+          BreakUpgrade: 3
+          TireUpdrage: 3
+      - CarID: 8
+        CarName: S42
+        RacerName: 
+        CarPrefab: {fileID: 8480943782784524359, guid: 495b78018631c3241a4ff40a57adc535, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 2
+          GearUpgrade: 3
+          BreakUpgrade: 3
+          TireUpdrage: 3
       SelectedCar:
         CarID: 0
         CarName: 
@@ -5809,9 +5943,61 @@ MonoBehaviour:
       position: 4
       OwnedCars:
       - CarID: 1
-        CarName: A
+        CarName: V14
         RacerName: 
-        CarPrefab: {fileID: 146260, guid: 03c7ad2063d463144be3457a51359e99, type: 3}
+        CarPrefab: {fileID: 5206555789164094927, guid: 96821b92994e2d04e989cbc6c7288c31, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 0
+          GearUpgrade: 0
+          BreakUpgrade: 1
+          TireUpdrage: 0
+      - CarID: 2
+        CarName: V11
+        RacerName: 
+        CarPrefab: {fileID: 6630330549426482226, guid: 850e08cdedc768d479f7e804cee74cbd, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 0
+          GearUpgrade: 0
+          BreakUpgrade: 1
+          TireUpdrage: 0
+      - CarID: 3
+        CarName: V34
+        RacerName: 
+        CarPrefab: {fileID: 5198965617262594025, guid: a992a8f4a4317a247a36e9a0deafc738, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 2
+          GearUpgrade: 1
+          BreakUpgrade: 3
+          TireUpdrage: 2
+      - CarID: 4
+        CarName: V31
+        RacerName: 
+        CarPrefab: {fileID: 8431594025834217937, guid: cce5454d0950aa34994f1ba8eba8571a, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 2
+          GearUpgrade: 1
+          BreakUpgrade: 3
+          TireUpdrage: 2
+      - CarID: 5
+        CarName: V24
+        RacerName: 
+        CarPrefab: {fileID: 3407134831563034665, guid: e83557d0662d40c4683abac3f6871227, type: 3}
         distance: 0
         lap: 0
         points: 0
@@ -5819,21 +6005,47 @@ MonoBehaviour:
         upgradelvls:
           TorqueUpgrade: 1
           GearUpgrade: 0
-          BreakUpgrade: 0
-          TireUpdrage: 0
-      - CarID: 2
-        CarName: b
+          BreakUpgrade: 2
+          TireUpdrage: 1
+      - CarID: 6
+        CarName: V21
         RacerName: 
-        CarPrefab: {fileID: 181440, guid: 1276291b9a1371743992b4240c99cb89, type: 3}
+        CarPrefab: {fileID: 2451892758423344883, guid: c6144f15a651168449188a3dcb9e3887, type: 3}
         distance: 0
         lap: 0
         points: 0
         price: 0
         upgradelvls:
-          TorqueUpgrade: 0
-          GearUpgrade: 1
+          TorqueUpgrade: 1
+          GearUpgrade: 0
           BreakUpgrade: 2
-          TireUpdrage: 0
+          TireUpdrage: 1
+      - CarID: 7
+        CarName: V44
+        RacerName: 
+        CarPrefab: {fileID: 1306209870103805353, guid: a2598187917544747ba8079313e11e63, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 3
+          GearUpgrade: 2
+          BreakUpgrade: 3
+          TireUpdrage: 3
+      - CarID: 8
+        CarName: V41
+        RacerName: 
+        CarPrefab: {fileID: 4089438537926621205, guid: d786932f19e09774996cbac99fa568b2, type: 3}
+        distance: 0
+        lap: 0
+        points: 0
+        price: 0
+        upgradelvls:
+          TorqueUpgrade: 3
+          GearUpgrade: 2
+          BreakUpgrade: 3
+          TireUpdrage: 3
       SelectedCar:
         CarID: 0
         CarName: 
@@ -5850,39 +6062,39 @@ MonoBehaviour:
           TireUpdrage: 0
     GameCars:
     - CarID: 1
-      CarName: A
+      CarName: Audi
       RacerName: 
       CarPrefab: {fileID: 146260, guid: 03c7ad2063d463144be3457a51359e99, type: 3}
       distance: 0
       lap: 0
       points: 0
-      price: 1000
+      price: 0
       upgradelvls:
         TorqueUpgrade: 0
         GearUpgrade: 0
         BreakUpgrade: 0
         TireUpdrage: 0
     - CarID: 2
-      CarName: B
+      CarName: Nissan
       RacerName: 
       CarPrefab: {fileID: 181440, guid: 1276291b9a1371743992b4240c99cb89, type: 3}
       distance: 0
       lap: 0
       points: 0
-      price: 5000
+      price: 700000
       upgradelvls:
         TorqueUpgrade: 0
         GearUpgrade: 0
         BreakUpgrade: 0
         TireUpdrage: 0
     - CarID: 3
-      CarName: La ferrari
+      CarName: Ferrari
       RacerName: 
       CarPrefab: {fileID: 135514, guid: 4a27fb37b885732428a19475a85a318e, type: 3}
       distance: 0
       lap: 0
       points: 0
-      price: 3000
+      price: 1550000
       upgradelvls:
         TorqueUpgrade: 0
         GearUpgrade: 0
@@ -5895,7 +6107,7 @@ MonoBehaviour:
       distance: 0
       lap: 0
       points: 0
-      price: 10000
+      price: 0
       upgradelvls:
         TorqueUpgrade: 0
         GearUpgrade: 0
@@ -5908,7 +6120,7 @@ MonoBehaviour:
       distance: 0
       lap: 0
       points: 0
-      price: 5000
+      price: 300000
       upgradelvls:
         TorqueUpgrade: 0
         GearUpgrade: 0
@@ -5921,7 +6133,7 @@ MonoBehaviour:
       distance: 0
       lap: 0
       points: 0
-      price: 50000
+      price: 1950000
       upgradelvls:
         TorqueUpgrade: 0
         GearUpgrade: 0
