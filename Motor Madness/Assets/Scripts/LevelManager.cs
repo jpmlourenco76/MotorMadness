@@ -126,10 +126,12 @@ public class LevelManager : MonoBehaviour
 
     public void Spawn()
     {
+        
         AiControllers.Clear();
         cars.Clear();
+        int i = 0;
 
-        for (int i = 0; i < gameManager.gameData.characters.Count; i++)
+        while (i < gameManager.gameData.characters.Count)
         {
 
             if (gameManager.gameData.characters[i].SelectedCar.CarID == 0)
@@ -211,6 +213,8 @@ public class LevelManager : MonoBehaviour
                     Quaternion rot = spawnPointManager.spawnPoints[0].rotation;
                     GameObject Car;
                     if (gameManager.gameData.characters[i].currentLevel == 2) {
+                        RaceRank = null;
+                        OverallRank = null;
                         Car = Instantiate(gameManager.gameData.GameCars[2].CarPrefab, pos, rot);
 
                     }
@@ -245,7 +249,7 @@ public class LevelManager : MonoBehaviour
             }
 
            
-
+            i++;
         }
 
 
@@ -286,111 +290,113 @@ public class LevelManager : MonoBehaviour
 
 
     private void EnableRaceRank()
-    {
+    {     
         MiniMap.enabled = false;
         Canvas.enabled = false;
 
+        if (RaceRank != null) 
+        {          
+            stPlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[0].RacerName;
+            ndPlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[1].RacerName;
+            rdPlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[2].RacerName;
+            thPlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[3].RacerName;
+            fthPlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[4].RacerName;
 
-        stPlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[0].RacerName;
-        ndPlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[1].RacerName;
-        rdPlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[2].RacerName;
-        thPlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[3].RacerName;
-        fthPlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[4].RacerName;
 
-
-        RaceRank.enabled = true;
-
+            RaceRank.enabled = true;
+        }
         Invoke("EnableOverallRank", 3);
-
     }
 
     private void EnableOverallRank()
     {
-        RaceRank.enabled = false;
-        int[] prize = { 25, 18, 15, 12, 10 };
-
-        for (int i = 0; i < finishplacements.Count; i++)
+        if (OverallRank != null)
         {
+            RaceRank.enabled = false;
+            int[] prize = { 25, 18, 15, 12, 10 };
+
+            for (int i = 0; i < finishplacements.Count; i++)
+            {
+                foreach (CarData car in cars)
+                {
+                    if (car.RacerName == finishplacements[i].RacerName)
+                    {
+                        car.points += prize[i];
+
+                    }
+                }
+
+                foreach (CharacterData characterData in gameManager.gameData.characters)
+                {
+                    if (characterData.characterName == finishplacements[i].RacerName)
+                    {
+                        characterData.position = i + 1;
+
+                        if (i == 0)
+                        {
+                            characterData.money += levelReward;
+                        }
+                        else if (i == 1)
+                        {
+                            characterData.money += (int)(levelReward * 0.7f);
+                        }
+                        else if (i == 2)
+                        {
+                            characterData.money += (int)(levelReward * 0.5f);
+                        }
+                        else if (i == 3)
+                        {
+                            characterData.money += (int)(levelReward * 0.3f);
+                        }
+                        else if (i == 4)
+                        {
+                            characterData.money += (int)(levelReward * 0.1f);
+                        }
+                    }
+                }
+
+
+            }
+
+            gameManager.SetPointsPerRacer();
+
             foreach (CarData car in cars)
             {
-                if (car.RacerName == finishplacements[i].RacerName)
-                {
-                    car.points += prize[i];
-                    
-                }
+
+                CarData carClone = (CarData)car.Clone();
+                Rank.Add(carClone);
+                Rank = Rank.OrderByDescending(carClone => carClone.points).ToList();
+
             }
 
-            foreach(CharacterData characterData in gameManager.gameData.characters)
+            for (int i = 1; i < gameManager.gameData.characters.Count; i++)
             {
-                if(characterData.characterName == finishplacements[i].RacerName)
-                {
-                    characterData.position = i + 1;
-                   
-                    if(i == 0)
-                    {
-                        characterData.money += levelReward;
-                    }
-                    else if (i == 1)
-                    {
-                        characterData.money += (int)(levelReward * 0.7f);
-                    }
-                    else if (i == 2)
-                    {
-                        characterData.money += (int)(levelReward * 0.5f);
-                    }
-                    else if (i == 3)
-                    {
-                        characterData.money += (int)(levelReward * 0.3f);
-                    }
-                    else if (i == 4)
-                    {
-                        characterData.money += (int)(levelReward * 0.1f);
-                    }
-                }
+                gameManager.gameData.characters[i].SelectedCar.CarID = 0;
             }
-
-            
-        }
-
-        gameManager.SetPointsPerRacer();
-
-        foreach (CarData car in cars)
-        {
-
-            CarData carClone = (CarData)car.Clone();
-            Rank.Add(carClone);
-            Rank = Rank.OrderByDescending(carClone => carClone.points).ToList();
-
-        }
-
-        for (int i = 1; i < gameManager.gameData.characters.Count; i++)
-        {
-            gameManager.gameData.characters[i].SelectedCar.CarID = 0;
-         }
 
 
             stPlaceDisplayR.GetComponent<TextMeshProUGUI>().text = Rank[0].RacerName;
-        ndPlaceDisplayR.GetComponent<TextMeshProUGUI>().text = Rank[1].RacerName;
-        rdPlaceDisplayR.GetComponent<TextMeshProUGUI>().text = Rank[2].RacerName;
-        thPlaceDisplayR.GetComponent<TextMeshProUGUI>().text = Rank[3].RacerName;
-        fthPlaceDisplayR.GetComponent<TextMeshProUGUI>().text = Rank[4].RacerName;
+            ndPlaceDisplayR.GetComponent<TextMeshProUGUI>().text = Rank[1].RacerName;
+            rdPlaceDisplayR.GetComponent<TextMeshProUGUI>().text = Rank[2].RacerName;
+            thPlaceDisplayR.GetComponent<TextMeshProUGUI>().text = Rank[3].RacerName;
+            fthPlaceDisplayR.GetComponent<TextMeshProUGUI>().text = Rank[4].RacerName;
 
-        stPointsR.GetComponent<TextMeshProUGUI>().text = Rank[0].points.ToString();
-        ndPointsR.GetComponent<TextMeshProUGUI>().text = Rank[1].points.ToString();
-        rdPointsR.GetComponent<TextMeshProUGUI>().text = Rank[2].points.ToString();
-        thPointsR.GetComponent<TextMeshProUGUI>().text = Rank[3].points.ToString();
-        fthPointsR.GetComponent<TextMeshProUGUI>().text = Rank[4].points.ToString();
-
-
-        OverallRank.enabled = true;
+            stPointsR.GetComponent<TextMeshProUGUI>().text = Rank[0].points.ToString();
+            ndPointsR.GetComponent<TextMeshProUGUI>().text = Rank[1].points.ToString();
+            rdPointsR.GetComponent<TextMeshProUGUI>().text = Rank[2].points.ToString();
+            thPointsR.GetComponent<TextMeshProUGUI>().text = Rank[3].points.ToString();
+            fthPointsR.GetComponent<TextMeshProUGUI>().text = Rank[4].points.ToString();
 
 
-        if (gameManager.gameData.characters[0].currentLevel == 2)
-        {
-            gameManager.gameData.characters[0].OwnedCars.Add(gameManager.gameData.GameCars[3]);
+            OverallRank.enabled = true;
 
+
+            if (gameManager.gameData.characters[0].currentLevel == 2)
+            {
+                gameManager.gameData.characters[0].OwnedCars.Add(gameManager.gameData.GameCars[3]);
+
+            }
         }
-
         Invoke("GoGarage", 3);
 
 
