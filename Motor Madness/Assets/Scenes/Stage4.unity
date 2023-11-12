@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2119,6 +2119,43 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 446260, guid: a53d1a20952abc848aaf3f52fa43fa70, type: 3}
   m_PrefabInstance: {fileID: 228515076}
   m_PrefabAsset: {fileID: 0}
+--- !u!84 &232816161
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 283
+  m_Height: 257
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 94
+  m_ColorFormat: 4
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 1
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &238328611
 GameObject:
   m_ObjectHideFlags: 0
@@ -5287,43 +5324,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!84 &565936333
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 283
-  m_Height: 257
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 4
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &573570596
 GameObject:
   m_ObjectHideFlags: 3
@@ -15479,38 +15479,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e94b044e3565740aa00c70ec8bee22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TotalLaps: 3
-  raceType: 0
+  TotalLaps: 2
+  raceType: 3
   carController: {fileID: 0}
   spawnPoints: []
-  levelReward: 0
-  cars:
-  - CarID: 0
-    CarName: 
-    RacerName: Eu
-    CarPrefab: {fileID: 0}
-    distance: 0
-    lap: 0
-    points: 0
-    price: 0
-    upgradelvls:
-      TorqueUpgrade: 0
-      GearUpgrade: 0
-      BreakUpgrade: 0
-      TireUpdrage: 0
-  - CarID: 0
-    CarName: 
-    RacerName: Bot1
-    CarPrefab: {fileID: 0}
-    distance: 0
-    lap: 0
-    points: 0
-    price: 0
-    upgradelvls:
-      TorqueUpgrade: 0
-      GearUpgrade: 0
-      BreakUpgrade: 0
-      TireUpdrage: 0
+  levelReward: 1000
+  cars: []
   finished: 0
   finishplacements: []
   Rank: []
@@ -15986,7 +15960,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1828715576}
   m_LocalRotation: {x: -0, y: 0.7326205, z: -0, w: 0.6806374}
-  m_LocalPosition: {x: -316.65997, y: -217.31, z: -23.770002}
+  m_LocalPosition: {x: -316.23, y: -218.13, z: -8.38}
   m_LocalScale: {x: 32, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21102,7 +21076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeColliderGO: {fileID: 2621598242265556054}
-  renderTex: {fileID: 565936333}
+  renderTex: {fileID: 232816161}
   mapMaterial: {fileID: 2100000, guid: 65bbe9e0008384c5997f0cf300c3cb81, type: 2}
   iconPref: {fileID: 100164, guid: d392edba23dec4ef38924695a920a568, type: 3}
   mapCamera: {fileID: 4123277791806792246}
@@ -21762,7 +21736,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 565936333}
+  m_TargetTexture: {fileID: 232816161}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -22912,7 +22886,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8458393618423009723}
   m_LocalRotation: {x: 0.544355, y: 0.45130664, z: -0.45130664, w: 0.544355}
-  m_LocalPosition: {x: -1256.0796, y: -523.4042, z: 43.22827}
+  m_LocalPosition: {x: -1152.5826, y: -527.785, z: 31.817339}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23178,7 +23152,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000045478344, y: 0.000036239624}
+  m_AnchoredPosition: {x: -0.000045478344, y: 0.000005722046}
   m_SizeDelta: {x: 283, y: 257}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &7339356831359716771
