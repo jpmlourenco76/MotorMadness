@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -9,10 +10,6 @@ public class PauseMenu : MonoBehaviour
     private GameManager gameManager;
     private GameData gameData;
 
-    void Start()
-    {
-        gameIsPaused = false;
-    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -28,23 +25,22 @@ public class PauseMenu : MonoBehaviour
         }        
     }
 
-    private void Resume()
+    public void Resume()
     {
         pauseMenu.SetActive(false);
         gameIsPaused = false;
         Time.timeScale = 1f;
     }
 
-    private void Pause()
+    public void Pause()
     {
         pauseMenu.SetActive(true);
         gameIsPaused = true;
-        //Time.timeScale = 0f;
+        Time.timeScale = 0f;
     }
 
-    private void Quit()
+    public void Quit()
     {
-        Invoke("GoGarage", gameManager.gameData.characters[0].currentLevel);
-        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
     }
 }
