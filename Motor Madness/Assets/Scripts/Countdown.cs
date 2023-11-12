@@ -38,7 +38,11 @@ public class Countdown : MonoBehaviour
     void Start()
     {
         carController = gameManager.playerCarController;
-        AIcarControllers = levelManager.AiControllers;
+        if(levelManager.AiControllers != null)
+        {
+            AIcarControllers = levelManager.AiControllers;
+
+        }
         StartCoroutine(CountStart());
 
         

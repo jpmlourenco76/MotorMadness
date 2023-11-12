@@ -30,6 +30,7 @@ public class CheckpointSystem : MonoBehaviour
         GameLogic = GameObject.Find("GameLogic");
         levelManager = GameLogic.GetComponent<LevelManager>();
         cars = levelManager.cars;
+        carText = GameObject.Find("PosDisplay").GetComponent<TextMeshProUGUI>();
         
     }
 
@@ -45,7 +46,7 @@ public class CheckpointSystem : MonoBehaviour
 
             for (int i = 0; i < cars.Count; i++)
             {
-                float distance = Vector3.Distance(transform.position, GameObject.Find("Car"+i).GetComponent<CarController2>().playerRB.position);
+                float distance = Vector3.Distance(transform.position, GameObject.Find("Car"+i).GetComponent<Rigidbody>().position);
                 if (distance < 25f)
                 {
                     nextCheckPoint.SetActive(true);
@@ -65,7 +66,7 @@ public class CheckpointSystem : MonoBehaviour
             // Update car text based on distance
             for (int i = 0; i < cars.Count; i++)
             {
-                if (Vector3.Distance(transform.position, GameObject.Find("Car0").GetComponent<CarController2>().playerRB.position) == distanceArray[i].distance)
+                if (Vector3.Distance(transform.position, GameObject.Find("Car0").GetComponent<Rigidbody>().position) == distanceArray[i].distance)
                 {
                     carText.text = $"{i + 1}/{cars.Count}";
                     

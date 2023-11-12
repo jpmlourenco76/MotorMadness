@@ -12,7 +12,7 @@ public class GhostPlayer : MonoBehaviour
 
     private void Awake()
     {
-        timeValue = 0;
+        timeValue = 1.5f;
     }
 
     void Update()
@@ -33,7 +33,7 @@ public class GhostPlayer : MonoBehaviour
 
     private void GetIndex()
     {
-        for(int i = 0; i < ghost.timeStamp.Count - 2; i++)
+        for(int i = 0; i < ghost.timeStamp.Count-2; i++)
         {
             if (ghost.timeStamp[i] == timeValue)
             {
