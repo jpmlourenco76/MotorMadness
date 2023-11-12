@@ -926,9 +926,9 @@ MonoBehaviour:
     CutOffTime: 0.1
     RPMToNextGear: 6500
     RPMToPrevGearDiff: 500
-  StartEngineInAwake: 1
+  StartEngineInAwake: 0
   StartEngineDellay: 0.3
-  isEngineRunning: 1
+  isEngineRunning: 0
   Steer:
     MaxSteerAngle: 35
     EnableSteerLimit: 1
