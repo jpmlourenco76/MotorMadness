@@ -5524,7 +5524,7 @@ MonoBehaviour:
   gameData:
     characters:
     - characterName: AHZCorp
-      currentLevel: 7
+      currentLevel: 1
       money: 150000
       position: 5
       OwnedCars:
@@ -5554,19 +5554,6 @@ MonoBehaviour:
           GearUpgrade: 0
           BreakUpgrade: 0
           TireUpdrage: 0
-      - CarID: 2
-        CarName: c
-        RacerName: 
-        CarPrefab: {fileID: 181440, guid: 1276291b9a1371743992b4240c99cb89, type: 3}
-        distance: 0
-        lap: 0
-        points: 0
-        price: 0
-        upgradelvls:
-          TorqueUpgrade: 2
-          GearUpgrade: 2
-          BreakUpgrade: 2
-          TireUpdrage: 2
       SelectedCar:
         CarID: 0
         CarName: 
