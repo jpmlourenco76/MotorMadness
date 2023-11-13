@@ -9,15 +9,24 @@ public class GhostPlayer : MonoBehaviour
     private float timeValue;
     private int index1;
     private int index2;
+    public bool pause = false;
 
     private void Awake()
     {
-        timeValue = 1.5f;
+        timeValue = 2f;
     }
 
     void Update()
     {
-        timeValue += Time.unscaledDeltaTime;
+        if (!pause)
+        {
+            timeValue += Time.deltaTime;
+        }
+        else
+        {
+            timeValue += 0;
+
+        }
 
         if (ghost.isReplay)
         {

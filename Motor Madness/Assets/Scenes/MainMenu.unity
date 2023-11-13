@@ -604,7 +604,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &209051002
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1131,7 +1131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &395507549
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5524,7 +5524,7 @@ MonoBehaviour:
   gameData:
     characters:
     - characterName: AHZCorp
-      currentLevel: 1
+      currentLevel: 6
       money: 150000
       position: 5
       OwnedCars:
