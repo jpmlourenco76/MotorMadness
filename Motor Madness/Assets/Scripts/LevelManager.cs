@@ -298,12 +298,20 @@ public class LevelManager : MonoBehaviour
         Canvas.enabled = false;
 
         if (RaceRank != null) 
-        {          
-            stPlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[0].RacerName;
-            ndPlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[1].RacerName;
-            rdPlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[2].RacerName;
-            thPlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[3].RacerName;
-            fthPlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[4].RacerName;
+        {
+            if (special)
+            {
+                stPlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[0].RacerName;
+                ndPlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[1].RacerName;
+            }
+            else
+            {
+                stPlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[0].RacerName;
+                ndPlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[1].RacerName;
+                rdPlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[2].RacerName;
+                thPlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[3].RacerName;
+                fthPlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[4].RacerName;
+            }
 
 
             RaceRank.enabled = true;
