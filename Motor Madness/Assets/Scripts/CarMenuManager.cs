@@ -10,7 +10,8 @@ public class CarMenuManager : MonoBehaviour
     public CharacterData characterData;
     public GameObject toRotate;
     public float rotateSpeed;
-   
+    public InformativePanels informativePanels;
+
     public int vehiclePointer = 0;
     private GameManager gameManager;
     public bool isShop;
@@ -127,7 +128,7 @@ public class CarMenuManager : MonoBehaviour
         if (gameManager != null)
         {
             // Call the function from GameManager
-            gameManager.GoLevel(vehiclePointer);
+            informativePanels.SpecialPanel(vehiclePointer);
         }
         else
         {
