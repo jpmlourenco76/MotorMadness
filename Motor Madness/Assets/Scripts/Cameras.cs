@@ -10,32 +10,41 @@ public class Cameras : MonoBehaviour
 
     private GameObject activeCamera;
 
+    public PlayerCarInput carInput;
+
     void Start()
     {
        if(normalViewCamera !=null){
             // Initially, set the normal view camera as active.
             ActivateCamera(normalViewCamera);
         }
+        carInput = GetComponent<PlayerCarInput>();
     }
 
     void Update()
     {
-        // Check for the 'V' key press to toggle cameras (objects).
-        if (Input.GetKeyDown(KeyCode.V))
+        
+        
+        if(carInput != null)
         {
-            if (activeCamera == hoodViewCamera)
+            if (carInput.cameraswitch)
             {
-                ActivateCamera(normalViewCamera);
+                if (activeCamera == hoodViewCamera)
+                {
+                    ActivateCamera(normalViewCamera);
+                }
+                else if (activeCamera == normalViewCamera)
+                {
+                    ActivateCamera(farViewCamera);
+                }
+                else if (activeCamera == farViewCamera)
+                {
+                    ActivateCamera(hoodViewCamera);
+                }
             }
-            else if (activeCamera == normalViewCamera)
-            {
-                ActivateCamera(farViewCamera);
-            }
-            else if (activeCamera == farViewCamera)
-            {
-                ActivateCamera(hoodViewCamera);
-            }
+            carInput.cameraswitch = false;
         }
+        
     }
 
     private void ActivateCamera(GameObject cameraToActivate)

@@ -89,6 +89,15 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""CameraSwitch"",
+                    ""type"": ""Button"",
+                    ""id"": ""d76dbcd1-75b9-4f4d-bc45-e2bc5bf2a836"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -333,6 +342,28 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
                     ""action"": ""ViewDelta"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a295dadc-49de-461c-bba5-9fb687eaff67"",
+                    ""path"": ""<Keyboard>/v"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraSwitch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""12ba318a-1b05-4048-8fc7-47da830fe842"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraSwitch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -348,6 +379,7 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
         m_Gameplay_GearUp = m_Gameplay.FindAction("GearUp", throwIfNotFound: true);
         m_Gameplay_GearDown = m_Gameplay.FindAction("GearDown", throwIfNotFound: true);
         m_Gameplay_ViewDelta = m_Gameplay.FindAction("ViewDelta", throwIfNotFound: true);
+        m_Gameplay_CameraSwitch = m_Gameplay.FindAction("CameraSwitch", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -416,6 +448,7 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_GearUp;
     private readonly InputAction m_Gameplay_GearDown;
     private readonly InputAction m_Gameplay_ViewDelta;
+    private readonly InputAction m_Gameplay_CameraSwitch;
     public struct GameplayActions
     {
         private @CarInput m_Wrapper;
@@ -427,6 +460,7 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
         public InputAction @GearUp => m_Wrapper.m_Gameplay_GearUp;
         public InputAction @GearDown => m_Wrapper.m_Gameplay_GearDown;
         public InputAction @ViewDelta => m_Wrapper.m_Gameplay_ViewDelta;
+        public InputAction @CameraSwitch => m_Wrapper.m_Gameplay_CameraSwitch;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -457,6 +491,9 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
             @ViewDelta.started += instance.OnViewDelta;
             @ViewDelta.performed += instance.OnViewDelta;
             @ViewDelta.canceled += instance.OnViewDelta;
+            @CameraSwitch.started += instance.OnCameraSwitch;
+            @CameraSwitch.performed += instance.OnCameraSwitch;
+            @CameraSwitch.canceled += instance.OnCameraSwitch;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -482,6 +519,9 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
             @ViewDelta.started -= instance.OnViewDelta;
             @ViewDelta.performed -= instance.OnViewDelta;
             @ViewDelta.canceled -= instance.OnViewDelta;
+            @CameraSwitch.started -= instance.OnCameraSwitch;
+            @CameraSwitch.performed -= instance.OnCameraSwitch;
+            @CameraSwitch.canceled -= instance.OnCameraSwitch;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -508,5 +548,6 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
         void OnGearUp(InputAction.CallbackContext context);
         void OnGearDown(InputAction.CallbackContext context);
         void OnViewDelta(InputAction.CallbackContext context);
+        void OnCameraSwitch(InputAction.CallbackContext context);
     }
 }
