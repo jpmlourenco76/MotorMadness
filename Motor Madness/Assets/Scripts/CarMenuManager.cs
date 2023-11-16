@@ -128,7 +128,8 @@ public class CarMenuManager : MonoBehaviour
         if (gameManager != null)
         {
             // Call the function from GameManager
-            informativePanels.SpecialPanel(vehiclePointer);
+            //informativePanels.SpecialPanel(vehiclePointer);
+            gameManager.GoLevel(vehiclePointer);
         }
         else
         {
