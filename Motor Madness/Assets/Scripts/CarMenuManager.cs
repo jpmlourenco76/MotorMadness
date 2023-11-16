@@ -142,8 +142,6 @@ public class CarMenuManager : MonoBehaviour
         {
             // Call the function from GameManager
             threeSecondsDone = false;
-            originalCanvas.SetActive(false);
-            canvasHolder.SetActive(true);
             timer = 0;
             specialPanel = true;
 
@@ -159,68 +157,60 @@ public class CarMenuManager : MonoBehaviour
 
     private void Update()
     {
+
         if (specialPanel)
         {
+            threeSecondsDone = false;
+            timer = 0;
+
             if (gameManager.gameData.characters[0].currentLevel == 2)
             {
-                if (specialPanelOne.alpha < 1)
+                originalCanvas.SetActive(false);
+                canvasHolder.SetActive(true);
+
+                while (specialPanelOne.alpha < 1)
                 {
                     specialPanelOne.alpha += Time.deltaTime;
                 }
 
-                if (specialPanelOne.alpha >= 1 && timer <= timerDuration)
+                while (specialPanelOne.alpha >= 1 && timer <= timerDuration)
                 {
                     timer += Time.deltaTime;
                 }
-
-                if (specialPanelOne.alpha >= 1 && timer >= timerDuration)
-                {
-                    goLevel = true;
-                }
-
             }
 
             if (gameManager.gameData.characters[0].currentLevel == 4)
             {
-                if (specialPanelTwo.alpha < 1)
+                originalCanvas.SetActive(false);
+                canvasHolder.SetActive(true);
+
+                while (specialPanelTwo.alpha < 1)
                 {
                     specialPanelTwo.alpha += Time.deltaTime;
                 }
 
-                if (specialPanelTwo.alpha >= 1 && timer <= timerDuration)
+                while (specialPanelTwo.alpha >= 1 && timer <= timerDuration)
                 {
                     timer += Time.deltaTime;
                 }
-
-                if (specialPanelTwo.alpha >= 1 && timer >= timerDuration)
-                {
-                    goLevel = true;
-                }
-
             }
 
             if (gameManager.gameData.characters[0].currentLevel == 6)
             {
-                if (specialPanelThree.alpha < 1)
+                originalCanvas.SetActive(false);
+                canvasHolder.SetActive(true);
+
+                while (specialPanelThree.alpha < 1)
                 {
                     specialPanelThree.alpha += Time.deltaTime;
                 }
 
-                if (specialPanelThree.alpha >= 1 && timer <= timerDuration)
+                while (specialPanelThree.alpha >= 1 && timer <= timerDuration)
                 {
                     timer += Time.deltaTime;                    
                 }
-
-                if(specialPanelThree.alpha >= 1 && timer >= timerDuration)
-                {
-                    goLevel = true;
-                }
             }
-
-            if (goLevel)
-            {
-                gameManager.GoLevel(vehiclePointer);
-            }
+            gameManager.GoLevel(vehiclePointer);
         }
         
     }
