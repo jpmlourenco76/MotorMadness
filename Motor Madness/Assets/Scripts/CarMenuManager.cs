@@ -28,7 +28,7 @@ public class CarMenuManager : MonoBehaviour
     private bool goLevel = false;
     private bool panelOne = false;
     private bool panelTwo = false;
-    private bool panelThree = false;
+    private bool isNormalLevel = false;
     private bool isTimerActive = false;
 
     public CanvasGroup specialPanelOne;
@@ -155,18 +155,20 @@ public class CarMenuManager : MonoBehaviour
                 canvasHolder.SetActive(true);
                 panelOne = true;
             }
-            if (gameManager.gameData.characters[0].currentLevel == 4)
+            else if (gameManager.gameData.characters[0].currentLevel == 4)
             {
                 canvasHolder.SetActive(true);
                 panelTwo = true;
             }
-            if (gameManager.gameData.characters[0].currentLevel == 6)
+            else if (gameManager.gameData.characters[0].currentLevel == 6)
             {
                 canvasHolder.SetActive(true);
                 panelThree = true;
             }
-
-            //gameManager.GoLevel(vehiclePointer);
+            else
+            {
+                gameManager.GoLevel(vehiclePointer);
+            }
         }
         else
         {
