@@ -18,15 +18,18 @@ public class CarMenuManager : MonoBehaviour
     public List<CarData> ShopCars;
 
     #region Variables for Panels
-    private bool threeSecondsDone = false;
     private float timerDuration = 3f;
+    private float fadeInDuration = 1f;
     private float timer;
 
     public GameObject originalCanvas;
     public GameObject canvasHolder;
 
     private bool goLevel = false;
-    private bool specialPanel = false;
+    private bool panelOne = false;
+    private bool panelTwo = false;
+    private bool panelThree = false;
+    private bool isTimerActive = false;
 
     public CanvasGroup specialPanelOne;
     public CanvasGroup specialPanelTwo;
@@ -48,6 +51,10 @@ public class CarMenuManager : MonoBehaviour
     }
     private void Start()
     {
+        specialPanelOne.alpha = 0f;
+        specialPanelTwo.alpha = 0f;
+        specialPanelThree.alpha = 0f;
+
         PlayerPrefs.SetInt("pointer", 0);
         vehiclePointer = PlayerPrefs.GetInt("pointer");
 
@@ -140,10 +147,24 @@ public class CarMenuManager : MonoBehaviour
 
         if (gameManager != null)
         {
-            // Call the function from GameManager
-            threeSecondsDone = false;
-            timer = 0;
-            specialPanel = true;
+            isTimerActive = false;
+            timer = 0f;
+
+            if (gameManager.gameData.characters[0].currentLevel == 2)
+            {
+                canvasHolder.SetActive(true);
+                panelOne = true;
+            }
+            if (gameManager.gameData.characters[0].currentLevel == 4)
+            {
+                canvasHolder.SetActive(true);
+                panelTwo = true;
+            }
+            if (gameManager.gameData.characters[0].currentLevel == 6)
+            {
+                canvasHolder.SetActive(true);
+                panelThree = true;
+            }
 
             //gameManager.GoLevel(vehiclePointer);
         }
@@ -155,65 +176,56 @@ public class CarMenuManager : MonoBehaviour
 
 #region Special Level Panels
 
-    private void Update()
+    void Update()
     {
-
-        if (specialPanel)
+        if (isTimerActive)
         {
-            threeSecondsDone = false;
-            timer = 0;
-
-            if (gameManager.gameData.characters[0].currentLevel == 2)
+            timer += Time.deltaTime;
+            
+            if(timer >= timerDuration)
             {
-                originalCanvas.SetActive(false);
-                canvasHolder.SetActive(true);
-
-                while (specialPanelOne.alpha < 1)
-                {
-                    specialPanelOne.alpha += Time.deltaTime;
-                }
-
-                while (specialPanelOne.alpha >= 1 && timer <= timerDuration)
-                {
-                    timer += Time.deltaTime;
-                }
+                gameManager.GoLevel(vehiclePointer);
             }
-
-            if (gameManager.gameData.characters[0].currentLevel == 4)
-            {
-                originalCanvas.SetActive(false);
-                canvasHolder.SetActive(true);
-
-                while (specialPanelTwo.alpha < 1)
-                {
-                    specialPanelTwo.alpha += Time.deltaTime;
-                }
-
-                while (specialPanelTwo.alpha >= 1 && timer <= timerDuration)
-                {
-                    timer += Time.deltaTime;
-                }
-            }
-
-            if (gameManager.gameData.characters[0].currentLevel == 6)
-            {
-                originalCanvas.SetActive(false);
-                canvasHolder.SetActive(true);
-
-                while (specialPanelThree.alpha < 1)
-                {
-                    specialPanelThree.alpha += Time.deltaTime;
-                }
-
-                while (specialPanelThree.alpha >= 1 && timer <= timerDuration)
-                {
-                    timer += Time.deltaTime;                    
-                }
-            }
-            gameManager.GoLevel(vehiclePointer);
         }
-        
-    }
 
+        if (panelOne)
+        {
+            timer += Time.deltaTime;
+            specialPanelOne.alpha = Mathf.Clamp01(timer / fadeInDuration);
+
+            if(timer >= fadeInDuration)
+            {
+                panelOne = false;
+                timer = 0f;
+                isTimerActive = true;
+            }
+        }
+
+        if (panelTwo)
+        {
+            timer += Time.deltaTime;
+            specialPanelTwo.alpha = Mathf.Clamp01(timer / fadeInDuration);
+
+            if(timer >= fadeInDuration)
+            {
+                panelTwo = false;
+                timer = 0f;
+                isTimerActive = true;
+            }
+        }
+
+        if (panelThree)
+        {
+            timer += Time.deltaTime;
+            specialPanelThree.alpha = Mathf.Clamp01(timer / fadeInDuration);
+
+            if(timer >= fadeInDuration)
+            {
+                panelThree = false;
+                timer = 0f;
+                isTimerActive = true;
+            }
+        }
+    }
 #endregion
 }
