@@ -426,12 +426,14 @@ public class LevelManager : MonoBehaviour
             OverallRank.enabled = true;
 
 
-            if (gameManager.gameData.characters[0].currentLevel == 2)
-            {
-                gameManager.gameData.characters[0].OwnedCars.Add(gameManager.gameData.GameCars[3]);
-
-            }
+            
         }
+        if (gameManager.gameData.characters[0].currentLevel == 2)
+        {
+            gameManager.gameData.characters[0].OwnedCars.Add(gameManager.gameData.GameCars[2]);
+
+        }
+
         Invoke("GoGarage", 3);
 
 
