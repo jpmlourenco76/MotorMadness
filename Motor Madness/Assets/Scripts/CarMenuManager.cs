@@ -28,6 +28,7 @@ public class CarMenuManager : MonoBehaviour
     private bool goLevel = false;
     private bool panelOne = false;
     private bool panelTwo = false;
+    private bool panelThree = false;
     private bool isNormalLevel = false;
     private bool isTimerActive = false;
 
