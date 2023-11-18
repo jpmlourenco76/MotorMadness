@@ -1096,6 +1096,7 @@ MonoBehaviour:
   driveController: 1
   HorizontalChangeSpeed: 10
   RotateCameraWithMousePressed: 0
+  cameraswitch: 0
   carController: {fileID: 2023005570754860928}
 --- !u!114 &1227484863701634540
 MonoBehaviour:
@@ -1112,6 +1113,7 @@ MonoBehaviour:
   hoodViewCamera: {fileID: 44510945655148509}
   normalViewCamera: {fileID: 7093341697194312050}
   farViewCamera: {fileID: 6247293522691914342}
+  carInput: {fileID: 0}
 --- !u!114 &1685167000557286674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1717,7 +1719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SteerPercent: 0
-  DriveWheel: 1
+  DriveWheel: 0
   MaxBrakeTorque: 3000
   HandBrakeWheel: 1
   WheelView: {fileID: 0}
@@ -1902,7 +1904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SteerPercent: 0
-  DriveWheel: 1
+  DriveWheel: 0
   MaxBrakeTorque: 3000
   HandBrakeWheel: 1
   WheelView: {fileID: 0}

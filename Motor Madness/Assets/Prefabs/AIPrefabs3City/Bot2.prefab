@@ -1788,6 +1788,7 @@ MonoBehaviour:
   hoodViewCamera: {fileID: 0}
   normalViewCamera: {fileID: 0}
   farViewCamera: {fileID: 0}
+  carInput: {fileID: 0}
 --- !u!1 &3562207339120074755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1864,7 +1865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SteerPercent: 0
-  DriveWheel: 1
+  DriveWheel: 0
   MaxBrakeTorque: 4500
   HandBrakeWheel: 1
   WheelView: {fileID: 0}
@@ -2364,7 +2365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SteerPercent: 0
-  DriveWheel: 1
+  DriveWheel: 0
   MaxBrakeTorque: 4500
   HandBrakeWheel: 1
   WheelView: {fileID: 0}
