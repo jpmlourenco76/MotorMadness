@@ -54,7 +54,7 @@ public class CheckpointSystem : MonoBehaviour
                 }
 
                 cars[i].distance = distance;
-                cars[i].lap = cars[i].CarPrefab.GetComponent<CarController2>().laps;
+                cars[i].lap = GameObject.Find("Car" + i).GetComponent<CarController2>().laps;
                 distanceArray.Add(cars[i]);
                 levelManager.distanceArray = distanceArray;
 
