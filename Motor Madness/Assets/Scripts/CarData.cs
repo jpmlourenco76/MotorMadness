@@ -35,11 +35,21 @@ public class CharacterData
 
     public void setPoints()
     {
+        int maxPoints = int.MinValue;
+
         foreach (var ownedCar in OwnedCars)
         {
-            int maxpoints = 0;
-            if (maxpoints < ownedCar.points) { maxpoints = ownedCar.points; }
-            ownedCar.points = maxpoints;
+            if (maxPoints < ownedCar.points)
+            {
+                maxPoints = ownedCar.points;
+            }
+        }
+
+  
+    
+        foreach (var ownedCar in OwnedCars)
+        {
+            ownedCar.points = maxPoints;
         }
     }
 

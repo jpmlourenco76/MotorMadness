@@ -65,7 +65,7 @@ public class LevelManager : MonoBehaviour
     public List<CarData> cars = new List<CarData>();
 
     [HideInInspector] public bool finished = false;
-    [HideInInspector] public List<CarData> finishplacements = new List<CarData>();
+     public List<CarData> finishplacements = new List<CarData>();
     [HideInInspector] public List<CarData> Rank = new List<CarData>();
     public List<CarData> distanceArray;
 
@@ -136,20 +136,20 @@ public class LevelManager : MonoBehaviour
 
             if (gameManager.gameData.characters[i].SelectedCar.CarID == 0)
             {
-                float rnd = 0;
+                int rnd = 0;
                 switch (raceType)
                 {
                     case RaceType.Industrial:       //stage1
-                        rnd = Random.Range(0f, 1f);
+                        rnd = Random.Range(0, 2);
                         break;
                     case RaceType.City:             //stage3
-                        rnd = Random.Range(2f, 3f);
+                        rnd = Random.Range(2, 4);
                         break;
                     case RaceType.Countryside:      //stage2
-                        rnd = Random.Range(4f, 5f);
+                        rnd = Random.Range(4, 6);
                         break;
                     case RaceType.RaceTrack:        //stage4
-                        rnd = Random.Range(6f, 7f);
+                        rnd = Random.Range(6, 8);
                         break;
                     case RaceType.Special:
                         
@@ -157,7 +157,7 @@ public class LevelManager : MonoBehaviour
                 }
 
                 if(!special) {
-                    gameManager.gameData.characters[i].SelectedCar = gameManager.gameData.characters[i].OwnedCars[(int)rnd];
+                    gameManager.gameData.characters[i].SelectedCar = gameManager.gameData.characters[i].OwnedCars[rnd];
                 }
 
             }
