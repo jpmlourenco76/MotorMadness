@@ -33,6 +33,8 @@ public class LevelManager : MonoBehaviour
     private Canvas OverallRank;
     private Canvas MiniMap;
     private Canvas Canvas;
+    public List<CarData> ShopCars;
+    public CharacterData characterData;
 
     private GameObject stPlaceDisplay;
     private GameObject ndPlaceDisplay;
@@ -76,6 +78,7 @@ public class LevelManager : MonoBehaviour
     {
 
         gameManager = GameManager.Instance;
+        characterData = gameManager.GetCurrentCharacter();
 
         FinishTrig = GameObject.Find("FinishTrigger");
         Finish = GameObject.Find("Finish");
@@ -431,7 +434,6 @@ public class LevelManager : MonoBehaviour
         if (gameManager.gameData.characters[0].currentLevel == 2)
         {
             gameManager.gameData.characters[0].OwnedCars.Add(gameManager.gameData.GameCars[2]);
-
         }
 
         Invoke("GoGarage", 3);
