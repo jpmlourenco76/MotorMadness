@@ -214,13 +214,13 @@ public class LevelManager : MonoBehaviour
             else
             {
                 if( i== 0) {
-
+                    RaceRank = null;
+                    OverallRank = null;
                     Vector3 pos = spawnPointManager.spawnPoints[0].position;
                     Quaternion rot = spawnPointManager.spawnPoints[0].rotation;
                     GameObject Car;
                     if (gameManager.gameData.characters[i].currentLevel == 2) {
-                        RaceRank = null;
-                        OverallRank = null;
+                       
                         Car = Instantiate(gameManager.gameData.GameCars[2].CarPrefab, pos, rot);
 
                     }
@@ -324,80 +324,89 @@ public class LevelManager : MonoBehaviour
 
     private void EnableOverallRank()
     {
-        if (OverallRank != null)
+        
+
+        int[] prize = { 25, 18, 15, 12, 10 };
+
+        for (int i = 0; i < finishplacements.Count; i++)
         {
-            RaceRank.enabled = false;
-            int[] prize = { 25, 18, 15, 12, 10 };
-
-            for (int i = 0; i < finishplacements.Count; i++)
+            foreach (CarData car in cars)
             {
-                foreach (CarData car in cars)
+                switch (raceType)
                 {
-                    if (car.RacerName == finishplacements[i].RacerName)
-                    {
-                        car.points += prize[i];
+                    case RaceType.Special:
 
-                    }
+
+                        break;
+                    default:
+                        if (car.RacerName == finishplacements[i].RacerName)
+                        {
+                            car.points += prize[i];
+
+                        }
+                        break;
                 }
+            }
 
-                foreach (CharacterData characterData in gameManager.gameData.characters)
+            foreach (CharacterData characterData in gameManager.gameData.characters)
+            {
+
+                switch (raceType)
                 {
+                    case RaceType.Special:
 
-                    switch (raceType)
-                    {
-                        case RaceType.Special:
-
-                            if (characterData.characterName == finishplacements[i].RacerName)
+                        if (characterData.characterName == finishplacements[i].RacerName)
+                        {
+                            if (i == 0)
                             {
-                                characterData.position = i + 1;
-
-                                if (i == 0)
-                                {
-                                    characterData.money += levelReward;
-                                }
-                                else if (i == 1)
-                                {
-                                    characterData.money += (int)(levelReward * 0.1f);
-                                }                              
+                                characterData.money += levelReward;
                             }
-                            break;
-                        default:
-
-                            if (characterData.characterName == finishplacements[i].RacerName)
+                            else if (i == 1)
                             {
-                                characterData.position = i + 1;
-
-                                if (i == 0)
-                                {
-                                    characterData.money += levelReward;
-                                }
-                                else if (i == 1)
-                                {
-                                    characterData.money += (int)(levelReward * 0.7f);
-                                }
-                                else if (i == 2)
-                                {
-                                    characterData.money += (int)(levelReward * 0.5f);
-                                }
-                                else if (i == 3)
-                                {
-                                    characterData.money += (int)(levelReward * 0.3f);
-                                }
-                                else if (i == 4)
-                                {
-                                    characterData.money += (int)(levelReward * 0.1f);
-                                }
+                                characterData.money += (int)(levelReward * 0.1f);
                             }
-                            break;
-                    }
-                    
+                        }
+                        break;
+                    default:
+
+                        if (characterData.characterName == finishplacements[i].RacerName)
+                        {
+                            characterData.position = i + 1;
+
+                            if (i == 0)
+                            {
+                                characterData.money += levelReward;
+                            }
+                            else if (i == 1)
+                            {
+                                characterData.money += (int)(levelReward * 0.7f);
+                            }
+                            else if (i == 2)
+                            {
+                                characterData.money += (int)(levelReward * 0.5f);
+                            }
+                            else if (i == 3)
+                            {
+                                characterData.money += (int)(levelReward * 0.3f);
+                            }
+                            else if (i == 4)
+                            {
+                                characterData.money += (int)(levelReward * 0.1f);
+                            }
+                        }
+                        break;
                 }
-
 
             }
 
-            gameManager.SetPointsPerRacer();
 
+        }
+
+        gameManager.SetPointsPerRacer();
+
+        if (OverallRank != null)
+        {
+            RaceRank.enabled = false;
             foreach (CarData car in cars)
             {
 
@@ -407,10 +416,7 @@ public class LevelManager : MonoBehaviour
 
             }
 
-            for (int i = 1; i < gameManager.gameData.characters.Count; i++)
-            {
-                gameManager.gameData.characters[i].SelectedCar.CarID = 0;
-            }
+
 
 
             stPlaceDisplayR.GetComponent<TextMeshProUGUI>().text = Rank[0].RacerName;
@@ -429,11 +435,21 @@ public class LevelManager : MonoBehaviour
             OverallRank.enabled = true;
 
 
-            
+
         }
+
+
+        for (int i = 1; i < gameManager.gameData.characters.Count; i++)
+        {
+            gameManager.gameData.characters[i].SelectedCar.CarID = 0;
+        }
+
+
         if (gameManager.gameData.characters[0].currentLevel == 2)
         {
             gameManager.gameData.characters[0].OwnedCars.Add(gameManager.gameData.GameCars[2]);
+            gameManager.SetRacerNames();
+            gameManager.SetPointsPerRacer();
         }
 
         Invoke("GoGarage", 3);
