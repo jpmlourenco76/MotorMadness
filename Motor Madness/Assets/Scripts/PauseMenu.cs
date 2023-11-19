@@ -41,6 +41,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Quit()
     {
-        SceneManager.LoadScene("MainMenu");
+        Resume();
+        SceneManager.LoadScene("Garage");
     }
 }
