@@ -52,9 +52,19 @@ public class CarMenuManager : MonoBehaviour
     }
     private void Start()
     {
-        specialPanelOne.alpha = 0f;
-        specialPanelTwo.alpha = 0f;
-        specialPanelThree.alpha = 0f;
+        if (specialPanelOne != null)
+        {
+            specialPanelOne.alpha = 0f;
+        }
+        if (specialPanelTwo != null)
+        {
+            specialPanelTwo.alpha = 0f;
+        }
+        if (specialPanelThree != null)
+        {
+            specialPanelThree.alpha = 0f;
+        }
+       
 
         PlayerPrefs.SetInt("pointer", 0);
         vehiclePointer = PlayerPrefs.GetInt("pointer");
@@ -133,6 +143,8 @@ public class CarMenuManager : MonoBehaviour
             characterData.money = characterData.money - ShopCars[vehiclePointer].price;
 
             characterData.OwnedCars.Add(ShopCars[vehiclePointer]);
+            gameManager.SetRacerNames();
+            gameManager.SetPointsPerRacer();
             ShopCars.Remove(ShopCars[vehiclePointer]);
             rightButton();
         }
