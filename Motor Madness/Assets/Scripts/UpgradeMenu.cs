@@ -45,8 +45,8 @@ public class UpgradeMenu : MonoBehaviour
 
     private void Update()
     {
-        if (characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.TorqueUpgrade < 3 && characterData.money >= price[characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.TorqueUpgrade])
-        {
+        if (characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.TorqueUpgrade < 3) 
+        { 
             Torquebtn.GetComponentInChildren<TextMeshProUGUI>().text = characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.TorqueUpgrade.ToString()  + "/3";
             TorquePrice.GetComponent<TextMeshProUGUI>().text = "Engine \n" + price[characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.TorqueUpgrade].ToString();
         }
@@ -56,7 +56,7 @@ public class UpgradeMenu : MonoBehaviour
             TorquePrice.GetComponent<TextMeshProUGUI>().text = "Engine \n ---";
         }
 
-        if (characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.BreakUpgrade < 3 && characterData.money >= price[characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.BreakUpgrade])
+        if (characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.BreakUpgrade < 3)
         {
             Breaksbtn.GetComponentInChildren<TextMeshProUGUI>().text = characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.BreakUpgrade.ToString() + "/3";
             BreaksPrice.GetComponent<TextMeshProUGUI>().text = "Breaks \n" + price[characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.BreakUpgrade].ToString();
@@ -67,7 +67,7 @@ public class UpgradeMenu : MonoBehaviour
             BreaksPrice.GetComponent<TextMeshProUGUI>().text = "Breaks \n ---";
         }
 
-        if (characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.GearUpgrade < 3 && characterData.money >= price[characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.GearUpgrade])
+        if (characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.GearUpgrade < 3)
         {
 
             Gearbtn.GetComponentInChildren<TextMeshProUGUI>().text = characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.GearUpgrade.ToString() + "/3";
@@ -80,7 +80,7 @@ public class UpgradeMenu : MonoBehaviour
 
         }
 
-        if (characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.TireUpdrage < 3 && characterData.money >= price[characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.TireUpdrage])
+        if (characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.TireUpdrage < 3)
         {
             Tiresbtn.GetComponentInChildren<TextMeshProUGUI>().text = characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.TireUpdrage.ToString() + "/3";
             TiresPrice.GetComponent<TextMeshProUGUI>().text = "Tires \n" + price[characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.TireUpdrage].ToString();
