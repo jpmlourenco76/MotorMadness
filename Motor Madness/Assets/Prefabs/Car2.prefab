@@ -1719,7 +1719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SteerPercent: 0
-  DriveWheel: 0
+  DriveWheel: 1
   MaxBrakeTorque: 3000
   HandBrakeWheel: 1
   WheelView: {fileID: 0}
@@ -1904,7 +1904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SteerPercent: 0
-  DriveWheel: 0
+  DriveWheel: 1
   MaxBrakeTorque: 3000
   HandBrakeWheel: 1
   WheelView: {fileID: 0}
