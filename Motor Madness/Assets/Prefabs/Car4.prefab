@@ -1070,7 +1070,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     MaxVelocityAngleForHelp: 120
     MinSpeedForHelp: 1.5
-    HelpDriftIntensity: 0.908
+    HelpDriftIntensity: 0
     HandBrakeAngularHelpCurve:
       serializedVersion: 2
       m_Curve:
@@ -1140,7 +1140,7 @@ MonoBehaviour:
     MaxSpeedForMaxAngularHelp: 150
     DriftLimitAngle: 0
     ABS: 1
-    TCS: 1
+    TCS: 0
   carAItarget: {fileID: 0}
   persuitAiOn: 0
   persuitTarget: {fileID: 0}
@@ -1160,6 +1160,7 @@ MonoBehaviour:
   driveController: 1
   HorizontalChangeSpeed: 10
   RotateCameraWithMousePressed: 0
+  cameraswitch: 0
   carController: {fileID: 4466437051665797031}
 --- !u!114 &5335052925571001965
 MonoBehaviour:
@@ -1176,6 +1177,7 @@ MonoBehaviour:
   hoodViewCamera: {fileID: 8925640382687108229}
   normalViewCamera: {fileID: 2923490683628378790}
   farViewCamera: {fileID: 7156531073518079008}
+  carInput: {fileID: 0}
 --- !u!114 &8637930546561998581
 MonoBehaviour:
   m_ObjectHideFlags: 0

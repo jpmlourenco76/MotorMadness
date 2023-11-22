@@ -1107,8 +1107,8 @@ MonoBehaviour:
         inWeight: 0.5918364
         outWeight: 0.45544556
       - serializedVersion: 3
-        time: 0.40079364
-        value: 0.91471803
+        time: 0.39780292
+        value: 0.9340967
         inSlope: 0.41082045
         outSlope: 0.41082045
         tangentMode: 0
@@ -1116,8 +1116,8 @@ MonoBehaviour:
         inWeight: 1
         outWeight: 0.2769231
       - serializedVersion: 3
-        time: 0.59424603
-        value: 0.9724897
+        time: 0.52533734
+        value: 0.9665922
         inSlope: 0.27730495
         outSlope: 0.27730495
         tangentMode: 0
@@ -1125,8 +1125,8 @@ MonoBehaviour:
         inWeight: 0.25641018
         outWeight: 0
       - serializedVersion: 3
-        time: 0.67857146
-        value: 0.98762035
+        time: 0.65232635
+        value: 0.97498226
         inSlope: -0.032244183
         outSlope: -0.032244183
         tangentMode: 0
@@ -1134,8 +1134,8 @@ MonoBehaviour:
         inWeight: 0.5058823
         outWeight: 0
       - serializedVersion: 3
-        time: 0.7490079
-        value: 0.9738652
+        time: 0.7587735
+        value: 0.96543854
         inSlope: -0.3697382
         outSlope: -0.3697382
         tangentMode: 0
@@ -1143,8 +1143,8 @@ MonoBehaviour:
         inWeight: 0.7246375
         outWeight: 0.37190133
       - serializedVersion: 3
-        time: 0.8690476
-        value: 0.9215956
+        time: 0.84951633
+        value: 0.9241209
         inSlope: -0.42662197
         outSlope: -0.42662197
         tangentMode: 0
@@ -1263,7 +1263,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     MaxVelocityAngleForHelp: 120
     MinSpeedForHelp: 1.5
-    HelpDriftIntensity: 0.579
+    HelpDriftIntensity: 0
     HandBrakeAngularHelpCurve:
       serializedVersion: 2
       m_Curve:
@@ -1353,6 +1353,7 @@ MonoBehaviour:
   driveController: 1
   HorizontalChangeSpeed: 10
   RotateCameraWithMousePressed: 0
+  cameraswitch: 0
   carController: {fileID: 252078128882138762}
 --- !u!114 &5683351181823297920
 MonoBehaviour:
@@ -1369,6 +1370,7 @@ MonoBehaviour:
   hoodViewCamera: {fileID: 6777294537743194373}
   normalViewCamera: {fileID: 2834367352385430185}
   farViewCamera: {fileID: 4730507858363169708}
+  carInput: {fileID: 0}
 --- !u!114 &5010919203478862958
 MonoBehaviour:
   m_ObjectHideFlags: 0

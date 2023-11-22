@@ -992,8 +992,8 @@ MonoBehaviour:
         inWeight: 0.6440677
         outWeight: 0
       - serializedVersion: 3
-        time: 0.32738096
-        value: 0.96973866
+        time: 0.3238104
+        value: 0.97689503
         inSlope: 0.3112589
         outSlope: 0.3112589
         tangentMode: 0
@@ -1001,8 +1001,8 @@ MonoBehaviour:
         inWeight: 0.425926
         outWeight: 0.6712329
       - serializedVersion: 3
-        time: 0.39980158
-        value: 0.9917469
+        time: 0.4019378
+        value: 0.9893627
         inSlope: -0.15654229
         outSlope: -0.15654229
         tangentMode: 0
@@ -1010,8 +1010,8 @@ MonoBehaviour:
         inWeight: 0.54794526
         outWeight: 0.20666666
       - serializedVersion: 3
-        time: 0.69742066
-        value: 0.9477304
+        time: 0.7002893
+        value: 0.9628366
         inSlope: -0.35293302
         outSlope: -0.35293302
         tangentMode: 0
@@ -1048,7 +1048,7 @@ MonoBehaviour:
     CutOffRPM: 8000
     TargetCutOffRPM: 7000
     CutOffTime: 0.1
-    RPMToNextGear: 5500
+    RPMToNextGear: 7000
     RPMToPrevGearDiff: 800
   StartEngineInAwake: 0
   StartEngineDellay: 0.5
@@ -1200,7 +1200,7 @@ MonoBehaviour:
     MaxSpeedForMaxAngularHelp: 150
     DriftLimitAngle: 0
     ABS: 1
-    TCS: 1
+    TCS: 0
   carAItarget: {fileID: 0}
   persuitAiOn: 0
   persuitTarget: {fileID: 0}
@@ -1220,6 +1220,7 @@ MonoBehaviour:
   driveController: 1
   HorizontalChangeSpeed: 10
   RotateCameraWithMousePressed: 0
+  cameraswitch: 0
   carController: {fileID: 3233234231559020979}
 --- !u!114 &6598204088910103916
 MonoBehaviour:
@@ -1236,6 +1237,7 @@ MonoBehaviour:
   hoodViewCamera: {fileID: 3097984059508269758}
   normalViewCamera: {fileID: 7616987330049688850}
   farViewCamera: {fileID: 4254975250256152500}
+  carInput: {fileID: 0}
 --- !u!114 &1906600967367450733
 MonoBehaviour:
   m_ObjectHideFlags: 0
