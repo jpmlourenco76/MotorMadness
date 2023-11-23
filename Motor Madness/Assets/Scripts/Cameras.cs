@@ -7,6 +7,7 @@ public class Cameras : MonoBehaviour
     public GameObject hoodViewCamera;
     public GameObject normalViewCamera;
     public GameObject farViewCamera;
+    public GameObject rearViewCamera;
 
     private GameObject activeCamera;
 
@@ -43,6 +44,15 @@ public class Cameras : MonoBehaviour
                 }
             }
             carInput.cameraswitch = false;
+
+            if (Input.GetKey(KeyCode.B))
+            {
+                rearViewCamera.SetActive(true);
+            }
+            else
+            {
+                rearViewCamera.SetActive(false);
+            }
         }
         
     }
@@ -59,4 +69,5 @@ public class Cameras : MonoBehaviour
         cameraToActivate.SetActive(true);
         activeCamera = cameraToActivate;
     }
+
 }
