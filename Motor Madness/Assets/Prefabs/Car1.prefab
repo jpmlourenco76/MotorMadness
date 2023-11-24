@@ -943,6 +943,7 @@ GameObject:
   - component: {fileID: 5683351181823297920}
   - component: {fileID: 5010919203478862958}
   - component: {fileID: 4376873893307081659}
+  - component: {fileID: -2241916910755722365}
   m_Layer: 0
   m_Name: Car1
   m_TagString: Car
@@ -1355,7 +1356,6 @@ MonoBehaviour:
   HorizontalChangeSpeed: 10
   RotateCameraWithMousePressed: 0
   cameraswitch: 0
-  rearCamSwitch: 0
   carController: {fileID: 252078128882138762}
 --- !u!114 &5683351181823297920
 MonoBehaviour:
@@ -1435,6 +1435,22 @@ MonoBehaviour:
   initiialpDistance: 0
   progressDistance: 0
   pathTransform: []
+--- !u!114 &-2241916910755722365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285645f26141c38419582397d6fd5b94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rewindKey: 114
+  rewindSpeed: 1
+  recordInterval: 0.2
+  maxRewindTime: 5
 --- !u!1 &146262
 GameObject:
   m_ObjectHideFlags: 0
