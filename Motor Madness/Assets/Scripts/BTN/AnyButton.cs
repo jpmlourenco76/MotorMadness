@@ -36,6 +36,22 @@ public class AnyButton : MonoBehaviour
         }
     }
 
+    public void MainMenuBtn()
+    {
+        // Find the GameManager instance using the singleton pattern
+        GameManager gameManager = GameManager.Instance;
+
+        if (gameManager != null)
+        {
+            // Call the function from GameManager
+            gameManager.GoMainMenu();
+        }
+        else
+        {
+            Debug.LogError("GameManager instance not found!");
+        }
+    }
+
 
    
 }

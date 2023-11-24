@@ -10,6 +10,12 @@ public class PauseMenu : MonoBehaviour
     private GameManager gameManager;
     private GameData gameData;
 
+    private void Awake()
+    {
+        gameManager = GameManager.Instance;
+
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -41,7 +47,17 @@ public class PauseMenu : MonoBehaviour
 
     public void Quit()
     {
-        Resume();
-        SceneManager.LoadScene("Garage");
+        if(gameManager.levelType == GameManager.LevelType.Story)
+        {
+            Resume();
+            SceneManager.LoadScene("Garage");
+        }
+        else
+        {
+            Resume();
+            SceneManager.LoadScene("MainMenu");
+
+        }
+        
     }
 }

@@ -45,55 +45,59 @@ public class UpgradeMenu : MonoBehaviour
 
     private void Update()
     {
-        if (characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.TorqueUpgrade < 3) 
-        { 
-            Torquebtn.GetComponentInChildren<TextMeshProUGUI>().text = characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.TorqueUpgrade.ToString()  + "/3";
-            TorquePrice.GetComponent<TextMeshProUGUI>().text = "Engine \n" + price[characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.TorqueUpgrade].ToString();
-        }
-        else
-        {
-            Torquebtn.GetComponentInChildren<TextMeshProUGUI>().text = "3/3";
-            TorquePrice.GetComponent<TextMeshProUGUI>().text = "Engine \n ---";
-        }
-
-        if (characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.BreakUpgrade < 3)
-        {
-            Breaksbtn.GetComponentInChildren<TextMeshProUGUI>().text = characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.BreakUpgrade.ToString() + "/3";
-            BreaksPrice.GetComponent<TextMeshProUGUI>().text = "Breaks \n" + price[characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.BreakUpgrade].ToString();
-        }
-        else
-        {
-            Breaksbtn.GetComponentInChildren<TextMeshProUGUI>().text = "3/3";
-            BreaksPrice.GetComponent<TextMeshProUGUI>().text = "Breaks \n ---";
-        }
-
-        if (characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.GearUpgrade < 3)
+        if (gameManager.levelType == GameManager.LevelType.Story)
         {
 
-            Gearbtn.GetComponentInChildren<TextMeshProUGUI>().text = characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.GearUpgrade.ToString() + "/3";
-            GearPrice.GetComponent<TextMeshProUGUI>().text = "Gearbox \n" + price[characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.GearUpgrade].ToString();
-        }
-        else
-        {
-            Gearbtn.GetComponentInChildren<TextMeshProUGUI>().text = "3/3";
-            GearPrice.GetComponent<TextMeshProUGUI>().text = "Gearbox \n ---";
+
+            if (characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.TorqueUpgrade < 3)
+            {
+                Torquebtn.GetComponentInChildren<TextMeshProUGUI>().text = characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.TorqueUpgrade.ToString() + "/3";
+                TorquePrice.GetComponent<TextMeshProUGUI>().text = "Engine \n" + price[characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.TorqueUpgrade].ToString();
+            }
+            else
+            {
+                Torquebtn.GetComponentInChildren<TextMeshProUGUI>().text = "3/3";
+                TorquePrice.GetComponent<TextMeshProUGUI>().text = "Engine \n ---";
+            }
+
+            if (characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.BreakUpgrade < 3)
+            {
+                Breaksbtn.GetComponentInChildren<TextMeshProUGUI>().text = characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.BreakUpgrade.ToString() + "/3";
+                BreaksPrice.GetComponent<TextMeshProUGUI>().text = "Breaks \n" + price[characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.BreakUpgrade].ToString();
+            }
+            else
+            {
+                Breaksbtn.GetComponentInChildren<TextMeshProUGUI>().text = "3/3";
+                BreaksPrice.GetComponent<TextMeshProUGUI>().text = "Breaks \n ---";
+            }
+
+            if (characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.GearUpgrade < 3)
+            {
+
+                Gearbtn.GetComponentInChildren<TextMeshProUGUI>().text = characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.GearUpgrade.ToString() + "/3";
+                GearPrice.GetComponent<TextMeshProUGUI>().text = "Gearbox \n" + price[characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.GearUpgrade].ToString();
+            }
+            else
+            {
+                Gearbtn.GetComponentInChildren<TextMeshProUGUI>().text = "3/3";
+                GearPrice.GetComponent<TextMeshProUGUI>().text = "Gearbox \n ---";
+
+            }
+
+            if (characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.TireUpdrage < 3)
+            {
+                Tiresbtn.GetComponentInChildren<TextMeshProUGUI>().text = characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.TireUpdrage.ToString() + "/3";
+                TiresPrice.GetComponent<TextMeshProUGUI>().text = "Tires \n" + price[characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.TireUpdrage].ToString();
+            }
+            else
+            {
+                Tiresbtn.GetComponentInChildren<TextMeshProUGUI>().text = "3/3";
+                TiresPrice.GetComponent<TextMeshProUGUI>().text = "Tires \n ---";
+            }
+
+
 
         }
-
-        if (characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.TireUpdrage < 3)
-        {
-            Tiresbtn.GetComponentInChildren<TextMeshProUGUI>().text = characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.TireUpdrage.ToString() + "/3";
-            TiresPrice.GetComponent<TextMeshProUGUI>().text = "Tires \n" + price[characterData.OwnedCars[carMenuManager.vehiclePointer].upgradelvls.TireUpdrage].ToString();
-        }
-        else
-        {
-            Tiresbtn.GetComponentInChildren<TextMeshProUGUI>().text = "3/3";
-            TiresPrice.GetComponent<TextMeshProUGUI>().text = "Tires \n ---";
-        }
-
-
-
-
 
     }
 
