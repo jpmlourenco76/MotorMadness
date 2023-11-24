@@ -31,6 +31,7 @@ public class LevelManager : MonoBehaviour
     private GameObject FinishPanel;
     private Canvas RaceRank;
     private Canvas OverallRank;
+    private Canvas RetryCanvas;
     private Canvas MiniMap;
     private Canvas Canvas;
     public List<CarData> ShopCars;
@@ -61,7 +62,7 @@ public class LevelManager : MonoBehaviour
     private GameManager gameManager;
 
     public int levelReward = 0;
-
+    
 
     [SerializeField]
     public List<CarData> cars = new List<CarData>();
@@ -88,6 +89,8 @@ public class LevelManager : MonoBehaviour
         lapsCompleted.totallaps = TotalLaps;
         RaceRank = GameObject.Find("RaceRank").GetComponent<Canvas>();
         OverallRank = GameObject.Find("OverallRank").GetComponent<Canvas>();
+        RetryCanvas = GameObject.Find("RetryCanvas").GetComponent<Canvas>();
+
         MiniMap = GameObject.Find("CanvasMiniMap").GetComponent<Canvas>();
         Canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
 
@@ -123,7 +126,9 @@ public class LevelManager : MonoBehaviour
         ended = true;
         RaceRank.enabled = false;
         OverallRank.enabled = false;
+        RetryCanvas.enabled = false;
 
+        gameManager.inrace = true;
         Spawn();
     }
 
@@ -172,7 +177,7 @@ public class LevelManager : MonoBehaviour
 
             }
 
-            if (!special)
+            if (!special && gameManager.levelType != GameManager.LevelType.Training)
             {
                 Vector3 pos = spawnPointManager.spawnPoints[gameManager.gameData.characters[i].position - 1].position;
                 Quaternion rot = spawnPointManager.spawnPoints[gameManager.gameData.characters[i].position - 1].rotation;
@@ -211,16 +216,16 @@ public class LevelManager : MonoBehaviour
                     
                 }
             }
-            else
+            else if(special || gameManager.levelType == GameManager.LevelType.Training)
             {
                 if( i== 0) {
-                    RaceRank = null;
+                    
                     OverallRank = null;
                     Vector3 pos = spawnPointManager.spawnPoints[0].position;
                     Quaternion rot = spawnPointManager.spawnPoints[0].rotation;
                     GameObject Car;
-                    if (gameManager.gameData.characters[i].currentLevel == 2) {
-                       
+                    if (gameManager.gameData.characters[i].currentLevel == 2 && gameManager.levelType == GameManager.LevelType.Story) {
+                        RaceRank = null;
                         Car = Instantiate(gameManager.gameData.GameCars[2].CarPrefab, pos, rot);
 
                     }
@@ -259,7 +264,27 @@ public class LevelManager : MonoBehaviour
         }
 
 
-        spawnPointManager.gameObject.SetActive(false);
+        if(gameManager.levelType == GameManager.LevelType.QuickPlay)
+        {
+            OverallRank = null;
+            
+        }
+        else if(gameManager.levelType == GameManager.LevelType.Training)
+        {
+            RaceRank = null;
+            OverallRank = null;
+            TotalLaps = 50;
+            lapsCompleted.totallaps = TotalLaps;
+        }
+
+
+       foreach(Transform checkpoint in spawnPointManager.spawnPoints) {
+            if(checkpoint != null) {
+                checkpoint.GetComponentInChildren<MeshRenderer>().material.color = Color.clear;
+               
+            }
+            
+        }
     }
 
 
@@ -283,10 +308,11 @@ public class LevelManager : MonoBehaviour
 
         FinishPanel.GetComponent<TextMeshProUGUI>().enabled = true;
         finish.Play();
+        gameManager.inrace = false;
 
 
 
-      
+
 
         Invoke("EnableRaceRank", 3);
 
@@ -324,9 +350,10 @@ public class LevelManager : MonoBehaviour
 
     private void EnableOverallRank()
     {
-        
+        if (gameManager.levelType == GameManager.LevelType.Story)
+        {
 
-        int[] prize = { 25, 18, 15, 12, 10 };
+            int[] prize = { 25, 18, 15, 12, 10 };
 
         for (int i = 0; i < finishplacements.Count; i++)
         {
@@ -404,6 +431,7 @@ public class LevelManager : MonoBehaviour
 
         gameManager.SetPointsPerRacer();
 
+        
         if (OverallRank != null)
         {
             RaceRank.enabled = false;
@@ -452,9 +480,28 @@ public class LevelManager : MonoBehaviour
             gameManager.SetPointsPerRacer();
         }
 
+        
         Invoke("GoGarage", 3);
 
+        }
+        else
+        {
 
+            RaceRank.enabled = false;
+            RetryCanvas.enabled = true;
+           
+        }
+
+    }
+
+    public void Restart()
+    {
+        gameManager.GoLevel(gameManager.currentcar);
+    }
+
+    public void GoMenu()
+    {
+        gameManager.GoMainMenu();
     }
 
     private void GoGarage()
@@ -462,6 +509,7 @@ public class LevelManager : MonoBehaviour
         gameManager.gameData.characters[0].currentLevel++;
         gameManager.GoGarage();
     }
+    
 
 
     private void ApplyTorqueUpgrade(GameObject car)

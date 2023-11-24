@@ -10,16 +10,24 @@ public class PauseMenu : MonoBehaviour
     private GameManager gameManager;
     private GameData gameData;
 
+    private void Awake()
+    {
+        gameManager = GameManager.Instance;
+
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (gameIsPaused)
             {
+                
                 Resume();
             }
             else
             {
+                gameManager.inrace = false;
                 Pause();
             }
         }        
@@ -27,21 +35,37 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        
         pauseMenu.SetActive(false);
         gameIsPaused = false;
         Time.timeScale = 1f;
+        gameManager.inrace = true;
+        
     }
 
     public void Pause()
     {
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
         pauseMenu.SetActive(true);
         gameIsPaused = true;
         Time.timeScale = 0f;
+        
     }
 
     public void Quit()
     {
-        Resume();
-        SceneManager.LoadScene("Garage");
+        if(gameManager.levelType == GameManager.LevelType.Story)
+        {
+            Resume();
+            SceneManager.LoadScene("Garage");
+        }
+        else
+        {
+            Resume();
+            SceneManager.LoadScene("MainMenu");
+
+        }
+        
     }
 }

@@ -33,7 +33,8 @@ public class PlayerCarInput : MonoBehaviour
     public Vector2 ViewDelta { get; private set; }
     public bool ViewDeltaFromGamepad { get; private set; }
 
-    public bool cameraswitch;
+    public bool cameraswitch, rewind, cameraRear;
+
 
     private float GearUpInput = 0;
    
@@ -72,6 +73,10 @@ public class PlayerCarInput : MonoBehaviour
                 input.Gameplay.ViewDelta.canceled += ReleaseViewDelta;
                 input.Gameplay.CameraSwitch.performed += ChangeCamera;
                 input.Gameplay.CameraSwitch.canceled += RealeaseCamera;
+                input.Gameplay.Respawn.performed += ApplyRespawn;
+                input.Gameplay.Respawn.canceled += ReleaseRespawn;
+                input.Gameplay.RearCam.performed += RearCamera;
+                input.Gameplay.RearCam.canceled += RealeaseRearCamera;
 
 
 
@@ -184,6 +189,24 @@ public class PlayerCarInput : MonoBehaviour
     private void RealeaseCamera(InputAction.CallbackContext value)
     {
         cameraswitch = false;
+    }
+
+    private void RearCamera(InputAction.CallbackContext value)
+    {
+        cameraRear = true;
+    }
+    private void RealeaseRearCamera(InputAction.CallbackContext value)
+    {
+        cameraRear = false;
+    }
+
+    private void ApplyRespawn(InputAction.CallbackContext value)
+    {
+        rewind = true;
+    }
+    private void ReleaseRespawn(InputAction.CallbackContext value)
+    {
+        rewind = false;
     }
     private void ApplyViewDelta(InputAction.CallbackContext value)
     {

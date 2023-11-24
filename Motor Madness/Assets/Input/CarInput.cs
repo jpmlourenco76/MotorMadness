@@ -98,6 +98,24 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Respawn"",
+                    ""type"": ""Button"",
+                    ""id"": ""2e220da1-44ad-4268-88e1-9eca5193b13c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RearCam"",
+                    ""type"": ""Button"",
+                    ""id"": ""b1d9c565-bfef-4429-b435-937bdec90caf"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -364,6 +382,50 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
                     ""action"": ""CameraSwitch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""25dd6009-7050-4782-a0bb-b0b7761ba822"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Respawn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e2136cb0-1051-4d58-9981-48428365cebb"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Respawn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""de637dc5-1808-4d1c-9f19-966a383898cf"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RearCam"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3a9d5f7e-8bcf-4b71-a6a8-243df8b0a46f"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RearCam"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -380,6 +442,8 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
         m_Gameplay_GearDown = m_Gameplay.FindAction("GearDown", throwIfNotFound: true);
         m_Gameplay_ViewDelta = m_Gameplay.FindAction("ViewDelta", throwIfNotFound: true);
         m_Gameplay_CameraSwitch = m_Gameplay.FindAction("CameraSwitch", throwIfNotFound: true);
+        m_Gameplay_Respawn = m_Gameplay.FindAction("Respawn", throwIfNotFound: true);
+        m_Gameplay_RearCam = m_Gameplay.FindAction("RearCam", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -449,6 +513,8 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_GearDown;
     private readonly InputAction m_Gameplay_ViewDelta;
     private readonly InputAction m_Gameplay_CameraSwitch;
+    private readonly InputAction m_Gameplay_Respawn;
+    private readonly InputAction m_Gameplay_RearCam;
     public struct GameplayActions
     {
         private @CarInput m_Wrapper;
@@ -461,6 +527,8 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
         public InputAction @GearDown => m_Wrapper.m_Gameplay_GearDown;
         public InputAction @ViewDelta => m_Wrapper.m_Gameplay_ViewDelta;
         public InputAction @CameraSwitch => m_Wrapper.m_Gameplay_CameraSwitch;
+        public InputAction @Respawn => m_Wrapper.m_Gameplay_Respawn;
+        public InputAction @RearCam => m_Wrapper.m_Gameplay_RearCam;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -494,6 +562,12 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
             @CameraSwitch.started += instance.OnCameraSwitch;
             @CameraSwitch.performed += instance.OnCameraSwitch;
             @CameraSwitch.canceled += instance.OnCameraSwitch;
+            @Respawn.started += instance.OnRespawn;
+            @Respawn.performed += instance.OnRespawn;
+            @Respawn.canceled += instance.OnRespawn;
+            @RearCam.started += instance.OnRearCam;
+            @RearCam.performed += instance.OnRearCam;
+            @RearCam.canceled += instance.OnRearCam;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -522,6 +596,12 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
             @CameraSwitch.started -= instance.OnCameraSwitch;
             @CameraSwitch.performed -= instance.OnCameraSwitch;
             @CameraSwitch.canceled -= instance.OnCameraSwitch;
+            @Respawn.started -= instance.OnRespawn;
+            @Respawn.performed -= instance.OnRespawn;
+            @Respawn.canceled -= instance.OnRespawn;
+            @RearCam.started -= instance.OnRearCam;
+            @RearCam.performed -= instance.OnRearCam;
+            @RearCam.canceled -= instance.OnRearCam;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -549,5 +629,7 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
         void OnGearDown(InputAction.CallbackContext context);
         void OnViewDelta(InputAction.CallbackContext context);
         void OnCameraSwitch(InputAction.CallbackContext context);
+        void OnRespawn(InputAction.CallbackContext context);
+        void OnRearCam(InputAction.CallbackContext context);
     }
 }

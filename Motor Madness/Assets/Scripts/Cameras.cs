@@ -45,7 +45,7 @@ public class Cameras : MonoBehaviour
             }
             carInput.cameraswitch = false;
 
-            if (Input.GetKey(KeyCode.B))
+            if (carInput.cameraRear)
             {
                 rearViewCamera.SetActive(true);
             }
