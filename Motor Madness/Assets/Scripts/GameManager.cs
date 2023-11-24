@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public CarController2 playerCarController;
     public int  desiredLevel;
     public int currentcar;
-
+    public bool inrace = false;
     public enum LevelType
     {
         Story,

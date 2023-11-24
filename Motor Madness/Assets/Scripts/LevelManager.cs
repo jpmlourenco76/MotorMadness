@@ -62,7 +62,7 @@ public class LevelManager : MonoBehaviour
     private GameManager gameManager;
 
     public int levelReward = 0;
-
+    
 
     [SerializeField]
     public List<CarData> cars = new List<CarData>();
@@ -127,8 +127,8 @@ public class LevelManager : MonoBehaviour
         RaceRank.enabled = false;
         OverallRank.enabled = false;
         RetryCanvas.enabled = false;
-        
 
+        gameManager.inrace = true;
         Spawn();
     }
 
@@ -308,10 +308,11 @@ public class LevelManager : MonoBehaviour
 
         FinishPanel.GetComponent<TextMeshProUGUI>().enabled = true;
         finish.Play();
+        gameManager.inrace = false;
 
 
 
-      
+
 
         Invoke("EnableRaceRank", 3);
 
