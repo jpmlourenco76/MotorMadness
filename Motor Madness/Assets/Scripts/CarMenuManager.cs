@@ -67,9 +67,17 @@ public class CarMenuManager : MonoBehaviour
        
 
         PlayerPrefs.SetInt("pointer", 0);
+
         vehiclePointer = PlayerPrefs.GetInt("pointer");
 
-        if (!isShop)
+        
+        if (gameManager.levelType == GameManager.LevelType.QuickPlay || gameManager.levelType == GameManager.LevelType.Training)
+        {
+            GameObject childObject = Instantiate(gameManager.gameData.GameCars[vehiclePointer].CarPrefab, Vector3.zero, Quaternion.identity) as GameObject;
+            childObject.transform.parent = toRotate.transform;
+
+        }
+        else if (!isShop && gameManager.levelType == GameManager.LevelType.Story)
         {
             GameObject childObject = Instantiate(characterData.OwnedCars[vehiclePointer].CarPrefab, Vector3.zero, Quaternion.identity) as GameObject;
             childObject.transform.parent = toRotate.transform;
@@ -95,13 +103,19 @@ public class CarMenuManager : MonoBehaviour
 
     public void rightButton()
     {
-        if ((vehiclePointer < characterData.OwnedCars.Count - 1 && !isShop) || (vehiclePointer < ShopCars.Count - 1 && isShop))
+        if ((vehiclePointer < characterData.OwnedCars.Count - 1 && !isShop && gameManager.levelType == GameManager.LevelType.Story) || (vehiclePointer < ShopCars.Count - 1 && isShop && gameManager.levelType == GameManager.LevelType.Story || vehiclePointer < gameManager.gameData.GameCars.Count - 1 && gameManager.levelType != GameManager.LevelType.Story))
         {
             Destroy(GameObject.FindGameObjectWithTag("Car"));
             vehiclePointer++;
             PlayerPrefs.SetInt("pointer", vehiclePointer);
 
-            if (!isShop)
+            if (gameManager.levelType == GameManager.LevelType.QuickPlay || gameManager.levelType == GameManager.LevelType.Training)
+            {
+                GameObject childObject = Instantiate(gameManager.gameData.GameCars[vehiclePointer].CarPrefab, Vector3.zero, Quaternion.identity) as GameObject;
+                childObject.transform.parent = toRotate.transform;
+
+            }
+            else if (!isShop && gameManager.levelType == GameManager.LevelType.Story)
             {
                 GameObject childObject = Instantiate(characterData.OwnedCars[vehiclePointer].CarPrefab, Vector3.zero, Quaternion.identity) as GameObject;
                 childObject.transform.parent = toRotate.transform;
@@ -110,6 +124,7 @@ public class CarMenuManager : MonoBehaviour
             {
                 GameObject childObject = Instantiate(ShopCars[vehiclePointer].CarPrefab, Vector3.zero, Quaternion.identity) as GameObject;
                 childObject.transform.parent = toRotate.transform;
+
             }
         }
     }
@@ -122,7 +137,13 @@ public class CarMenuManager : MonoBehaviour
             vehiclePointer--;
             PlayerPrefs.SetInt("pointer", vehiclePointer);
 
-            if (!isShop)
+            if (gameManager.levelType == GameManager.LevelType.QuickPlay || gameManager.levelType == GameManager.LevelType.Training)
+            {
+                GameObject childObject = Instantiate(gameManager.gameData.GameCars[vehiclePointer].CarPrefab, Vector3.zero, Quaternion.identity) as GameObject;
+                childObject.transform.parent = toRotate.transform;
+
+            }
+            else if (!isShop && gameManager.levelType == GameManager.LevelType.Story)
             {
                 GameObject childObject = Instantiate(characterData.OwnedCars[vehiclePointer].CarPrefab, Vector3.zero, Quaternion.identity) as GameObject;
                 childObject.transform.parent = toRotate.transform;
@@ -131,6 +152,7 @@ public class CarMenuManager : MonoBehaviour
             {
                 GameObject childObject = Instantiate(ShopCars[vehiclePointer].CarPrefab, Vector3.zero, Quaternion.identity) as GameObject;
                 childObject.transform.parent = toRotate.transform;
+
             }
         }
     }
@@ -163,17 +185,20 @@ public class CarMenuManager : MonoBehaviour
             isTimerActive = false;
             timer = 0f;
 
-            if (gameManager.gameData.characters[0].currentLevel == 2)
+            if (gameManager.gameData.characters[0].currentLevel == 2 && gameManager.levelType == GameManager.LevelType.Story ||
+                (gameManager.desiredLevel == 2 && gameManager.levelType != GameManager.LevelType.Story))
             {
                 canvasHolder.SetActive(true);
                 panelOne = true;
             }
-            else if (gameManager.gameData.characters[0].currentLevel == 4)
+            else if (gameManager.gameData.characters[0].currentLevel == 4 && gameManager.levelType == GameManager.LevelType.Story ||
+                (gameManager.desiredLevel == 4 && gameManager.levelType != GameManager.LevelType.Story))
             {
                 canvasHolder.SetActive(true);
                 panelTwo = true;
             }
-            else if (gameManager.gameData.characters[0].currentLevel == 6)
+            else if (gameManager.gameData.characters[0].currentLevel == 6 && gameManager.levelType == GameManager.LevelType.Story ||
+                (gameManager.desiredLevel == 6 && gameManager.levelType != GameManager.LevelType.Story))
             {
                 canvasHolder.SetActive(true);
                 panelThree = true;
