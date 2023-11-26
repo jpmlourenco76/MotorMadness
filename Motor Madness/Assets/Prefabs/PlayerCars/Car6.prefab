@@ -377,7 +377,7 @@ MonoBehaviour:
     TargetCutOffRPM: 6400
     CutOffTime: 0.1
     RPMToNextGear: 6500
-    RPMToPrevGearDiff: 500
+    RPMToPrevGearDiff: 800
   StartEngineInAwake: 0
   StartEngineDellay: 0.5
   isEngineRunning: 0
