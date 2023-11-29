@@ -846,7 +846,7 @@ GameObject:
   - component: {fileID: 5320009331575992615}
   m_Layer: 0
   m_Name: Car9
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -984,9 +984,9 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0.475
         value: 1
-        inSlope: -0.20000012
-        outSlope: -0.20000012
-        tangentMode: 34
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
@@ -1016,7 +1016,7 @@ MonoBehaviour:
     RPMEngineToRPMWheelsFast: 15
     RPMEngineToRPMWheelsSlow: 4
     SpeedLimit: 255
-    finalDrive: 3.7
+    finalDrive: 3.267
     CutOffRPM: 6900
     TargetCutOffRPM: 5500
     CutOffTime: 0.1
@@ -1948,8 +1948,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930352003139759757}
-  m_LocalRotation: {x: 0.06389165, y: -0.0000021606684, z: 0.00000013876706, w: 0.9979569}
-  m_LocalPosition: {x: 0.000026464462, y: 1.9000015, z: -5.099981}
+  m_LocalRotation: {x: 0.06389141, y: -0, z: -0, w: 0.9979569}
+  m_LocalPosition: {x: 0, y: 1.9, z: -5.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2274,7 +2274,7 @@ WheelCollider:
     damper: 3500
     targetPosition: 0.5
   m_SuspensionDistance: 0.2
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.1
   m_Mass: 40
   m_WheelDampingRate: 1
   m_ForwardFriction:
@@ -2359,7 +2359,7 @@ WheelCollider:
     damper: 3500
     targetPosition: 0.5
   m_SuspensionDistance: 0.2
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.1
   m_Mass: 40
   m_WheelDampingRate: 1
   m_ForwardFriction:
@@ -2577,7 +2577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5812417249593177357
 Transform:
   m_ObjectHideFlags: 0
@@ -2585,8 +2585,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5812417249593177359}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.000000044703484}
-  m_LocalPosition: {x: 0.000010967255, y: 1.0999985, z: -1.79999}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000004371139}
+  m_LocalPosition: {x: 0, y: 1.1, z: -1.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
