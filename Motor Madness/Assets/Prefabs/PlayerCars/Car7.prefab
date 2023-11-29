@@ -985,9 +985,9 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0.55
         value: 1
-        inSlope: 0.03333348
-        outSlope: 0.03333348
-        tangentMode: 34
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
@@ -1026,12 +1026,12 @@ MonoBehaviour:
     RPMEngineToRPMWheelsFast: 15
     RPMEngineToRPMWheelsSlow: 4
     SpeedLimit: 355
-    finalDrive: 3.7
+    finalDrive: 3.546
     CutOffRPM: 8500
     TargetCutOffRPM: 7500
     CutOffTime: 0.1
     RPMToNextGear: 8000
-    RPMToPrevGearDiff: 900
+    RPMToPrevGearDiff: 800
   StartEngineInAwake: 0
   StartEngineDellay: 0.5
   isEngineRunning: 0
@@ -1581,7 +1581,7 @@ WheelCollider:
     damper: 3500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.1
   m_Mass: 40
   m_WheelDampingRate: 1
   m_ForwardFriction:
@@ -1925,7 +1925,7 @@ WheelCollider:
     damper: 3500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.1
   m_Mass: 20
   m_WheelDampingRate: 0.75
   m_ForwardFriction:
@@ -2243,7 +2243,7 @@ WheelCollider:
     damper: 3500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.1
   m_Mass: 40
   m_WheelDampingRate: 1
   m_ForwardFriction:
@@ -2652,7 +2652,7 @@ WheelCollider:
     damper: 3500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.1
   m_Mass: 20
   m_WheelDampingRate: 0.75
   m_ForwardFriction:
@@ -2809,8 +2809,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7832766190957280324}
-  m_LocalRotation: {x: 0.05814462, y: -0.00000055134296, z: 0.00000003259629, w: 0.9983082}
-  m_LocalPosition: {x: 0.000015974045, y: 1.9000015, z: -4.6200256}
+  m_LocalRotation: {x: 0.058144767, y: -0, z: -0, w: 0.9983082}
+  m_LocalPosition: {x: 0, y: 1.9, z: -4.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
