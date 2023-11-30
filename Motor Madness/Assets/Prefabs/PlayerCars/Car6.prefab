@@ -282,102 +282,93 @@ MonoBehaviour:
   carID: 
   KPH: 0
   Gearbox:
-    ChangeUpGearTime: 0.3
-    ChangeDownGearTime: 0.2
+    ChangeUpGearTime: 0.2
+    ChangeDownGearTime: 0.1
     AutomaticGearBox: 1
     GearsRatio:
-    - 11.5
-    - 6.9
-    - 5.18
-    - 3.97
-    - 3.22
-    - 2.7
-    - 2.46
-    MainRatio: 1
+    - 3.18
+    - 2.24
+    - 1.19
+    - 0.92
+    - 0.75
+    - 0.62
+    - 0.55
+    MainRatio: 3.64
     HasRGear: 1
-    ReversGearRatio: 4
+    ReversGearRatio: 2.5
   Engine:
-    MaxMotorTorque: 1600
+    MaxMotorTorque: 1500
     MotorTorqueFromRpmCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.024801588
-        value: 0.44154057
+        time: 0.1
+        value: 0.5
+        inSlope: 3.7
+        outSlope: 3.7
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.2
+        value: 0.87
+        inSlope: 2.5
+        outSlope: 2.5
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.3
+        value: 1
         inSlope: 0
         outSlope: 0
-        tangentMode: 136
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.09920635
-        value: 0.5006878
-        inSlope: 1.3522189
-        outSlope: 1.3522189
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.199765
-        value: 0.9998455
-        inSlope: 0.015275137
-        outSlope: 0.015275137
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.60050863
-        value: 1.0017599
+        time: 0.525
+        value: 1
         inSlope: 0
         outSlope: 0
-        tangentMode: 136
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.6331858
-        value: 1.0017599
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
+        time: 0.6
+        value: 0.93
+        inSlope: -1.1666669
+        outSlope: -1.1666669
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.69914454
-        value: 0.90270007
-        inSlope: -2.786403
-        outSlope: -2.786403
-        tangentMode: 136
+        time: 0.65
+        value: 0.86
+        inSlope: -1.4000012
+        outSlope: -1.4000012
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7753904
-        value: 0.5225247
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    MaxRPM: 7000
+    MaxRPM: 6500
     MinRPM: 1000
     RPMEngineToRPMWheelsFast: 15
     RPMEngineToRPMWheelsSlow: 4
-    SpeedLimit: 400
-    finalDrive: 3.7
-    CutOffRPM: 6800
-    TargetCutOffRPM: 6400
+    SpeedLimit: 430
+    finalDrive: 3.64
+    CutOffRPM: 6500
+    TargetCutOffRPM: 5500
     CutOffTime: 0.1
-    RPMToNextGear: 6500
-    RPMToPrevGearDiff: 800
+    RPMToNextGear: 5250
+    RPMToPrevGearDiff: 1500
   StartEngineInAwake: 0
   StartEngineDellay: 0.5
   isEngineRunning: 0
@@ -456,8 +447,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    MaxVelocityAngleForHelp: 120
-    MinSpeedForHelp: 1.5
+    MaxVelocityAngleForHelp: 430
+    MinSpeedForHelp: 100
     HelpDriftIntensity: 0
     HandBrakeAngularHelpCurve:
       serializedVersion: 2
@@ -525,7 +516,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    MaxSpeedForMaxAngularHelp: 200
+    MaxSpeedForMaxAngularHelp: 150
     DriftLimitAngle: 0
     ABS: 1
     TCS: 0
@@ -560,12 +551,12 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165018}
   serializedVersion: 2
-  m_Mass: 1500
-  m_Drag: 0.005
+  m_Mass: 1840
+  m_Drag: 0.01
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 2
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &4563436333573135665
@@ -1665,7 +1656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SteerPercent: 0
   DriveWheel: 1
-  MaxBrakeTorque: 5000
+  MaxBrakeTorque: 3500
   HandBrakeWheel: 1
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
@@ -1750,7 +1741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SteerPercent: 0
   DriveWheel: 1
-  MaxBrakeTorque: 5000
+  MaxBrakeTorque: 3500
   HandBrakeWheel: 1
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
@@ -1938,7 +1929,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SteerPercent: 1
   DriveWheel: 1
-  MaxBrakeTorque: 5000
+  MaxBrakeTorque: 3750
   HandBrakeWheel: 0
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
@@ -2407,7 +2398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SteerPercent: 1
   DriveWheel: 1
-  MaxBrakeTorque: 5000
+  MaxBrakeTorque: 3750
   HandBrakeWheel: 0
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}

@@ -353,11 +353,11 @@ Rigidbody:
   m_GameObject: {fileID: 143980}
   serializedVersion: 2
   m_Mass: 1387
-  m_Drag: 0.1
+  m_Drag: 0.01
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 2
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &1770337776383923012
@@ -394,8 +394,8 @@ MonoBehaviour:
   carID: 
   KPH: 0
   Gearbox:
-    ChangeUpGearTime: 0.3
-    ChangeDownGearTime: 0.2
+    ChangeUpGearTime: 0.2
+    ChangeDownGearTime: 0.1
     AutomaticGearBox: 1
     GearsRatio:
     - 3.625
@@ -479,16 +479,16 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     MaxRPM: 7000
-    MinRPM: 700
+    MinRPM: 1000
     RPMEngineToRPMWheelsFast: 15
     RPMEngineToRPMWheelsSlow: 4
     SpeedLimit: 270
     finalDrive: 3.842
     CutOffRPM: 7000
-    TargetCutOffRPM: 5600
+    TargetCutOffRPM: 5000
     CutOffTime: 0.1
-    RPMToNextGear: 6000
-    RPMToPrevGearDiff: 600
+    RPMToNextGear: 4750
+    RPMToPrevGearDiff: 1500
   StartEngineInAwake: 0
   StartEngineDellay: 0.5
   isEngineRunning: 0
@@ -636,7 +636,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    MaxSpeedForMaxAngularHelp: 100
+    MaxSpeedForMaxAngularHelp: 150
     DriftLimitAngle: 0
     ABS: 1
     TCS: 0
@@ -1656,7 +1656,7 @@ WheelCollider:
     damper: 3500
     targetPosition: 0.5
   m_SuspensionDistance: 0.1
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.1
   m_Mass: 20
   m_WheelDampingRate: 1
   m_ForwardFriction:
@@ -2125,7 +2125,7 @@ WheelCollider:
     damper: 3500
     targetPosition: 0.5
   m_SuspensionDistance: 0.1
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.1
   m_Mass: 20
   m_WheelDampingRate: 1
   m_ForwardFriction:

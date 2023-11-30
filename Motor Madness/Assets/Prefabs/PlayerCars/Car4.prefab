@@ -819,12 +819,12 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117736}
   serializedVersion: 2
-  m_Mass: 1500
+  m_Mass: 1750
   m_Drag: 0.01
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 2
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &4466437051665797031
@@ -861,137 +861,110 @@ MonoBehaviour:
   carID: 
   KPH: 0
   Gearbox:
-    ChangeUpGearTime: 0.3
-    ChangeDownGearTime: 0.2
+    ChangeUpGearTime: 0.2
+    ChangeDownGearTime: 0.1
     AutomaticGearBox: 1
     GearsRatio:
-    - 4.17
-    - 2.34
-    - 1.52
-    - 1.14
-    - 0.86
-    - 0.69
+    - 3.237
+    - 2.104
+    - 1.422
+    - 1
+    - 0.814
+    - 0.622
     MainRatio: 3.55
     HasRGear: 1
-    ReversGearRatio: 3.4
+    ReversGearRatio: 3.32
   Engine:
     MaxMotorTorque: 530
     MotorTorqueFromRpmCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.0029761905
-        value: 0.45804676
+        time: 0.1
+        value: 0.46
+        inSlope: 3.4
+        outSlope: 3.4
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.2
+        value: 0.8
+        inSlope: 2.3
+        outSlope: 2.3
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.3
+        value: 0.92
+        inSlope: 0.85
+        outSlope: 0.85
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.4
+        value: 0.97
+        inSlope: 0.44999993
+        outSlope: 0.44999993
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.475
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.09821428
-        value: 0.48418158
-        inSlope: 1.2280602
-        outSlope: 1.2280602
-        tangentMode: 0
-        weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.94594616
-      - serializedVersion: 3
-        time: 0.12996031
-        value: 0.58046764
-        inSlope: 3.5433304
-        outSlope: 3.5433304
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.48648635
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.1656746
-        value: 0.75240713
-        inSlope: 2.1864362
-        outSlope: 2.1864362
-        tangentMode: 0
+        time: 0.6
+        value: 0.94
+        inSlope: -0.68999994
+        outSlope: -0.68999994
+        tangentMode: 34
         weightedMode: 0
-        inWeight: 0.3888887
-        outWeight: 0.5531916
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.21230158
-        value: 0.8514443
-        inSlope: 2.1099243
-        outSlope: 2.1099243
-        tangentMode: 0
+        time: 0.7
+        value: 0.85
+        inSlope: -1.8500001
+        outSlope: -1.8500001
+        tangentMode: 34
         weightedMode: 0
-        inWeight: 0.48936144
-        outWeight: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.30555555
-        value: 0.95323247
-        inSlope: 0.5726927
-        outSlope: 0.5726927
-        tangentMode: 0
+        time: 0.75
+        value: 0.71
+        inSlope: -2.8000002
+        outSlope: -2.8000002
+        tangentMode: 34
         weightedMode: 0
-        inWeight: 0.48936173
-        outWeight: 0.38333338
-      - serializedVersion: 3
-        time: 0.42460316
-        value: 0.997249
-        inSlope: 0.055461228
-        outSlope: 0.055461228
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.4166666
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.5783731
-        value: 0.9504814
-        inSlope: -0.6617473
-        outSlope: -0.6617473
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.2838713
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.66269845
-        value: 0.8541953
-        inSlope: -1.7166469
-        outSlope: -1.7166469
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.25925922
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.7013889
-        value: 0.738652
-        inSlope: -5.92421
-        outSlope: -5.92421
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.28205195
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.8422619
-        value: 0.5914718
-        inSlope: -0.3747349
-        outSlope: -0.3747349
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.26056322
+        inWeight: 0.33333334
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    MaxRPM: 7000
-    MinRPM: 1200
+    MaxRPM: 7500
+    MinRPM: 1000
     RPMEngineToRPMWheelsFast: 15
     RPMEngineToRPMWheelsSlow: 4
-    SpeedLimit: 290
+    SpeedLimit: 300
     finalDrive: 3.55
-    CutOffRPM: 6800
-    TargetCutOffRPM: 6400
+    CutOffRPM: 7500
+    TargetCutOffRPM: 5500
     CutOffTime: 0.1
-    RPMToNextGear: 4500
-    RPMToPrevGearDiff: 800
+    RPMToNextGear: 5250
+    RPMToPrevGearDiff: 1500
   StartEngineInAwake: 0
   StartEngineDellay: 0.5
   isEngineRunning: 0
@@ -1070,8 +1043,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    MaxVelocityAngleForHelp: 120
-    MinSpeedForHelp: 1.5
+    MaxVelocityAngleForHelp: 300
+    MinSpeedForHelp: 100
     HelpDriftIntensity: 0
     HandBrakeAngularHelpCurve:
       serializedVersion: 2
@@ -1948,7 +1921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SteerPercent: 1
   DriveWheel: 0
-  MaxBrakeTorque: 3000
+  MaxBrakeTorque: 3500
   HandBrakeWheel: 0
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
@@ -2149,7 +2122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SteerPercent: 1
   DriveWheel: 0
-  MaxBrakeTorque: 3000
+  MaxBrakeTorque: 3500
   HandBrakeWheel: 0
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}

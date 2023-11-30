@@ -353,11 +353,11 @@ Rigidbody:
   m_GameObject: {fileID: 123916}
   serializedVersion: 2
   m_Mass: 1610
-  m_Drag: 0.1
+  m_Drag: 0.01
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 2
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &6090057000621720283
@@ -394,8 +394,8 @@ MonoBehaviour:
   carID: 
   KPH: 0
   Gearbox:
-    ChangeUpGearTime: 0.3
-    ChangeDownGearTime: 0.2
+    ChangeUpGearTime: 0.2
+    ChangeDownGearTime: 0.1
     AutomaticGearBox: 1
     GearsRatio:
     - 2.55
@@ -458,16 +458,16 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     MaxRPM: 6100
-    MinRPM: 610
+    MinRPM: 1000
     RPMEngineToRPMWheelsFast: 15
     RPMEngineToRPMWheelsSlow: 4
     SpeedLimit: 224
     finalDrive: 3.25
     CutOffRPM: 6100
-    TargetCutOffRPM: 4300
+    TargetCutOffRPM: 4000
     CutOffTime: 0.1
-    RPMToNextGear: 4600
-    RPMToPrevGearDiff: 500
+    RPMToNextGear: 3700
+    RPMToPrevGearDiff: 1250
   StartEngineInAwake: 0
   StartEngineDellay: 0.5
   isEngineRunning: 0
@@ -546,8 +546,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    MaxVelocityAngleForHelp: 100
-    MinSpeedForHelp: 1.5
+    MaxVelocityAngleForHelp: 224
+    MinSpeedForHelp: 100
     HelpDriftIntensity: 0
     HandBrakeAngularHelpCurve:
       serializedVersion: 2
@@ -615,7 +615,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    MaxSpeedForMaxAngularHelp: 100
+    MaxSpeedForMaxAngularHelp: 125
     DriftLimitAngle: 0
     ABS: 1
     TCS: 0
@@ -1785,7 +1785,7 @@ WheelCollider:
     damper: 3500
     targetPosition: 0.5
   m_SuspensionDistance: 0.2
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.1
   m_Mass: 20
   m_WheelDampingRate: 0.75
   m_ForwardFriction:
@@ -2468,7 +2468,7 @@ WheelCollider:
     damper: 3500
     targetPosition: 0.5
   m_SuspensionDistance: 0.2
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.1
   m_Mass: 20
   m_WheelDampingRate: 0.75
   m_ForwardFriction:
