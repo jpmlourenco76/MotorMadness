@@ -37,7 +37,7 @@ public class wheelsManager : MonoBehaviour
     public float Radius { get { return WheelCollider.radius; } }
     public Vector3 LocalPositionOnAwake { get; private set; }       //For CarState
 
-    [HideInInspector] public float GroundStiffness = 1f; //ASPHALT
+ 
     float BrakeSpeed = 2;
     float CurrentBrakeTorque;
 
@@ -62,6 +62,8 @@ public class wheelsManager : MonoBehaviour
     public float SuspensionPos { get; private set; } = 0;
     public float PrevSuspensionPos { get; private set; } = 0;
     public wheelsManager AntiRollWheel;
+    private float stiffnessMultiplier = 2f;
+    [HideInInspector] public float stiffnessupgrade= 0;
 
 
     private void Awake()
@@ -76,9 +78,7 @@ public class wheelsManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(_carController.AION){
-            GroundStiffness = 1.4f;
-        }
+       
 
         if (WheelCollider.GetGroundHit(out Hit))
         {
@@ -101,16 +101,49 @@ public class wheelsManager : MonoBehaviour
             SidewaysSlipNormalized = 0;
             SlipNormalized = 0;
         }
-        
 
+        AdjustStiffness();
         ApplyStiffness();
         ApplyBrake();
-       ApplyAntiRollForce();
+        ApplyAntiRollForce();
+    }
+
+
+    void AdjustStiffness()
+    {
+        WheelHit hit;
+       if( WheelCollider.GetGroundHit(out hit))
+        {
+            PhysicMaterial surfaceMaterial = hit.collider.material;
+
+            WheelFrictionCurve forwardFriction = WheelCollider.forwardFriction;
+            WheelFrictionCurve sidewaysFriction = WheelCollider.sidewaysFriction;
+
+
+            if (!_carController.AION)
+            {
+                forwardFriction.stiffness = (surfaceMaterial.dynamicFriction * stiffnessMultiplier) + stiffnessupgrade;
+                sidewaysFriction.stiffness = (surfaceMaterial.dynamicFriction * stiffnessMultiplier) + stiffnessupgrade;
+            }
+            else {
+                forwardFriction.stiffness = (surfaceMaterial.dynamicFriction * stiffnessMultiplier)+0.4f;
+                sidewaysFriction.stiffness = (surfaceMaterial.dynamicFriction * stiffnessMultiplier)+0.4f;
+            }
+
+            WheelCollider.forwardFriction = forwardFriction;
+            WheelCollider.sidewaysFriction = sidewaysFriction;
+
+         
+
+        }
+
+
     }
 
     void ApplyStiffness()
     {
-        float stiffness = GroundStiffness;
+        WheelFrictionCurve forwardFriction = WheelCollider.forwardFriction;
+        float stiffness = forwardFriction.stiffness;
         var friction = WheelCollider.forwardFriction;
         friction.stiffness = stiffness;
         WheelCollider.forwardFriction = friction;
