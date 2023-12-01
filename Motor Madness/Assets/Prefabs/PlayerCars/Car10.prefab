@@ -255,11 +255,11 @@ Rigidbody:
   m_GameObject: {fileID: 190412}
   serializedVersion: 2
   m_Mass: 1560
-  m_Drag: 0.1
+  m_Drag: 0.01
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 2
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &3033515077974473744
@@ -296,8 +296,8 @@ MonoBehaviour:
   carID: 
   KPH: 0
   Gearbox:
-    ChangeUpGearTime: 0.3
-    ChangeDownGearTime: 0.2
+    ChangeUpGearTime: 0.2
+    ChangeDownGearTime: 0.1
     AutomaticGearBox: 1
     GearsRatio:
     - 2.857
@@ -371,16 +371,16 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     MaxRPM: 6900
-    MinRPM: 690
+    MinRPM: 1000
     RPMEngineToRPMWheelsFast: 15
     RPMEngineToRPMWheelsSlow: 4
     SpeedLimit: 240
     finalDrive: 4.687
     CutOffRPM: 6900
-    TargetCutOffRPM: 5600
+    TargetCutOffRPM: 5000
     CutOffTime: 0.1
-    RPMToNextGear: 6300
-    RPMToPrevGearDiff: 600
+    RPMToNextGear: 4500
+    RPMToPrevGearDiff: 1500
   StartEngineInAwake: 0
   StartEngineDellay: 0.5
   isEngineRunning: 0
@@ -1562,7 +1562,7 @@ WheelCollider:
     targetPosition: 0.5
   m_SuspensionDistance: 0.1
   m_ForceAppPointDistance: 0.1
-  m_Mass: 20
+  m_Mass: 25
   m_WheelDampingRate: 0.75
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
@@ -1751,7 +1751,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3314760516785078083}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2, z: 0.25}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1806,7 +1806,7 @@ WheelCollider:
     targetPosition: 0.5
   m_SuspensionDistance: 0.1
   m_ForceAppPointDistance: 0.1
-  m_Mass: 20
+  m_Mass: 25
   m_WheelDampingRate: 0.75
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
@@ -2057,7 +2057,7 @@ WheelCollider:
     targetPosition: 0.5
   m_SuspensionDistance: 0.1
   m_ForceAppPointDistance: 0.1
-  m_Mass: 40
+  m_Mass: 25
   m_WheelDampingRate: 1
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
@@ -2270,7 +2270,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6898888214808100072}
-  m_LocalRotation: {x: 0.070889026, y: -0.000000016644108, z: 0.0000000011828605, w: 0.9974842}
+  m_LocalRotation: {x: 0.070889026, y: -0.000000016643241, z: 0.0000000011827989, w: 0.9974842}
   m_LocalPosition: {x: 0, y: 2, z: -4.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2764,7 +2764,7 @@ WheelCollider:
     targetPosition: 0.5
   m_SuspensionDistance: 0.1
   m_ForceAppPointDistance: 0.1
-  m_Mass: 40
+  m_Mass: 25
   m_WheelDampingRate: 1
   m_ForwardFriction:
     m_ExtremumSlip: 0.4

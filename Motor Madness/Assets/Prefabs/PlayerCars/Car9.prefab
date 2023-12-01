@@ -886,11 +886,11 @@ Rigidbody:
   m_GameObject: {fileID: 114550}
   serializedVersion: 2
   m_Mass: 1630
-  m_Drag: 0.1
+  m_Drag: 0.01
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 2
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &5710371187412271487
@@ -927,8 +927,8 @@ MonoBehaviour:
   carID: 
   KPH: 0
   Gearbox:
-    ChangeUpGearTime: 0.3
-    ChangeDownGearTime: 0.2
+    ChangeUpGearTime: 0.2
+    ChangeDownGearTime: 0.1
     AutomaticGearBox: 1
     GearsRatio:
     - 3.827
@@ -1012,7 +1012,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     MaxRPM: 6900
-    MinRPM: 690
+    MinRPM: 1000
     RPMEngineToRPMWheelsFast: 15
     RPMEngineToRPMWheelsSlow: 4
     SpeedLimit: 255
@@ -1020,8 +1020,8 @@ MonoBehaviour:
     CutOffRPM: 6900
     TargetCutOffRPM: 5500
     CutOffTime: 0.1
-    RPMToNextGear: 5700
-    RPMToPrevGearDiff: 600
+    RPMToNextGear: 5000
+    RPMToPrevGearDiff: 1500
   StartEngineInAwake: 0
   StartEngineDellay: 0.5
   isEngineRunning: 0
@@ -1100,8 +1100,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    MaxVelocityAngleForHelp: 120
-    MinSpeedForHelp: 1.5
+    MaxVelocityAngleForHelp: 255
+    MinSpeedForHelp: 100
     HelpDriftIntensity: 0
     HandBrakeAngularHelpCurve:
       serializedVersion: 2
@@ -1602,9 +1602,9 @@ WheelCollider:
     damper: 3500
     targetPosition: 0.5
   m_SuspensionDistance: 0.2
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.1
   m_Mass: 20
-  m_WheelDampingRate: 1
+  m_WheelDampingRate: 0.75
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1.2
@@ -2276,7 +2276,7 @@ WheelCollider:
   m_SuspensionDistance: 0.2
   m_ForceAppPointDistance: 0.1
   m_Mass: 40
-  m_WheelDampingRate: 1
+  m_WheelDampingRate: 0.5
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 2
@@ -2361,7 +2361,7 @@ WheelCollider:
   m_SuspensionDistance: 0.2
   m_ForceAppPointDistance: 0.1
   m_Mass: 40
-  m_WheelDampingRate: 1
+  m_WheelDampingRate: 0.5
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 2
@@ -2777,9 +2777,9 @@ WheelCollider:
     damper: 3500
     targetPosition: 0.5
   m_SuspensionDistance: 0.2
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.1
   m_Mass: 20
-  m_WheelDampingRate: 1
+  m_WheelDampingRate: 0.75
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1.2
@@ -2839,7 +2839,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8531301672483490810}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0.1, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
