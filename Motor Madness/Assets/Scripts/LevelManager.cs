@@ -603,7 +603,7 @@ public class LevelManager : MonoBehaviour
 
     private void ApplyTireUpgrade(GameObject car)
     {
-        float OriginalTire = car.gameObject.GetComponent<CarController2>().wheels[0].GroundStiffness;
+        float OriginalTire = car.gameObject.GetComponent<CarController2>().wheels[0].stiffnessupgrade;
         float newTire;
 
         for (int i = 0; i < car.gameObject.GetComponent<CarController2>().wheels.Length; i++)
@@ -615,20 +615,20 @@ public class LevelManager : MonoBehaviour
                     newTire = OriginalTire;
                     break;
                 case 1:
-                    newTire = OriginalTire * 1.1f;
+                    newTire = 0.1f;
                     break;
                 case 2:
-                    newTire = OriginalTire * 1.2f;
+                    newTire = 0.2f;
                     break;
                 case 3:
-                    newTire = OriginalTire * 1.35f;
+                    newTire = 0.4f;
                     break;
                 default:
                     newTire = OriginalTire;
                     break;
 
             }
-            car.gameObject.GetComponent<CarController2>().wheels[i].GroundStiffness = newTire;
+            car.gameObject.GetComponent<CarController2>().wheels[i].stiffnessupgrade = newTire;
 
 
         }
