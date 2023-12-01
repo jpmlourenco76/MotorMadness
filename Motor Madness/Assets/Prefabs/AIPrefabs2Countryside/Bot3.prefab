@@ -242,6 +242,7 @@ Transform:
   - {fileID: 5263619908600780514}
   - {fileID: 7849392679547881620}
   - {fileID: 8436105616225915503}
+  - {fileID: 3452305874080576654}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 3.146, y: 60.799, z: 0}
@@ -657,6 +658,8 @@ MonoBehaviour:
   hoodViewCamera: {fileID: 0}
   normalViewCamera: {fileID: 0}
   farViewCamera: {fileID: 0}
+  rearViewCamera: {fileID: 0}
+  carInput: {fileID: 0}
 --- !u!1 &692796276214261465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1536,9 +1539,9 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
-  GroundStiffness: 1
   AntiRollBar: 1
   AntiRollWheel: {fileID: 4816647950278772105}
+  stiffnessupgrade: 0
 --- !u!1 &4771166149433083626
 GameObject:
   m_ObjectHideFlags: 0
@@ -1621,9 +1624,9 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
-  GroundStiffness: 1
   AntiRollBar: 1
   AntiRollWheel: {fileID: 3311654270730309704}
+  stiffnessupgrade: 0
 --- !u!1 &4916411753828761893
 GameObject:
   m_ObjectHideFlags: 0
@@ -1903,9 +1906,9 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
-  GroundStiffness: 1
   AntiRollBar: 1
   AntiRollWheel: {fileID: 1498709728292620818}
+  stiffnessupgrade: 0
 --- !u!1 &5817687023795757412
 GameObject:
   m_ObjectHideFlags: 0
@@ -1988,9 +1991,9 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
-  GroundStiffness: 1
   AntiRollBar: 1
   AntiRollWheel: {fileID: 2528182232516483446}
+  stiffnessupgrade: 0
 --- !u!1 &6793143796568869322
 GameObject:
   m_ObjectHideFlags: 0
@@ -2538,3 +2541,65 @@ Transform:
   m_Father: {fileID: 692796276213904119}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &8018573930661403924
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 692796276213904119}
+    m_Modifications:
+    - target: {fileID: 4660873116545116570, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660873116545116570, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660873116545116570, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660873116545116570, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.2493322
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660873116545116570, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660873116545116570, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660873116545116570, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660873116545116570, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660873116545116570, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660873116545116570, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660873116545116570, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342252025521185224, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+      propertyPath: m_Name
+      value: BotSphere
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+--- !u!4 &3452305874080576654 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4660873116545116570, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+  m_PrefabInstance: {fileID: 8018573930661403924}
+  m_PrefabAsset: {fileID: 0}

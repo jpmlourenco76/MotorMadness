@@ -396,9 +396,9 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
-  GroundStiffness: 1
   AntiRollBar: 0.9
   AntiRollWheel: {fileID: 4089438536310296000}
+  stiffnessupgrade: 0
 --- !u!1 &4089438536485997094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,9 +1061,9 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
-  GroundStiffness: 1
   AntiRollBar: 0.9
   AntiRollWheel: {fileID: 4089438537007397931}
+  stiffnessupgrade: 0
 --- !u!1 &4089438537019545494
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,9 +1262,9 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
-  GroundStiffness: 1
   AntiRollBar: 0.9
   AntiRollWheel: {fileID: 4089438537201907170}
+  stiffnessupgrade: 0
 --- !u!1 &4089438537361112467
 GameObject:
   m_ObjectHideFlags: 0
@@ -1857,6 +1857,7 @@ Transform:
   - {fileID: 8491401549306217039}
   - {fileID: 7070498502496869839}
   - {fileID: 134761927700515513}
+  - {fileID: 1368596450286466886}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -1.275, y: 82.38, z: -0.61}
@@ -2299,6 +2300,8 @@ MonoBehaviour:
   hoodViewCamera: {fileID: 0}
   normalViewCamera: {fileID: 0}
   farViewCamera: {fileID: 0}
+  rearViewCamera: {fileID: 0}
+  carInput: {fileID: 0}
 --- !u!1 &4089438537965674389
 GameObject:
   m_ObjectHideFlags: 0
@@ -2412,9 +2415,9 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
-  GroundStiffness: 1
   AntiRollBar: 0.9
   AntiRollWheel: {fileID: 4089438537970714475}
+  stiffnessupgrade: 0
 --- !u!1 &7070498502496869837
 GameObject:
   m_ObjectHideFlags: 0
@@ -2733,3 +2736,65 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 8491401548939690214}
+--- !u!1001 &5931386256477495004
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4089438537926621215}
+    m_Modifications:
+    - target: {fileID: 4660873116545116570, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660873116545116570, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660873116545116570, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660873116545116570, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.4435256
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660873116545116570, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660873116545116570, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660873116545116570, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660873116545116570, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660873116545116570, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660873116545116570, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660873116545116570, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342252025521185224, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+      propertyPath: m_Name
+      value: BotSphere
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+--- !u!4 &1368596450286466886 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4660873116545116570, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
+  m_PrefabInstance: {fileID: 5931386256477495004}
+  m_PrefabAsset: {fileID: 0}

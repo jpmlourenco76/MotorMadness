@@ -43,13 +43,16 @@ public class CarStateMAchine : MonoBehaviour
             case CarState.Stopped:
                 aICarController.isEngineRunning = false;
                 hit = false;
+                transform.GetChild(7).gameObject.SetActive(false);
                 break;
 
             case CarState.Follow:
                 aICarController.isEngineRunning=true;
                 timerRunning = true;
+                transform.GetChild(7).gameObject.SetActive(true);
 
-                if(timerRunning) {
+
+                if (timerRunning) {
                     timer += Time.deltaTime;
                     if (followpath)
                     {
@@ -57,7 +60,6 @@ public class CarStateMAchine : MonoBehaviour
                         {
                             aICarController.persuitAiOn = true;
                             aICarController.persuitDistance = 2;
-
                         }
                     } 
                       else
