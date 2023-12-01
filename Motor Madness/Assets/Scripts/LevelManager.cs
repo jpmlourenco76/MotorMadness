@@ -202,7 +202,7 @@ public class LevelManager : MonoBehaviour
                     ApplyGearUpgrade(Car);
                     ApplyBreakUpgrade(Car);
                     ApplyTireUpgrade(Car);
-                    MiniMap.GetComponent<MiniMapController>().target = Car.gameObject.transform;
+                   // MiniMap.GetComponent<MiniMapController>().target = Car.gameObject.transform;
 
                 }
                 else
