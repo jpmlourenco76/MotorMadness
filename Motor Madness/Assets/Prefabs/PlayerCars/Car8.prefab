@@ -2014,9 +2014,9 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
-  GroundStiffness: 1
   AntiRollBar: 1
   AntiRollWheel: {fileID: 1057984736074955247}
+  stiffnessupgrade: 0
 --- !u!1 &3678510591784384206
 GameObject:
   m_ObjectHideFlags: 0
@@ -2452,9 +2452,9 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
-  GroundStiffness: 1
   AntiRollBar: 1
   AntiRollWheel: {fileID: 3431786777197344126}
+  stiffnessupgrade: 0
 --- !u!1 &5082891898143637301
 GameObject:
   m_ObjectHideFlags: 0
@@ -2537,9 +2537,9 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
-  GroundStiffness: 1
   AntiRollBar: 1
   AntiRollWheel: {fileID: 5499826043147784641}
+  stiffnessupgrade: 0
 --- !u!1 &5410791522999690065
 GameObject:
   m_ObjectHideFlags: 0
@@ -2685,6 +2685,6 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
-  GroundStiffness: 1
   AntiRollBar: 1
   AntiRollWheel: {fileID: 3672011127501658255}
+  stiffnessupgrade: 0
