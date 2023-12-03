@@ -105,9 +105,12 @@ public class PlayerCarInput : MonoBehaviour
     {
         switch (driveController)
         {
-            case driver.AI: AIDrive();
+            case driver.AI: 
+                AIDrive();
                 break;
-            case driver.Human:HumanDrive();
+            case driver.Human:
+                HumanDrive();
+                CheckInputDevices();
                 break;
         }
   
@@ -119,6 +122,25 @@ public class PlayerCarInput : MonoBehaviour
         
     }
 
+    void CheckInputDevices()
+    {
+        var devices = InputSystem.devices;
+
+        // Iterate through all connected devices
+        foreach (var device in devices)
+        {
+            if (device is Keyboard)
+            {
+                // Set your int to 10 when a keyboard is detected
+                HorizontalChangeSpeed = 10 ;
+            }
+            else if (device is Gamepad || device is Joystick)
+            {
+                // Set your int to 0 when a controller is detected
+                HorizontalChangeSpeed = 0;
+            }
+        }
+    }
 
     private void HumanDrive() 
     {
