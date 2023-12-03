@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using static UnityEditor.IMGUI.Controls.PrimitiveBoundsHandle;
 
 public class CarController2 : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class CarController2 : MonoBehaviour
     private GameObject wheelMeshes;
     private GameObject wheelColliders;
     private GameObject[] wheelMesh = new GameObject[4];
+    private GameObject[] skidMarks = new GameObject[4];
     [HideInInspector] public wheelsManager[] wheels = new wheelsManager[4];
     public float throttleinputt, breakinpuu, steerin;
     public bool handbrakeinnn;
@@ -165,6 +167,8 @@ public class CarController2 : MonoBehaviour
     public GameObject persuitTarget;
     public float persuitDistance;
 
+    private Transform childTransform;
+
 
 
     private void Awake()
@@ -209,6 +213,17 @@ public class CarController2 : MonoBehaviour
         wheelMesh[1] = wheelMeshes.transform.Find("1").gameObject;
         wheelMesh[2] = wheelMeshes.transform.Find("2").gameObject;
         wheelMesh[3] = wheelMeshes.transform.Find("3").gameObject;
+
+        for(int i = 0;i<=3; i++)
+        {
+             childTransform = wheelMesh[i].transform.childCount > 0 ? wheelMesh[i].transform.GetChild(0) : null;
+
+            if (childTransform != null)
+            {
+                skidMarks[i] = childTransform.gameObject;
+            }
+          
+        }
 
 
     }
@@ -278,8 +293,14 @@ public class CarController2 : MonoBehaviour
         UpdateSteer();
        
             ApplyWheelPositions();
+
+        if(childTransform != null)
+        {
+            WheelEffects();
+        }
        
-        
+
+
     }
     public void UpdateCar()
     {
@@ -747,6 +768,24 @@ public class CarController2 : MonoBehaviour
             wheels[i].WheelCollider.GetWorldPose(out wheelPosition, out wheelRotation);
             wheelMesh[i].transform.position = wheelPosition;
             wheelMesh[i].transform.rotation = wheelRotation;
+        }
+    }
+
+    void WheelEffects()
+    {
+        foreach (var skidmark in skidMarks)
+        {
+            //var dirtParticleMainSettings = wheel.smokeParticle.main;
+
+            if (Input.GetKey(KeyCode.Space) && playerRB.velocity.magnitude >= 10.0f)
+            {
+                skidmark.GetComponentInChildren<TrailRenderer>().emitting = true;
+                //wheel.smokeParticle.Emit(1);
+            }
+            else
+            {
+                skidmark.GetComponentInChildren<TrailRenderer>().emitting = false;
+            }
         }
     }
 
