@@ -9264,7 +9264,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 70
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -9289,8 +9289,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 1}
+  m_LocalRotation: {x: 0.06389141, y: 0, z: 0, w: 0.9979569}
+  m_LocalPosition: {x: 0, y: 1.9, z: -5.117}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10099,43 +10099,6 @@ Transform:
   m_Father: {fileID: 1286157969657603027}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!84 &1068629475
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 283
-  m_Height: 257
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 94
-  m_ColorFormat: 4
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &1070780800
 GameObject:
   m_ObjectHideFlags: 0
@@ -17958,11 +17921,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 394678294991601751, guid: 9552b6d9fba5a4041aa8d5a1ccf61ec7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1210304608421744086, guid: 9552b6d9fba5a4041aa8d5a1ccf61ec7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1302809235201756364, guid: 9552b6d9fba5a4041aa8d5a1ccf61ec7, type: 3}
       propertyPath: m_Name
       value: Catalunya
       objectReference: {fileID: 0}
+    - target: {fileID: 4538648840955867692, guid: 9552b6d9fba5a4041aa8d5a1ccf61ec7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5159808835699885691, guid: 9552b6d9fba5a4041aa8d5a1ccf61ec7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926695528967807677, guid: 9552b6d9fba5a4041aa8d5a1ccf61ec7, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -21965,37 +21944,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &3052221236527491916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4129765131522811440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fee82f5d308b5499783c1dd290c83534, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shapeColliderGO: {fileID: 0}
-  renderTex: {fileID: 1068629475}
-  mapMaterial: {fileID: 2100000, guid: 65bbe9e0008384c5997f0cf300c3cb81, type: 2}
-  iconPref: {fileID: 100164, guid: d392edba23dec4ef38924695a920a568, type: 3}
-  mapCamera: {fileID: 4123277791806792246}
-  target: {fileID: 0}
-  minimapLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  showBackground: 0
-  miniMapMask: {fileID: 21300000, guid: 9243298161ed747c6b64ce48c4f6a8fa, type: 3}
-  miniMapBorder: {fileID: 21300000, guid: f42597291af7e4639b62ca80f4afca5a, type: 3}
-  miniMapOpacity: 1
-  miniMapScale: {x: 1, y: 1, z: 1}
-  cameraOffset: {x: 0, y: 7.5, z: 0}
-  camSize: 100
-  camFarClip: 1000
-  rotationOfCam: {x: 90, y: 0, z: 0}
-  rotateWithTarget: 1
 --- !u!224 &3605614470239402653
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22076,7 +22024,6 @@ GameObject:
   - component: {fileID: 4974177126248747110}
   - component: {fileID: 5904523022206124667}
   - component: {fileID: 2018987199462360578}
-  - component: {fileID: 3052221236527491916}
   m_Layer: 5
   m_Name: CanvasMiniMap
   m_TagString: Untagged
