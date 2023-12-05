@@ -12990,8 +12990,11 @@ MonoBehaviour:
   - {fileID: 1651327666}
   - {fileID: 2115409798}
   - {fileID: 228515077}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1137292383}
+  - {fileID: 918427164}
+  - {fileID: 401651583}
+  - {fileID: 1110896056}
+  - {fileID: 1295455909}
 --- !u!4 &701179793
 Transform:
   m_ObjectHideFlags: 0
@@ -15284,7 +15287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &815628656
 Transform:
   m_ObjectHideFlags: 0
@@ -36085,6 +36088,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Catalunya
       objectReference: {fileID: 0}
+    - target: {fileID: 1302809235201756364, guid: 9552b6d9fba5a4041aa8d5a1ccf61ec7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4538648840955867692, guid: 9552b6d9fba5a4041aa8d5a1ccf61ec7, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -38534,7 +38541,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2015113217
 MonoBehaviour:
   m_ObjectHideFlags: 0
