@@ -155,6 +155,12 @@ public class CarController2 : MonoBehaviour
         }
     }
     public bool ABSIsActive { get; private set; }
+    public ExplosionController ExplosionController { get => ExplosionController1; set => ExplosionController1 = value; }
+    public ExplosionController ExplosionController1 { get => ExplosionController2; set => ExplosionController2 = value; }
+    public ExplosionController ExplosionController2 { get => explosionController; set => explosionController = value; }
+    public global::System.Boolean BlowTriggered { get => blowTriggered; set => blowTriggered = value; }
+    public global::System.Boolean BlowTriggered1 { get => blowTriggered; set => blowTriggered = value; }
+
     [Space(10)]
 
     [Header("AI")]
@@ -169,7 +175,11 @@ public class CarController2 : MonoBehaviour
 
     private Transform childTransform;
 
+    [Space(10)]
+    [Header("FX Ademar")]
 
+    private bool blowTriggered = false;
+    public ExplosionController explosionController;
 
     private void Awake()
     {
@@ -824,10 +834,34 @@ public class CarController2 : MonoBehaviour
                     break;
             }
         }
+
+        if (other.CompareTag("FXAdemar"))
+        {
+            BlowTriggered = true;
+            ActivateExplosion();
+        }
     }
 
+    private void ActivateExplosion()
+    {
+        if (BlowTriggered && explosionController != null)
+        {
+            // Chama o método ActivateExplosion no script ExplosionController
+            explosionController.ActivateExplosion();
 
-    
+            // Desativa o sistema de partículas após um certo tempo (opcional)
+            StartCoroutine(DeactivateExplosion());
+        }
+    }
+
+    private IEnumerator DeactivateExplosion()
+    {
+        // Espere por alguns segundos antes de desativar o sistema de partículas
+        yield return new WaitForSeconds(2f);
+
+        // Chama o método DeactivateExplosion no script ExplosionController
+        explosionController.DeactivateExplosion();
+    }
 
 
 
