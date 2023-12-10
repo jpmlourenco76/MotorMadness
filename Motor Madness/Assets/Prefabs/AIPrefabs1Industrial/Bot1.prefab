@@ -2175,8 +2175,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6630330549426482226}
-  m_LocalRotation: {x: 0.012088245, y: -0.7105953, z: -0.0024642868, w: -0.7034927}
-  m_LocalPosition: {x: -4.13, y: 1.65, z: -34.4}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2193,7 +2193,7 @@ Transform:
   - {fileID: 7321516459818309261}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -1.175, y: 90.584, z: -0.786}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &6630330549426482233
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2542,29 +2542,29 @@ MonoBehaviour:
   avoidObstacleMultiplier: 0
   targetAngle: 0
   brakeCondition: 1
-  cautiousSpeedFactor: 0.115
+  cautiousSpeedFactor: 0.12
   cautiousAngle: 40
-  cautiousDistance: 10
+  cautiousDistance: 100
   cautiousAngularVelocityFactor: 30
   steerSensitivity: 0.05
   accelSensitivity: 0.05
   brakeSensitivity: 1
-  lateralWander: 1
-  lateralWanderSpeed: 0.2
-  wanderAmount: 0.6
-  accelWanderSpeed: 0.5
+  lateralWander: 3
+  lateralWanderSpeed: 0.5
+  wanderAmount: 0.65
+  accelWanderSpeed: 0.2
   stopWhenTargetReached: 0
   reachTargetThreshold: 2
-  sensorsAngle: 30
-  avoidDistance: 12
+  sensorsAngle: 40
+  avoidDistance: 0
   brakeDistance: 1
   reverseDistance: 3
   progressStyle: 0
   AIcircuit: {fileID: 0}
-  lookAheadForTarget: 20
+  lookAheadForTarget: 15
   lookAheadForTargetFactor: 1
-  lookAheadForSpeedOffset: 3
-  lookAheadForSpeedFactor: 3
+  lookAheadForSpeedOffset: 2
+  lookAheadForSpeedFactor: 2
   pointThreshold: 4
   AItarget: {fileID: 0}
 --- !u!114 &6630330549426482237
@@ -2624,7 +2624,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6630330549462911922}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.046, z: -0.624}
+  m_LocalPosition: {x: 0, y: 0, z: -0.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

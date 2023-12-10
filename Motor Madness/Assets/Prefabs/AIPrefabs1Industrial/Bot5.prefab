@@ -1542,8 +1542,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5206555789164094927}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -143.45634, y: -0.10958785, z: -35.53049}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1560,7 +1560,7 @@ Transform:
   - {fileID: 4840210948745702790}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8915168863181508447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1881,7 +1881,7 @@ MonoBehaviour:
   avoidObstacleMultiplier: 0
   targetAngle: 0
   brakeCondition: 1
-  cautiousSpeedFactor: 0.2
+  cautiousSpeedFactor: 0.25
   cautiousAngle: 40
   cautiousDistance: 100
   cautiousAngularVelocityFactor: 30
@@ -1890,20 +1890,20 @@ MonoBehaviour:
   brakeSensitivity: 1
   lateralWander: 3
   lateralWanderSpeed: 0.5
-  wanderAmount: 0.7
-  accelWanderSpeed: 0.5
+  wanderAmount: 0.6
+  accelWanderSpeed: 0.2
   stopWhenTargetReached: 0
   reachTargetThreshold: 2
-  sensorsAngle: 30
-  avoidDistance: 6
-  brakeDistance: 3
+  sensorsAngle: 40
+  avoidDistance: 0
+  brakeDistance: 1
   reverseDistance: 3
   progressStyle: 0
   AIcircuit: {fileID: 0}
-  lookAheadForTarget: 20
+  lookAheadForTarget: 15
   lookAheadForTargetFactor: 1
-  lookAheadForSpeedOffset: 3
-  lookAheadForSpeedFactor: 3
+  lookAheadForSpeedOffset: 2
+  lookAheadForSpeedFactor: 2
   pointThreshold: 4
   AItarget: {fileID: 0}
 --- !u!114 &8915168863181508446
@@ -2029,7 +2029,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7226188056448861686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.335}
+  m_LocalPosition: {x: 0, y: 0, z: -0.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
