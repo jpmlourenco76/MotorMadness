@@ -472,11 +472,11 @@ MonoBehaviour:
   SteerPercent: 0
   DriveWheel: 1
   MaxBrakeTorque: 4000
-  HandBrakeWheel: 0
+  HandBrakeWheel: 1
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
-  AntiRollBar: 0.9
+  AntiRollBar: 1
   AntiRollWheel: {fileID: 2451892758207277453}
   stiffnessupgrade: 0
 --- !u!1 &2451892758218617203
@@ -766,12 +766,12 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2451892758423344883}
   serializedVersion: 2
-  m_Mass: 1500
-  m_Drag: 0.025
+  m_Mass: 1480
+  m_Drag: 0.01
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 2
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &2451892758423344895
@@ -1121,6 +1121,7 @@ MonoBehaviour:
   persuitAiOn: 0
   persuitTarget: {fileID: 0}
   persuitDistance: 50
+  explosionController: {fileID: 0}
 --- !u!114 &2451892758423344893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1133,9 +1134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be936eb89c3c5234eb82aece6727a855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desiredSpeed: 300
+  desiredSpeed: 0
   brakeinp: 0
-  accel: 0.8179064
+  accel: 0
   reverseGearOn: 0
   persuitAiOn: 0
   avoidObstacleMultiplier: 0
@@ -1277,11 +1278,11 @@ MonoBehaviour:
   SteerPercent: 0
   DriveWheel: 1
   MaxBrakeTorque: 4000
-  HandBrakeWheel: 0
+  HandBrakeWheel: 1
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
-  AntiRollBar: 0.9
+  AntiRollBar: 1
   AntiRollWheel: {fileID: 2451892758578977540}
   stiffnessupgrade: 0
 --- !u!1 &2451892758610679282
@@ -1477,12 +1478,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SteerPercent: 1
   DriveWheel: 0
-  MaxBrakeTorque: 4000
+  MaxBrakeTorque: 4250
   HandBrakeWheel: 0
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
-  AntiRollBar: 0.9
+  AntiRollBar: 1
   AntiRollWheel: {fileID: 2451892758669677261}
   stiffnessupgrade: 0
 --- !u!1 &2451892758809917140
@@ -2410,12 +2411,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SteerPercent: 1
   DriveWheel: 0
-  MaxBrakeTorque: 4000
+  MaxBrakeTorque: 4250
   HandBrakeWheel: 0
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
-  AntiRollBar: 0.9
+  AntiRollBar: 1
   AntiRollWheel: {fileID: 2451892760036516646}
   stiffnessupgrade: 0
 --- !u!1 &3308345381148569712

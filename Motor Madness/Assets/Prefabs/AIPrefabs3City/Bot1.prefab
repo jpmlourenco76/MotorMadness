@@ -850,12 +850,12 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8431594025834217937}
   serializedVersion: 2
-  m_Mass: 1500
-  m_Drag: 0.025
+  m_Mass: 1480
+  m_Drag: 0.01
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 2
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &8431594025834217949
@@ -1205,6 +1205,7 @@ MonoBehaviour:
   persuitAiOn: 0
   persuitTarget: {fileID: 0}
   persuitDistance: 50
+  explosionController: {fileID: 0}
 --- !u!114 &8431594025834217951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1479,11 +1480,11 @@ MonoBehaviour:
   SteerPercent: 0
   DriveWheel: 1
   MaxBrakeTorque: 4000
-  HandBrakeWheel: 0
+  HandBrakeWheel: 1
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
-  AntiRollBar: 0.9
+  AntiRollBar: 1
   AntiRollWheel: {fileID: 8431594026054368943}
   stiffnessupgrade: 0
 --- !u!1 &8431594026065700433
@@ -1710,12 +1711,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SteerPercent: 1
   DriveWheel: 0
-  MaxBrakeTorque: 4000
+  MaxBrakeTorque: 4250
   HandBrakeWheel: 0
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
-  AntiRollBar: 0.9
+  AntiRollBar: 1
   AntiRollWheel: {fileID: 8431594026214442479}
   stiffnessupgrade: 0
 --- !u!1 &8431594026292562968
@@ -1796,11 +1797,11 @@ MonoBehaviour:
   SteerPercent: 0
   DriveWheel: 1
   MaxBrakeTorque: 4000
-  HandBrakeWheel: 0
+  HandBrakeWheel: 1
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
-  AntiRollBar: 0.9
+  AntiRollBar: 1
   AntiRollWheel: {fileID: 8431594026292562982}
   stiffnessupgrade: 0
 --- !u!1 &8431594026401825879
@@ -2728,12 +2729,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SteerPercent: 1
   DriveWheel: 0
-  MaxBrakeTorque: 4000
+  MaxBrakeTorque: 4250
   HandBrakeWheel: 0
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
-  AntiRollBar: 0.9
+  AntiRollBar: 1
   AntiRollWheel: {fileID: 8431594027448448004}
   stiffnessupgrade: 0
 --- !u!1001 &8640454992810739855
