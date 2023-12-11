@@ -116,6 +116,15 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Lights"",
+                    ""type"": ""Button"",
+                    ""id"": ""b05cef19-8579-49ea-ac97-2d7eff560d36"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -426,6 +435,17 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
                     ""action"": ""RearCam"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d18f19e5-a55b-4389-806f-1223fb46cd79"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Lights"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -444,6 +464,7 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
         m_Gameplay_CameraSwitch = m_Gameplay.FindAction("CameraSwitch", throwIfNotFound: true);
         m_Gameplay_Respawn = m_Gameplay.FindAction("Respawn", throwIfNotFound: true);
         m_Gameplay_RearCam = m_Gameplay.FindAction("RearCam", throwIfNotFound: true);
+        m_Gameplay_Lights = m_Gameplay.FindAction("Lights", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -515,6 +536,7 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_CameraSwitch;
     private readonly InputAction m_Gameplay_Respawn;
     private readonly InputAction m_Gameplay_RearCam;
+    private readonly InputAction m_Gameplay_Lights;
     public struct GameplayActions
     {
         private @CarInput m_Wrapper;
@@ -529,6 +551,7 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
         public InputAction @CameraSwitch => m_Wrapper.m_Gameplay_CameraSwitch;
         public InputAction @Respawn => m_Wrapper.m_Gameplay_Respawn;
         public InputAction @RearCam => m_Wrapper.m_Gameplay_RearCam;
+        public InputAction @Lights => m_Wrapper.m_Gameplay_Lights;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -568,6 +591,9 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
             @RearCam.started += instance.OnRearCam;
             @RearCam.performed += instance.OnRearCam;
             @RearCam.canceled += instance.OnRearCam;
+            @Lights.started += instance.OnLights;
+            @Lights.performed += instance.OnLights;
+            @Lights.canceled += instance.OnLights;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -602,6 +628,9 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
             @RearCam.started -= instance.OnRearCam;
             @RearCam.performed -= instance.OnRearCam;
             @RearCam.canceled -= instance.OnRearCam;
+            @Lights.started -= instance.OnLights;
+            @Lights.performed -= instance.OnLights;
+            @Lights.canceled -= instance.OnLights;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -631,5 +660,6 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
         void OnCameraSwitch(InputAction.CallbackContext context);
         void OnRespawn(InputAction.CallbackContext context);
         void OnRearCam(InputAction.CallbackContext context);
+        void OnLights(InputAction.CallbackContext context);
     }
 }

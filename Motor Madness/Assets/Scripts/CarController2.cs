@@ -87,6 +87,7 @@ public class CarController2 : MonoBehaviour
         {
             return
                  Engine.MotorTorqueFromRpmCurve.Evaluate(EngineRPM * 0.001f) *
+                 (1 + CurrentTurbo * Engine.TurboAdditionalTorque) *
                     (Steer.TCS > 0 ? TCSMultiplayer : 1) *
                     (Engine.SpeedLimit > 0 ? Mathf.InverseLerp(Engine.SpeedLimit, Engine.SpeedLimit * 0.5f, CurrentSpeed) : 1)
                     ;
@@ -99,11 +100,12 @@ public class CarController2 : MonoBehaviour
 
     public float MaxRPM { get { return Engine.MaxRPM; } }
     public float MinRPM { get { return Engine.MinRPM; } }
-
+    public event System.Action BackFireAction;
     float MaxMotorTorque;
     float CutOffTimer;
     bool InCutOff;
 
+    public float CurrentTurbo { get; private set; }
     public float CurrentAcceleration { get; private set; }
     public bool InHandBrake
     {
@@ -213,6 +215,11 @@ public class CarController2 : MonoBehaviour
         wheelMesh[1] = wheelMeshes.transform.Find("1").gameObject;
         wheelMesh[2] = wheelMeshes.transform.Find("2").gameObject;
         wheelMesh[3] = wheelMeshes.transform.Find("3").gameObject;
+
+        for(int i = 0; i <= 3; i++)
+        {
+            wheels[i].WheelView = wheelMesh[i].transform;
+        }
 
         for(int i = 0;i<=3; i++)
         {
@@ -339,6 +346,7 @@ public class CarController2 : MonoBehaviour
                 {
                     CurrentAcceleration = 0;
                     CurrentBrake = 0;
+                    CurrentTurbo = 0;
                 }
                 else if (!Gearbox.AutomaticGearBox || CurrentGear >= 0)
                 {
@@ -356,6 +364,7 @@ public class CarController2 : MonoBehaviour
                 {
                     CurrentAcceleration = 0;
                     CurrentBrake = 0;
+                    CurrentTurbo = 0;
                 }
                 else if (!Gearbox.AutomaticGearBox || CurrentGear >= 0)
                 {
@@ -376,6 +385,7 @@ public class CarController2 : MonoBehaviour
                 {
                     CurrentAcceleration = 0;
                     CurrentBrake = 0;
+                    CurrentTurbo = 0;
                 }
                 else if (!Gearbox.AutomaticGearBox || CurrentGear >= 0)
                 {
@@ -468,10 +478,23 @@ public class CarController2 : MonoBehaviour
         //Check CutOff.
         if (EngineRPM >= Engine.CutOffRPM)
         {
-      
+            PlayBackfireWithProbability();
             InCutOff = true;
             CutOffTimer = Engine.CutOffTime;
         }
+
+        if (Engine.EnableTurbo)
+        {
+            float rpmToCutOffNormolize = Mathf.Clamp01(EngineRPM / Engine.CutOffRPM);
+            float targetTurbo = InChangeGear || CurrentAcceleration < 0.2f ? 0 : rpmToCutOffNormolize;
+            CurrentTurbo = Mathf.Lerp(
+                CurrentTurbo,
+                targetTurbo,
+                (targetTurbo > CurrentTurbo ? Engine.TurboIncreaseSpeed * rpmToCutOffNormolize : Engine.TurboDecreaseSpeed) * Time.fixedDeltaTime);
+        }
+
+
+
 
     }
     public void UpdateTransmission()
@@ -720,9 +743,10 @@ public class CarController2 : MonoBehaviour
     {
         if (!InChangeGear && CurrentGear < (AllGearsRatio.Length - 2))
         {
+            PlayBackfireWithProbability();
             CurrentGear++;
             ChangeGearTimer = Gearbox.ChangeUpGearTime;
-           // PlayBackfireWithProbability();
+          
         }
     }
     public void PrevGear()
@@ -797,6 +821,23 @@ public class CarController2 : MonoBehaviour
         transform.position = pos - new Vector3(0, 0.4f, 0);
     }
 
+    void PlayBackfireWithProbability()
+    {
+        PlayBackfireWithProbability(Engine.ProbabilityBackfire);
+    }
+
+    void PlayBackfireWithProbability(float probability)
+    {
+        if (Random.Range(0f, 1f) <= probability)
+        {
+            if(BackFireAction != null)
+            {
+                BackFireAction.Invoke();
+            }
+           
+        }
+    }
+
 
 
     public void SetDriverType(driver newDriver)
@@ -860,10 +901,25 @@ public class CarController2 : MonoBehaviour
         public float SpeedLimit = 0;
         public float finalDrive = 3.7f;
 
+
+
         [Header("Cut off")]
         public float CutOffRPM = 6800;                      //The rpm at which the cut-off is triggered.
         public float TargetCutOffRPM = 6400;                //The value to which the rpm fall.
         public float CutOffTime = 0.1f;                     //The time for which the rpm fall during the cut-off.
+        
+        
+        [Header("Turbo")]
+        public bool EnableTurbo = false;                                                //Enables / Disables the turbo of the car.
+         public float TurboIncreaseSpeed = 3f;        //The speed at which the turbo value increases.
+         public float TurboDecreaseSpeed = 10;        //The speed at which the turbo value decreases.
+         public float TurboAdditionalTorque = 0.2f;   //Additional engine power multiplier at maximum turbo.
+
+
+
+        [Header("Back fire")]
+        [Range(0, 1)] public float ProbabilityBackfire = 0.2f;
+
 
         //Automatic gear shifting is in EngineConfig because the maximum number of rpm can be different for the motors, and the gearbox can be the same.
         [Header("Automatic change gear")]

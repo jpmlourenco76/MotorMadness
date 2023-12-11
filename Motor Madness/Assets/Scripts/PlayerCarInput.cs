@@ -20,7 +20,7 @@ public class PlayerCarInput : MonoBehaviour
     public bool RotateCameraWithMousePressed;
 
     private CarInput input;
-    
+    CarLights CarLights;
     public float throttleInput { get; private set; }
     public float steeringInput { get; private set; }
 
@@ -52,6 +52,7 @@ public class PlayerCarInput : MonoBehaviour
       
         
         carController = GetComponent<CarController2>();
+        CarLights = GetComponent<CarLights>();
     }
     private void OnEnable()
     {
@@ -77,6 +78,7 @@ public class PlayerCarInput : MonoBehaviour
                 input.Gameplay.Respawn.canceled += ReleaseRespawn;
                 input.Gameplay.RearCam.performed += RearCamera;
                 input.Gameplay.RearCam.canceled += RealeaseRearCamera;
+                input.Gameplay.Lights.performed += TurnMainLightsOn;
 
 
 
@@ -137,7 +139,7 @@ public class PlayerCarInput : MonoBehaviour
             else if (device is Gamepad || device is Joystick)
             {
                 // Set your int to 0 when a controller is detected
-                HorizontalChangeSpeed = 0;
+                HorizontalChangeSpeed = 1;
             }
         }
     }
@@ -221,6 +223,13 @@ public class PlayerCarInput : MonoBehaviour
     {
         cameraRear = false;
     }
+
+    
+    private void TurnMainLightsOn(InputAction.CallbackContext value)
+    {
+        CarLights.SwitchMainLights();
+    }
+
 
     private void ApplyRespawn(InputAction.CallbackContext value)
     {
