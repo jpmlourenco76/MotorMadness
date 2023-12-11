@@ -28,8 +28,8 @@ public class wheelsManager : MonoBehaviour
     public float SlipNormalized { get; private set; }
     public float ForwardSlipNormalized { get; private set; }
     public float SidewaysSlipNormalized { get; private set; }
-    public bool HasForwardSlip { get { return CurrentForwardSlip > WheelCollider.forwardFriction.asymptoteSlip; } }
-    public bool HasSideSlip { get { return CurrentSidewaysSlip > WheelCollider.sidewaysFriction.asymptoteSlip; } }
+    public bool HasForwardSlip { get { return 0.3f + CurrentForwardSlip > WheelCollider.forwardFriction.asymptoteSlip ; } }
+    public bool HasSideSlip { get { return 0.3f + CurrentSidewaysSlip > WheelCollider.sidewaysFriction.asymptoteSlip ; } }
     public WheelHit GetHit { get { return Hit; } }
     public Vector3 HitPoint { get; private set; }
     public bool IsGrounded { get { return  WheelCollider.isGrounded; } } //!IsDead &&
@@ -83,7 +83,7 @@ public class wheelsManager : MonoBehaviour
         if (WheelCollider.GetGroundHit(out Hit))
         {
             //Calculation of the current friction.
-            CurrentForwardSlip = (CurrentForwardSlip + Mathf.Abs(Hit.forwardSlip)) / 2;
+            CurrentForwardSlip =  (CurrentForwardSlip + Mathf.Abs(Hit.forwardSlip)) / 2;
             CurrentSidewaysSlip = (CurrentSidewaysSlip + Mathf.Abs(Hit.sidewaysSlip)) / 2;
 
             HitPoint = Hit.point;
