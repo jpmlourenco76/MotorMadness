@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class CarVFX : MonoBehaviour
 {
@@ -16,9 +17,14 @@ public class CarVFX : MonoBehaviour
     Transform ParentForEffects;         //Parent object for effects, created in the scene without a parent (Does not move).
     static Transform EffectsHolder;
 
-    public List<ParticleSystem> ExhaustParticles = new List<ParticleSystem>();
+    [SerializeField] ParticleSystem DefaultCollisionParticles;
+    [SerializeField] List<CollissionParticles> CollisionParticlesList = new List<CollissionParticles>();
     public List<ParticleSystem> BackFireParticles = new List<ParticleSystem>();
     public List<ParticleSystem> SmokeParticles = new List<ParticleSystem>();
+
+    [SerializeField] float MinTimeBetweenCollisions = 0.1f;
+    float LastCollisionTime;
+
 
 
     private CarController2 carController;
@@ -32,7 +38,8 @@ public class CarVFX : MonoBehaviour
         
 
         carController.BackFireAction += OnBackFire;
-
+        carController.CollisionAction += PlayCollisionParticles;
+        carController.CollisionStayAction += CollisionStay;
 
 
     }
@@ -51,21 +58,54 @@ public class CarVFX : MonoBehaviour
 
     private void Update()
     {
+        EmitParams emitParams;
+        float rndValue = UnityEngine.Random.Range(0, 1f);
         for (int i = 0; i < carController.wheels.Length; i++)
         {
             var wheel = carController.wheels[i];
-            
-
             var hasSlip = wheel.HasForwardSlip || wheel.HasSideSlip;
+
+            if((wheel.MaterialIndex == 1 || wheel.MaterialIndex == 2) && (carController.CurrentSpeed > 5f || hasSlip))
+            {
+                var particles = SmokeParticles[wheel.MaterialIndex];
+                var point = wheel.transform.position;
+                point.y = wheel.GetHit.point.y;
+                var particleVelocity = -wheel.GetHit.forwardDir * wheel.GetHit.forwardSlip;
+                particleVelocity += wheel.GetHit.sidewaysDir * wheel.GetHit.sidewaysSlip;
+                particleVelocity += carController.playerRB.velocity;
+
+                emitParams = new EmitParams();
+
+                emitParams.position = point;
+                emitParams.velocity = particleVelocity;
+                emitParams.startSize = Mathf.Max(1f, particles.main.startSize.constant  * rndValue);
+                emitParams.startLifetime = particles.main.startLifetime.constant *  rndValue;
+                emitParams.startColor = particles.main.startColor.color;
+
+                particles.Emit(emitParams, 1);
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
             UpdateTrail(wheel, !wheel.StopEmitFX && wheel.IsGrounded && hasSlip);
         }
+
+
+
            
     }
-
-
-
     void OnBackFire ()
     {
         foreach (var particles in BackFireParticles)
@@ -74,7 +114,54 @@ public class CarVFX : MonoBehaviour
         }
     }
 
-    
+    private void CollisionStay(CarController2 carController, Collision collision)
+    {
+        if (carController.CurrentSpeed >= 1 && (collision.rigidbody == null || (collision.rigidbody.velocity - carController.playerRB.velocity).sqrMagnitude > 25))
+        {
+            PlayCollisionParticles(carController, collision);
+        }
+    }
+
+    public void PlayCollisionParticles(CarController2 carController, Collision collision)
+    {
+        if (collision == null || Time.time - LastCollisionTime < MinTimeBetweenCollisions)
+        {
+            return;
+        }
+      
+        LastCollisionTime = Time.time;
+        var magnitude = collision.relativeVelocity.magnitude * Mathf.Abs( Vector3.Dot(collision.relativeVelocity.normalized, collision.contacts[0].normal));
+        var particles = GetParticlesForCollision(magnitude);
+        
+        
+
+
+        float offsetDistance = 0.1f;
+
+        for (int i = 0; i < collision.contacts.Length; i++)
+        {
+            Vector3 ContactPosition = collision.contacts[i].point;
+            Vector3 contactNormal = collision.contacts[i].normal;
+
+            particles.transform.position = ContactPosition + (contactNormal * offsetDistance);
+
+            
+            particles.Play(withChildren: true);
+        }
+    }
+
+    public ParticleSystem GetParticlesForCollision(float collisionMagnitude)
+    {
+        for (int i = 0; i < CollisionParticlesList.Count; i++)
+        {
+            if (collisionMagnitude >= CollisionParticlesList[i].MinMagnitudeCollision && collisionMagnitude < CollisionParticlesList[i].MaxMagnitudeCollision)
+            {
+                return CollisionParticlesList[i].Particles;
+            }
+        }
+
+        return DefaultCollisionParticles;
+    }
 
     public void UpdateTrail(wheelsManager wheel, bool hasSlip)
     {
@@ -94,11 +181,10 @@ public class CarVFX : MonoBehaviour
             {
                 //Move the trail to the desired position
                 trail.transform.position = wheel.WheelView.position + (wheel.transform.up * (-wheel.Radius + OffsetHitHeightForTrail));
-                foreach (var particles in SmokeParticles)
-                {
-                    particles.transform.position = wheel.WheelView.position + (wheel.transform.up * (-wheel.Radius + 0.15f));
-                    particles.Emit(1);
-                }
+              
+   
+                    SmokeParticles[wheel.MaterialIndex].transform.position = wheel.WheelView.position + (wheel.transform.up * (-wheel.Radius + 0.15f));
+                    SmokeParticles[wheel.MaterialIndex].Emit(1);
 
             }
         }
@@ -147,6 +233,12 @@ public class CarVFX : MonoBehaviour
         FreeTrails.Enqueue(trail);
     }
 
-   
+    [System.Serializable]
+    public struct CollissionParticles
+    {
+        public ParticleSystem Particles;
+        public float MinMagnitudeCollision;
+        public float MaxMagnitudeCollision;
+    }
 
 }

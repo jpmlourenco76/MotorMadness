@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem.HID;
@@ -41,6 +42,7 @@ public class wheelsManager : MonoBehaviour
     float BrakeSpeed = 2;
     float CurrentBrakeTorque;
 
+    public int MaterialIndex = 0;
 
     [System.NonSerialized]
     public Vector3 Position;
@@ -115,6 +117,35 @@ public class wheelsManager : MonoBehaviour
        if( WheelCollider.GetGroundHit(out hit))
         {
             PhysicMaterial surfaceMaterial = hit.collider.material;
+           
+            if( surfaceMaterial != null )
+            {
+               
+                if ( surfaceMaterial.ToString().Contains("Asphalt"))
+                {
+                    MaterialIndex = 0;
+                    
+                }
+                else if( surfaceMaterial.ToString().Contains("Gravel"))
+                {
+                    MaterialIndex = 1;
+                    
+
+                }
+                else if (surfaceMaterial.ToString().Contains("Grass"))
+                {
+                    MaterialIndex = 2;
+                   
+
+                }
+                else if (surfaceMaterial.ToString().Contains("Sidewalk"))
+                {
+                    MaterialIndex = 0;
+                    
+
+                }
+            }
+           
 
             WheelFrictionCurve forwardFriction = WheelCollider.forwardFriction;
             WheelFrictionCurve sidewaysFriction = WheelCollider.sidewaysFriction;
