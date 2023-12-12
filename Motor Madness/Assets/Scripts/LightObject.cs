@@ -26,7 +26,7 @@ public class LightObject : MonoBehaviour
         }
 
         LightIsOn = value;
-        if(LightIsOn)
+        if (LightIsOn)
         {
             LightRenderer.enabled = true;
 
