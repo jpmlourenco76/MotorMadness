@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 using UnityEngine.Windows;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CarController2))]
 public class PlayerCarInput : MonoBehaviour
@@ -12,7 +13,7 @@ public class PlayerCarInput : MonoBehaviour
     {
         AI,
         Human
-    }
+    }    
 
     [SerializeField]driver driveController;
 
@@ -35,13 +36,16 @@ public class PlayerCarInput : MonoBehaviour
 
     public bool cameraswitch, rewind, cameraRear;
 
+    public bool toCreateRain = false;
+
 
     private float GearUpInput = 0;
    
     private float GearDownInput = 0;
 
     float TargetHorizontal;
-   
+
+
 
 
     public CarController2 carController;
@@ -87,7 +91,7 @@ public class PlayerCarInput : MonoBehaviour
                 input.Gameplay.GearDown.performed += ApplyGearDown;
                 input.Gameplay.GearDown.canceled += ReleaseGearDown;
 
-
+                toCreateRain = true;
                 break;
         }
       
@@ -102,6 +106,7 @@ public class PlayerCarInput : MonoBehaviour
     private void Update()
     {
     }
+
 
     private void FixedUpdate()
     {

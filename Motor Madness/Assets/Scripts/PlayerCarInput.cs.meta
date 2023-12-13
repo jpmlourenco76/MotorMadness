@@ -3,7 +3,9 @@ guid: 4df0cfbdb368e724d9b1d2f525a28250
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - particleSystemPrefab: {fileID: 5680172446639734358, guid: 10c568dfe9cc5374cac65049e644360d, type: 3}
+  - carController: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
