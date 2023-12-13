@@ -100,7 +100,11 @@ public class CarController2 : MonoBehaviour
 
     public float MaxRPM { get { return Engine.MaxRPM; } }
     public float MinRPM { get { return Engine.MinRPM; } }
+   
     public event System.Action BackFireAction;
+    public event System.Action<CarController2, Collision> CollisionAction;
+    public event System.Action<CarController2, Collision> CollisionStayAction;
+
     float MaxMotorTorque;
     float CutOffTimer;
     bool InCutOff;
@@ -880,6 +884,25 @@ public class CarController2 : MonoBehaviour
         {
             BlowTriggered = true;
             ActivateExplosion();
+        }
+    }
+
+
+
+
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if(CollisionAction != null)
+        {
+            CollisionAction.Invoke(this, collision);
+        }
+    }
+    public void OnCollisionStay(Collision collision)
+    {
+        if (CollisionStayAction != null)
+        {
+            CollisionStayAction.Invoke(this, collision);
         }
     }
 

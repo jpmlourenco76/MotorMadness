@@ -49,6 +49,12 @@ public class CarLights : MonoBehaviour
             InBrake = carInBrake;
             SetActiveBrake(InBrake);
         }
+
+        bool reverseactive = CarController != null && CarController.CurrentGear == -1;
+
+
+        SetActiveReverse(reverseactive);
+
     }
 
 
@@ -85,6 +91,18 @@ public class CarLights : MonoBehaviour
             OnSetActiveLight.Invoke(CarLightType.Brake, value);
         }
 
+    }
+
+    public void SetActiveReverse(bool value)
+    {
+        ReverseLights.ForEach(l => l.Switch(value));
+
+        if (OnSetActiveLight != null)
+        {
+            OnSetActiveLight.Invoke(CarLightType.Reverse, value);
+        }
+
+       
     }
 
 
