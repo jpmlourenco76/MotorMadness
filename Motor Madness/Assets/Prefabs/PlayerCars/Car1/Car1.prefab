@@ -952,6 +952,7 @@ GameObject:
   - component: {fileID: 4376873893307081659}
   - component: {fileID: -2241916910755722365}
   - component: {fileID: 7924071755054754014}
+  - component: {fileID: 377590762730732571}
   m_Layer: 0
   m_Name: Car1
   m_TagString: Car
@@ -1338,6 +1339,7 @@ MonoBehaviour:
   cameraswitch: 0
   rewind: 0
   cameraRear: 0
+  toCreateRain: 0
   carController: {fileID: 252078128882138762}
 --- !u!114 &5683351181823297920
 MonoBehaviour:
@@ -1444,6 +1446,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CarController: {fileID: 252078128882138762}
+--- !u!114 &377590762730732571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c096959253bf34d94906ce37f1fb33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystemPrefab: {fileID: 5680172446639734358, guid: 10c568dfe9cc5374cac65049e644360d, type: 3}
 --- !u!1 &146262
 GameObject:
   m_ObjectHideFlags: 0
@@ -6994,7 +7009,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726175087600521632}
-  m_LocalRotation: {x: -0.08203317, y: 0.000000012572855, z: -6.4028427e-10, w: 0.99662966}
+  m_LocalRotation: {x: -0.08203317, y: -0.000000019092113, z: 8.1490725e-10, w: 0.99662966}
   m_LocalPosition: {x: 0.000000007450581, y: -1.2752175, z: -2.860738}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
