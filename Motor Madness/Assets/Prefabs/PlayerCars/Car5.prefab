@@ -630,6 +630,7 @@ MonoBehaviour:
   persuitAiOn: 0
   persuitTarget: {fileID: 0}
   persuitDistance: 0
+  explosionController: {fileID: 0}
 --- !u!114 &1874212665338080092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2088,7 +2089,7 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
-  AntiRollBar: 0.751
+  AntiRollBar: 1
   AntiRollWheel: {fileID: 426999037539578529}
   stiffnessupgrade: 0
 --- !u!1 &3173336963611482305
@@ -2115,7 +2116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3173336963611482305}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.05, z: -0.75}
+  m_LocalPosition: {x: 0, y: 0.05, z: -0.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2204,7 +2205,7 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
-  AntiRollBar: 0.751
+  AntiRollBar: 1
   AntiRollWheel: {fileID: 9220167562725426389}
   stiffnessupgrade: 0
 --- !u!1 &4090864213912641548
@@ -2722,7 +2723,7 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
-  AntiRollBar: 0.751
+  AntiRollBar: 1
   AntiRollWheel: {fileID: 8141163503344893400}
   stiffnessupgrade: 0
 --- !u!1 &8239157137238267404
@@ -2875,7 +2876,7 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 5
-  AntiRollBar: 0.751
+  AntiRollBar: 1
   AntiRollWheel: {fileID: 2320047921777456579}
   stiffnessupgrade: 0
 --- !u!1 &9156291940817666527
