@@ -49,7 +49,7 @@ WheelCollider:
   m_SuspensionDistance: 0.2
   m_ForceAppPointDistance: 0.1
   m_Mass: 20
-  m_WheelDampingRate: 1
+  m_WheelDampingRate: 0.7
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1.2
@@ -77,12 +77,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SteerPercent: 1
   DriveWheel: 1
-  MaxBrakeTorque: 4500
+  MaxBrakeTorque: 4250
   HandBrakeWheel: 0
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
-  MaxVisualDamageAngle: 14.82
-  AntiRollBar: 0.806
+  MaxVisualDamageAngle: 5
+  AntiRollBar: 1
   AntiRollWheel: {fileID: 8962833906006017765}
   stiffnessupgrade: 0
 --- !u!1 &420299374892180400
@@ -523,7 +523,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2323949045501244453}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.081, z: -0.194}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -580,7 +580,7 @@ WheelCollider:
   m_SuspensionDistance: 0.2
   m_ForceAppPointDistance: 0.1
   m_Mass: 20
-  m_WheelDampingRate: 1
+  m_WheelDampingRate: 0.7
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1.2
@@ -608,12 +608,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SteerPercent: 1
   DriveWheel: 1
-  MaxBrakeTorque: 4500
+  MaxBrakeTorque: 4250
   HandBrakeWheel: 0
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
-  MaxVisualDamageAngle: 14.82
-  AntiRollBar: 0.806
+  MaxVisualDamageAngle: 5
+  AntiRollBar: 1
   AntiRollWheel: {fileID: 4085647690648544119}
   stiffnessupgrade: 0
 --- !u!1 &3614057721448276149
@@ -700,7 +700,7 @@ WheelCollider:
   m_SuspensionDistance: 0.2
   m_ForceAppPointDistance: 0.1
   m_Mass: 40
-  m_WheelDampingRate: 0.4
+  m_WheelDampingRate: 1
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 2
@@ -727,13 +727,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SteerPercent: 0
-  DriveWheel: 0
-  MaxBrakeTorque: 4500
+  DriveWheel: 1
+  MaxBrakeTorque: 4000
   HandBrakeWheel: 1
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
-  MaxVisualDamageAngle: 0
-  AntiRollBar: 0.9
+  MaxVisualDamageAngle: 5
+  AntiRollBar: 1
   AntiRollWheel: {fileID: 1660723360993363667}
   stiffnessupgrade: 0
 --- !u!1 &5037731197770628163
@@ -917,7 +917,7 @@ WheelCollider:
   m_SuspensionDistance: 0.2
   m_ForceAppPointDistance: 0.1
   m_Mass: 40
-  m_WheelDampingRate: 0.4
+  m_WheelDampingRate: 1
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 2
@@ -944,13 +944,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SteerPercent: 0
-  DriveWheel: 0
-  MaxBrakeTorque: 4500
+  DriveWheel: 1
+  MaxBrakeTorque: 4000
   HandBrakeWheel: 1
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
-  MaxVisualDamageAngle: 0
-  AntiRollBar: 0.9
+  MaxVisualDamageAngle: 5
+  AntiRollBar: 1
   AntiRollWheel: {fileID: 6039963307722170644}
   stiffnessupgrade: 0
 --- !u!1 &8310312924760924090
@@ -2157,8 +2157,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8480943782784524359}
   serializedVersion: 2
-  m_Mass: 1500
-  m_Drag: 0.02
+  m_Mass: 1752
+  m_Drag: 0.01
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -2218,84 +2218,66 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.061175883
-        value: 0.4363144
+        time: 0.1
+        value: 0.49
+        inSlope: 3.6000001
+        outSlope: 3.6000001
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.2
+        value: 0.85
+        inSlope: 2.376923
+        outSlope: 2.376923
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.33
+        value: 1
         inSlope: 0
         outSlope: 0
-        tangentMode: 1
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.41383082
-        value: 0.4362957
-        inSlope: -0.061229862
-        outSlope: -0.061229862
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0.75934255
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.9615758
-        value: 0.49328792
-        inSlope: 0.3939533
-        outSlope: 0.3939533
+        time: 0.6
+        value: 1
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.08615821
-        outWeight: 0.061790485
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2.967336
-        value: 0.9838531
-        inSlope: 0.015903529
-        outSlope: 0.015903529
-        tangentMode: 0
+        time: 0.71
+        value: 0.86
+        inSlope: -1.2727276
+        outSlope: -1.2727276
+        tangentMode: 34
         weightedMode: 0
-        inWeight: 0.33747917
-        outWeight: 0.11694629
-      - serializedVersion: 3
-        time: 5.9693604
-        value: 0.98096514
-        inSlope: -0.015418634
-        outSlope: -0.015418634
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.23027855
-        outWeight: 0.5234108
-      - serializedVersion: 3
-        time: 6.9929385
-        value: 0.72945696
-        inSlope: -0.28976128
-        outSlope: -0.28976128
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.24339658
-        outWeight: 0.42557946
-      - serializedVersion: 3
-        time: 7.6363726
-        value: 0.0041131442
-        inSlope: -1.19057
-        outSlope: -1.19057
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33598864
+        inWeight: 0.33333334
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    MaxRPM: 7000
-    MinRPM: 700
+    MaxRPM: 7100
+    MinRPM: 1000
     RPMEngineToRPMWheelsFast: 15
     RPMEngineToRPMWheelsSlow: 4
-    SpeedLimit: 312
+    SpeedLimit: 320
     finalDrive: 3.7
-    CutOffRPM: 6800
-    TargetCutOffRPM: 6200
+    CutOffRPM: 7100
+    TargetCutOffRPM: 6500
     CutOffTime: 0.1
-    RPMToNextGear: 6500
-    RPMToPrevGearDiff: 500
+    RPMToNextGear: 6000
+    RPMToPrevGearDiff: 1500
   StartEngineInAwake: 0
-  StartEngineDellay: 0.1
+  StartEngineDellay: 0.3
   isEngineRunning: 0
   Steer:
     MaxSteerAngle: 35
@@ -2372,8 +2354,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    MaxVelocityAngleForHelp: 120
-    MinSpeedForHelp: 50
+    MaxVelocityAngleForHelp: 320
+    MinSpeedForHelp: 100
     HelpDriftIntensity: 0
     HandBrakeAngularHelpCurve:
       serializedVersion: 2
@@ -2442,13 +2424,14 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     MaxSpeedForMaxAngularHelp: 150
-    DriftLimitAngle: 50
+    DriftLimitAngle: 0
     ABS: 1
     TCS: 0
   carAItarget: {fileID: 0}
   persuitAiOn: 0
   persuitTarget: {fileID: 0}
   persuitDistance: 0
+  explosionController: {fileID: 0}
 --- !u!114 &8480943782784524358
 MonoBehaviour:
   m_ObjectHideFlags: 0

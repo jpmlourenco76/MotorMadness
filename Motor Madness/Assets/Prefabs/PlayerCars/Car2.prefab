@@ -1066,6 +1066,7 @@ MonoBehaviour:
   persuitAiOn: 0
   persuitTarget: {fileID: 0}
   persuitDistance: 0
+  explosionController: {fileID: 0}
 --- !u!114 &5787025742804192125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1895,7 +1896,7 @@ WheelCollider:
   m_SuspensionDistance: 0.2
   m_ForceAppPointDistance: 0.1
   m_Mass: 40
-  m_WheelDampingRate: 0.4
+  m_WheelDampingRate: 1
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 2
@@ -1928,7 +1929,7 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 0
-  AntiRollBar: 0.9
+  AntiRollBar: 1
   AntiRollWheel: {fileID: 2765245145824839059}
   stiffnessupgrade: 0
 --- !u!1 &3195401794276201585
@@ -2080,7 +2081,7 @@ WheelCollider:
   m_SuspensionDistance: 0.2
   m_ForceAppPointDistance: 0.1
   m_Mass: 40
-  m_WheelDampingRate: 0.4
+  m_WheelDampingRate: 1
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 2
@@ -2113,7 +2114,7 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 0
-  AntiRollBar: 0.9
+  AntiRollBar: 1
   AntiRollWheel: {fileID: 7115210732938781268}
   stiffnessupgrade: 0
 --- !u!1 &6193028069823516834
@@ -2362,7 +2363,7 @@ WheelCollider:
   m_SuspensionDistance: 0.2
   m_ForceAppPointDistance: 0.1
   m_Mass: 20
-  m_WheelDampingRate: 1
+  m_WheelDampingRate: 0.7
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1.2
@@ -2395,7 +2396,7 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 14.82
-  AntiRollBar: 0.806
+  AntiRollBar: 1
   AntiRollWheel: {fileID: 5548856413065791472}
   stiffnessupgrade: 0
 --- !u!1 &7093341697194312050
@@ -2710,7 +2711,7 @@ WheelCollider:
   m_SuspensionDistance: 0.2
   m_ForceAppPointDistance: 0.1
   m_Mass: 20
-  m_WheelDampingRate: 1
+  m_WheelDampingRate: 0.7
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1.2
@@ -2743,7 +2744,7 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 14.82
-  AntiRollBar: 0.806
+  AntiRollBar: 1
   AntiRollWheel: {fileID: 707131786248839778}
   stiffnessupgrade: 0
 --- !u!1001 &6225898884296249032
