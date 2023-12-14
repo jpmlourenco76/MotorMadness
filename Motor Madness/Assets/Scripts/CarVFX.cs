@@ -21,9 +21,13 @@ public class CarVFX : MonoBehaviour
     [SerializeField] List<CollissionParticles> CollisionParticlesList = new List<CollissionParticles>();
     public List<ParticleSystem> BackFireParticles = new List<ParticleSystem>();
     public List<ParticleSystem> SmokeParticles = new List<ParticleSystem>();
+    public ParticleSystem RainMist;
+    public List<ParticleSystem> RainTrail = new List<ParticleSystem>();
 
     [SerializeField] float MinTimeBetweenCollisions = 0.1f;
     float LastCollisionTime;
+
+    public bool raining = false;
 
 
 
@@ -58,7 +62,7 @@ public class CarVFX : MonoBehaviour
 
     private void Update()
     {
-        EmitParams emitParams;
+        EmitParams emitParams, emitParams2;
         float rndValue = UnityEngine.Random.Range(0, 1f);
         for (int i = 0; i < carController.wheels.Length; i++)
         {
@@ -85,19 +89,26 @@ public class CarVFX : MonoBehaviour
                 particles.Emit(emitParams, 1);
             }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+            if (raining)
+            {
+                if(RainMist != null)
+                {
+                    RainMist.Emit(1);
+                }
+                if(i > 1)
+                {
+                    emitParams2 = new EmitParams();
+                    emitParams2.startSize = Random.Range(0,Mathf.Lerp(-1, 1.2f, carController.playerRB.velocity.magnitude / 15f));
+                    if (emitParams2.startSize < 0) emitParams2.startSize = 0f;
+                    Debug.Log(emitParams2.startSize);
+                    foreach (var raintrail in RainTrail)
+                    {
+                        raintrail.Emit(emitParams2,1);
+                    }
+                }
+                
+                
+            }
 
             UpdateTrail(wheel, !wheel.StopEmitFX && wheel.IsGrounded && hasSlip);
         }
