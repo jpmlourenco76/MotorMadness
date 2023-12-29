@@ -1,0 +1,56 @@
+{
+    "CarAgent": {
+        "checkpoints": [
+            {
+                "steps": 499590,
+                "file_path": "results\\v2.7\\CarAgent\\CarAgent-499590.onnx",
+                "reward": -1.9738001823425293,
+                "creation_time": 1703774844.5455625,
+                "auxillary_file_paths": [
+                    "results\\v2.7\\CarAgent\\CarAgent-499590.pt"
+                ]
+            },
+            {
+                "steps": 999738,
+                "file_path": "results\\v2.7\\CarAgent\\CarAgent-999738.onnx",
+                "reward": 4.471002012491226,
+                "creation_time": 1703775349.3419394,
+                "auxillary_file_paths": [
+                    "results\\v2.7\\CarAgent\\CarAgent-999738.pt"
+                ]
+            },
+            {
+                "steps": 1499907,
+                "file_path": "results\\v2.7\\CarAgent\\CarAgent-1499907.onnx",
+                "reward": 2.9150652065873146,
+                "creation_time": 1703775848.4822044,
+                "auxillary_file_paths": [
+                    "results\\v2.7\\CarAgent\\CarAgent-1499907.pt"
+                ]
+            },
+            {
+                "steps": 1527696,
+                "file_path": "results\\v2.7\\CarAgent\\CarAgent-1527696.onnx",
+                "reward": 0.5990004763007164,
+                "creation_time": 1703775877.8469791,
+                "auxillary_file_paths": [
+                    "results\\v2.7\\CarAgent\\CarAgent-1527696.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1527696,
+            "file_path": "results\\v2.7\\CarAgent.onnx",
+            "reward": 0.5990004763007164,
+            "creation_time": 1703775877.8469791,
+            "auxillary_file_paths": [
+                "results\\v2.7\\CarAgent\\CarAgent-1527696.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.0.1+cpu"
+    }
+}

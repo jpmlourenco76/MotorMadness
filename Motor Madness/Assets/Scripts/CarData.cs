@@ -65,6 +65,8 @@ public class CarData
     public GameObject CarPrefab;
     public float distance;
     public float lap;
+    public float checkpoints;
+    public float wanderAmount;
     public int points;
     public int price;
     public CarUpgrade upgradelvls;
@@ -83,6 +85,8 @@ public class CarData
             CarPrefab = CarPrefab,
             distance = distance,
             lap = lap,
+            checkpoints = checkpoints,
+            wanderAmount = wanderAmount,
             points = points,
             price = price
         };

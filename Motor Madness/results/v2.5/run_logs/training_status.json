@@ -1,0 +1,47 @@
+{
+    "CarAgent": {
+        "checkpoints": [
+            {
+                "steps": 499122,
+                "file_path": "results\\v2.5\\CarAgent\\CarAgent-499122.onnx",
+                "reward": -9.63069844742616,
+                "creation_time": 1703702396.6383955,
+                "auxillary_file_paths": [
+                    "results\\v2.5\\CarAgent\\CarAgent-499122.pt"
+                ]
+            },
+            {
+                "steps": 999940,
+                "file_path": "results\\v2.5\\CarAgent\\CarAgent-999940.onnx",
+                "reward": 3.9078508764505386,
+                "creation_time": 1703702843.6220663,
+                "auxillary_file_paths": [
+                    "results\\v2.5\\CarAgent\\CarAgent-999940.pt"
+                ]
+            },
+            {
+                "steps": 1004067,
+                "file_path": "results\\v2.5\\CarAgent\\CarAgent-1004067.onnx",
+                "reward": 2.8121582828462124,
+                "creation_time": 1703702843.91149,
+                "auxillary_file_paths": [
+                    "results\\v2.5\\CarAgent\\CarAgent-1004067.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1004067,
+            "file_path": "results\\v2.5\\CarAgent.onnx",
+            "reward": 2.8121582828462124,
+            "creation_time": 1703702843.91149,
+            "auxillary_file_paths": [
+                "results\\v2.5\\CarAgent\\CarAgent-1004067.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.0.1+cpu"
+    }
+}

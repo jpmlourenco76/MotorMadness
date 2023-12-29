@@ -55,6 +55,7 @@ public class CheckpointSystem : MonoBehaviour
 
                 cars[i].distance = distance;
                 cars[i].lap = GameObject.Find("Car" + i).GetComponent<CarController2>().laps;
+                cars[i].checkpoints = GameObject.Find("Car" + i).GetComponent<CarController2>().pchecks;
                 distanceArray.Add(cars[i]);
                 levelManager.distanceArray = distanceArray;
 
@@ -78,26 +79,27 @@ public class CheckpointSystem : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
 
-    }
 
     public class CarDataComparer : IComparer<CarData>
     {
         public int Compare(CarData x, CarData y)
         {
+            // First, compare by lap in descending order
             if (x.lap != y.lap)
             {
-                // If lap is different, compare by lap in descending order.
                 return y.lap.CompareTo(x.lap);
             }
 
-            // If lap is the same, compare by distance in ascending order
+            // If lap is the same, compare by checkpoints in descending order
+            if (x.checkpoints != y.checkpoints)
+            {
+                return y.checkpoints.CompareTo(x.checkpoints);
+            }
+
+            // If lap and checkpoints are the same, compare by distance in ascending order
             return x.distance.CompareTo(y.distance);
-
         }
-
     }
 
     public void SetupNextCheckpoint(CheckpointSystem nextCheckpointSystem)
