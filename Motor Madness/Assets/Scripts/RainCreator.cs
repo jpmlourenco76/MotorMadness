@@ -26,11 +26,6 @@ public class RainCreator : MonoBehaviour
             // Update the position of the instantiated prefab
             UpdatePrefabPosition();
         }
-        else
-        {
-            Debug.LogError("wtf");
-        }
-
     }
 
     private void InstantiatePrefab()
