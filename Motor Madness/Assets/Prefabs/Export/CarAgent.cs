@@ -9,7 +9,7 @@ public class CarAgent : Agent
 {
 
     public CheckpointManager _checkpointManager;
-    private CarController2 _carController;
+    public CarController2 _carController;
     private bool isOnWall = false;
     private float wallTimer = 0.0f;
     private const float wallDurationThreshold = 0.5f;
@@ -53,16 +53,37 @@ public class CarAgent : Agent
         if(_carController.KPH < 5f)
         {
             Timer += Time.deltaTime;
-            if(Timer > 3f)
+            if(Timer > 6f)
             {
                 EndEpisode();
             }
         }
 
+        if(_carController.KPH < 40f)
+        {
+            AddReward(-0.009f);
+        }
+        if (_carController.KPH > 40f)
+        {
+            if(!hitwall)
+            {
+                AddReward(_carController.KPH / 25000); // Adjust the reward scale as needed
+            }
+            else
+            {
+                AddReward(_carController.KPH / 100000);
+            }
+            if (_carController.KPH > 120f)
+            {
+                AddReward(_carController.KPH / 250000);
+            }
+
+         }
+
 
         if (isOnWall)
         {
-            AddReward(-0.8f);
+            AddReward(-0.05f);
            
             wallTimer += Time.deltaTime;
             if (wallTimer >= wallDurationThreshold)
@@ -76,9 +97,9 @@ public class CarAgent : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
         Vector3 diff = _checkpointManager.nextCheckPointToReach.transform.position - transform.position;
-        sensor.AddObservation(diff / 20f); 
-        
-        AddReward(-0.001f);
+        sensor.AddObservation(diff / 25f);
+        sensor.AddObservation(_carController.KPH);
+        AddReward(-0.002f);
 
         
     }
@@ -87,10 +108,11 @@ public class CarAgent : Agent
     {
         if (collision.gameObject.CompareTag("Wall"))
         {
-            AddReward(-3.0f);
+            AddReward(-1f);
            hitwall= true;
             isOnWall = true;
-           // EndEpisode();
+            
+           EndEpisode();
 
 
         }

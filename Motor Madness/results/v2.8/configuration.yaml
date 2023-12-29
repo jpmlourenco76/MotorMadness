@@ -34,10 +34,10 @@ behaviors:
           memory: null
           goal_conditioning_type: hyper
           deterministic: false
-    init_path: null
+    init_path: results\v2.7\CarAgent\checkpoint.pt
     keep_checkpoints: 5
     checkpoint_interval: 500000
-    max_steps: 20000000
+    max_steps: 2000000
     time_horizon: 1000
     summary_freq: 20000
     threaded: true
@@ -64,9 +64,9 @@ engine_settings:
 environment_parameters: null
 checkpoint_settings:
   run_id: v2.8
-  initialize_from: null
+  initialize_from: v2.7
   load_model: false
-  resume: true
+  resume: false
   force: false
   train_model: false
   inference: false

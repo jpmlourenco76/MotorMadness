@@ -16,6 +16,7 @@ public class CarController2 : MonoBehaviour
 
     public SpawnPointManager _spawnPointManager;
     public int laps = 0;
+    public int pchecks = 0;
     public bool human;
     public bool halfpointtrigger = false;
     public bool AION = false;
@@ -829,8 +830,11 @@ public class CarController2 : MonoBehaviour
 
     public void Respawn()
     {
-        Vector3 pos = _spawnPointManager.SelectRandomSpawnpoint();
-        transform.rotation = Quaternion.LookRotation(Vector3.forward);
+        Transform spawnpoint = _spawnPointManager.SelectRandomSpawnpoint();
+        Vector3 pos =spawnpoint.position;
+        transform.rotation = spawnpoint.rotation;
+        
+        playerRB.velocity = Vector3.zero;
 
         transform.position = pos - new Vector3(0, 0.4f, 0);
     }
@@ -884,6 +888,10 @@ public class CarController2 : MonoBehaviour
         {
             BlowTriggered = true;
             ActivateExplosion();
+        }
+        if (other.CompareTag("PCheckpoint"))
+        {
+            pchecks++;
         }
     }
 

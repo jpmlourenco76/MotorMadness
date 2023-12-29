@@ -21,7 +21,8 @@ TagManager:
   - HPT
   - chasedcar
   - FXAdemar
-  - Fire
+  - PCheckpoint
+  - Timer
   layers:
   - Default
   - TransparentFX
@@ -58,7 +59,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: RainCam
-    uniqueID: 3592893365
     locked: 0
