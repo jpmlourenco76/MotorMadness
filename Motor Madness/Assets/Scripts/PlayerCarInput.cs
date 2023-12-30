@@ -139,12 +139,12 @@ public class PlayerCarInput : MonoBehaviour
             if (device is Keyboard)
             {
                 // Set your int to 10 when a keyboard is detected
-                HorizontalChangeSpeed = 5 ;
+                HorizontalChangeSpeed = 5;
             }
             else if (device is Gamepad || device is Joystick)
             {
                 // Set your int to 0 when a controller is detected
-                HorizontalChangeSpeed = 1;
+                HorizontalChangeSpeed = 5;
             }
         }
     }

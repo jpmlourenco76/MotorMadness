@@ -6523,7 +6523,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209631410833649500}
   m_LocalRotation: {x: 0.00000008146034, y: -0.00000004371139, z: 3.560745e-15, w: 1}
-  m_LocalPosition: {x: 0.7459497, y: -0.426, z: 3.4349394}
+  m_LocalPosition: {x: 0.7459497, y: -0.476, z: 3.4349394}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6543,7 +6543,7 @@ WheelCollider:
     spring: 25000
     damper: 3500
     targetPosition: 0.5
-  m_SuspensionDistance: 0.2
+  m_SuspensionDistance: 0.1
   m_ForceAppPointDistance: 0.1
   m_Mass: 25
   m_WheelDampingRate: 0.75
@@ -21495,7 +21495,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3079111637422018798
 Transform:
   m_ObjectHideFlags: 0
@@ -21808,8 +21808,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2432163397354819682}
-  m_LocalRotation: {x: 0.06389141, y: -0, z: -0, w: 0.9979569}
-  m_LocalPosition: {x: 0, y: 1.9, z: -5.117}
+  m_LocalRotation: {x: 0.063891515, y: -0, z: -0.0000000037252903, w: 0.99795693}
+  m_LocalPosition: {x: 0.00000047683716, y: 1.9000015, z: -5.117005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -47375,7 +47375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7110180191726103567}
   m_LocalRotation: {x: 0.00000008146034, y: -0.00000004371139, z: 3.560745e-15, w: 1}
-  m_LocalPosition: {x: -0.7455999, y: -0.426, z: 3.4349399}
+  m_LocalPosition: {x: -0.7455999, y: -0.476, z: 3.4349399}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47395,7 +47395,7 @@ WheelCollider:
     spring: 25000
     damper: 3500
     targetPosition: 0.5
-  m_SuspensionDistance: 0.2
+  m_SuspensionDistance: 0.1
   m_ForceAppPointDistance: 0.1
   m_Mass: 25
   m_WheelDampingRate: 0.75
@@ -52323,7 +52323,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1295711879491581686
 Transform:
   m_ObjectHideFlags: 0
