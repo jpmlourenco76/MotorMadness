@@ -39,12 +39,22 @@ public class FXLap1_explosion : MonoBehaviour
     public GameObject Firespot7;
     public GameObject Firespot8;
     public GameObject Firespot9;
+    public AudioClip explosion;
+    private AudioSource audioSource;
 
+
+    private bool hasExploded = false;
+
+    void Start()
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Trigger Enter: " + other.gameObject.name);
-        if (other.CompareTag("Car"))
-        {
+        if (other.CompareTag("Car") && !hasExploded)
+        {   
+            hasExploded = true;
             ActivateExplosions();
         }
     }
@@ -68,6 +78,10 @@ public class FXLap1_explosion : MonoBehaviour
         GameObject fire8 = Instantiate(Fire8, Firespot8.transform.position, Quaternion.identity);
         GameObject fire9 = Instantiate(Fire9, Firespot9.transform.position, Quaternion.identity);
 
+        if (explosion != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(explosion);
+            }
         Debug.Log("Blow!");
     }
 }
