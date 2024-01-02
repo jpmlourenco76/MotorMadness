@@ -1435,7 +1435,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -4394464721800852097, guid: 68e965192d893d64d91749bc8aa5d78c, type: 3}
 --- !u!1 &6704133992663579830
@@ -1686,7 +1686,7 @@ Rigidbody:
   m_Mass: 750
   m_Drag: 0.01
   m_AngularDrag: 0.01
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
