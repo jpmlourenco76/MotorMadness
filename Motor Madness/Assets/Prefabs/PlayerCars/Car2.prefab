@@ -909,6 +909,11 @@ MonoBehaviour:
     CutOffRPM: 7100
     TargetCutOffRPM: 6500
     CutOffTime: 0.1
+    EnableTurbo: 0
+    TurboIncreaseSpeed: 3
+    TurboDecreaseSpeed: 10
+    TurboAdditionalTorque: 0.2
+    ProbabilityBackfire: 0.2
     RPMToNextGear: 6000
     RPMToPrevGearDiff: 1500
   StartEngineInAwake: 0
@@ -1085,6 +1090,7 @@ MonoBehaviour:
   cameraswitch: 0
   rewind: 0
   cameraRear: 0
+  toCreateRain: 0
   carController: {fileID: 2023005570754860928}
 --- !u!114 &1227484863701634540
 MonoBehaviour:
@@ -1929,6 +1935,7 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 0
+  MaterialIndex: 0
   AntiRollBar: 1
   AntiRollWheel: {fileID: 2765245145824839059}
   stiffnessupgrade: 0
@@ -2114,6 +2121,7 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 0
+  MaterialIndex: 0
   AntiRollBar: 1
   AntiRollWheel: {fileID: 7115210732938781268}
   stiffnessupgrade: 0
@@ -2396,6 +2404,7 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 14.82
+  MaterialIndex: 0
   AntiRollBar: 1
   AntiRollWheel: {fileID: 5548856413065791472}
   stiffnessupgrade: 0
@@ -2744,6 +2753,7 @@ MonoBehaviour:
   WheelView: {fileID: 0}
   WheelHub: {fileID: 0}
   MaxVisualDamageAngle: 14.82
+  MaterialIndex: 0
   AntiRollBar: 1
   AntiRollWheel: {fileID: 707131786248839778}
   stiffnessupgrade: 0
