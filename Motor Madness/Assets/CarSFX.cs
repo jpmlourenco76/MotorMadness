@@ -27,10 +27,6 @@ public class CarSFX : MonoBehaviour
     [SerializeField] AudioClip DefaultFrictionClip;                                     //Clip playable if the desired one was not found.                        
     [SerializeField] List<ColissionEvent> FrictionEvents = new List<ColissionEvent>();
 
-    [Header("Shards settings")]
-    [SerializeField] AudioClip EasyShardsClip;
-    [SerializeField] AudioClip MediumShardsClip;
-    [SerializeField] AudioClip HardShardsClip;
 
     [Header("Other settings")]
     public AudioSource OtherEffectsSource;                                             //Source for playing other sound effects.
@@ -372,7 +368,9 @@ public class CarSFX : MonoBehaviour
 
         var audioClip = GetClipForCollision(collisionLayer, collisionMagnitude, out magnitudeDivider);
 
-        var volume = Mathf.Clamp01(collisionMagnitude / Mathf.Clamp(magnitudeDivider,0, 40));
+        var volume = Mathf.Clamp01(collisionMagnitude );
+
+        Debug.Log(audioClip + " " + volume);
 
         OtherEffectsSource.PlayOneShot(audioClip, volume);
     }
