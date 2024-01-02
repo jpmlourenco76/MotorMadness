@@ -7,11 +7,13 @@ public class CheckpointManager : MonoBehaviour
     public List<Checkpoint> Checkpoints;
     public float MaxTimeToReachNextCheckpoint = 60f;
     public float TimeLeft;
+    public float totaltime;
     public float EndTime = 5f;
     public bool finished = false;
     public int CurrentCheckpointIndex = 0;
     public Checkpoint lastCheckpoint;
     public Checkpoint nextCheckPointToReach;
+
 
     public event Action<Checkpoint> reachedCheckpoint;
 
@@ -28,29 +30,20 @@ public class CheckpointManager : MonoBehaviour
     {
         CurrentCheckpointIndex = 0;
         TimeLeft = MaxTimeToReachNextCheckpoint;
+        totaltime = 0;
         SetNextCheckpoint();
     }
 
     private void Update()
     {
-        if (CurrentCheckpointIndex >= Checkpoints.Count)
+        Vector3 carToCheckpoint = nextCheckPointToReach.transform.position - transform.position;
+        carToCheckpoint.Normalize();
+        float directionDot = Vector3.Dot(transform.forward, carToCheckpoint);
+       
+        if (directionDot > 0f)
         {
-            // All checkpoints reached, give a final reward
+            carAgent.AddReward(0.00005f);
 
-            if (carAgent.hitwall)
-            {
-                carAgent.AddReward(-2.0f);
-                Debug.Log("CheckWall");
-            }
-            else
-            {
-                carAgent.AddReward(1.0f);
-                Debug.Log("Check 1");
-            }
-            carAgent.hitwall = false;
-            //Debug.Log("All checkpoints reached.");
-            carAgent.EndEpisode();
-            return;
         }
 
         TimeLeft -= Time.deltaTime;
@@ -69,31 +62,56 @@ public class CheckpointManager : MonoBehaviour
         lastCheckpoint = Checkpoints[CurrentCheckpointIndex];
        // reachedCheckpoint?.Invoke(checkpoint);
         CurrentCheckpointIndex++;
-
-        if (CurrentCheckpointIndex < Checkpoints.Count)
+        
+        if (CurrentCheckpointIndex >= Checkpoints.Count)
         {
-            // Reward for passing a checkpoint
-            Vector3 carToCheckpoint = nextCheckPointToReach.transform.position - transform.position;
-            carToCheckpoint.Normalize();
-            float directionDot = Vector3.Dot(transform.forward, carToCheckpoint);
-            
-            if (directionDot > 0f)
-            {
-                carAgent.AddReward(0.001f); 
-               
-            }
-            float timeReward = (MaxTimeToReachNextCheckpoint - TimeLeft) / MaxTimeToReachNextCheckpoint;
-            timeReward = Mathf.Clamp(timeReward, 0f, 20f); 
-           if(carAgent.hitwall)
-            {
-                carAgent.AddReward(timeReward / ( 2 * Checkpoints.Count));
+            // All checkpoints reached, give a final reward
 
-                carAgent.AddReward((20f) / (2 * Checkpoints.Count));
+
+
+            float timeReward = Mathf.Clamp((8*(totaltime / (MaxTimeToReachNextCheckpoint * Checkpoints.Count))), 0f, 8f);
+
+            timeReward = timeReward - 3.5f;
+
+            if (carAgent.hitwall)
+            {
+                carAgent.AddReward(-0.2f);
+                Debug.Log("w" + totaltime + " " + MaxTimeToReachNextCheckpoint + " " + timeReward);
+                if (timeReward< 0)
+                {
+                    carAgent.AddReward(timeReward * 1.5f);
+                }
+                else
+                {
+                    carAgent.AddReward(timeReward * 0.5f);
+                }
+                 ;
+
             }
             else
             {
-                carAgent.AddReward(timeReward / Checkpoints.Count);
-                carAgent.AddReward((20f) / Checkpoints.Count);
+
+                Debug.Log("nw" +timeReward);
+                carAgent.AddReward(timeReward);
+
+            }
+            carAgent.hitwall = false;
+            
+            carAgent.EndEpisode();
+            return;
+        }
+        else 
+        {
+            // Reward for passing a checkpoint
+            totaltime +=  TimeLeft;
+            
+            if (!carAgent.hitwall)
+            {
+                carAgent.AddReward(carAgent._carController.KPH / (30 * Checkpoints.Count));
+            }
+            else
+            {
+                carAgent.AddReward(carAgent._carController.KPH / (100 * Checkpoints.Count));
             }
             
             

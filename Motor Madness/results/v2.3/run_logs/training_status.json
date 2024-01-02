@@ -1,0 +1,56 @@
+{
+    "CarAgent": {
+        "checkpoints": [
+            {
+                "steps": 63758,
+                "file_path": "results\\v2.3\\CarAgent\\CarAgent-63758.onnx",
+                "reward": null,
+                "creation_time": 1703696621.6645956,
+                "auxillary_file_paths": [
+                    "results\\v2.3\\CarAgent\\CarAgent-63758.pt"
+                ]
+            },
+            {
+                "steps": 499897,
+                "file_path": "results\\v2.3\\CarAgent\\CarAgent-499897.onnx",
+                "reward": -0.5270510539412498,
+                "creation_time": 1703697129.8263636,
+                "auxillary_file_paths": [
+                    "results\\v2.3\\CarAgent\\CarAgent-499897.pt"
+                ]
+            },
+            {
+                "steps": 999153,
+                "file_path": "results\\v2.3\\CarAgent\\CarAgent-999153.onnx",
+                "reward": -0.640677884221077,
+                "creation_time": 1703697571.741055,
+                "auxillary_file_paths": [
+                    "results\\v2.3\\CarAgent\\CarAgent-999153.pt"
+                ]
+            },
+            {
+                "steps": 1003587,
+                "file_path": "results\\v2.3\\CarAgent\\CarAgent-1003587.onnx",
+                "reward": -0.5373982737461726,
+                "creation_time": 1703697572.0440223,
+                "auxillary_file_paths": [
+                    "results\\v2.3\\CarAgent\\CarAgent-1003587.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1003587,
+            "file_path": "results\\v2.3\\CarAgent.onnx",
+            "reward": -0.5373982737461726,
+            "creation_time": 1703697572.0440223,
+            "auxillary_file_paths": [
+                "results\\v2.3\\CarAgent\\CarAgent-1003587.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.0.1+cpu"
+    }
+}

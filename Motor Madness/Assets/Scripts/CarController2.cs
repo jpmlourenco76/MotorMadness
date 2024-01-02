@@ -16,6 +16,7 @@ public class CarController2 : MonoBehaviour
 
     public SpawnPointManager _spawnPointManager;
     public int laps = 0;
+    public int pchecks = 0;
     public bool human;
     public bool halfpointtrigger = false;
     public bool AION = false;
@@ -29,7 +30,7 @@ public class CarController2 : MonoBehaviour
     private GameObject wheelColliders;
     private GameObject[] wheelMesh = new GameObject[4];
     private GameObject[] skidMarks = new GameObject[4];
-    [HideInInspector] public wheelsManager[] wheels = new wheelsManager[4];
+     public wheelsManager[] wheels = new wheelsManager[4];
     public float throttleinputt, breakinpuu, steerin;
     public bool handbrakeinnn;
     public Transform _centerOfMass;
@@ -43,7 +44,8 @@ public class CarController2 : MonoBehaviour
     public float PrevVelocityAngle { get; private set; }
 
     public float KPH;
-
+    private bool wasRunning;
+   
 
     [Space(10)]
 
@@ -79,6 +81,7 @@ public class CarController2 : MonoBehaviour
     [Header("Engine")]
 
     public EngineConfig Engine;
+    private CarSFX sFX;
     public bool StartEngineInAwake = false;
     public float StartEngineDellay = 0.5f;
     public float CurrentMotorTorque
@@ -273,6 +276,7 @@ public class CarController2 : MonoBehaviour
 
     void AwakeEngine()
     {
+        sFX = GetComponentInChildren<CarSFX>(); 
         MaxMotorTorque = Engine.MaxMotorTorque / DriveWheels.Length;
 
     }
@@ -351,7 +355,16 @@ public class CarController2 : MonoBehaviour
     {
         if (!isEngineRunning)
         {
+            wasRunning = false;
             return;
+        }
+        else
+        {
+            if (!wasRunning)
+            {
+                StartEngine();
+                wasRunning = true;
+            }
         }
         switch (driveController)
         {
@@ -790,9 +803,10 @@ public class CarController2 : MonoBehaviour
             timer += Time.deltaTime;
             EngineRPM = Mathf.Lerp(0, MinRPM, Mathf.Pow(Mathf.InverseLerp(0, StartEngineDellay, timer), 2));
         }
-
+        float delay = StartEngineDellay;
+        sFX.StartEngine(delay);
         EngineRPM = MinRPM;
-
+        
         StartEngineCoroutine = null;
     }
     
@@ -829,8 +843,11 @@ public class CarController2 : MonoBehaviour
 
     public void Respawn()
     {
-        Vector3 pos = _spawnPointManager.SelectRandomSpawnpoint();
-        transform.rotation = Quaternion.LookRotation(Vector3.forward);
+        Transform spawnpoint = _spawnPointManager.SelectRandomSpawnpoint();
+        Vector3 pos =spawnpoint.position;
+        transform.rotation = spawnpoint.rotation;
+        
+        playerRB.velocity = Vector3.zero;
 
         transform.position = pos - new Vector3(0, 0.4f, 0);
     }
@@ -884,6 +901,10 @@ public class CarController2 : MonoBehaviour
         {
             BlowTriggered = true;
             ActivateExplosion();
+        }
+        if (other.CompareTag("PCheckpoint"))
+        {
+            pchecks++;
         }
     }
 

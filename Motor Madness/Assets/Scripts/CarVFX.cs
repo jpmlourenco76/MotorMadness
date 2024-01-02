@@ -100,7 +100,7 @@ public class CarVFX : MonoBehaviour
                     emitParams2 = new EmitParams();
                     emitParams2.startSize = Random.Range(0,Mathf.Lerp(-1, 1.2f, carController.playerRB.velocity.magnitude / 15f));
                     if (emitParams2.startSize < 0) emitParams2.startSize = 0f;
-                    Debug.Log(emitParams2.startSize);
+                   
                     foreach (var raintrail in RainTrail)
                     {
                         raintrail.Emit(emitParams2,1);
