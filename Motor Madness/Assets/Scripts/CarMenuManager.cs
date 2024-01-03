@@ -72,22 +72,21 @@ public class CarMenuManager : MonoBehaviour
 
         vehiclePointer = PlayerPrefs.GetInt("pointer");
 
-        
+
         if (gameManager.levelType == GameManager.LevelType.QuickPlay || gameManager.levelType == GameManager.LevelType.Training)
         {
             GameObject childObject = Instantiate(gameManager.gameData.GameCars[vehiclePointer].CarPrefab, position, Quaternion.identity) as GameObject;
-            childObject.transform.parent = toRotate.transform;
+
 
         }
         else if (!isShop && gameManager.levelType == GameManager.LevelType.Story)
         {
             GameObject childObject = Instantiate(characterData.OwnedCars[vehiclePointer].CarPrefab, position, Quaternion.identity) as GameObject;
-            childObject.transform.parent = toRotate.transform;
+            childObject.GetComponentInChildren<MeshRenderer>().material = characterData.OwnedCars[vehiclePointer].material;
         }
         else
         {
             GameObject childObject = Instantiate(ShopCars[vehiclePointer].CarPrefab, position, Quaternion.identity) as GameObject;
-            childObject.transform.parent = toRotate.transform;
 
         }
 
@@ -114,18 +113,17 @@ public class CarMenuManager : MonoBehaviour
             if (gameManager.levelType == GameManager.LevelType.QuickPlay || gameManager.levelType == GameManager.LevelType.Training)
             {
                 GameObject childObject = Instantiate(gameManager.gameData.GameCars[vehiclePointer].CarPrefab, position, Quaternion.identity) as GameObject;
-                childObject.transform.parent = toRotate.transform;
 
             }
             else if (!isShop && gameManager.levelType == GameManager.LevelType.Story)
             {
                 GameObject childObject = Instantiate(characterData.OwnedCars[vehiclePointer].CarPrefab, position, Quaternion.identity) as GameObject;
-                childObject.transform.parent = toRotate.transform;
+                childObject.GetComponentInChildren<MeshRenderer>().material = characterData.OwnedCars[vehiclePointer].material;
+
             }
             else
             {
                 GameObject childObject = Instantiate(ShopCars[vehiclePointer].CarPrefab, position, Quaternion.identity) as GameObject;
-                childObject.transform.parent = toRotate.transform;
 
             }
         }
@@ -142,18 +140,17 @@ public class CarMenuManager : MonoBehaviour
             if (gameManager.levelType == GameManager.LevelType.QuickPlay || gameManager.levelType == GameManager.LevelType.Training)
             {
                 GameObject childObject = Instantiate(gameManager.gameData.GameCars[vehiclePointer].CarPrefab, position, Quaternion.identity) as GameObject;
-                childObject.transform.parent = toRotate.transform;
 
             }
             else if (!isShop && gameManager.levelType == GameManager.LevelType.Story)
             {
                 GameObject childObject = Instantiate(characterData.OwnedCars[vehiclePointer].CarPrefab, position, Quaternion.identity) as GameObject;
-                childObject.transform.parent = toRotate.transform;
+                childObject.GetComponentInChildren<MeshRenderer>().material = characterData.OwnedCars[vehiclePointer].material;
+
             }
             else
             {
                 GameObject childObject = Instantiate(ShopCars[vehiclePointer].CarPrefab, position, Quaternion.identity) as GameObject;
-                childObject.transform.parent = toRotate.transform;
 
             }
         }
