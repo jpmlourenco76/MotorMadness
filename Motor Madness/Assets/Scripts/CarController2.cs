@@ -380,7 +380,7 @@ public class CarController2 : MonoBehaviour
                 }
                 break;
             case driver.AIML:
-                if (carAgent == null)
+                if (carAgent == null || isEngineRunning == false)
                 {
                     CurrentAcceleration = 0;
                     CurrentBrake = 0;

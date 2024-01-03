@@ -41,7 +41,7 @@ public class CarAgent : Agent
         id = _carController.carID;
         _checkpointManager.ResetCheckpoints();
         _carController.Respawn();
-        _carController.isEngineRunning = true;
+        //_carController.isEngineRunning = true;
         isOnWall = false;
         hitwall = false;
         wallTimer = 0.0f;
@@ -55,7 +55,7 @@ public class CarAgent : Agent
             Timer += Time.deltaTime;
             if(Timer > 6f)
             {
-                EndEpisode();
+               // EndEpisode();
             }
         }
 
@@ -89,7 +89,7 @@ public class CarAgent : Agent
             if (wallTimer >= wallDurationThreshold)
             {
                 isOnWall = false;
-                EndEpisode();
+               // EndEpisode();
 
             }
         }
@@ -112,7 +112,7 @@ public class CarAgent : Agent
            hitwall= true;
             isOnWall = true;
             
-           EndEpisode();
+         //  EndEpisode();
 
 
         }
@@ -156,12 +156,16 @@ public class CarAgent : Agent
             handBrakeInput= false;
         }
 
-        _carController.UpdateCar();
-        _carController.UpdateEngine();
-        _carController.UpdateTransmission();
-        _carController.UpdateBrake();
-        _carController.UpdateSteer();
-        _carController.ApplyWheelPositions();
+        
+            _carController.UpdateCar();
+            _carController.UpdateEngine();
+            _carController.UpdateTransmission();
+            _carController.UpdateBrake();
+            _carController.UpdateSteer();
+            _carController.ApplyWheelPositions();
+        
+
+      
 
         /*
                 _carController.SetInput(Actions[1], Actions[0], discreteActions[0]);
