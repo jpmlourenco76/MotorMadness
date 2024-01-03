@@ -563,8 +563,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    MaxVelocityAngleForHelp: 224
-    MinSpeedForHelp: 100
+    MaxVelocityAngleForHelp: 0
+    MinSpeedForHelp: 0
     HelpDriftIntensity: 0
     HandBrakeAngularHelpCurve:
       serializedVersion: 2
@@ -632,7 +632,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    MaxSpeedForMaxAngularHelp: 125
+    MaxSpeedForMaxAngularHelp: 0
     DriftLimitAngle: 0
     ABS: 1
     TCS: 0
@@ -11509,11 +11509,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BindingMode: 1
+  m_BindingMode: 2
   m_FollowOffset: {x: 0, y: 0.9, z: -7.2}
   m_XDamping: 0.3
-  m_YDamping: 0.3
-  m_ZDamping: 0
+  m_YDamping: 0.05
+  m_ZDamping: 0.1
   m_AngularDampingMode: 1
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -11543,7 +11543,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 908664530157758091}
-  m_LocalRotation: {x: 0.06213745, y: -0.000000017173129, z: 0.0000000010691603, w: 0.9980676}
+  m_LocalRotation: {x: 0.06213745, y: -0.000000017173132, z: 0.0000000010691605, w: 0.9980676}
   m_LocalPosition: {x: 0, y: 1.9, z: -5.218}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -16624,16 +16624,16 @@ WheelCollider:
     targetPosition: 0.5
   m_SuspensionDistance: 0.15
   m_ForceAppPointDistance: 0.1
-  m_Mass: 40
-  m_WheelDampingRate: 0.5
+  m_Mass: 35
+  m_WheelDampingRate: 0.9
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
+    m_ExtremumSlip: 0.2
     m_ExtremumValue: 2
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 1.2
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.4
+    m_ExtremumSlip: 0.3
     m_ExtremumValue: 3
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 2.8
@@ -21751,8 +21751,8 @@ WheelCollider:
     targetPosition: 0.5
   m_SuspensionDistance: 0.15
   m_ForceAppPointDistance: 0.1
-  m_Mass: 20
-  m_WheelDampingRate: 0.75
+  m_Mass: 25
+  m_WheelDampingRate: 0.95
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1.2
@@ -21760,7 +21760,7 @@ WheelCollider:
     m_AsymptoteValue: 0.5
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.4
+    m_ExtremumSlip: 0.55
     m_ExtremumValue: 2.1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 1.9
@@ -26829,7 +26829,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3152849310144330270}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.1, z: -1.5}
+  m_LocalPosition: {x: -0, y: 0.075, z: -0.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42333,16 +42333,16 @@ WheelCollider:
     targetPosition: 0.5
   m_SuspensionDistance: 0.15
   m_ForceAppPointDistance: 0.1
-  m_Mass: 40
-  m_WheelDampingRate: 0.5
+  m_Mass: 35
+  m_WheelDampingRate: 0.9
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
+    m_ExtremumSlip: 0.2
     m_ExtremumValue: 2
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 1.2
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.4
+    m_ExtremumSlip: 0.3
     m_ExtremumValue: 3
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 2.8
@@ -42616,11 +42616,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BindingMode: 1
+  m_BindingMode: 2
   m_FollowOffset: {x: 0, y: 1.25, z: -8.4}
   m_XDamping: 0.3
-  m_YDamping: 0.3
-  m_ZDamping: 0.1
+  m_YDamping: 0.1
+  m_ZDamping: 0.2
   m_AngularDampingMode: 1
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -62509,8 +62509,8 @@ WheelCollider:
     targetPosition: 0.5
   m_SuspensionDistance: 0.15
   m_ForceAppPointDistance: 0.1
-  m_Mass: 20
-  m_WheelDampingRate: 0.75
+  m_Mass: 25
+  m_WheelDampingRate: 0.95
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1.2
@@ -62518,7 +62518,7 @@ WheelCollider:
     m_AsymptoteValue: 0.5
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.4
+    m_ExtremumSlip: 0.55
     m_ExtremumValue: 2.1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 1.9
