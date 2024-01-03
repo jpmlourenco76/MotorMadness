@@ -51,9 +51,11 @@ public class CarMenuManager : MonoBehaviour
             select gameCar).ToList();
 
         Price = GameObject.Find("PriceLabel");
+
     }
     private void Start()
     {
+        gameManager.updateMaterials();
         if (specialPanelOne != null)
         {
             specialPanelOne.alpha = 0f;
