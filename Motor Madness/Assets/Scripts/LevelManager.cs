@@ -190,7 +190,7 @@ public class LevelManager : MonoBehaviour
                 Car.gameObject.GetComponent<AIInput>().enabled = true;
                 Car.gameObject.GetComponentInChildren<MeshCollider>().enabled = true;
                 Car.gameObject.GetComponent<CarAIWaipointTracker>().enabled = true;
-                Car.gameObject.GetComponent<MeshRenderer>().material = gameManager.gameData.characters[i].SelectedCar.material;
+                Car.gameObject.GetComponentInChildren<MeshRenderer>().material = gameManager.gameData.characters[i].SelectedCar.material;
 
                 cars.Add(gameManager.gameData.characters[i].SelectedCar);
                 cars[i].lap = 0;
@@ -248,7 +248,7 @@ public class LevelManager : MonoBehaviour
                     Car.gameObject.GetComponentInChildren<MeshCollider>().enabled = true;
                     Car.gameObject.GetComponent<AIInput>().enabled = true;
                     Car.gameObject.GetComponent <CarAIWaipointTracker>().enabled = true;
-                    Car.gameObject.GetComponent<MeshRenderer>().material = gameManager.gameData.characters[i].SelectedCar.material;
+                    Car.gameObject.GetComponentInChildren<MeshRenderer>().material = gameManager.gameData.characters[i].SelectedCar.material;
 
                     cars.Add(gameManager.gameData.characters[i].SelectedCar);
                     cars[i].lap = 0;
