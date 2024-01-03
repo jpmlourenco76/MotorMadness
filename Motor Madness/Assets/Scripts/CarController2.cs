@@ -44,7 +44,7 @@ public class CarController2 : MonoBehaviour
     public float PrevVelocityAngle { get; private set; }
 
     public float KPH;
-    private bool wasRunning;
+    private bool wasRunning = true;
    
 
     [Space(10)]
@@ -276,9 +276,11 @@ public class CarController2 : MonoBehaviour
 
     void AwakeEngine()
     {
+
         sFX = GetComponentInChildren<CarSFX>(); 
         MaxMotorTorque = Engine.MaxMotorTorque / DriveWheels.Length;
 
+        StartEngine();
     }
 
     void AwakeSteer()
@@ -355,16 +357,7 @@ public class CarController2 : MonoBehaviour
     {
         if (!isEngineRunning)
         {
-            wasRunning = false;
             return;
-        }
-        else
-        {
-            if (!wasRunning)
-            {
-                StartEngine();
-                wasRunning = true;
-            }
         }
         switch (driveController)
         {
@@ -387,7 +380,7 @@ public class CarController2 : MonoBehaviour
                 }
                 break;
             case driver.AIML:
-                if (carAgent == null)
+                if (carAgent == null || isEngineRunning == false)
                 {
                     CurrentAcceleration = 0;
                     CurrentBrake = 0;
@@ -804,7 +797,11 @@ public class CarController2 : MonoBehaviour
             EngineRPM = Mathf.Lerp(0, MinRPM, Mathf.Pow(Mathf.InverseLerp(0, StartEngineDellay, timer), 2));
         }
         float delay = StartEngineDellay;
-        sFX.StartEngine(delay);
+        if(sFX != null)
+        {
+            sFX.StartEngine(delay);
+        }
+        
         EngineRPM = MinRPM;
         
         StartEngineCoroutine = null;

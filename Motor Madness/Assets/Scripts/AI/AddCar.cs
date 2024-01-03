@@ -43,10 +43,10 @@ public class AddCar : MonoBehaviour
 
 
         levelManager.cars.Add(newCar);
-
+        levelManager.AiControllers.Add(GetComponent<CarController2>());
         if (!stage3)
         {
-            levelManager.AiControllers.Add(GetComponent<CarController2>());
+            
             gameObject.GetComponent<Cameras>().enabled = false;
             gameObject.transform.GetChild(9).gameObject.SetActive(false);
         }
