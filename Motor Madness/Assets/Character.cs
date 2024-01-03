@@ -9,18 +9,57 @@ public class Character : MonoBehaviour
     private GameManager gameManager;
     private List<Material> oldMaterials;
     private MainMenu mainMenu;
+    private bool videoInProgress = false;
     
+    public List<videocontroller> videos;
 
-    
 
     private void Start()
     {
         gameManager = GameManager.Instance;
         mainMenu = GameObject.Find("Main Camera").gameObject.GetComponent<MainMenu>();
-         
+        videos = new List<videocontroller>(GameObject.Find("CutSceneManager").gameObject.GetComponentsInChildren<videocontroller>());
+
     }
 
     public void OnButtonClick()
+    {
+
+  
+
+        if(!videoInProgress)
+        {
+            StartCoroutine(PlayVideoAndGoGarage(videos[1]));
+        }
+
+       
+    }
+
+
+    IEnumerator PlayVideoAndGoGarage(videocontroller video)
+    {
+        
+        gameManager.gameData.characters[0].characterName = gameManager.gameData.characters[id].characterName;
+
+        videoInProgress = true;
+        // Assuming videocontroller is an instance of VideoController
+        yield return StartCoroutine(video.PlayVideo());
+
+       
+
+        while (!video.videoCompleted)
+        {
+            yield return null;
+        }
+
+        videoInProgress = false;
+        HandleGoGarage();
+
+
+    }
+
+
+    private void HandleGoGarage()
     {
 
         oldMaterials = gameManager.gameData.characters[0].CarMaterials;
@@ -29,20 +68,29 @@ public class Character : MonoBehaviour
 
         gameManager.gameData.characters[id].characterName = "Apex";
         gameManager.gameData.characters[id].CarMaterials = oldMaterials;
-        
+
 
         gameManager.gameData.characters[0].position = 10;
 
-        for(int i = 1;  i < 10; i++)
+        for (int i = 1; i < 10; i++)
         {
-            if(gameManager.gameData.characters[0].position == gameManager.gameData.characters[i].position)
+            if (gameManager.gameData.characters[0].position == gameManager.gameData.characters[i].position)
             {
                 gameManager.gameData.characters[i].position = 1;
             }
         }
 
         gameManager.updateMaterials();
-        mainMenu.GoGarage();
 
+
+
+        if (gameManager != null)
+        {
+            gameManager.GoGarage();
+        }
+        else
+        {
+            mainMenu.GoGarage();
+        }
     }
 }

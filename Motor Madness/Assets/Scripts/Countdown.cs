@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class Countdown : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class Countdown : MonoBehaviour
 
     public CarController2 carController;
     public List<CarController2> AIcarControllers;
-
+    private bool once = true;
     public LevelManager levelManager;
 
     private void Awake()
@@ -37,16 +38,28 @@ public class Countdown : MonoBehaviour
 
     void Start()
     {
-        carController = gameManager.playerCarController;
-        if(levelManager.AiControllers != null)
-        {
-            AIcarControllers = levelManager.AiControllers;
-
-        }
-        StartCoroutine(CountStart());
+        
+        once = true;
+        
+        
 
         
 }
+
+    private void Update()
+    {
+        if (levelManager.startLevel && once)
+        {
+            carController = gameManager.playerCarController;
+            if (levelManager.AiControllers != null)
+            {
+                AIcarControllers = levelManager.AiControllers;
+
+            }
+            once = false;
+            StartCoroutine(CountStart());
+        }
+    }
 
     IEnumerator CountStart (){
       

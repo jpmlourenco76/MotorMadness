@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-       SetRacerNames();
+      // SetRacerNames();
     }
 
     public CharacterData GetCurrentCharacter()

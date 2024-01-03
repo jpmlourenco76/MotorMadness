@@ -18,6 +18,8 @@ public class CarStateMAchine : MonoBehaviour
     private float timer = 0.0f;
     public bool followpath;
     public float timepath;
+    public LevelManager levelManager;
+    private bool once = true;
 
     [HideInInspector] public bool hit;
 
@@ -27,10 +29,15 @@ public class CarStateMAchine : MonoBehaviour
 
     private void Awake()
     {
+        GameObject gameLogic = GameObject.Find("GameLogic");
+
+        levelManager = gameLogic.GetComponent<LevelManager>();
+
         aICarController = GetComponent<CarController2>();
         aIInput = GetComponent<AIInput>();
         wanderamount = aIInput.wanderAmount;
         aICarController.StartEngineDellay = 0;
+        once = true;
     }
 
 
@@ -38,6 +45,13 @@ public class CarStateMAchine : MonoBehaviour
 
     private void Update()
     {
+        if(once && levelManager.startLevel)
+        {
+            aICarController.persuitTarget = GameObject.Find("Car0").gameObject;
+            once = false;
+        }
+
+
         switch (currentState)
         {
             case CarState.Stopped:
