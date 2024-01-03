@@ -621,7 +621,6 @@ MonoBehaviour:
   cameraswitch: 0
   rewind: 0
   cameraRear: 0
-  toCreateRain: 0
   carController: {fileID: -6296505253003541282}
 --- !u!114 &-6598405868702273211
 MonoBehaviour:
@@ -32523,7 +32522,7 @@ WheelCollider:
   m_SuspensionDistance: 0.2
   m_ForceAppPointDistance: 0.1
   m_Mass: 35
-  m_WheelDampingRate: 1
+  m_WheelDampingRate: 0.95
   m_ForwardFriction:
     m_ExtremumSlip: 0.25
     m_ExtremumValue: 2
@@ -62768,7 +62767,7 @@ WheelCollider:
   m_SuspensionDistance: 0.2
   m_ForceAppPointDistance: 0.1
   m_Mass: 35
-  m_WheelDampingRate: 1
+  m_WheelDampingRate: 0.95
   m_ForwardFriction:
     m_ExtremumSlip: 0.25
     m_ExtremumValue: 2
