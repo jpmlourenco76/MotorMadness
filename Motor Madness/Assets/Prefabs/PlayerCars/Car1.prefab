@@ -1340,7 +1340,6 @@ MonoBehaviour:
   cameraswitch: 0
   rewind: 0
   cameraRear: 0
-  toCreateRain: 0
   carController: {fileID: 252078128882138762}
 --- !u!114 &5683351181823297920
 MonoBehaviour:
@@ -6783,7 +6782,7 @@ WheelCollider:
   m_SuspensionDistance: 0.1
   m_ForceAppPointDistance: 0.2
   m_Mass: 20
-  m_WheelDampingRate: 1
+  m_WheelDampingRate: 0.95
   m_ForwardFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1.2
@@ -7072,7 +7071,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726175087600521632}
-  m_LocalRotation: {x: -0.082031034, y: 0.0035676053, z: -0.00016330631, w: 0.9966234}
+  m_LocalRotation: {x: -0.082031034, y: 0.0035676416, z: -0.00016330797, w: 0.9966234}
   m_LocalPosition: {x: -0.07142675, y: -1.2751528, z: -2.860312}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -32727,7 +32726,7 @@ WheelCollider:
   m_SuspensionDistance: 0.05
   m_ForceAppPointDistance: 0.2
   m_Mass: 30
-  m_WheelDampingRate: 1
+  m_WheelDampingRate: 0.95
   m_ForwardFriction:
     m_ExtremumSlip: 0.25
     m_ExtremumValue: 2
@@ -63489,7 +63488,7 @@ WheelCollider:
   m_SuspensionDistance: 0.1
   m_ForceAppPointDistance: 0.2
   m_Mass: 20
-  m_WheelDampingRate: 1
+  m_WheelDampingRate: 0.95
   m_ForwardFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1.2
@@ -63643,7 +63642,7 @@ WheelCollider:
   m_SuspensionDistance: 0.05
   m_ForceAppPointDistance: 0.2
   m_Mass: 30
-  m_WheelDampingRate: 1
+  m_WheelDampingRate: 0.95
   m_ForwardFriction:
     m_ExtremumSlip: 0.25
     m_ExtremumValue: 2

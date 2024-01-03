@@ -36,9 +36,6 @@ public class PlayerCarInput : MonoBehaviour
 
     public bool cameraswitch, rewind, cameraRear;
 
-    public bool toCreateRain = false;
-
-
     private float GearUpInput = 0;
    
     private float GearDownInput = 0;
@@ -90,8 +87,7 @@ public class PlayerCarInput : MonoBehaviour
                 input.Gameplay.GearUp.canceled += ReleaseGearUp;
                 input.Gameplay.GearDown.performed += ApplyGearDown;
                 input.Gameplay.GearDown.canceled += ReleaseGearDown;
-
-                toCreateRain = true;
+                
                 break;
         }
       
