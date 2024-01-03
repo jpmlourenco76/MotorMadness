@@ -21734,16 +21734,10 @@ MonoBehaviour:
       m_Bits: 1
     MinMagnitudeCollision: 20
     MaxMagnitudeCollision: 1e+14
-  FrictionEffectSourceRef: {fileID: 7663666496444063880}
+  FrictionEffectSourceRef: {fileID: 0}
   PlayFrictionTime: 0.5
-  DefaultFrictionClip: {fileID: 8300000, guid: 89507da55c95d8247b1d26d3fefc7df5, type: 3}
-  FrictionEvents:
-  - AudioClip: {fileID: 8300000, guid: 89507da55c95d8247b1d26d3fefc7df5, type: 3}
-    CollisionMask:
-      serializedVersion: 2
-      m_Bits: 1
-    MinMagnitudeCollision: 0
-    MaxMagnitudeCollision: 1e+26
+  DefaultFrictionClip: {fileID: 0}
+  FrictionEvents: []
   OtherEffectsSource: {fileID: 6669927401143415964}
   EngineSourceRef: {fileID: 5279334102795208802}
   StartEngineClip: {fileID: 8300000, guid: 52120e0f573f21f488f253eec714d231, type: 3}
