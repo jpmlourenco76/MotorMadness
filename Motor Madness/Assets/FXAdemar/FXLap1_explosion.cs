@@ -22,7 +22,6 @@ public class FXLap1_explosion : MonoBehaviour
     public GameObject Fire8;
     public GameObject Fire9;
 
-    //public GameObject Scenery_Lap1;
     public GameObject Explosionspot1;
     public GameObject Explosionspot2;
     public GameObject Explosionspot3;
@@ -39,16 +38,17 @@ public class FXLap1_explosion : MonoBehaviour
     public GameObject Firespot7;
     public GameObject Firespot8;
     public GameObject Firespot9;
+    
     public AudioClip explosion;
-    private AudioSource audioSource;
-
+    private AudioSource Explosion;
 
     private bool hasExploded = false;
 
     void Start()
-        {
-            audioSource = GetComponent<AudioSource>();
-        }
+    {
+        Explosion = GetComponent<AudioSource>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Trigger Enter: " + other.gameObject.name);
@@ -78,10 +78,10 @@ public class FXLap1_explosion : MonoBehaviour
         GameObject fire8 = Instantiate(Fire8, Firespot8.transform.position, Quaternion.identity);
         GameObject fire9 = Instantiate(Fire9, Firespot9.transform.position, Quaternion.identity);
 
-        if (explosion != null && audioSource != null)
-            {
-                audioSource.PlayOneShot(explosion);
-            }
+        if (explosion != null && Explosion != null)
+        {
+            Explosion.PlayOneShot(explosion);
+        }
         Debug.Log("Blow!");
     }
 }
