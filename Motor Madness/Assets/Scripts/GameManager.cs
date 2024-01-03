@@ -68,29 +68,41 @@ public class GameManager : MonoBehaviour
             gameData.characters[currentCharacterIndex].SelectedCar = gameData.GameCars[carPointer];
             if (desiredLevel == 1)
             {
-                SceneManager.LoadScene("Stage1.2");
+                SceneManager.LoadScene("Stage1.1");
             }
             else if (desiredLevel == 2)
             {
-                SceneManager.LoadScene("Stage1.3");
+                SceneManager.LoadScene("Stage1.2");
             }
             else if (desiredLevel == 3)
             {
-                SceneManager.LoadScene("Stage2.1");
+                SceneManager.LoadScene("Stage1.3");
             }
             else if (desiredLevel == 4)
             {
-                SceneManager.LoadScene("Stage2.3");
+                SceneManager.LoadScene("Stage2.1");
             }
             else if (desiredLevel == 5)
             {
-                SceneManager.LoadScene("Stage3.1");
+                SceneManager.LoadScene("Stage2.2");
             }
             else if (desiredLevel == 6)
             {
-                SceneManager.LoadScene("Stage3.3");
+                SceneManager.LoadScene("Stage2.3");
             }
             else if (desiredLevel == 7)
+            {
+                SceneManager.LoadScene("Stage3.1");
+            }
+            else if (desiredLevel == 8)
+            {
+                SceneManager.LoadScene("Stage3.2");
+            }
+            else if (desiredLevel == 9)
+            {
+                SceneManager.LoadScene("Stage3.3");
+            }
+            else if (desiredLevel == 10)
             {
                 SceneManager.LoadScene("Stage4");
             }
@@ -104,29 +116,41 @@ public class GameManager : MonoBehaviour
             gameData.characters[currentCharacterIndex].SelectedCar = gameData.characters[currentCharacterIndex].OwnedCars[carPointer];
             if (gameData.characters[0].currentLevel == 1)
             {
-                SceneManager.LoadScene("Stage1.2");
+                SceneManager.LoadScene("Stage1.1");
             }
             else if (gameData.characters[0].currentLevel == 2)
             {
-                SceneManager.LoadScene("Stage1.3");
+                SceneManager.LoadScene("Stage1.2");
             }
             else if (gameData.characters[0].currentLevel == 3)
             {
-                SceneManager.LoadScene("Stage2.1");
+                SceneManager.LoadScene("Stage1.3");
             }
             else if (gameData.characters[0].currentLevel == 4)
             {
-                SceneManager.LoadScene("Stage2.3");
+                SceneManager.LoadScene("Stage2.1");
             }
             else if (gameData.characters[0].currentLevel == 5)
             {
-                SceneManager.LoadScene("Stage3.1");
+                SceneManager.LoadScene("Stage2.2");
             }
             else if (gameData.characters[0].currentLevel == 6)
             {
-                SceneManager.LoadScene("Stage3.3");
+                SceneManager.LoadScene("Stage2.3");
             }
             else if (gameData.characters[0].currentLevel == 7)
+            {
+                SceneManager.LoadScene("Stage3.1");
+            }
+            else if (gameData.characters[0].currentLevel == 8)
+            {
+                SceneManager.LoadScene("Stage3.2");
+            }
+            else if (gameData.characters[0].currentLevel == 9)
+            {
+                SceneManager.LoadScene("Stage3.3");
+            }
+            else if (gameData.characters[0].currentLevel == 10)
             {
                 SceneManager.LoadScene("Stage4");
             }

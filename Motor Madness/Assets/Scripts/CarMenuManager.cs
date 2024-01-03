@@ -56,9 +56,21 @@ public class CarMenuManager : MonoBehaviour
     private void Start()
     {
         gameManager.updateMaterials();
+        gameManager.SetRacerNames();
         if (specialPanelOne != null)
         {
-            specialPanelOne.alpha = 0f;
+            
+            if (gameManager.gameData.characters[0].currentLevel == 3 && gameManager.levelType == GameManager.LevelType.Story ||
+            (gameManager.desiredLevel == 3 && gameManager.levelType != GameManager.LevelType.Story))
+            {
+                specialPanelOne.alpha = 1f;
+                canvasHolder.SetActive(true);
+                panelOne = true;
+            }
+            else
+            {
+                specialPanelOne.alpha = 0f;
+            }
         }
         if (specialPanelTwo != null)
         {
@@ -68,7 +80,12 @@ public class CarMenuManager : MonoBehaviour
         {
             specialPanelThree.alpha = 0f;
         }
+
+        isTimerActive = false;
+        timer = 0f;
+
        
+
 
         PlayerPrefs.SetInt("pointer", 0);
 
@@ -178,21 +195,12 @@ public class CarMenuManager : MonoBehaviour
 
     public void OnSelect()
     {
-        // Find the GameManager instance using the singleton pattern
-        GameManager gameManager = GameManager.Instance;
+        
 
         if (gameManager != null)
         {
-            isTimerActive = false;
-            timer = 0f;
-
-            if (gameManager.gameData.characters[0].currentLevel == 2 && gameManager.levelType == GameManager.LevelType.Story ||
-                (gameManager.desiredLevel == 2 && gameManager.levelType != GameManager.LevelType.Story))
-            {
-                canvasHolder.SetActive(true);
-                panelOne = true;
-            }
-            else if (gameManager.gameData.characters[0].currentLevel == 4 && gameManager.levelType == GameManager.LevelType.Story ||
+            
+             if (gameManager.gameData.characters[0].currentLevel == 4 && gameManager.levelType == GameManager.LevelType.Story ||
                 (gameManager.desiredLevel == 4 && gameManager.levelType != GameManager.LevelType.Story))
             {
                 canvasHolder.SetActive(true);
@@ -232,7 +240,7 @@ public class CarMenuManager : MonoBehaviour
         if (panelOne)
         {
             timer += Time.deltaTime;
-            specialPanelOne.alpha = Mathf.Clamp01(timer / fadeInDuration);
+            
 
             if(timer >= fadeInDuration)
             {

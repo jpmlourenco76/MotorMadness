@@ -122,7 +122,7 @@ public class LevelManager : MonoBehaviour
         fthPlaceDisplay = GameObject.Find("5thPlaceDisplay");
         th6PlaceDisplay = GameObject.Find("6thPlaceDisplay");
         th7PlaceDisplay = GameObject.Find("7thPlaceDisplay");
-        th8PlaceDisplay = GameObject.Find("8thPlaceDisplay");
+        th8PlaceDisplay = GameObject.Find("8hPlaceDisplay");
         th9PlaceDisplay = GameObject.Find("9thPlaceDisplay");
         th10PlaceDisplay = GameObject.Find("10thPlaceDisplay");
 
@@ -134,20 +134,20 @@ public class LevelManager : MonoBehaviour
         fthPlaceDisplayR = GameObject.Find("5thPlaceDisplayR");
         th6PlaceDisplayR = GameObject.Find("6thPlaceDisplayR");
         th7PlaceDisplayR = GameObject.Find("7thPlaceDisplayR");
-        th8PlaceDisplayR = GameObject.Find("8thPlaceDisplayR");
+        th8PlaceDisplayR = GameObject.Find("8hPlaceDisplayR");
         th9PlaceDisplayR = GameObject.Find("9thPlaceDisplayR");
         th10PlaceDisplayR = GameObject.Find("10thPlaceDisplayR");
 
-        stPointsR = GameObject.Find("1stPointsR");
-        ndPointsR = GameObject.Find("2ndPointsR");
-        rdPointsR = GameObject.Find("3rdPointsR");
-        thPointsR = GameObject.Find("4thPointsR");
-        fthPointsR = GameObject.Find("5thPointsR");
-        th6PointsR = GameObject.Find("6thPointsR");
-        th7PointsR = GameObject.Find("7thPointsR");
-        th8PointsR = GameObject.Find("8thPointsR");
-        th9PointsR = GameObject.Find("9thPointsR");
-        th10PointsR = GameObject.Find("10thPointsR");
+        stPointsR = GameObject.Find("1stPoints");
+        ndPointsR = GameObject.Find("2ndPoints");
+        rdPointsR = GameObject.Find("3rdPoints");
+        thPointsR = GameObject.Find("4thPoints");
+        fthPointsR = GameObject.Find("5thPoints");
+        th6PointsR = GameObject.Find("6thPoints");
+        th7PointsR = GameObject.Find("7thPoints");
+        th8PointsR = GameObject.Find("8thPoints");
+        th9PointsR = GameObject.Find("9thPoints");
+        th10PointsR = GameObject.Find("10thPoints");
 
 
 
@@ -260,7 +260,7 @@ public class LevelManager : MonoBehaviour
                     Vector3 pos = spawnPointManager.spawnPoints[0].position;
                     Quaternion rot = spawnPointManager.spawnPoints[0].rotation;
                     GameObject Car;
-                    if (gameManager.gameData.characters[i].currentLevel == 2 && gameManager.levelType == GameManager.LevelType.Story) {
+                    if (gameManager.gameData.characters[i].currentLevel == 3 && gameManager.levelType == GameManager.LevelType.Story) {
                         RaceRank = null;
                         Car = Instantiate(gameManager.gameData.GameCars[2].CarPrefab, pos, rot);
 
@@ -471,6 +471,7 @@ public class LevelManager : MonoBehaviour
 
                             if (i == 0)
                             {
+                                    Debug.Log(levelReward + characterData.characterName);
                                 characterData.money += levelReward;
                             }
                             else if (i == 1)
@@ -576,7 +577,7 @@ public class LevelManager : MonoBehaviour
         }
 
 
-        if (gameManager.gameData.characters[0].currentLevel == 2)
+        if (gameManager.gameData.characters[0].currentLevel == 3)
         {
             gameManager.gameData.characters[0].OwnedCars.Add(gameManager.gameData.GameCars[2]);
             gameManager.SetRacerNames();
@@ -627,13 +628,13 @@ public class LevelManager : MonoBehaviour
                 newTorque = OriginalTorque;
                 break;
             case 1:
-                newTorque = OriginalTorque * 1.05f;
+                newTorque = OriginalTorque * 1.15f;
                 break;
             case 2:
-                newTorque = OriginalTorque * 1.2f;
+                newTorque = OriginalTorque * 1.3f;
                 break;
             case 3:
-                newTorque = OriginalTorque * 1.5f;
+                newTorque = OriginalTorque * 1.6f;
                 break;
             default:
                 newTorque = OriginalTorque;
@@ -653,13 +654,13 @@ public class LevelManager : MonoBehaviour
                 newGear = OriginalGear;
                 break;
             case 1:
-                newGear = OriginalGear * 1.1f;
-                break;
-            case 2:
                 newGear = OriginalGear * 1.2f;
                 break;
+            case 2:
+                newGear = OriginalGear * 1.35f;
+                break;
             case 3:
-                newGear = OriginalGear * 1.3f;
+                newGear = OriginalGear * 1.5f;
                 break;
             default:
                 newGear = OriginalGear;
@@ -683,13 +684,13 @@ public class LevelManager : MonoBehaviour
                     newBreak = OriginalBreak;
                     break;
                 case 1:
-                    newBreak = OriginalBreak * 1.25f;
+                    newBreak = OriginalBreak * 1.3f;
                     break;
                 case 2:
-                    newBreak = OriginalBreak * 1.75f;
+                    newBreak = OriginalBreak * 1.85f;
                     break;
                 case 3:
-                    newBreak = OriginalBreak * 2.50f;
+                    newBreak = OriginalBreak * 2.70f;
                     break;
                 default:
                     newBreak = OriginalBreak;
@@ -719,13 +720,13 @@ public class LevelManager : MonoBehaviour
                     newTire = OriginalTire;
                     break;
                 case 1:
-                    newTire = 0.1f;
+                    newTire = 0.15f;
                     break;
                 case 2:
-                    newTire = 0.2f;
+                    newTire = 0.25f;
                     break;
                 case 3:
-                    newTire = 0.4f;
+                    newTire = 0.45f;
                     break;
                 default:
                     newTire = OriginalTire;

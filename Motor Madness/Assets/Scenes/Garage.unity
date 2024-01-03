@@ -1889,11 +1889,13 @@ MonoBehaviour:
       wanderAmount: 0
       points: 0
       price: 0
+      material: {fileID: 0}
       upgradelvls:
         TorqueUpgrade: 1
         GearUpgrade: 1
         BreakUpgrade: 1
         TireUpdrage: 1
+    CarMaterials: []
   toRotate: {fileID: 0}
   rotateSpeed: 10
   vehiclePointer: 0
