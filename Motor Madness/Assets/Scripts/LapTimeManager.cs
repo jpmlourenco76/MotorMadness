@@ -25,12 +25,14 @@ public class LapTimeManager : MonoBehaviour
     public GameObject BestSecDisplayObj;
     public GameObject BestMilDisplayObj;
     public CarController2 carController;
-
+    private GameObject gameLogic;
+    private bool once = true;
     private float bestLapTime = float.MaxValue; // Initialize best lap time to a high value
 
     private bool lapCompleted = false;
     private GameManager gameManager;
-    
+    private LevelManager levelManager;
+
 
     private void Awake()
     {
@@ -41,7 +43,8 @@ public class LapTimeManager : MonoBehaviour
             return;
         }
 
-      
+        gameLogic = GameObject.Find("GameLogic");
+        levelManager = gameLogic.GetComponent<LevelManager>();
 
         FinishTrig = GameObject.Find("FinishTrigger");
 
@@ -56,19 +59,25 @@ public class LapTimeManager : MonoBehaviour
     }
 
     private void Start()
-    {
-        if (gameManager.playerCarController == null)
-        {
-            Debug.LogError("Player Car Controller is not assigned in the GameManager.");
-            return;
-        }
-        carController = gameManager.playerCarController;
+    { 
+        
 
 
     }
     void Update()
     {
-        if (carController.isEngineRunning)
+        if(once && levelManager.startLevel)
+        {
+            if (gameManager.playerCarController == null)
+            {
+                Debug.LogError("Player Car Controller is not assigned in the GameManager.");
+                return;
+            }
+            carController = gameManager.playerCarController;
+            once = false;
+        }
+
+        if (carController.isEngineRunning && carController != null)
         {
             if (!lapCompleted)
             {

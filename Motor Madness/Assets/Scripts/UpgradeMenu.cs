@@ -28,8 +28,7 @@ public class UpgradeMenu : MonoBehaviour
     public int[] price = {50000, 75000, 100000}; 
     private void Awake()
     {
-        gameManager = GameManager.Instance;
-        characterData = gameManager.GetCurrentCharacter();
+        
         carMenuManager = GameObject.Find("VehicleSelect").GetComponent<CarMenuManager>();
 
 
@@ -43,6 +42,11 @@ public class UpgradeMenu : MonoBehaviour
         GearPrice = GameObject.Find("Gearbox");
     }
 
+    private void Start()
+    {
+        gameManager = GameManager.Instance;
+        characterData = gameManager.GetCurrentCharacter();
+    }
     private void Update()
     {
         if (gameManager.levelType == GameManager.LevelType.Story)

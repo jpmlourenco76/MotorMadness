@@ -21,8 +21,11 @@ public class LevelManager : MonoBehaviour
     }
     [SerializeField] RaceType raceType;
 
+    public bool hasCutscene;
+    public bool isRaining;
+    public bool isNight;
 
-
+    public List<videocontroller> videocontroller;
     private GameObject FinishTrig;
     public CarController2 carController;
     private LapsCompleted lapsCompleted;
@@ -78,7 +81,7 @@ public class LevelManager : MonoBehaviour
     private GameManager gameManager;
 
     public int levelReward = 0;
-    
+    public bool startLevel = false;
 
     [SerializeField]
     public List<CarData> cars = new List<CarData>();
@@ -96,6 +99,13 @@ public class LevelManager : MonoBehaviour
 
         gameManager = GameManager.Instance;
         characterData = gameManager.GetCurrentCharacter();
+       
+        if (hasCutscene)
+        {
+            videocontroller = new List<videocontroller>(GameObject.Find("CutSceneManager").gameObject.GetComponentsInChildren<videocontroller>());
+
+        }
+
 
         FinishTrig = GameObject.Find("FinishTrigger");
         Finish = GameObject.Find("Finish");
@@ -113,7 +123,6 @@ public class LevelManager : MonoBehaviour
 
         spawnPointManager = GameObject.Find("SpawnPoints").GetComponent<SpawnPointManager>();
         spawnPoints = spawnPointManager.spawnPoints;
-
 
         stPlaceDisplay = GameObject.Find("1stPlaceDisplay");
         ndPlaceDisplay = GameObject.Find("2ndPlaceDisplay");
@@ -159,18 +168,57 @@ public class LevelManager : MonoBehaviour
         RaceRank.enabled = false;
         OverallRank.enabled = false;
         RetryCanvas.enabled = false;
+        Canvas.enabled = false;
+        MiniMap.enabled = false;
 
         gameManager.inrace = true;
+
+        if(characterData.currentLevel == 3 )
+        {
+            StartCoroutine(PlayVideoAndSpawn());
+        }
+        else if (characterData.currentLevel == 5)
+        {
+            StartCoroutine(PlayVideoAndSpawn());
+        }
+        else if (characterData.currentLevel == 6)
+        {
+            StartCoroutine(PlayVideoAndSpawn());
+        }
+        else
+        {
+            Spawn();
+        }
+
+        
+    }
+
+    IEnumerator PlayVideoAndSpawn()
+    {
+        // Assuming videocontroller is an instance of VideoController
+        yield return StartCoroutine(videocontroller[0].PlayVideoSingle());
+
+        while (!videocontroller[0].videoCompleted)
+        {
+            yield return null;
+        }
+
         Spawn();
     }
 
-
-
     public void Spawn()
     {
+
         
         AiControllers.Clear();
         cars.Clear();
+        startLevel = true;
+        Canvas.enabled = true;
+        MiniMap.enabled = true;
+
+
+
+
         int i = 0;
 
         while (i < gameManager.gameData.characters.Count)
@@ -285,7 +333,7 @@ public class LevelManager : MonoBehaviour
                     cars.Add(gameManager.gameData.characters[i].SelectedCar);
                     cars[i].lap = 0;
                     cars[i].distance = 0;
-
+                    
                     carController = Car.GetComponent<CarController2>();
                     carController.SetDriverType(CarController2.driver.Human);
                     gameManager.SetPlayerCarController(Car);
@@ -297,6 +345,9 @@ public class LevelManager : MonoBehaviour
 
 
                 }
+               
+
+
             }
 
            
@@ -336,15 +387,31 @@ public class LevelManager : MonoBehaviour
             ai = GameObject.Find("Car" + i).GetComponent<AIInput>();
             if (ai!= null)
             {
-                if (cars[i].checkpoints - GameObject.Find("Car0").GetComponent<CarController2>().pchecks > 2)
+                if (!special)
                 {
-                    GameObject.Find("Car" + i).GetComponent<AIInput>().wanderAmount = GameObject.Find("Car" + i).GetComponent<AIInput>().wanderAmount * 0.9999f;
-                    if (GameObject.Find("Car" + i).GetComponent<AIInput>().wanderAmount < 0.15f) GameObject.Find("Car" + i).GetComponent<AIInput>().wanderAmount = 0.15f;
+                    if (cars[i].checkpoints - GameObject.Find("Car0").GetComponent<CarController2>().pchecks > 2)
+                    {
+                        GameObject.Find("Car" + i).GetComponent<AIInput>().wanderAmount = GameObject.Find("Car" + i).GetComponent<AIInput>().wanderAmount * 0.9999f;
+                        if (GameObject.Find("Car" + i).GetComponent<AIInput>().wanderAmount < 0.15f) GameObject.Find("Car" + i).GetComponent<AIInput>().wanderAmount = 0.15f;
+                    }
+                    else
+                    {
+                        GameObject.Find("Car" + i).GetComponent<AIInput>().wanderAmount = cars[i].wanderAmount;
+                    }
                 }
                 else
                 {
-                    GameObject.Find("Car" + i).GetComponent<AIInput>().wanderAmount = cars[i].wanderAmount;
+                    if (cars[i].checkpoints - GameObject.Find("Car0").GetComponent<CarController2>().pchecks > 2)
+                    {
+                        GameObject.Find("Car" + i).GetComponent<AIInput>().wanderAmount = GameObject.Find("Car" + i).GetComponent<AIInput>().wanderAmount * 0.9999f;
+                        if (GameObject.Find("Car" + i).GetComponent<AIInput>().wanderAmount < 0.15f) GameObject.Find("Car" + i).GetComponent<AIInput>().wanderAmount = 0.15f;
+                    }
+                    else
+                    {
+                        GameObject.Find("Car" + i).GetComponent<AIInput>().wanderAmount = 0.8f;
+                    }
                 }
+                
             }
            
         }
@@ -585,8 +652,28 @@ public class LevelManager : MonoBehaviour
             gameManager.updateMaterials();
         }
 
-        
-        Invoke("GoGarage", 3);
+        if(gameManager.gameData.characters[0].currentLevel == 10)
+            {
+                int winner;
+                if (Rank[0].RacerName == gameManager.gameData.characters[0].characterName)
+                {
+                    winner = 0;
+                }
+                else
+                {
+                    winner = 1;
+
+                }
+                OverallRank.enabled = false;
+                StartCoroutine(PlayVideoAndGoGarage(winner));
+            }
+            else
+            {
+                Invoke("GoGarage", 3);
+            }
+
+
+      
 
         }
         else
@@ -597,6 +684,28 @@ public class LevelManager : MonoBehaviour
            
         }
 
+    }
+
+    IEnumerator PlayVideoAndGoGarage(int i)
+    {
+        
+        if(i == 0)
+        {
+            yield return StartCoroutine(videocontroller[i].PlayVideo());
+        }
+        else if(i == 1) {
+
+            yield return StartCoroutine(videocontroller[i].PlayVideoSingle());
+        }
+
+      
+
+        while (!videocontroller[i].videoCompleted)
+        {
+            yield return null;
+        }
+
+        GoMenu();
     }
 
     public void Restart()

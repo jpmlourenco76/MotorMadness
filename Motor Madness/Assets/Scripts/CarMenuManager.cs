@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class CarMenuManager : MonoBehaviour
 {
+    public bool hasCutscene;
     public CharacterData characterData;
     public GameObject toRotate;
     public float rotateSpeed;
@@ -20,8 +21,8 @@ public class CarMenuManager : MonoBehaviour
 
 
     #region Variables for Panels
-    private float timerDuration = 3f;
-    private float fadeInDuration = 1f;
+    private float timerDuration = 1f;
+    private float fadeInDuration = 0.5f;
     private float timer;
 
     public GameObject originalCanvas;
@@ -34,6 +35,8 @@ public class CarMenuManager : MonoBehaviour
     private bool isNormalLevel = false;
     private bool isTimerActive = false;
 
+    public List<videocontroller> videos;
+
     public CanvasGroup specialPanelOne;
     public CanvasGroup specialPanelTwo;
     public CanvasGroup specialPanelThree;
@@ -41,6 +44,19 @@ public class CarMenuManager : MonoBehaviour
 
 
     private void Awake()
+    {
+        
+        
+
+        Price = GameObject.Find("PriceLabel");
+        if (hasCutscene)
+        {
+            videos = new List<videocontroller>(GameObject.Find("CutSceneManager").gameObject.GetComponentsInChildren<videocontroller>());
+
+        }
+
+    }
+    private void Start()
     {
         gameManager = GameManager.Instance;
         characterData = gameManager.GetCurrentCharacter();
@@ -50,19 +66,16 @@ public class CarMenuManager : MonoBehaviour
             where !ownedCarsGroup.Any()
             select gameCar).ToList();
 
-        Price = GameObject.Find("PriceLabel");
-
-    }
-    private void Start()
-    {
         gameManager.updateMaterials();
         gameManager.SetRacerNames();
+        gameManager.SetPointsPerRacer();
+
         if (specialPanelOne != null)
         {
             
-            if (gameManager.gameData.characters[0].currentLevel == 3 && gameManager.levelType == GameManager.LevelType.Story ||
-            (gameManager.desiredLevel == 3 && gameManager.levelType != GameManager.LevelType.Story))
+            if (gameManager.gameData.characters[0].currentLevel == 3 && gameManager.levelType == GameManager.LevelType.Story)
             {
+                
                 specialPanelOne.alpha = 1f;
                 canvasHolder.SetActive(true);
                 panelOne = true;
@@ -194,23 +207,27 @@ public class CarMenuManager : MonoBehaviour
 
 
     public void OnSelect()
-    {
-        
-
+    {   
         if (gameManager != null)
         {
             
              if (gameManager.gameData.characters[0].currentLevel == 4 && gameManager.levelType == GameManager.LevelType.Story ||
                 (gameManager.desiredLevel == 4 && gameManager.levelType != GameManager.LevelType.Story))
             {
-                canvasHolder.SetActive(true);
-                panelTwo = true;
+                
+                StartCoroutine(PlayVideoAndGoLevel(videos[0]));
             }
-            else if (gameManager.gameData.characters[0].currentLevel == 6 && gameManager.levelType == GameManager.LevelType.Story ||
-                (gameManager.desiredLevel == 6 && gameManager.levelType != GameManager.LevelType.Story))
+            else if (gameManager.gameData.characters[0].currentLevel == 7 && gameManager.levelType == GameManager.LevelType.Story ||
+                (gameManager.desiredLevel == 7 && gameManager.levelType != GameManager.LevelType.Story))
             {
-                canvasHolder.SetActive(true);
-                panelThree = true;
+                
+                StartCoroutine(PlayVideoAndGoLevel(videos[1]));
+            }
+            else if (gameManager.gameData.characters[0].currentLevel == 10 && gameManager.levelType == GameManager.LevelType.Story ||
+               (gameManager.desiredLevel == 10 && gameManager.levelType != GameManager.LevelType.Story))
+            {
+                
+                StartCoroutine(PlayVideoAndGoLevel(videos[2]));
             }
             else
             {
@@ -223,7 +240,22 @@ public class CarMenuManager : MonoBehaviour
         }
     }
 
-#region Special Level Panels
+
+
+    IEnumerator PlayVideoAndGoLevel(videocontroller video)
+    {
+        // Assuming videocontroller is an instance of VideoController
+        yield return StartCoroutine(video.PlayVideo());
+
+        while (!video.videoCompleted)
+        {
+            yield return null;
+        }
+
+        gameManager.GoLevel(vehiclePointer);
+
+    }
+    #region Special Level Panels
 
     void Update()
     {
@@ -250,31 +282,7 @@ public class CarMenuManager : MonoBehaviour
             }
         }
 
-        if (panelTwo)
-        {
-            timer += Time.deltaTime;
-            specialPanelTwo.alpha = Mathf.Clamp01(timer / fadeInDuration);
-
-            if(timer >= fadeInDuration)
-            {
-                panelTwo = false;
-                timer = 0f;
-                isTimerActive = true;
-            }
-        }
-
-        if (panelThree)
-        {
-            timer += Time.deltaTime;
-            specialPanelThree.alpha = Mathf.Clamp01(timer / fadeInDuration);
-
-            if(timer >= fadeInDuration)
-            {
-                panelThree = false;
-                timer = 0f;
-                isTimerActive = true;
-            }
-        }
+    
     }
 #endregion
 }

@@ -424,6 +424,56 @@
                     "action": "Lights",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bf4654f0-b318-464e-b5aa-e5167def5110",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Lights",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Menu",
+            "id": "74cbb40e-c5ca-4356-820a-67806b4b85ec",
+            "actions": [
+                {
+                    "name": "SkipVideo",
+                    "type": "Button",
+                    "id": "6ac291db-08a9-4699-93c0-ef0ad7836ca9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "38b60727-8b44-458b-82f5-5e1f6e9566ea",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SkipVideo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c71e0752-9210-4450-bc43-52248ed73724",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SkipVideo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

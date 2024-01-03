@@ -10,6 +10,7 @@ public class AddCar : MonoBehaviour
     public GameObject car;
     public CarController2 controller2;
     public bool stage3 = false;
+    private bool once = true;
 
     private void Awake()
     {
@@ -21,10 +22,17 @@ public class AddCar : MonoBehaviour
 
     private void Start()
     {
-        AddNewCar(); 
+       
     }
 
-  
+    private void Update()
+    {
+        if(once && levelManager.startLevel)
+        {
+            AddNewCar();
+            once = false;
+        }
+    }
 
     private void AddNewCar()
     {

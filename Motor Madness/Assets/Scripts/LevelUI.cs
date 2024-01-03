@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class LevelUI : MonoBehaviour
 {
+    public LevelManager levelManager;
+
     public CarController2 carController;
     private GameObject neeedle;
     private float startPosition = 32f, endPosition = -211f;
@@ -12,12 +14,13 @@ public class LevelUI : MonoBehaviour
     private TMPro.TextMeshProUGUI gear;
     private TMPro.TextMeshProUGUI kph;
     private GameManager gameManager;
-
+    private bool once = true;
 
     // Start is called before the first frame update
     private void Awake()
     {
         gameManager = GameManager.Instance;
+        levelManager = GetComponent<LevelManager>();
 
         gear = GameObject.Find("Gear").GetComponent<TextMeshProUGUI>();
         kph = GameObject.Find("Speed").GetComponent<TextMeshProUGUI>();
@@ -27,11 +30,17 @@ public class LevelUI : MonoBehaviour
 
     private void Start()
     {
-        carController = gameManager.playerCarController;
+        once = true;
+
+        
     }
     // Update is called once per frame
     private void FixedUpdate()
     {
+        if(once && levelManager.startLevel) {
+            carController = gameManager.playerCarController;
+            once = false;
+        }
         kph.text = carController.KPH.ToString("0");
         updateNeedle();
         changeGear();

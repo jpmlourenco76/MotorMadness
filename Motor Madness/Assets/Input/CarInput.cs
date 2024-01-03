@@ -446,6 +446,56 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
                     ""action"": ""Lights"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bf4654f0-b318-464e-b5aa-e5167def5110"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Lights"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Menu"",
+            ""id"": ""74cbb40e-c5ca-4356-820a-67806b4b85ec"",
+            ""actions"": [
+                {
+                    ""name"": ""SkipVideo"",
+                    ""type"": ""Button"",
+                    ""id"": ""6ac291db-08a9-4699-93c0-ef0ad7836ca9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""38b60727-8b44-458b-82f5-5e1f6e9566ea"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SkipVideo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c71e0752-9210-4450-bc43-52248ed73724"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SkipVideo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -465,6 +515,9 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
         m_Gameplay_Respawn = m_Gameplay.FindAction("Respawn", throwIfNotFound: true);
         m_Gameplay_RearCam = m_Gameplay.FindAction("RearCam", throwIfNotFound: true);
         m_Gameplay_Lights = m_Gameplay.FindAction("Lights", throwIfNotFound: true);
+        // Menu
+        m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
+        m_Menu_SkipVideo = m_Menu.FindAction("SkipVideo", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -648,6 +701,52 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
         }
     }
     public GameplayActions @Gameplay => new GameplayActions(this);
+
+    // Menu
+    private readonly InputActionMap m_Menu;
+    private List<IMenuActions> m_MenuActionsCallbackInterfaces = new List<IMenuActions>();
+    private readonly InputAction m_Menu_SkipVideo;
+    public struct MenuActions
+    {
+        private @CarInput m_Wrapper;
+        public MenuActions(@CarInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @SkipVideo => m_Wrapper.m_Menu_SkipVideo;
+        public InputActionMap Get() { return m_Wrapper.m_Menu; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MenuActions set) { return set.Get(); }
+        public void AddCallbacks(IMenuActions instance)
+        {
+            if (instance == null || m_Wrapper.m_MenuActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_MenuActionsCallbackInterfaces.Add(instance);
+            @SkipVideo.started += instance.OnSkipVideo;
+            @SkipVideo.performed += instance.OnSkipVideo;
+            @SkipVideo.canceled += instance.OnSkipVideo;
+        }
+
+        private void UnregisterCallbacks(IMenuActions instance)
+        {
+            @SkipVideo.started -= instance.OnSkipVideo;
+            @SkipVideo.performed -= instance.OnSkipVideo;
+            @SkipVideo.canceled -= instance.OnSkipVideo;
+        }
+
+        public void RemoveCallbacks(IMenuActions instance)
+        {
+            if (m_Wrapper.m_MenuActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IMenuActions instance)
+        {
+            foreach (var item in m_Wrapper.m_MenuActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_MenuActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public MenuActions @Menu => new MenuActions(this);
     public interface IGameplayActions
     {
         void OnAcceleration(InputAction.CallbackContext context);
@@ -661,5 +760,9 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
         void OnRespawn(InputAction.CallbackContext context);
         void OnRearCam(InputAction.CallbackContext context);
         void OnLights(InputAction.CallbackContext context);
+    }
+    public interface IMenuActions
+    {
+        void OnSkipVideo(InputAction.CallbackContext context);
     }
 }

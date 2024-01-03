@@ -27,10 +27,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Stage1.3.unity
     guid: a23c1bfc1452fa4448a2044b35e3a722
   - enabled: 1
-    path: Assets/Scenes/Stage2.1.unity
+    path: Assets/Scenes/Stage2.2.unity
     guid: d1448a0196cb5e94ba3cdb39f4fdc454
   - enabled: 1
-    path: Assets/Scenes/Stage2.2.unity
+    path: Assets/Scenes/Stage2.1.unity
     guid: 9ae5951df70552d409ad496ec06aee51
   - enabled: 1
     path: Assets/Scenes/Stage2.3.unity
@@ -56,4 +56,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Multiplayer/Stage4Multiplayer.unity
     guid: 5b0d16101b78e474c828c013dafd14ce
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: b42580129e173ca499147e751507b81d, type: 2}

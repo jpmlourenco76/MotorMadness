@@ -26,7 +26,7 @@ public class LapsCompleted : MonoBehaviour
     private LapTimeManager lapTimeManager;
     private GameManager gameManager;
 
-
+    private bool once = true;
 
     public float totallaps;
 
@@ -51,9 +51,19 @@ public class LapsCompleted : MonoBehaviour
 
     private void Start()
     {
-        TotalLaps.GetComponent<TextMeshProUGUI>().text = "/ " + totallaps;
-        carController = gameManager.playerCarController;
 
+        once = true;
+    }
+
+    private void Update()
+    {
+        if(once && levelManager.startLevel)
+        {
+            TotalLaps.GetComponent<TextMeshProUGUI>().text = "/ " + totallaps;
+            carController = gameManager.playerCarController;
+            once = false;
+        }
+        
     }
 
     private void OnTriggerExit(Collider other)
