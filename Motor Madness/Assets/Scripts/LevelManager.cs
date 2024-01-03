@@ -190,6 +190,7 @@ public class LevelManager : MonoBehaviour
                 Car.gameObject.GetComponent<AIInput>().enabled = true;
                 Car.gameObject.GetComponentInChildren<MeshCollider>().enabled = true;
                 Car.gameObject.GetComponent<CarAIWaipointTracker>().enabled = true;
+                Car.gameObject.GetComponent<MeshRenderer>().material = gameManager.gameData.characters[i].SelectedCar.material;
 
                 cars.Add(gameManager.gameData.characters[i].SelectedCar);
                 cars[i].lap = 0;
@@ -231,10 +232,12 @@ public class LevelManager : MonoBehaviour
                         RaceRank = null;
                         Car = Instantiate(gameManager.gameData.GameCars[2].CarPrefab, pos, rot);
 
+
                     }
                     else
                     {
                         Car = Instantiate(gameManager.gameData.characters[i].SelectedCar.CarPrefab, pos, rot);
+
 
                     }
 
@@ -245,6 +248,8 @@ public class LevelManager : MonoBehaviour
                     Car.gameObject.GetComponentInChildren<MeshCollider>().enabled = true;
                     Car.gameObject.GetComponent<AIInput>().enabled = true;
                     Car.gameObject.GetComponent <CarAIWaipointTracker>().enabled = true;
+                    Car.gameObject.GetComponent<MeshRenderer>().material = gameManager.gameData.characters[i].SelectedCar.material;
+
                     cars.Add(gameManager.gameData.characters[i].SelectedCar);
                     cars[i].lap = 0;
                     cars[i].distance = 0;
@@ -293,17 +298,23 @@ public class LevelManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        AIInput ai;
         for (int i = 1; i < cars.Count; i++)
         {
-            if (cars[i].checkpoints - GameObject.Find("Car0").GetComponent<CarController2>().pchecks   > 2)
+            ai = GameObject.Find("Car" + i).GetComponent<AIInput>();
+            if (ai!= null)
             {
-                GameObject.Find("Car" + i).GetComponent<AIInput>().wanderAmount = GameObject.Find("Car" + i).GetComponent<AIInput>().wanderAmount * 0.9999f;
-                if (GameObject.Find("Car" + i).GetComponent<AIInput>().wanderAmount < 0.15f) GameObject.Find("Car" + i).GetComponent<AIInput>().wanderAmount = 0.15f;
+                if (cars[i].checkpoints - GameObject.Find("Car0").GetComponent<CarController2>().pchecks > 2)
+                {
+                    GameObject.Find("Car" + i).GetComponent<AIInput>().wanderAmount = GameObject.Find("Car" + i).GetComponent<AIInput>().wanderAmount * 0.9999f;
+                    if (GameObject.Find("Car" + i).GetComponent<AIInput>().wanderAmount < 0.15f) GameObject.Find("Car" + i).GetComponent<AIInput>().wanderAmount = 0.15f;
+                }
+                else
+                {
+                    GameObject.Find("Car" + i).GetComponent<AIInput>().wanderAmount = cars[i].wanderAmount;
+                }
             }
-            else
-            {
-                GameObject.Find("Car" + i).GetComponent<AIInput>().wanderAmount = cars[i].wanderAmount;
-            }
+           
         }
 
     }

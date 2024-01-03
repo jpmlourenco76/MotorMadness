@@ -166,4 +166,11 @@ public class GameManager : MonoBehaviour
             gameData.characters[i].setPoints();
         }
     }
+    public void updateMaterials()
+    {
+        for(int i = 0;i < gameData.characters.Count;i++)
+        {
+            gameData.characters[i].updateMaterials();
+        }
+    }
 }
