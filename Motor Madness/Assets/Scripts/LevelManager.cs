@@ -42,18 +42,34 @@ public class LevelManager : MonoBehaviour
     private GameObject rdPlaceDisplay;
     private GameObject thPlaceDisplay;
     private GameObject fthPlaceDisplay;
+    private GameObject th6PlaceDisplay;
+    private GameObject th7PlaceDisplay;
+    private GameObject th8PlaceDisplay;
+    private GameObject th9PlaceDisplay;
+    private GameObject th10PlaceDisplay;
 
     private GameObject stPlaceDisplayR;
     private GameObject ndPlaceDisplayR;
     private GameObject rdPlaceDisplayR;
     private GameObject thPlaceDisplayR;
     private GameObject fthPlaceDisplayR;
+    private GameObject th6PlaceDisplayR;
+    private GameObject th7PlaceDisplayR;
+    private GameObject th8PlaceDisplayR;
+    private GameObject th9PlaceDisplayR;
+    private GameObject th10PlaceDisplayR;
+
 
     private GameObject stPointsR;
     private GameObject ndPointsR;
     private GameObject rdPointsR;
     private GameObject thPointsR;
     private GameObject fthPointsR;
+    private GameObject th6PointsR;
+    private GameObject th7PointsR;
+    private GameObject th8PointsR;
+    private GameObject th9PointsR;
+    private GameObject th10PointsR;
 
     private SpawnPointManager spawnPointManager;
     public Transform[] spawnPoints;
@@ -104,18 +120,34 @@ public class LevelManager : MonoBehaviour
         rdPlaceDisplay = GameObject.Find("3rdPlaceDisplay");
         thPlaceDisplay = GameObject.Find("4thPlaceDisplay");
         fthPlaceDisplay = GameObject.Find("5thPlaceDisplay");
+        th6PlaceDisplay = GameObject.Find("6thPlaceDisplay");
+        th7PlaceDisplay = GameObject.Find("7thPlaceDisplay");
+        th8PlaceDisplay = GameObject.Find("8thPlaceDisplay");
+        th9PlaceDisplay = GameObject.Find("9thPlaceDisplay");
+        th10PlaceDisplay = GameObject.Find("10thPlaceDisplay");
+
 
         stPlaceDisplayR = GameObject.Find("1stPlaceDisplayR");
         ndPlaceDisplayR = GameObject.Find("2ndPlaceDisplayR");
         rdPlaceDisplayR = GameObject.Find("3rdPlaceDisplayR");
         thPlaceDisplayR = GameObject.Find("4thPlaceDisplayR");
         fthPlaceDisplayR = GameObject.Find("5thPlaceDisplayR");
+        th6PlaceDisplayR = GameObject.Find("6thPlaceDisplayR");
+        th7PlaceDisplayR = GameObject.Find("7thPlaceDisplayR");
+        th8PlaceDisplayR = GameObject.Find("8thPlaceDisplayR");
+        th9PlaceDisplayR = GameObject.Find("9thPlaceDisplayR");
+        th10PlaceDisplayR = GameObject.Find("10thPlaceDisplayR");
 
         stPointsR = GameObject.Find("1stPointsR");
         ndPointsR = GameObject.Find("2ndPointsR");
         rdPointsR = GameObject.Find("3rdPointsR");
         thPointsR = GameObject.Find("4thPointsR");
         fthPointsR = GameObject.Find("5thPointsR");
+        th6PointsR = GameObject.Find("6thPointsR");
+        th7PointsR = GameObject.Find("7thPointsR");
+        th8PointsR = GameObject.Find("8thPointsR");
+        th9PointsR = GameObject.Find("9thPointsR");
+        th10PointsR = GameObject.Find("10thPointsR");
 
 
 
@@ -371,6 +403,12 @@ public class LevelManager : MonoBehaviour
                 rdPlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[2].RacerName;
                 thPlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[3].RacerName;
                 fthPlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[4].RacerName;
+                th6PlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[5].RacerName;
+                th7PlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[6].RacerName;
+                th8PlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[7].RacerName;
+                th9PlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[8].RacerName;
+                th10PlaceDisplay.GetComponent<TextMeshProUGUI>().text = finishplacements[9].RacerName;
+
             }
 
 
@@ -384,7 +422,7 @@ public class LevelManager : MonoBehaviour
         if (gameManager.levelType == GameManager.LevelType.Story)
         {
 
-            int[] prize = { 25, 18, 15, 12, 10 };
+            int[] prize = { 25, 18, 15, 12, 10, 8, 6, 4, 2, 1};
 
         for (int i = 0; i < finishplacements.Count; i++)
         {
@@ -421,7 +459,7 @@ public class LevelManager : MonoBehaviour
                             }
                             else if (i == 1)
                             {
-                                characterData.money += (int)(levelReward * 0.1f);
+                                characterData.money += (int)(levelReward * 0.2f);
                             }
                         }
                         break;
@@ -437,17 +475,37 @@ public class LevelManager : MonoBehaviour
                             }
                             else if (i == 1)
                             {
-                                characterData.money += (int)(levelReward * 0.7f);
+                                characterData.money += (int)(levelReward * 0.85f);
                             }
                             else if (i == 2)
                             {
-                                characterData.money += (int)(levelReward * 0.5f);
+                                characterData.money += (int)(levelReward * 0.75f);
                             }
                             else if (i == 3)
                             {
-                                characterData.money += (int)(levelReward * 0.3f);
+                                characterData.money += (int)(levelReward * 0.68f);
                             }
                             else if (i == 4)
+                            {
+                                characterData.money += (int)(levelReward * 0.5f);
+                            }
+                            else if (i == 5)
+                            {
+                                characterData.money += (int)(levelReward * 0.4f);
+                            }
+                            else if (i == 6)
+                            {
+                                characterData.money += (int)(levelReward * 0.3f);
+                            }
+                            else if (i == 7)
+                            {
+                                characterData.money += (int)(levelReward * 0.25f);
+                            }
+                            else if (i == 8)
+                            {
+                                characterData.money += (int)(levelReward * 0.2f);
+                            }
+                            else if (i == 9)
                             {
                                 characterData.money += (int)(levelReward * 0.1f);
                             }
@@ -483,15 +541,29 @@ public class LevelManager : MonoBehaviour
             rdPlaceDisplayR.GetComponent<TextMeshProUGUI>().text = Rank[2].RacerName;
             thPlaceDisplayR.GetComponent<TextMeshProUGUI>().text = Rank[3].RacerName;
             fthPlaceDisplayR.GetComponent<TextMeshProUGUI>().text = Rank[4].RacerName;
+            th6PlaceDisplayR.GetComponent<TextMeshProUGUI>().text = Rank[5].RacerName;
+            th7PlaceDisplayR.GetComponent<TextMeshProUGUI>().text = Rank[6].RacerName;
+            th8PlaceDisplayR.GetComponent<TextMeshProUGUI>().text = Rank[7].RacerName;
+            th9PlaceDisplayR.GetComponent<TextMeshProUGUI>().text = Rank[8].RacerName;
+            th10PlaceDisplayR.GetComponent<TextMeshProUGUI>().text = Rank[9].RacerName;
+               
+
+
 
             stPointsR.GetComponent<TextMeshProUGUI>().text = Rank[0].points.ToString();
             ndPointsR.GetComponent<TextMeshProUGUI>().text = Rank[1].points.ToString();
             rdPointsR.GetComponent<TextMeshProUGUI>().text = Rank[2].points.ToString();
             thPointsR.GetComponent<TextMeshProUGUI>().text = Rank[3].points.ToString();
             fthPointsR.GetComponent<TextMeshProUGUI>().text = Rank[4].points.ToString();
+            th6PointsR.GetComponent<TextMeshProUGUI>().text = Rank[5].points.ToString();
+            th7PointsR.GetComponent<TextMeshProUGUI>().text = Rank[6].points.ToString();
+            th8PointsR.GetComponent<TextMeshProUGUI>().text = Rank[7].points.ToString();
+            th9PointsR.GetComponent<TextMeshProUGUI>().text = Rank[8].points.ToString();
+            th10PointsR.GetComponent<TextMeshProUGUI>().text = Rank[9].points.ToString();
 
 
-            OverallRank.enabled = true;
+
+                OverallRank.enabled = true;
 
 
 
@@ -509,6 +581,7 @@ public class LevelManager : MonoBehaviour
             gameManager.gameData.characters[0].OwnedCars.Add(gameManager.gameData.GameCars[2]);
             gameManager.SetRacerNames();
             gameManager.SetPointsPerRacer();
+            gameManager.updateMaterials();
         }
 
         
