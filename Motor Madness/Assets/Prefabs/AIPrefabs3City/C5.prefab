@@ -677,7 +677,7 @@ MonoBehaviour:
   targetAngle: 0
   brakeCondition: 1
   cautiousSpeedFactor: 0.1
-  cautiousAngle: 65
+  cautiousAngle: 45
   cautiousDistance: 0
   cautiousAngularVelocityFactor: 60
   steerSensitivity: 0.05
@@ -696,7 +696,7 @@ MonoBehaviour:
   progressStyle: 0
   AIcircuit: {fileID: 0}
   lookAheadForTarget: 20
-  lookAheadForTargetFactor: 0.8
+  lookAheadForTargetFactor: 0.6
   lookAheadForSpeedOffset: 2
   lookAheadForSpeedFactor: 1.1
   pointThreshold: 4

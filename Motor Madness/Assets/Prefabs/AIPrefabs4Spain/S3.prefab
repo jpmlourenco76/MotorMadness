@@ -1221,30 +1221,30 @@ MonoBehaviour:
   persuitAiOn: 0
   avoidObstacleMultiplier: 0
   targetAngle: 0
-  brakeCondition: 0
-  cautiousSpeedFactor: 0.05
+  brakeCondition: 1
+  cautiousSpeedFactor: 0.085
   cautiousAngle: 50
-  cautiousDistance: 100
-  cautiousAngularVelocityFactor: 30
+  cautiousDistance: 0
+  cautiousAngularVelocityFactor: 60
   steerSensitivity: 0.05
-  accelSensitivity: 0.04
+  accelSensitivity: 0.05
   brakeSensitivity: 1
-  lateralWander: 3
-  lateralWanderSpeed: 0.5
-  wanderAmount: 0.1
-  accelWanderSpeed: 0.1
+  lateralWander: 1
+  lateralWanderSpeed: 0.25
+  wanderAmount: 0.6
+  accelWanderSpeed: 0.25
   stopWhenTargetReached: 0
   reachTargetThreshold: 2
-  sensorsAngle: 0
-  avoidDistance: 10
-  brakeDistance: 6
+  sensorsAngle: 25
+  avoidDistance: 12
+  brakeDistance: 3
   reverseDistance: 3
   progressStyle: 0
   AIcircuit: {fileID: 0}
-  lookAheadForTarget: 5
+  lookAheadForTarget: 20
   lookAheadForTargetFactor: 0.1
-  lookAheadForSpeedOffset: 10
-  lookAheadForSpeedFactor: 0.2
+  lookAheadForSpeedOffset: 4
+  lookAheadForSpeedFactor: 3.5
   pointThreshold: 4
   AItarget: {fileID: 0}
 --- !u!114 &7311253018160400257
