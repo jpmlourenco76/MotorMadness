@@ -650,7 +650,7 @@ GameObject:
   - component: {fileID: 2154914927459194197}
   m_Layer: 3
   m_Name: Body_8
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -927,7 +927,7 @@ MonoBehaviour:
     ProbabilityBackfire: 0.2
     RPMToNextGear: 6000
     RPMToPrevGearDiff: 1500
-  StartEngineInAwake: 1
+  StartEngineInAwake: 0
   StartEngineDellay: 0.3
   isEngineRunning: 0
   Steer:
@@ -1101,7 +1101,6 @@ MonoBehaviour:
   cameraswitch: 0
   rewind: 0
   cameraRear: 0
-  toCreateRain: 0
   carController: {fileID: 2023005570754860928}
 --- !u!114 &1227484863701634540
 MonoBehaviour:
@@ -1208,6 +1207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CarController: {fileID: 2023005570754860928}
+  MainLightsIsOn: 0
 --- !u!114 &7224937141016200959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1874,7 +1874,7 @@ ParticleSystem:
   emitterVelocityMode: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -17308,7 +17308,7 @@ ParticleSystem:
   emitterVelocityMode: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -53056,7 +53056,7 @@ ParticleSystem:
   emitterVelocityMode: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:

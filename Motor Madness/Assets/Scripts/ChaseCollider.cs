@@ -20,6 +20,10 @@ public class ChaseCollider : MonoBehaviour
 
 
     }
+    private void Start()
+    {
+        BustedPanel.SetActive(false);
+    }
 
     public void OnCollisionEnter(Collision collision)
     {
@@ -27,7 +31,7 @@ public class ChaseCollider : MonoBehaviour
         {
            
 
-        BustedPanel.GetComponent<TextMeshProUGUI>().enabled = true;
+        BustedPanel?.SetActive(true);
         Invoke("GoGarage", 3);
 
 

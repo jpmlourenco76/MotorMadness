@@ -844,7 +844,7 @@ GameObject:
   - component: {fileID: 3317895630451497330}
   m_Layer: 3
   m_Name: Body_21
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1166,7 +1166,7 @@ MonoBehaviour:
     ProbabilityBackfire: 0.2
     RPMToNextGear: 8750
     RPMToPrevGearDiff: 1500
-  StartEngineInAwake: 1
+  StartEngineInAwake: 0
   StartEngineDellay: 0.5
   isEngineRunning: 0
   Steer:
@@ -1446,6 +1446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CarController: {fileID: 252078128882138762}
+  MainLightsIsOn: 0
 --- !u!114 &7325740358783516743
 MonoBehaviour:
   m_ObjectHideFlags: 0
