@@ -69,6 +69,39 @@ public class Character : MonoBehaviour
         gameManager.gameData.characters[id].characterName = "Apex";
         gameManager.gameData.characters[id].CarMaterials = oldMaterials;
 
+        gameManager.gameData.characters[0].OwnedCars.Clear();
+
+
+
+        if (gameManager.gameData.characters[0].characterName.Contains("Apex"))
+        {
+            gameManager.gameData.characters[0].OwnedCars.Add(gameManager.gameData.GameCars[0]);
+            gameManager.gameData.characters[0].OwnedCars.Add(gameManager.gameData.GameCars[12]);
+
+        }
+        else if (gameManager.gameData.characters[0].characterName.Contains("Nitro"))
+        {
+            gameManager.gameData.characters[0].OwnedCars.Add(gameManager.gameData.GameCars[1]);
+            gameManager.gameData.characters[0].OwnedCars.Add(gameManager.gameData.GameCars[3]);
+        }
+        else if (gameManager.gameData.characters[0].characterName.Contains("Blaze"))
+        {
+            gameManager.gameData.characters[0].OwnedCars.Add(gameManager.gameData.GameCars[0]);
+            gameManager.gameData.characters[0].OwnedCars.Add(gameManager.gameData.GameCars[9]);
+        }
+        else if (gameManager.gameData.characters[0].characterName.Contains("Shadow"))
+        {
+            gameManager.gameData.characters[0].OwnedCars.Add(gameManager.gameData.GameCars[4]);
+            gameManager.gameData.characters[0].OwnedCars.Add(gameManager.gameData.GameCars[11]);
+        }
+        else if (gameManager.gameData.characters[0].characterName.Contains("Viper"))
+        {
+            gameManager.gameData.characters[0].OwnedCars.Add(gameManager.gameData.GameCars[1]);
+            gameManager.gameData.characters[0].OwnedCars.Add(gameManager.gameData.GameCars[8]);
+        }
+
+
+
 
         gameManager.gameData.characters[0].position = 10;
 
@@ -80,7 +113,7 @@ public class Character : MonoBehaviour
             }
         }
 
-        gameManager.updateMaterials();
+      //  gameManager.updateMaterials();
 
 
 

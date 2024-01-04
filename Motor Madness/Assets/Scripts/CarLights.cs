@@ -11,7 +11,7 @@ public class CarLights : MonoBehaviour
 
     public CarController2 CarController;
     bool InBrake;
-    bool MainLightsIsOn;
+   public bool MainLightsIsOn;
     public event System.Action<CarLightType, bool> OnSetActiveLight;
 
 
