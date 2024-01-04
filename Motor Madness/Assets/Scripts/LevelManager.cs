@@ -301,8 +301,8 @@ public class LevelManager : MonoBehaviour
                    if(AiControllers != null)
                     {
                         AiControllers.Add(Car.GetComponent<CarController2>());
-                        Car.gameObject.GetComponent<Cameras>().enabled = false;
-                        Car.gameObject.transform.GetChild(9).gameObject.SetActive(false);
+                      //  Car.gameObject.GetComponent<Cameras>().enabled = false;
+                      //  Car.gameObject.transform.GetChild(9).gameObject.SetActive(false);
                     }
                     
                 }
