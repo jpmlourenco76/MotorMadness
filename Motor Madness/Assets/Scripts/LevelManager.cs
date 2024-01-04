@@ -271,6 +271,13 @@ public class LevelManager : MonoBehaviour
                 Car.gameObject.GetComponentInChildren<MeshCollider>().enabled = true;
                 Car.gameObject.GetComponent<CarAIWaipointTracker>().enabled = true;
                 Car.gameObject.GetComponentInChildren<MeshRenderer>().material = gameManager.gameData.characters[i].SelectedCar.material;
+                Car.gameObject.GetComponent<CarController2>().StartEngineInAwake = true;
+                if (isNight)
+                {
+                    Car.gameObject.GetComponent<CarLights>().MainLightsIsOn = true;
+                    Car.gameObject.GetComponent<CarLights>().SwitchMainLights();
+                }
+
 
                 cars.Add(gameManager.gameData.characters[i].SelectedCar);
                 cars[i].lap = 0;
@@ -329,6 +336,12 @@ public class LevelManager : MonoBehaviour
                     Car.gameObject.GetComponent<AIInput>().enabled = true;
                     Car.gameObject.GetComponent <CarAIWaipointTracker>().enabled = true;
                     Car.gameObject.GetComponentInChildren<MeshRenderer>().material = gameManager.gameData.characters[i].SelectedCar.material;
+                    Car.gameObject.GetComponent<CarController2>().StartEngineInAwake = true;
+                    if (isNight)
+                    {
+                        Car.gameObject.GetComponent<CarLights>().MainLightsIsOn = true;
+                        Car.gameObject.GetComponent<CarLights>().SwitchMainLights();
+                    }
 
                     cars.Add(gameManager.gameData.characters[i].SelectedCar);
                     cars[i].lap = 0;
@@ -820,25 +833,32 @@ public class LevelManager : MonoBehaviour
         float OriginalTire = car.gameObject.GetComponent<CarController2>().wheels[0].stiffnessupgrade;
         float newTire;
 
+        float rainValue = 0;
+
+        if (isRaining)
+        {
+            rainValue = -0.4f;
+        }
+
         for (int i = 0; i < car.gameObject.GetComponent<CarController2>().wheels.Length; i++)
         {
 
             switch (gameManager.gameData.characters[0].SelectedCar.upgradelvls.TireUpdrage)
             {
                 case 0:
-                    newTire = OriginalTire;
+                    newTire = OriginalTire + rainValue;
                     break;
                 case 1:
-                    newTire = 0.15f;
+                    newTire = 0.15f + rainValue;
                     break;
                 case 2:
-                    newTire = 0.25f;
+                    newTire = 0.25f + rainValue;
                     break;
                 case 3:
-                    newTire = 0.45f;
+                    newTire = 0.45f + rainValue;
                     break;
                 default:
-                    newTire = OriginalTire;
+                    newTire = OriginalTire + rainValue;
                     break;
 
             }

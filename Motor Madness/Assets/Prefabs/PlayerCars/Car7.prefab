@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 496490}
   - component: {fileID: 3396494}
   - component: {fileID: 2396494}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 496492}
   - component: {fileID: 3396496}
   - component: {fileID: 2396496}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 496494}
   - component: {fileID: 3396498}
   - component: {fileID: 2396498}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Glass_ight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 496496}
   - component: {fileID: 3396500}
   - component: {fileID: 2396500}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: break_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 496498}
   - component: {fileID: 3396502}
   - component: {fileID: 2396502}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: break_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 496500}
   - component: {fileID: 3396504}
   - component: {fileID: 2396504}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -509,7 +509,7 @@ GameObject:
   - component: {fileID: 496502}
   - component: {fileID: 3396506}
   - component: {fileID: 2396506}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,7 +592,7 @@ GameObject:
   - component: {fileID: 496504}
   - component: {fileID: 3396508}
   - component: {fileID: 2396508}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Taillights_43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -675,7 +675,7 @@ GameObject:
   - component: {fileID: 496506}
   - component: {fileID: 3396510}
   - component: {fileID: 2396510}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Matte_43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -758,7 +758,7 @@ GameObject:
   - component: {fileID: 496508}
   - component: {fileID: 3396512}
   - component: {fileID: 2396512}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Glass_43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -848,7 +848,7 @@ GameObject:
   - component: {fileID: 820906495947724956}
   - component: {fileID: 4732046152288833564}
   - component: {fileID: -1270845498289193597}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Car7
   m_TagString: Car
   m_Icon: {fileID: 0}
@@ -1044,7 +1044,7 @@ MonoBehaviour:
     ProbabilityBackfire: 0.2
     RPMToNextGear: 6500
     RPMToPrevGearDiff: 1500
-  StartEngineInAwake: 1
+  StartEngineInAwake: 0
   StartEngineDellay: 0.5
   isEngineRunning: 0
   Steer:
@@ -1263,6 +1263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CarController: {fileID: 0}
+  MainLightsIsOn: 0
 --- !u!114 &820906495947724956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1350,9 +1351,9 @@ GameObject:
   - component: {fileID: 3396514}
   - component: {fileID: 2396514}
   - component: {fileID: 5693883346558166331}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1450,7 +1451,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 496514}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Car_43_Interior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1485,7 +1486,7 @@ GameObject:
   - component: {fileID: 496516}
   - component: {fileID: 3396516}
   - component: {fileID: 2396516}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Car_43_Interior_G
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1568,7 +1569,7 @@ GameObject:
   - component: {fileID: 496518}
   - component: {fileID: 3396518}
   - component: {fileID: 2396518}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Steering_wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1652,7 +1653,7 @@ GameObject:
   - component: {fileID: 3719551248326128010}
   - component: {fileID: 8740779677706433881}
   - component: {fileID: 8200851460890179125}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TaillightsMain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1749,7 +1750,7 @@ GameObject:
   - component: {fileID: 6296484837468631830}
   - component: {fileID: 2283787251904819470}
   - component: {fileID: 2641690941718363953}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1835,7 +1836,7 @@ GameObject:
   - component: {fileID: 6121251048532001599}
   - component: {fileID: 1430709689186606992}
   - component: {fileID: 2051944634038515022}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1874,7 +1875,7 @@ ParticleSystem:
   emitterVelocityMode: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -6704,7 +6705,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5586070236603039909}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FrontSensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6735,7 +6736,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2951289802638060851}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Rain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6772,7 +6773,7 @@ GameObject:
   - component: {fileID: 377521833006632147}
   - component: {fileID: 8352734204213767872}
   - component: {fileID: 7308110829147561598}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FrontLightL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6869,7 +6870,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4337465116052324072}
   - component: {fileID: 6117350965567222400}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CarSFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6972,7 +6973,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5362019258316891548}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: COM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7006,7 +7007,7 @@ GameObject:
   - component: {fileID: 5784634272959529140}
   - component: {fileID: 9170887046803081008}
   - component: {fileID: 1365224671204948560}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FrontLightR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7103,7 +7104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9198191066482319086}
   - component: {fileID: 4907509850265104703}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: L_FL_LightSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7197,7 +7198,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2045113384360618498}
   - component: {fileID: 2045113384360618497}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CameraFar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7270,7 +7271,7 @@ GameObject:
   - component: {fileID: 2045113384733501590}
   - component: {fileID: 2045113384733501589}
   - component: {fileID: 2045113384733501588}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7362,7 +7363,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6142774396795021486}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RightSensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7395,7 +7396,7 @@ GameObject:
   - component: {fileID: 1031033072451832761}
   - component: {fileID: 4538567874052238911}
   - component: {fileID: 1796315032169393574}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Backfire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12283,7 +12284,7 @@ GameObject:
   - component: {fileID: 6916000898909135831}
   - component: {fileID: 5252546525133930025}
   - component: {fileID: 634491830765274021}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12369,7 +12370,7 @@ GameObject:
   - component: {fileID: 5433852530022148093}
   - component: {fileID: 5958692438835447668}
   - component: {fileID: 5950250081372696908}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Shards
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17240,7 +17241,7 @@ GameObject:
   - component: {fileID: 2481059900211807634}
   - component: {fileID: 2481059900211807645}
   - component: {fileID: 192772707080483609}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17368,7 +17369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2481059900754104972}
   - component: {fileID: 2481059900754104975}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CameraRear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17439,7 +17440,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8538629126911216672}
   - component: {fileID: 4512269924420816336}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FrictionSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17568,7 +17569,7 @@ GameObject:
   - component: {fileID: 5696099233043945656}
   - component: {fileID: 4851246174552478312}
   - component: {fileID: 8352973839101714414}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SparksnSmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17681,7 +17682,7 @@ ParticleSystem:
   emitterVelocityMode: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -22438,7 +22439,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7572645355102040320}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Utility
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22472,7 +22473,7 @@ GameObject:
   - component: {fileID: 7188705107622725481}
   - component: {fileID: 1779518951841512493}
   - component: {fileID: 821037955582717793}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Smoke (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27350,7 +27351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2265225305696505514}
   - component: {fileID: 3840377312677879934}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: OtherSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27478,7 +27479,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5207621072827905154}
   - component: {fileID: 2168014242331125064}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27610,7 +27611,7 @@ GameObject:
   - component: {fileID: 2368212100873686754}
   - component: {fileID: 4052402974702578764}
   - component: {fileID: 5433721543308426036}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27695,7 +27696,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3213207950820242763}
   - component: {fileID: 792255616830215240}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EngineSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27822,7 +27823,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3419599845892183849}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LeftSensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27853,7 +27854,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2137440599775217995}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Details
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27890,7 +27891,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5956948844024330317}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sensors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27926,7 +27927,7 @@ GameObject:
   - component: {fileID: 3350397199713733646}
   - component: {fileID: 2220939484045066566}
   - component: {fileID: 4613981809271360241}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32806,7 +32807,7 @@ GameObject:
   - component: {fileID: 4460350085682981027}
   - component: {fileID: 4460350085682981036}
   - component: {fileID: 4460350085682981026}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32885,7 +32886,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4460350086227509181}
   - component: {fileID: 4460350086227509182}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CameraHood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32956,7 +32957,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3147222229582779758}
   - component: {fileID: 566672143711164666}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: L_FL_LightSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33049,7 +33050,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2458532822019501615}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: wheelColliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33084,7 +33085,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1485000583070117234}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: wheelMeshes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33121,7 +33122,7 @@ GameObject:
   - component: {fileID: 6713552538759313941}
   - component: {fileID: 5376552299293844445}
   - component: {fileID: 8950693397658347193}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37933,7 +37934,7 @@ GameObject:
   - component: {fileID: 6728737910748643404}
   - component: {fileID: 4841632468230933292}
   - component: {fileID: 4497649059807420060}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: raintrailR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42744,7 +42745,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8406308628447076168}
   - component: {fileID: 5314410893916902247}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CarVFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42827,7 +42828,7 @@ GameObject:
   - component: {fileID: 3513755360549100717}
   - component: {fileID: 986312436317855440}
   - component: {fileID: 5638774976883788966}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: raintrailL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47639,7 +47640,7 @@ GameObject:
   - component: {fileID: 3866312213346946036}
   - component: {fileID: 657158149371196025}
   - component: {fileID: 6059813774242447692}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47725,7 +47726,7 @@ GameObject:
   - component: {fileID: 8952254441382973631}
   - component: {fileID: 4424161569809451635}
   - component: {fileID: 8616555102472982291}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52603,7 +52604,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6889277655257612584}
   - component: {fileID: 3860700439016690119}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WindSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52733,7 +52734,7 @@ GameObject:
   - component: {fileID: 7042463796312841157}
   - component: {fileID: 4856145307986720411}
   - component: {fileID: 4275896038311279115}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TaillightsReverse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52831,7 +52832,7 @@ GameObject:
   - component: {fileID: 7942835829453956540}
   - component: {fileID: 4262844974511614220}
   - component: {fileID: 8073465743978791132}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TaillightsBrake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52929,7 +52930,7 @@ GameObject:
   - component: {fileID: 7832766190217805910}
   - component: {fileID: 7832766190217805911}
   - component: {fileID: 7832766190217805912}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53022,7 +53023,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7832766190957280322}
   - component: {fileID: 7832766190957280323}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CameraNormal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53093,7 +53094,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5980296290798284263}
   - component: {fileID: 2024961017462387577}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WheelsGroundSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53222,7 +53223,7 @@ GameObject:
   - component: {fileID: 4961311736324798612}
   - component: {fileID: 1683259375300429282}
   - component: {fileID: 6708971000802854843}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SparksSmokeShards
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53336,7 +53337,7 @@ ParticleSystem:
   emitterVelocityMode: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -58095,7 +58096,7 @@ GameObject:
   - component: {fileID: 8970871499747830189}
   - component: {fileID: 6962053450468807746}
   - component: {fileID: 940146955514882785}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Backfire (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62983,6 +62984,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GravelSmoke
       objectReference: {fileID: 0}
+    - target: {fileID: 4881456926032782852, guid: e7eb0610522172844b9afc80fb61d725, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4881456926032782873, guid: e7eb0610522172844b9afc80fb61d725, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -63050,6 +63055,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AsphaltSmoke
       objectReference: {fileID: 0}
+    - target: {fileID: 4720812451089378754, guid: 867d6aaf938e86f4ea40670a11242ff7, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4720812451089378759, guid: 867d6aaf938e86f4ea40670a11242ff7, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -63116,6 +63125,10 @@ PrefabInstance:
     - target: {fileID: 8552823001609500488, guid: 20d9189b2c72b5b4eb2b8cbadac3054a, type: 3}
       propertyPath: m_Name
       value: GroundSmoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552823001609500488, guid: 20d9189b2c72b5b4eb2b8cbadac3054a, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8552823001609500493, guid: 20d9189b2c72b5b4eb2b8cbadac3054a, type: 3}
       propertyPath: m_RootOrder

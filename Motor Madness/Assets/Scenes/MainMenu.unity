@@ -4993,7 +4993,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 556094134}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 40676f1c584b94c479d8aee174c7e4de, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 919df19ea07216843b1ae793bf14bc83, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -13356,6 +13356,22 @@ MonoBehaviour:
         CarName: S43
         RacerName: 
         CarPrefab: {fileID: 4394314076056891325, guid: 0e010c2ec37cca140855ab336153031d, type: 3}
+        distance: 0
+        lap: 0
+        checkpoints: 0
+        wanderAmount: 0
+        points: 0
+        price: 0
+        material: {fileID: 0}
+        upgradelvls:
+          TorqueUpgrade: 2
+          GearUpgrade: 3
+          BreakUpgrade: 3
+          TireUpdrage: 3
+      - CarID: 99
+        CarName: S42
+        RacerName: 
+        CarPrefab: {fileID: 8480943782784524359, guid: 495b78018631c3241a4ff40a57adc535, type: 3}
         distance: 0
         lap: 0
         checkpoints: 0
