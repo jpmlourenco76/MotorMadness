@@ -271,7 +271,11 @@ public class LevelManager : MonoBehaviour
                 Car.gameObject.GetComponent<AIInput>().enabled = true;
                 Car.gameObject.GetComponentInChildren<MeshCollider>().enabled = true;
                 Car.gameObject.GetComponent<CarAIWaipointTracker>().enabled = true;
-                Car.gameObject.GetComponentInChildren<MeshRenderer>().material = gameManager.gameData.characters[i].SelectedCar.material;
+                if (gameManager.levelType == GameManager.LevelType.Story)
+                {
+                    Car.gameObject.GetComponentInChildren<MeshRenderer>().material = gameManager.gameData.characters[i].SelectedCar.material;
+
+                }
                 Car.gameObject.GetComponent<CarController2>().StartEngineInAwake = true;
                 if (isNight)
                 {
@@ -342,7 +346,12 @@ public class LevelManager : MonoBehaviour
                     Car.gameObject.GetComponentInChildren<MeshCollider>().enabled = true;
                     Car.gameObject.GetComponent<AIInput>().enabled = true;
                     Car.gameObject.GetComponent <CarAIWaipointTracker>().enabled = true;
-                    Car.gameObject.GetComponentInChildren<MeshRenderer>().material = gameManager.gameData.characters[i].SelectedCar.material;
+
+                    if (gameManager.levelType == GameManager.LevelType.Story)
+                    {
+                        Car.gameObject.GetComponentInChildren<MeshRenderer>().material = gameManager.gameData.characters[i].SelectedCar.material;
+
+                    }
                     Car.gameObject.GetComponent<CarController2>().StartEngineInAwake = true;
                     if (isNight)
                     {
@@ -667,9 +676,14 @@ public class LevelManager : MonoBehaviour
         if (gameManager.gameData.characters[0].currentLevel == 3)
         {
             gameManager.gameData.characters[0].OwnedCars.Add(gameManager.gameData.GameCars[2]);
-            gameManager.SetRacerNames();
-            gameManager.SetPointsPerRacer();
-            gameManager.updateMaterials();
+
+                if(gameManager.levelType == GameManager.LevelType.Story)
+                {
+                    gameManager.SetRacerNames();
+                    gameManager.SetPointsPerRacer();
+                    gameManager.updateMaterials();
+                }
+            
         }
 
         if(gameManager.gameData.characters[0].currentLevel == 10)

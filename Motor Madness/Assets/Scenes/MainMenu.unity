@@ -9773,7 +9773,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988865373}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 411324054}
@@ -12853,7 +12853,7 @@ MonoBehaviour:
   gameData:
     characters:
     - characterName: Apex
-      currentLevel: 1
+      currentLevel: 8
       money: 150000
       position: 10
       OwnedCars:

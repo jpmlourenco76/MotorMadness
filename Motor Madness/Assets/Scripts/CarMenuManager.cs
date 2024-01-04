@@ -66,9 +66,11 @@ public class CarMenuManager : MonoBehaviour
             where !ownedCarsGroup.Any()
             select gameCar).ToList();
 
-        gameManager.updateMaterials();
-        gameManager.SetRacerNames();
-        gameManager.SetPointsPerRacer();
+            gameManager.updateMaterials();
+            gameManager.SetRacerNames();
+            gameManager.SetPointsPerRacer();
+        
+      
 
         if (specialPanelOne != null)
         {
