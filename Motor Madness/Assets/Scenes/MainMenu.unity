@@ -8533,7 +8533,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 846354445}
   m_OnClick:
     m_PersistentCalls:
@@ -12853,7 +12853,7 @@ MonoBehaviour:
   gameData:
     characters:
     - characterName: Apex
-      currentLevel: 1
+      currentLevel: 8
       money: 150000
       position: 10
       OwnedCars:
@@ -14713,7 +14713,7 @@ MonoBehaviour:
         TireUpdrage: 0
   currentCharacterIndex: 0
   playerCarController: {fileID: 0}
-  desiredLevel: 0
+  desiredLevel: 3
   currentcar: 0
   inrace: 0
   levelType: 1

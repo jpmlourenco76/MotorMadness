@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
@@ -270,12 +271,22 @@ public class LevelManager : MonoBehaviour
                 Car.gameObject.GetComponent<AIInput>().enabled = true;
                 Car.gameObject.GetComponentInChildren<MeshCollider>().enabled = true;
                 Car.gameObject.GetComponent<CarAIWaipointTracker>().enabled = true;
-                Car.gameObject.GetComponentInChildren<MeshRenderer>().material = gameManager.gameData.characters[i].SelectedCar.material;
+                if (gameManager.levelType == GameManager.LevelType.Story)
+                {
+                    Car.gameObject.GetComponentInChildren<MeshRenderer>().material = gameManager.gameData.characters[i].SelectedCar.material;
+
+                }
                 Car.gameObject.GetComponent<CarController2>().StartEngineInAwake = true;
                 if (isNight)
                 {
-                    Car.gameObject.GetComponent<CarLights>().MainLightsIsOn = true;
-                    Car.gameObject.GetComponent<CarLights>().SwitchMainLights();
+                   
+                    Car.gameObject.GetComponent<CarLights>().LightsOnSpawn = true;
+                
+                }
+
+                if (isRaining)
+                {
+                    Car.gameObject.GetComponentInChildren<CarVFX>().raining = true;
                 }
 
 
@@ -335,7 +346,12 @@ public class LevelManager : MonoBehaviour
                     Car.gameObject.GetComponentInChildren<MeshCollider>().enabled = true;
                     Car.gameObject.GetComponent<AIInput>().enabled = true;
                     Car.gameObject.GetComponent <CarAIWaipointTracker>().enabled = true;
-                    Car.gameObject.GetComponentInChildren<MeshRenderer>().material = gameManager.gameData.characters[i].SelectedCar.material;
+
+                    if (gameManager.levelType == GameManager.LevelType.Story)
+                    {
+                        Car.gameObject.GetComponentInChildren<MeshRenderer>().material = gameManager.gameData.characters[i].SelectedCar.material;
+
+                    }
                     Car.gameObject.GetComponent<CarController2>().StartEngineInAwake = true;
                     if (isNight)
                     {
@@ -551,7 +567,7 @@ public class LevelManager : MonoBehaviour
 
                             if (i == 0)
                             {
-                                    Debug.Log(levelReward + characterData.characterName);
+                                   
                                 characterData.money += levelReward;
                             }
                             else if (i == 1)
@@ -660,9 +676,14 @@ public class LevelManager : MonoBehaviour
         if (gameManager.gameData.characters[0].currentLevel == 3)
         {
             gameManager.gameData.characters[0].OwnedCars.Add(gameManager.gameData.GameCars[2]);
-            gameManager.SetRacerNames();
-            gameManager.SetPointsPerRacer();
-            gameManager.updateMaterials();
+
+                if(gameManager.levelType == GameManager.LevelType.Story)
+                {
+                    gameManager.SetRacerNames();
+                    gameManager.SetPointsPerRacer();
+                    gameManager.updateMaterials();
+                }
+            
         }
 
         if(gameManager.gameData.characters[0].currentLevel == 10)
@@ -838,6 +859,7 @@ public class LevelManager : MonoBehaviour
         if (isRaining)
         {
             rainValue = -0.4f;
+
         }
 
         for (int i = 0; i < car.gameObject.GetComponent<CarController2>().wheels.Length; i++)

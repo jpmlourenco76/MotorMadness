@@ -7,7 +7,7 @@ using UnityEngine;
 public class ChaseCollider : MonoBehaviour
 {
     private GameManager gameManager;
-    private GameObject BustedPanel;
+    public Canvas BustedPanel;
 
 
 
@@ -15,24 +15,34 @@ public class ChaseCollider : MonoBehaviour
     {
 
         gameManager = GameManager.Instance;
-        BustedPanel = GameObject.Find("BustedPanel");
-
+        BustedPanel = GameObject.Find("BustedCanvas").GetComponent<Canvas>();
+        
 
 
     }
     private void Start()
     {
-        BustedPanel.SetActive(false);
+
+        if (BustedPanel != null)
+        {
+            BustedPanel.enabled = false;
+        }
+
+    }
+
+    private void Update()
+    {
+        
     }
 
     public void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("chasedcar"))
         {
-           
 
-        BustedPanel?.SetActive(true);
-        Invoke("GoGarage", 3);
+
+            BustedPanel.enabled = true;
+            Invoke("GoGarage", 3);
 
 
 
