@@ -113,7 +113,7 @@ public class Character : MonoBehaviour
             }
         }
 
-      //  gameManager.updateMaterials();
+       gameManager.updateMaterials();
 
 
 
