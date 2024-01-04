@@ -1100,7 +1100,6 @@ MonoBehaviour:
   cameraswitch: 0
   rewind: 0
   cameraRear: 0
-  toCreateRain: 0
   carController: {fileID: 2023005570754860928}
 --- !u!114 &1227484863701634540
 MonoBehaviour:
@@ -1162,6 +1161,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CarController: {fileID: 2023005570754860928}
+  MainLightsIsOn: 0
+  LightsOnSpawn: 0
 --- !u!114 &7224937141016200959
 MonoBehaviour:
   m_ObjectHideFlags: 0
