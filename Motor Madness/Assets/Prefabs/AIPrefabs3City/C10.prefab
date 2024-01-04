@@ -578,8 +578,8 @@ MonoBehaviour:
   avoidObstacleMultiplier: 0
   targetAngle: 0
   brakeCondition: 1
-  cautiousSpeedFactor: 0.1
-  cautiousAngle: 65
+  cautiousSpeedFactor: 0.11
+  cautiousAngle: 40
   cautiousDistance: 0
   cautiousAngularVelocityFactor: 60
   steerSensitivity: 0.05
@@ -587,7 +587,7 @@ MonoBehaviour:
   brakeSensitivity: 1
   lateralWander: 1.5
   lateralWanderSpeed: 0.25
-  wanderAmount: 0.6
+  wanderAmount: 0.61
   accelWanderSpeed: 0.25
   stopWhenTargetReached: 0
   reachTargetThreshold: 2
@@ -598,7 +598,7 @@ MonoBehaviour:
   progressStyle: 0
   AIcircuit: {fileID: 0}
   lookAheadForTarget: 20
-  lookAheadForTargetFactor: 0.8
+  lookAheadForTargetFactor: 0.45
   lookAheadForSpeedOffset: 1.25
   lookAheadForSpeedFactor: 1
   pointThreshold: 4
