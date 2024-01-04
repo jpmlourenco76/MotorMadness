@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
@@ -274,8 +275,14 @@ public class LevelManager : MonoBehaviour
                 Car.gameObject.GetComponent<CarController2>().StartEngineInAwake = true;
                 if (isNight)
                 {
-                    Car.gameObject.GetComponent<CarLights>().MainLightsIsOn = true;
-                    Car.gameObject.GetComponent<CarLights>().SwitchMainLights();
+                   
+                    Car.gameObject.GetComponent<CarLights>().LightsOnSpawn = true;
+                
+                }
+
+                if (isRaining)
+                {
+                    Car.gameObject.GetComponentInChildren<CarVFX>().raining = true;
                 }
 
 
@@ -551,7 +558,7 @@ public class LevelManager : MonoBehaviour
 
                             if (i == 0)
                             {
-                                    Debug.Log(levelReward + characterData.characterName);
+                                   
                                 characterData.money += levelReward;
                             }
                             else if (i == 1)
@@ -838,6 +845,7 @@ public class LevelManager : MonoBehaviour
         if (isRaining)
         {
             rainValue = -0.4f;
+
         }
 
         for (int i = 0; i < car.gameObject.GetComponent<CarController2>().wheels.Length; i++)

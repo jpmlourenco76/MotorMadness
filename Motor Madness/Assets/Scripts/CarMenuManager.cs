@@ -131,6 +131,10 @@ public class CarMenuManager : MonoBehaviour
             Price.GetComponent<TextMeshProUGUI>().text = "Price: " + ShopCars[vehiclePointer].price.ToString();
 
         }
+        if(gameManager.gameData.characters[0].currentLevel == 9)
+        {
+            gameManager.gameData.characters[0].currentLevel = 10;
+        }
         //toRotate.transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
     }
 

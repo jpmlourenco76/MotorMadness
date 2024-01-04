@@ -14,6 +14,8 @@ public class CarLights : MonoBehaviour
    public bool MainLightsIsOn;
     public event System.Action<CarLightType, bool> OnSetActiveLight;
 
+    public bool LightsOnSpawn = false;
+
 
     private void Awake()
     {
@@ -55,6 +57,11 @@ public class CarLights : MonoBehaviour
 
         SetActiveReverse(reverseactive);
 
+        if(LightsOnSpawn)
+        {
+            SwitchMainLights();
+            LightsOnSpawn= false;
+        }
     }
 
 

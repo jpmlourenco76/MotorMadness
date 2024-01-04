@@ -77,45 +77,49 @@ public class LapTimeManager : MonoBehaviour
             once = false;
         }
 
-        if (carController.isEngineRunning && carController != null)
+        if (carController != null)
         {
-            if (!lapCompleted)
+            if(carController.isEngineRunning)
             {
-                MilliCount += Time.deltaTime * 10;
-                MilliDisplay = MilliCount.ToString("F0");
+                if (!lapCompleted)
+                {
+                    MilliCount += Time.deltaTime * 10;
+                    MilliDisplay = MilliCount.ToString("F0");
 
-                MilDisplay.GetComponent<TextMeshProUGUI>().text = "" + MilliDisplay;
+                    MilDisplay.GetComponent<TextMeshProUGUI>().text = "" + MilliDisplay;
 
-                if (MilliCount > 9)
-                {
-                    MilliCount = 0;
-                    SecondCount += 1;
-                }
+                    if (MilliCount > 9)
+                    {
+                        MilliCount = 0;
+                        SecondCount += 1;
+                    }
 
-                if (SecondCount <= 9)
-                {
-                    SecDisplay.GetComponent<TextMeshProUGUI>().text = "0" + SecondCount + ".";
-                }
-                else
-                {
-                    SecDisplay.GetComponent<TextMeshProUGUI>().text = "" + SecondCount + ".";
-                }
+                    if (SecondCount <= 9)
+                    {
+                        SecDisplay.GetComponent<TextMeshProUGUI>().text = "0" + SecondCount + ".";
+                    }
+                    else
+                    {
+                        SecDisplay.GetComponent<TextMeshProUGUI>().text = "" + SecondCount + ".";
+                    }
 
-                if (SecondCount >= 60)
-                {
-                    SecondCount = 0;
-                    MinuteCount += 1;
-                }
+                    if (SecondCount >= 60)
+                    {
+                        SecondCount = 0;
+                        MinuteCount += 1;
+                    }
 
-                if (MinuteCount <= 9)
-                {
-                    MinDisplay.GetComponent<TextMeshProUGUI>().text = "0" + MinuteCount + ".";
-                }
-                else
-                {
-                    MinDisplay.GetComponent<TextMeshProUGUI>().text = "" + MinuteCount + ".";
+                    if (MinuteCount <= 9)
+                    {
+                        MinDisplay.GetComponent<TextMeshProUGUI>().text = "0" + MinuteCount + ".";
+                    }
+                    else
+                    {
+                        MinDisplay.GetComponent<TextMeshProUGUI>().text = "" + MinuteCount + ".";
+                    }
                 }
             }
+           
         }
     }
 

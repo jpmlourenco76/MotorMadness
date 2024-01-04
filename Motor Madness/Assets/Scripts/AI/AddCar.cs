@@ -11,6 +11,7 @@ public class AddCar : MonoBehaviour
     public CarController2 controller2;
     public bool stage3 = false;
     private bool once = true;
+    public bool Cameras = true;
 
     private void Awake()
     {
@@ -54,9 +55,12 @@ public class AddCar : MonoBehaviour
         levelManager.AiControllers.Add(GetComponent<CarController2>());
         if (!stage3)
         {
+            if (Cameras)
+            {
+                gameObject.GetComponent<Cameras>().enabled = false;
+                gameObject.transform.GetChild(9).gameObject.SetActive(false);
+            }
             
-            gameObject.GetComponent<Cameras>().enabled = false;
-            gameObject.transform.GetChild(9).gameObject.SetActive(false);
         }
       
     }

@@ -41,9 +41,14 @@ public class LevelUI : MonoBehaviour
             carController = gameManager.playerCarController;
             once = false;
         }
-        kph.text = carController.KPH.ToString("0");
-        updateNeedle();
-        changeGear();
+
+        if(carController != null)
+        {
+            kph.text = carController.KPH.ToString("0");
+            updateNeedle();
+            changeGear();
+        }
+        
     }
 
     public void updateNeedle()
