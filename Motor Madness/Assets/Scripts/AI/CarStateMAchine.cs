@@ -20,6 +20,8 @@ public class CarStateMAchine : MonoBehaviour
     public float timepath;
     public LevelManager levelManager;
     private bool once = true;
+    public GameObject minimapMarker;
+    private bool isMMInstanciated;
 
     [HideInInspector] public bool hit;
 
@@ -57,13 +59,20 @@ public class CarStateMAchine : MonoBehaviour
             case CarState.Stopped:
                 aICarController.isEngineRunning = false;
                 hit = false;
-                transform.GetChild(7).gameObject.SetActive(false);
+                if (isMMInstanciated)
+                {
+                    Destroy(minimapMarker);
+                    isMMInstanciated = false;
+                }
                 break;
 
             case CarState.Follow:
                 aICarController.isEngineRunning=true;
-                timerRunning = true;
-                transform.GetChild(7).gameObject.SetActive(true);
+                if (!isMMInstanciated)
+                {
+                    Instantiate(minimapMarker);
+                    isMMInstanciated=true;
+                }
 
 
                 if (timerRunning) {
