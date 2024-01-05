@@ -3,7 +3,9 @@ guid: 71b6eefe3ce49fe4d863afde9b8efb7e
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - levelManager: {instanceID: 0}
+  - minimapMarker: {fileID: 7342252025521185224, guid: 85aea4c24978e2d408868866783d08ea, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
