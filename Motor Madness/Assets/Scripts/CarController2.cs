@@ -840,6 +840,8 @@ public class CarController2 : MonoBehaviour
 
     public void Respawn()
     {
+        // Transform spawnpoint = _spawnPointManager.spawnPoints[1];
+
         Transform spawnpoint = _spawnPointManager.spawnPoints[1];
         Vector3 pos =spawnpoint.position;
         transform.rotation = spawnpoint.rotation;

@@ -14,6 +14,7 @@ public class FollowTrigger : MonoBehaviour
             if (carStateMachine != null)
             {
                 carStateMachine.SetState(CarStateMAchine.CarState.Follow);
+            carStateMachine.timerRunning = true;
             }
         
     }
