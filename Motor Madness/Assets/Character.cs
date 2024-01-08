@@ -63,10 +63,11 @@ public class Character : MonoBehaviour
     {
 
         oldMaterials = gameManager.gameData.characters[0].CarMaterials;
+        string oldname = gameManager.gameData.characters[0].characterName;
         gameManager.gameData.characters[0].characterName = gameManager.gameData.characters[id].characterName;
         gameManager.gameData.characters[0].CarMaterials = gameManager.gameData.characters[id].CarMaterials;
 
-        gameManager.gameData.characters[id].characterName = "Apex";
+        gameManager.gameData.characters[id].characterName = oldname;
         gameManager.gameData.characters[id].CarMaterials = oldMaterials;
 
         gameManager.gameData.characters[0].OwnedCars.Clear();

@@ -1,3 +1,4 @@
+using Photon.Pun.Demo.PunBasics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,11 @@ public class AIInput : MonoBehaviour
     private Transform frontSensor;
     private Transform rightSensor;
     private Transform leftSensor;
+
+    
+    private float timerDuration = 5f;
+    private float timer;
+    private float timer2;
 
 
     private float randomValue;
@@ -82,6 +88,8 @@ public class AIInput : MonoBehaviour
     [SerializeField] public float lookAheadForSpeedFactor = .2f;
     [SerializeField][Range(1, 10)] public float pointThreshold = 4;
     public Transform AItarget;
+
+    private bool isTimerActive = false;
     private void Awake()
     {
 
@@ -431,6 +439,7 @@ public class AIInput : MonoBehaviour
 
     private void ReverseGearSensors()
     {
+        bool isreverse = false;
         RaycastHit hit;
         reverseGearOn = false;
 
@@ -446,6 +455,7 @@ public class AIInput : MonoBehaviour
             {
                 Debug.DrawLine(rightSensor.position, hit.point, Color.blue);
                 reverseGearOn = true;
+                isreverse = true;
             }
         }
 
@@ -461,8 +471,38 @@ public class AIInput : MonoBehaviour
             {
                 Debug.DrawLine(leftSensor.position, hit.point, Color.blue);
                 reverseGearOn = true;
+                isreverse = true;
             }
         }
+
+        if (AICarController.isEngineRunning && AICarController.KPH < 10 && !isreverse)
+        {
+
+            timer += Time.deltaTime;
+
+            if (timer >= timerDuration)
+            {
+                reverseGearOn = true;
+                timer2 += Time.deltaTime;
+                if(timer2 >= 3f)
+                { 
+                    reverseGearOn = false;
+                    timer = 0;
+                }
+
+            }
+        }
+        else
+        {
+            timer = 0;
+            timer2 = 0;
+            if(!isreverse)
+            {
+                reverseGearOn = false;
+
+            }
+        }
+
     }
 
    

@@ -370,7 +370,7 @@ public class CarSFX : MonoBehaviour
 
         var volume = Mathf.Clamp01(collisionMagnitude );
 
-        Debug.Log(audioClip + " " + volume);
+     
 
         OtherEffectsSource.PlayOneShot(audioClip, volume);
     }

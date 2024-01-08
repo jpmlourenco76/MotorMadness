@@ -51,7 +51,7 @@ public class FXLap1_explosion : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Trigger Enter: " + other.gameObject.name);
+   
         if (other.CompareTag("Car") && !hasExploded)
         {   
             hasExploded = true;
@@ -82,6 +82,6 @@ public class FXLap1_explosion : MonoBehaviour
         {
             Explosion.PlayOneShot(explosion);
         }
-        Debug.Log("Blow!");
+  
     }
 }
