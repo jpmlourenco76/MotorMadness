@@ -3328,6 +3328,7 @@ GameObject:
   - component: {fileID: 411324053}
   - component: {fileID: 411324056}
   - component: {fileID: 411324057}
+  - component: {fileID: 411324058}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3430,6 +3431,66 @@ MonoBehaviour:
   car3: {fileID: 194808, guid: 78c3251c736bb0c4aa3a49c83f38e5d0, type: 3}
   car4: {fileID: 196510, guid: 24aa0efbb152e4d4bbeb42ac3ccca6a7, type: 3}
   car5: {fileID: 128642, guid: b1210297a49cd244b907693d6292a92a, type: 3}
+--- !u!114 &411324058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411324052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 411324055}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 511
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 2
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 0
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &412416444
 GameObject:
   m_ObjectHideFlags: 0
