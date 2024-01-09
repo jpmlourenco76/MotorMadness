@@ -215,26 +215,35 @@ public class CarMenuManager : MonoBehaviour
         if (gameManager != null)
         {
             
-             if (gameManager.gameData.characters[0].currentLevel == 4 && gameManager.levelType == GameManager.LevelType.Story ||
-                (gameManager.desiredLevel == 4 && gameManager.levelType != GameManager.LevelType.Story))
+             if (gameManager.gameData.characters[0].currentLevel == 4 && gameManager.levelType == GameManager.LevelType.Story )
             {
                 
                 StartCoroutine(PlayVideoAndGoLevel(videos[0]));
             }
-            else if (gameManager.gameData.characters[0].currentLevel == 7 && gameManager.levelType == GameManager.LevelType.Story ||
-                (gameManager.desiredLevel == 7 && gameManager.levelType != GameManager.LevelType.Story))
+            else if (gameManager.gameData.characters[0].currentLevel == 7 && gameManager.levelType == GameManager.LevelType.Story )
             {
                 
                 StartCoroutine(PlayVideoAndGoLevel(videos[1]));
             }
-            else if (gameManager.gameData.characters[0].currentLevel == 10 && gameManager.levelType == GameManager.LevelType.Story ||
-               (gameManager.desiredLevel == 10 && gameManager.levelType != GameManager.LevelType.Story))
+            else if (gameManager.gameData.characters[0].currentLevel == 10 && gameManager.levelType == GameManager.LevelType.Story )
             {
                 
                 StartCoroutine(PlayVideoAndGoLevel(videos[2]));
             }
             else
             {
+                if(gameManager.levelType == GameManager.LevelType.QuickPlay)
+                {
+                    gameManager.gameData.characters[0].position = 10;
+
+                    for (int i = 1; i < 10; i++)
+                    {
+                        if (gameManager.gameData.characters[0].position == gameManager.gameData.characters[i].position)
+                        {
+                            gameManager.gameData.characters[i].position = 1;
+                        }
+                    }
+                }
                 gameManager.GoLevel(vehiclePointer);
             }
         }

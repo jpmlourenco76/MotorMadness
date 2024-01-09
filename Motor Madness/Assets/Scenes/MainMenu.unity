@@ -3132,7 +3132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db166876afeb904a9ff78381d2d54bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 4
+  level: 6
   characterData:
     characterName: 
     currentLevel: 0
@@ -3650,7 +3650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db166876afeb904a9ff78381d2d54bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 3
+  level: 4
   characterData:
     characterName: 
     currentLevel: 0
@@ -5161,7 +5161,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 557601434}
   m_OnClick:
     m_PersistentCalls:
@@ -5240,7 +5240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db166876afeb904a9ff78381d2d54bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
+  level: 5
   characterData:
     characterName: 
     currentLevel: 0
@@ -5965,7 +5965,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 607488894}
   m_OnClick:
     m_PersistentCalls:
@@ -6044,7 +6044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db166876afeb904a9ff78381d2d54bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
+  level: 8
   characterData:
     characterName: 
     currentLevel: 0
@@ -6689,7 +6689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db166876afeb904a9ff78381d2d54bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 6
+  level: 9
   characterData:
     characterName: 
     currentLevel: 0
@@ -7203,7 +7203,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 708596332}
   m_OnClick:
     m_PersistentCalls:
@@ -7282,7 +7282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db166876afeb904a9ff78381d2d54bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
+  level: 1
   characterData:
     characterName: 
     currentLevel: 0
@@ -7738,7 +7738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db166876afeb904a9ff78381d2d54bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
+  level: 2
   characterData:
     characterName: 
     currentLevel: 0
@@ -10112,7 +10112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db166876afeb904a9ff78381d2d54bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 2
+  level: 3
   characterData:
     characterName: 
     currentLevel: 0
@@ -14573,7 +14573,7 @@ MonoBehaviour:
       checkpoints: 0
       wanderAmount: 0
       points: 0
-      price: 0
+      price: 1750000
       material: {fileID: 0}
       upgradelvls:
         TorqueUpgrade: 0
@@ -14589,7 +14589,7 @@ MonoBehaviour:
       checkpoints: 0
       wanderAmount: 0
       points: 0
-      price: 700000
+      price: 3500000
       material: {fileID: 0}
       upgradelvls:
         TorqueUpgrade: 0
@@ -14605,7 +14605,7 @@ MonoBehaviour:
       checkpoints: 0
       wanderAmount: 0
       points: 0
-      price: 1550000
+      price: 2800000
       material: {fileID: 0}
       upgradelvls:
         TorqueUpgrade: 0
@@ -14621,7 +14621,7 @@ MonoBehaviour:
       checkpoints: 0
       wanderAmount: 0
       points: 0
-      price: 0
+      price: 800000
       material: {fileID: 0}
       upgradelvls:
         TorqueUpgrade: 0
@@ -14637,7 +14637,7 @@ MonoBehaviour:
       checkpoints: 0
       wanderAmount: 0
       points: 0
-      price: 300000
+      price: 750000
       material: {fileID: 0}
       upgradelvls:
         TorqueUpgrade: 0
@@ -14653,7 +14653,7 @@ MonoBehaviour:
       checkpoints: 0
       wanderAmount: 0
       points: 0
-      price: 1950000
+      price: 6000000
       material: {fileID: 0}
       upgradelvls:
         TorqueUpgrade: 0
@@ -14669,7 +14669,7 @@ MonoBehaviour:
       checkpoints: 0
       wanderAmount: 0
       points: 0
-      price: 1950000
+      price: 7000000
       material: {fileID: 0}
       upgradelvls:
         TorqueUpgrade: 0
@@ -14685,7 +14685,7 @@ MonoBehaviour:
       checkpoints: 0
       wanderAmount: 0
       points: 0
-      price: 1950000
+      price: 6500000
       material: {fileID: 0}
       upgradelvls:
         TorqueUpgrade: 0
@@ -14701,7 +14701,7 @@ MonoBehaviour:
       checkpoints: 0
       wanderAmount: 0
       points: 0
-      price: 1950000
+      price: 700000
       material: {fileID: 0}
       upgradelvls:
         TorqueUpgrade: 0
@@ -14717,7 +14717,7 @@ MonoBehaviour:
       checkpoints: 0
       wanderAmount: 0
       points: 0
-      price: 1950000
+      price: 1100000
       material: {fileID: 0}
       upgradelvls:
         TorqueUpgrade: 0
@@ -14733,7 +14733,7 @@ MonoBehaviour:
       checkpoints: 0
       wanderAmount: 0
       points: 0
-      price: 1950000
+      price: 300000
       material: {fileID: 0}
       upgradelvls:
         TorqueUpgrade: 0
@@ -14749,7 +14749,7 @@ MonoBehaviour:
       checkpoints: 0
       wanderAmount: 0
       points: 0
-      price: 1950000
+      price: 3500000
       material: {fileID: 0}
       upgradelvls:
         TorqueUpgrade: 0
@@ -14765,7 +14765,7 @@ MonoBehaviour:
       checkpoints: 0
       wanderAmount: 0
       points: 0
-      price: 1950000
+      price: 3750000
       material: {fileID: 0}
       upgradelvls:
         TorqueUpgrade: 0
@@ -15087,7 +15087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db166876afeb904a9ff78381d2d54bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 7
+  level: 10
   characterData:
     characterName: 
     currentLevel: 0
@@ -16348,7 +16348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db166876afeb904a9ff78381d2d54bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 5
+  level: 7
   characterData:
     characterName: 
     currentLevel: 0
