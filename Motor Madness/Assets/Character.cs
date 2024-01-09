@@ -10,7 +10,8 @@ public class Character : MonoBehaviour
     private List<Material> oldMaterials;
     private MainMenu mainMenu;
     private bool videoInProgress = false;
-    
+    private string oldname;
+
     public List<videocontroller> videos;
 
 
@@ -38,7 +39,11 @@ public class Character : MonoBehaviour
 
     IEnumerator PlayVideoAndGoGarage(videocontroller video)
     {
+
+        oldMaterials = gameManager.gameData.characters[0].CarMaterials;
+         oldname = gameManager.gameData.characters[0].characterName;
         
+
         gameManager.gameData.characters[0].characterName = gameManager.gameData.characters[id].characterName;
 
         videoInProgress = true;
@@ -62,8 +67,9 @@ public class Character : MonoBehaviour
     private void HandleGoGarage()
     {
 
-        oldMaterials = gameManager.gameData.characters[0].CarMaterials;
-        string oldname = gameManager.gameData.characters[0].characterName;
+        
+      
+        
         gameManager.gameData.characters[0].characterName = gameManager.gameData.characters[id].characterName;
         gameManager.gameData.characters[0].CarMaterials = gameManager.gameData.characters[id].CarMaterials;
 

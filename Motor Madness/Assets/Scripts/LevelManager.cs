@@ -38,6 +38,7 @@ public class LevelManager : MonoBehaviour
     private Canvas RetryCanvas;
     private Canvas MiniMap;
     private Canvas Canvas;
+    private Canvas MoneyEarnings;
     public List<CarData> ShopCars;
     public CharacterData characterData;
 
@@ -74,6 +75,10 @@ public class LevelManager : MonoBehaviour
     private GameObject th8PointsR;
     private GameObject th9PointsR;
     private GameObject th10PointsR;
+
+    private int Earnings = 0;
+
+    private GameObject EarningsLabel;
 
     private SpawnPointManager spawnPointManager;
     public Transform[] spawnPoints;
@@ -117,6 +122,7 @@ public class LevelManager : MonoBehaviour
         RaceRank = GameObject.Find("RaceRank").GetComponent<Canvas>();
         OverallRank = GameObject.Find("OverallRank").GetComponent<Canvas>();
         RetryCanvas = GameObject.Find("RetryCanvas").GetComponent<Canvas>();
+        MoneyEarnings = GameObject.Find("MoneyEarnings").GetComponent<Canvas>();
 
         MiniMap = GameObject.Find("CanvasMiniMap").GetComponent<Canvas>();
         Canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
@@ -160,6 +166,9 @@ public class LevelManager : MonoBehaviour
         th10PointsR = GameObject.Find("10thPoints");
 
 
+        EarningsLabel = GameObject.Find("EarningsLabel");
+
+
 
     }
     bool ended;
@@ -171,6 +180,7 @@ public class LevelManager : MonoBehaviour
         RetryCanvas.enabled = false;
         Canvas.enabled = false;
         MiniMap.enabled = false;
+        MoneyEarnings.enabled = false;
 
         gameManager.inrace = true;
 
@@ -473,7 +483,7 @@ public class LevelManager : MonoBehaviour
 
 
 
-        Invoke("EnableRaceRank", 3);
+        Invoke("EnableRaceRank", 1.5f);
 
 
 
@@ -510,7 +520,7 @@ public class LevelManager : MonoBehaviour
 
             RaceRank.enabled = true;
         }
-        Invoke("EnableOverallRank", 3);
+        Invoke("EnableOverallRank", 1.5f);
     }
 
     private void EnableOverallRank()
@@ -567,45 +577,92 @@ public class LevelManager : MonoBehaviour
 
                             if (i == 0)
                             {
-                                   
+     
                                 characterData.money += levelReward;
-                            }
+                                if (characterData.characterName == gameManager.gameData.characters[0].characterName)
+                                    {
+                                        Earnings = levelReward;
+                                    }
+                                }
                             else if (i == 1)
                             {
-                                characterData.money += (int)(levelReward * 0.85f);
-                            }
+                                    characterData.money += (int)(levelReward * 0.75f);
+                                    if (characterData.characterName == gameManager.gameData.characters[0].characterName)
+                                    {
+                                        Earnings = (int)(levelReward * 0.75f);
+                                    }
+                                }
                             else if (i == 2)
                             {
-                                characterData.money += (int)(levelReward * 0.75f);
-                            }
+                                  
+                                    characterData.money += (int)(levelReward * 0.50f);
+                                    if (characterData.characterName == gameManager.gameData.characters[0].characterName)
+                                    {
+                                        Earnings = (int)(levelReward * 0.50f);
+                                    }
+                                }
                             else if (i == 3)
                             {
-                                characterData.money += (int)(levelReward * 0.68f);
-                            }
+                                
+                                    characterData.money += (int)(levelReward * 0.35f);
+                                    if (characterData.characterName == gameManager.gameData.characters[0].characterName)
+                                    {
+                                        Earnings = (int)(levelReward * 0.35f);
+                                    }
+                                }
                             else if (i == 4)
                             {
-                                characterData.money += (int)(levelReward * 0.5f);
-                            }
+                              
+                                    characterData.money += (int)(levelReward * 0.25f);
+                                    if (characterData.characterName == gameManager.gameData.characters[0].characterName)
+                                    {
+                                        Earnings = (int)(levelReward * 0.25f);
+                                    }
+                                }
                             else if (i == 5)
                             {
-                                characterData.money += (int)(levelReward * 0.4f);
-                            }
+
+                                    characterData.money += (int)(levelReward * 0.175f);
+                                    if (characterData.characterName == gameManager.gameData.characters[0].characterName)
+                                    {
+                                        Earnings = (int)(levelReward * 0.175f);
+                                    }
+                                }
                             else if (i == 6)
                             {
-                                characterData.money += (int)(levelReward * 0.3f);
-                            }
+
+                                    characterData.money += (int)(levelReward * 0.125f);
+                                    if (characterData.characterName == gameManager.gameData.characters[0].characterName)
+                                    {
+                                        Earnings = (int)(levelReward * 0.125f);
+                                    }
+                                }
                             else if (i == 7)
                             {
-                                characterData.money += (int)(levelReward * 0.25f);
-                            }
+                                    characterData.money += (int)(levelReward * 0.1f);
+                                    if (characterData.characterName == gameManager.gameData.characters[0].characterName)
+                                    {
+                                        Earnings = (int)(levelReward * 0.1f);
+                                    }
+                                }
                             else if (i == 8)
                             {
-                                characterData.money += (int)(levelReward * 0.2f);
-                            }
+                                
+                                    characterData.money += (int)(levelReward * 0.05f);
+                                    if (characterData.characterName == gameManager.gameData.characters[0].characterName)
+                                    {
+                                        Earnings = (int)(levelReward * 0.05f);
+                                    }
+                                }
                             else if (i == 9)
                             {
-                                characterData.money += (int)(levelReward * 0.1f);
-                            }
+                                   
+                                    characterData.money += (int)(levelReward * 0.025f);
+                                    if (characterData.characterName == gameManager.gameData.characters[0].characterName)
+                                    {
+                                        Earnings = (int)(levelReward * 0.025f);
+                                    }
+                                }
                         }
                         break;
                 }
@@ -686,28 +743,9 @@ public class LevelManager : MonoBehaviour
             
         }
 
-        if(gameManager.gameData.characters[0].currentLevel == 10)
-            {
-                int winner;
-                if (Rank[0].RacerName == gameManager.gameData.characters[0].characterName)
-                {
-                    winner = 0;
-                }
-                else
-                {
-                    winner = 1;
 
-                }
-                OverallRank.enabled = false;
-                StartCoroutine(PlayVideoAndGoGarage(winner));
-            }
-            else
-            {
-                Invoke("GoGarage", 3);
-            }
+            Invoke("EnableMoneyEarnings", 1.5f);
 
-
-      
 
         }
         else
@@ -720,7 +758,59 @@ public class LevelManager : MonoBehaviour
 
     }
 
-    IEnumerator PlayVideoAndGoGarage(int i)
+
+    private void EnableMoneyEarnings()
+    {
+
+
+        
+
+        if(MoneyEarnings != null)
+        {
+            OverallRank.enabled = false;
+            if (gameManager.gameData.characters[0].currentLevel == 3)
+            {
+                EarningsLabel.GetComponent<TextMeshProUGUI>().text = "La Ferrari";
+            }
+            else
+            {
+                EarningsLabel.GetComponent<TextMeshProUGUI>().text = Earnings + " $";
+            }
+
+
+            MoneyEarnings.enabled = true;
+
+        }
+
+
+
+
+
+
+        if (gameManager.gameData.characters[0].currentLevel == 10)
+        {
+            int winner;
+            if (Rank[0].RacerName == gameManager.gameData.characters[0].characterName)
+            {
+                winner = 0;
+            }
+            else
+            {
+                winner = 1;
+
+            }
+            
+            StartCoroutine(PlayVideoAndGoGarage(winner));
+        }
+        else
+        {
+            Invoke("GoGarage", 1.5f);
+        }
+    }
+
+
+
+        IEnumerator PlayVideoAndGoGarage(int i)
     {
         
         if(i == 0)
