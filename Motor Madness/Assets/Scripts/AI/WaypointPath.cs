@@ -12,7 +12,7 @@ public class WaypointPath : MonoBehaviour
     public float Length { get; private set; }
 
     [SerializeField] private bool smoothRoute = true;
-    [Range(40, 200)] public float editorVisualisationSubsteps = 100;
+    [Range(40, 300)] public float editorVisualisationSubsteps = 100;
 
     private int p0n;
     private int p1n;
