@@ -671,7 +671,7 @@ MonoBehaviour:
   targetAngle: 0
   brakeCondition: 1
   cautiousSpeedFactor: 0.08
-  cautiousAngle: 65
+  cautiousAngle: 50
   cautiousDistance: 0
   cautiousAngularVelocityFactor: 60
   steerSensitivity: 0.05
@@ -685,7 +685,7 @@ MonoBehaviour:
   reachTargetThreshold: 2
   sensorsAngle: 25
   avoidDistance: 12
-  brakeDistance: 3
+  brakeDistance: 5
   reverseDistance: 3
   progressStyle: 0
   AIcircuit: {fileID: 0}
@@ -708,6 +708,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CarController: {fileID: 0}
+  MainLightsIsOn: 0
+  LightsOnSpawn: 0
 --- !u!114 &5276377782625699204
 MonoBehaviour:
   m_ObjectHideFlags: 0
