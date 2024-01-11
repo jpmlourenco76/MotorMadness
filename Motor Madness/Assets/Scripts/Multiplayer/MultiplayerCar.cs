@@ -1,15 +1,17 @@
 using UnityEngine;
 using Photon.Pun;
 using TMPro;
+using System.Collections;
 
 public class MultiplayerCar : MonoBehaviour
 {
-    [SerializeField] PhotonView _photonView;
+    [SerializeField] public PhotonView _photonView;
     [Space]
     [SerializeField] TMP_Text _usernameText;
     [SerializeField] GameObject _usernameCanvas;
     [SerializeField] GameObject _camerasHolder;
 
+    public int carIdentifier = -1;
     private bool camerasON;
     //[SerializeField] GameObject _ownerObj;
     //[Space]
@@ -24,8 +26,47 @@ public class MultiplayerCar : MonoBehaviour
         //TODO: Set Username
         SetUsername();
         camerasON = true;
+
+
+        if (_photonView.IsMine)
+        {
+            StartCoroutine(DelayedSetName());
+
+        }
+        else
+        {
+            // This is another player's car
+            object identifier;
+            if (_photonView.Owner.CustomProperties.TryGetValue("CarIdentifier", out identifier))
+            {
+                carIdentifier = (int)identifier;
+            }
+
+            GameObject Car = gameObject;
+            Car.gameObject.name = "Car" + identifier;
+
+
+
+        }
+
     }
 
+
+    IEnumerator DelayedSetName()
+    {
+        // Wait for a short delay
+        yield return new WaitForSeconds(0.1f);
+
+        // Retrieve the car identifier
+        object identifier;
+        if (_photonView.Owner.CustomProperties.TryGetValue("CarIdentifier", out identifier))
+        {
+            carIdentifier = (int)identifier;
+        }
+
+        GameObject Car = gameObject;
+        Car.gameObject.name = "Car" + identifier;
+    }
     void Update()
     {
 
@@ -52,4 +93,16 @@ public class MultiplayerCar : MonoBehaviour
             _usernameCanvas.SetActive(false);
         }
     }
+
+    public int GetCarIdentifier()
+    {
+        return carIdentifier;
+    }
+
+
+
+
+
+
+
 }

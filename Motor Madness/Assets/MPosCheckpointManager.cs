@@ -1,21 +1,21 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PosCheckpointManager : MonoBehaviour
+public class MPosCheckpointManager : MonoBehaviour
 {
-    public List<CheckpointSystem> checkpoints;
+    public List<MCheckpointSystem> checkpoints;
 
 
     private void Awake()
     {
-        checkpoints = new List<CheckpointSystem>(GetComponentsInChildren<CheckpointSystem>());
+        checkpoints = new List<MCheckpointSystem>(GetComponentsInChildren<MCheckpointSystem>());
 
-       
+
     }
     private void Start()
     {
-        
+
 
         // Certifique-se de que h� pelo menos um checkpoint
         if (checkpoints.Count > 0)

@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-
+using Photon.Pun;
 
 public class CarController2 : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class CarController2 : MonoBehaviour
     private CarAgent carAgent;
     public PlayerCarInput carinput;
     public bool race = false;
+
     [Header("Car")]
 
     private GameObject wheelMeshes;
@@ -945,6 +947,16 @@ public class CarController2 : MonoBehaviour
 
         // Chama o método DeactivateExplosion no script ExplosionController
         explosionController.DeactivateExplosion();
+    }
+
+
+
+    //Multiplayer
+
+    [PunRPC]
+    public void EnableEngine()
+    {
+        isEngineRunning = true;
     }
 
 
