@@ -36,7 +36,6 @@ public class LevelManager : MonoBehaviour
     private Canvas RaceRank;
     private Canvas OverallRank;
     private Canvas RetryCanvas;
-    private Canvas MiniMap;
     private Canvas Canvas;
     private Canvas MoneyEarnings;
     public List<CarData> ShopCars;
@@ -124,7 +123,6 @@ public class LevelManager : MonoBehaviour
         RetryCanvas = GameObject.Find("RetryCanvas").GetComponent<Canvas>();
         MoneyEarnings = GameObject.Find("MoneyEarnings").GetComponent<Canvas>();
 
-        MiniMap = GameObject.Find("CanvasMiniMap").GetComponent<Canvas>();
         Canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
 
 
@@ -179,7 +177,6 @@ public class LevelManager : MonoBehaviour
         OverallRank.enabled = false;
         RetryCanvas.enabled = false;
         Canvas.enabled = false;
-        MiniMap.enabled = false;
         MoneyEarnings.enabled = false;
 
         gameManager.inrace = true;
@@ -225,7 +222,6 @@ public class LevelManager : MonoBehaviour
         cars.Clear();
         startLevel = true;
         Canvas.enabled = true;
-        MiniMap.enabled = true;
 
 
 
@@ -314,7 +310,6 @@ public class LevelManager : MonoBehaviour
                     ApplyGearUpgrade(Car);
                     ApplyBreakUpgrade(Car);
                     ApplyTireUpgrade(Car);
-                   // MiniMap.GetComponent<MiniMapController>().target = Car.gameObject.transform;
 
                 }
                 else
@@ -380,7 +375,6 @@ public class LevelManager : MonoBehaviour
                     ApplyGearUpgrade(Car);
                     ApplyBreakUpgrade(Car);
                     ApplyTireUpgrade(Car);
-                    //MiniMap.GetComponent<MiniMapController>().target = Car.gameObject.transform;
 
 
                 }
@@ -492,7 +486,6 @@ public class LevelManager : MonoBehaviour
 
     private void EnableRaceRank()
     {     
-        MiniMap.enabled = false;
         Canvas.enabled = false;
 
         if (RaceRank != null) 

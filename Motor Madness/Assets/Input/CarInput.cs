@@ -472,6 +472,15 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OpenClosePause"",
+                    ""type"": ""Button"",
+                    ""id"": ""31b957ae-1c51-4295-b11d-b82abe7b5a35"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -496,6 +505,28 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
                     ""action"": ""SkipVideo"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e15ed957-f0fb-46b4-900e-6892a36f89e2"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenClosePause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1c8d1300-b220-4008-acbc-30b799db2ee3"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenClosePause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -518,6 +549,7 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_SkipVideo = m_Menu.FindAction("SkipVideo", throwIfNotFound: true);
+        m_Menu_OpenClosePause = m_Menu.FindAction("OpenClosePause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -706,11 +738,13 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Menu;
     private List<IMenuActions> m_MenuActionsCallbackInterfaces = new List<IMenuActions>();
     private readonly InputAction m_Menu_SkipVideo;
+    private readonly InputAction m_Menu_OpenClosePause;
     public struct MenuActions
     {
         private @CarInput m_Wrapper;
         public MenuActions(@CarInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @SkipVideo => m_Wrapper.m_Menu_SkipVideo;
+        public InputAction @OpenClosePause => m_Wrapper.m_Menu_OpenClosePause;
         public InputActionMap Get() { return m_Wrapper.m_Menu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -723,6 +757,9 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
             @SkipVideo.started += instance.OnSkipVideo;
             @SkipVideo.performed += instance.OnSkipVideo;
             @SkipVideo.canceled += instance.OnSkipVideo;
+            @OpenClosePause.started += instance.OnOpenClosePause;
+            @OpenClosePause.performed += instance.OnOpenClosePause;
+            @OpenClosePause.canceled += instance.OnOpenClosePause;
         }
 
         private void UnregisterCallbacks(IMenuActions instance)
@@ -730,6 +767,9 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
             @SkipVideo.started -= instance.OnSkipVideo;
             @SkipVideo.performed -= instance.OnSkipVideo;
             @SkipVideo.canceled -= instance.OnSkipVideo;
+            @OpenClosePause.started -= instance.OnOpenClosePause;
+            @OpenClosePause.performed -= instance.OnOpenClosePause;
+            @OpenClosePause.canceled -= instance.OnOpenClosePause;
         }
 
         public void RemoveCallbacks(IMenuActions instance)
@@ -764,5 +804,6 @@ public partial class @CarInput: IInputActionCollection2, IDisposable
     public interface IMenuActions
     {
         void OnSkipVideo(InputAction.CallbackContext context);
+        void OnOpenClosePause(InputAction.CallbackContext context);
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     private GameManager gameManager;
     private GameData gameData;
+    private bool toPause;
+    private bool canceledAction;    
 
     private void Awake()
     {
@@ -16,31 +19,40 @@ public class PauseMenu : MonoBehaviour
 
     }
 
-    void Update()
+    private void OnEnable()
+    {      
+        var pauseAction = new CarInput().Menu.OpenClosePause;
+        pauseAction.performed += PauseAction;
+        pauseAction.canceled += NoPauseAction;
+        pauseAction.Enable();
+    }
+
+    private void PauseAction(InputAction.CallbackContext value)
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if(!toPause && !gameIsPaused)
         {
-            if (gameIsPaused)
-            {
-                
-                Resume();
-            }
-            else
-            {
-                gameManager.inrace = false;
-                Pause();
-            }
-        }        
+            gameManager.inrace = false;
+            Pause();
+            toPause = true;
+        }
+        else if(!toPause && gameIsPaused)
+        {
+            Resume();
+            toPause = true;
+        }
+    }
+
+    public void NoPauseAction(InputAction.CallbackContext value)
+    {
+        toPause=false;
     }
 
     public void Resume()
-    {
-        
+    {        
         pauseMenu.SetActive(false);
         gameIsPaused = false;
         Time.timeScale = 1f;
-        gameManager.inrace = true;
-        
+        gameManager.inrace = true;        
     }
 
     public void Pause()
@@ -59,12 +71,13 @@ public class PauseMenu : MonoBehaviour
         {
             Resume();
             SceneManager.LoadScene("Garage");
+            return;
         }
         else
         {
             Resume();
             SceneManager.LoadScene("MainMenu");
-
+            return;
         }
         
     }

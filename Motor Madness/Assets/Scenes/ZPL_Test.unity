@@ -1042,7 +1042,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834280073}
-  m_LocalRotation: {x: 0.041114565, y: 0.70591044, z: -0.04111456, w: 0.7059105}
+  m_LocalRotation: {x: 0.04111457, y: 0.7059105, z: -0.04111457, w: 0.7059105}
   m_LocalPosition: {x: -414.82492, y: -62.914474, z: 132.49002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1429,7 +1429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7832766190957280322, guid: 81310fe39f28262409e96b30b9d27822, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99830824
+      value: 0.9983082
       objectReference: {fileID: 0}
     - target: {fileID: 7832766190957280322, guid: 81310fe39f28262409e96b30b9d27822, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1437,14 +1437,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7832766190957280322, guid: 81310fe39f28262409e96b30b9d27822, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000059604645
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7832766190957280322, guid: 81310fe39f28262409e96b30b9d27822, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000018626451
+      value: -0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7832766190217805911, guid: 81310fe39f28262409e96b30b9d27822, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 81310fe39f28262409e96b30b9d27822, type: 3}
+--- !u!1 &1537437244 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7832766190217805914, guid: 81310fe39f28262409e96b30b9d27822, type: 3}
+  m_PrefabInstance: {fileID: 1537437243}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1537437245
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537437244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e8b78ac948f05a46a6d8339a503172b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1562163323 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5429717298895030934, guid: 9552b6d9fba5a4041aa8d5a1ccf61ec7, type: 3}
