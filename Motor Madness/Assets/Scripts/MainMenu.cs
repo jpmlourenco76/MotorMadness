@@ -19,26 +19,30 @@ public class MainMenu : MonoBehaviour
     {
         int randomNumber = GetRandomNumber();
 
-        if (randomNumber == 1)
+        if( car1 != null && car2 != null && car3 != null && car4 != null && car5 != null)
         {
-            InstantiatePrefab(car1);
+            if (randomNumber == 1)
+            {
+                InstantiatePrefab(car1);
+            }
+            else if (randomNumber == 2)
+            {
+                InstantiatePrefab(car2);
+            }
+            else if (randomNumber == 3)
+            {
+                InstantiatePrefab(car3);
+            }
+            else if (randomNumber == 4)
+            {
+                InstantiatePrefab(car4);
+            }
+            else if (randomNumber == 5)
+            {
+                InstantiatePrefab(car5);
+            }
         }
-        else if (randomNumber == 2) 
-        {
-            InstantiatePrefab(car2);
-        }
-        else if (randomNumber == 3)
-        {
-            InstantiatePrefab(car3);
-        }
-        else if (randomNumber == 4)
-        {
-            InstantiatePrefab(car4);
-        }
-        else if (randomNumber == 5)
-        {
-            InstantiatePrefab(car5);
-        }            
+                
     }
 
     private void InstantiatePrefab(GameObject car)
@@ -59,6 +63,15 @@ public class MainMenu : MonoBehaviour
     public void GoGarageTraining()
     {
         SceneManager.LoadScene("GarageTraining");
+    }
+
+    public void GoMultiplayer()
+    {
+        SceneManager.LoadScene("NameMultiplayer");
+    }
+    public void GoMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
 }

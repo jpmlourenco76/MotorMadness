@@ -104,10 +104,15 @@ public class wheelsManager : MonoBehaviour
             SlipNormalized = 0;
         }
 
-        AdjustStiffness();
-        ApplyStiffness();
-        ApplyBrake();
-        ApplyAntiRollForce();
+        if (_carController != null) {
+
+            AdjustStiffness();
+            ApplyStiffness();
+            ApplyBrake();
+            ApplyAntiRollForce();
+        }
+
+      
     }
 
 

@@ -561,7 +561,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 722028189}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1140495165}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: GoMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &722028189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -864,6 +876,7 @@ GameObject:
   - component: {fileID: 1140495164}
   - component: {fileID: 1140495163}
   - component: {fileID: 1140495162}
+  - component: {fileID: 1140495165}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -937,6 +950,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1140495165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140495161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df164f245bf4d7a418925d2fe8ea3036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  car1: {fileID: 0}
+  car2: {fileID: 0}
+  car3: {fileID: 0}
+  car4: {fileID: 0}
+  car5: {fileID: 0}
 --- !u!1 &1267357067
 GameObject:
   m_ObjectHideFlags: 0
