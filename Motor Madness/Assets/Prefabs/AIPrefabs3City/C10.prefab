@@ -616,6 +616,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CarController: {fileID: 0}
+  MainLightsIsOn: 0
+  LightsOnSpawn: 0
 --- !u!114 &4253877257305201828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1613,7 +1615,7 @@ WheelCollider:
   m_SuspensionDistance: 0.1
   m_ForceAppPointDistance: 0.1
   m_Mass: 25
-  m_WheelDampingRate: 0.75
+  m_WheelDampingRate: 0.7
   m_ForwardFriction:
     m_ExtremumSlip: 0.25
     m_ExtremumValue: 1.2
@@ -36718,7 +36720,7 @@ WheelCollider:
   m_SuspensionDistance: 0.1
   m_ForceAppPointDistance: 0.1
   m_Mass: 25
-  m_WheelDampingRate: 0.75
+  m_WheelDampingRate: 0.7
   m_ForwardFriction:
     m_ExtremumSlip: 0.25
     m_ExtremumValue: 1.2
@@ -37131,7 +37133,7 @@ WheelCollider:
   m_SuspensionDistance: 0.1
   m_ForceAppPointDistance: 0.1
   m_Mass: 25
-  m_WheelDampingRate: 1
+  m_WheelDampingRate: 0.95
   m_ForwardFriction:
     m_ExtremumSlip: 0.3
     m_ExtremumValue: 2
@@ -62335,7 +62337,7 @@ WheelCollider:
   m_SuspensionDistance: 0.1
   m_ForceAppPointDistance: 0.1
   m_Mass: 25
-  m_WheelDampingRate: 1
+  m_WheelDampingRate: 0.95
   m_ForwardFriction:
     m_ExtremumSlip: 0.3
     m_ExtremumValue: 2
