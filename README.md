@@ -23,7 +23,6 @@ This game can be played using a mouse and keyboard, as well as a console control
 ---
 
 ## Images
-<img scr=https://github.com/user-attachments/assets/3273993f-7722-4b41-8840-67ffd0141346 alt="img1" width="400"/>
 
 ---
 
