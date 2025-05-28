@@ -6,13 +6,27 @@ MotorMadness is a 3D racing game developed in Unity, featuring a variety of cars
 
 ## Features
 
-- **Visuals:**
+- **`Visuals:`**
+  - ***Environments & Tracks:*** \
+  MotorMadness features four distinct environments, three of which include three unique track layouts, resulting in 10 playable tracks. \
+  Key visual elements include:
+    - **Time of Day:** All maps are set to different day times;
+    - **Weather & Atmosphere:** Fog, raing and industrial air pollution;
+    - **Lightting:** Dim lights, neon-lit roads and simple industrial lights.
 
-- **Gameplay Mechanics:**
+  - ***Cars:***<br>
+ The project contains 14 different cars, each with unique visuals, customizable liveries, and distinct performance and maneuverability settings.  
+ Key visual elements include:  
+    - **Lights:** Functional brake lights, headlights, and taillights;  
+    - **Effects:** Smoke and tire marks while drifting and backfire during gear changes.  
 
-- **Game Modes:**
+  - ***Events:***<br>
+  
+- **`Gameplay Mechanics:`**
 
-- **Artifical Inteligence:**
+- **`Game Modes:`**
+
+- **`Artifical Inteligence:`**
 
 
 ---
