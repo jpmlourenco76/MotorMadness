@@ -32,7 +32,7 @@ MotorMadness is a 3D racing game developed in Unity, featuring a variety of cars
   - ***Time Trial:*** Endless mode to try to achieve the best time.
     
 
-- **`Artifical Intelligence:`**
+- **`Artificial Intelligence:`**
   - ***State Machine:*** Campaign police chase level.\
     
   - ***Machine Learning through Unity ML-Agents:*** Campaign 1v1 level.\
@@ -82,5 +82,5 @@ Be aware, the project contains a `.zip` file that needs to be extracted before r
 ---
 
 #### [Youtube Video](https://www.youtube.com/watch?v=ehFc2QCBKNk)
-This project was developed for academic purposes as part of the *3nd Year ***Applied Project*, *Artificial Intelligence Applied to Games*, *Programming for Network Video Games*** and ***Computer Graphics Techniques for Visual Effects**** classes at IPCA, 2023/2024.
+This project was developed for academic purposes as part of the *3rd Year ***Applied Project*, *Artificial Intelligence Applied to Games*, *Programming for Network Video Games*** and ***Computer Graphics Techniques for Visual Effects**** classes at IPCA, 2023/2024.
 
