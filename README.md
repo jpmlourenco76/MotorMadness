@@ -77,4 +77,6 @@ Be aware, the project contains a `.zip` file that needs to be extracted before r
 
 ---
 
+#### [Youtube Video](https://www.youtube.com/watch?v=ehFc2QCBKNk)
 This project was developed for academic purposes as part of the *3nd Year ***Applied Project*, *Artificial Intelligence Applied to Games*, *Programming for Network Video Games*** and ***Computer Graphics Techniques for Visual Effects**** class at IPCA, 2023/2024.
+
