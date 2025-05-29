@@ -33,11 +33,11 @@ MotorMadness is a 3D racing game developed in Unity, featuring a variety of cars
     
 
 - **`Artifical Intelligence:`**
-  - ***Type 1:*** \
+  - ***State Machine:*** Campaign police chase level.\
     
-  - ***Type 2:*** \
+  - ***Machine Learning through Unity ML-Agents:*** Campaign 1v1 level.\
     
-  - ***Type 3:*** \ 
+  - ***Pathfinding A*:*** Every non-special racing game modes that have AI opponents.\ 
   
 - **`Supported Controls:`**  
   - Mouse & keyboard;
