@@ -33,11 +33,11 @@ MotorMadness is a 3D racing game developed in Unity, featuring a variety of cars
     
 
 - **`Artifical Intelligence:`**
-  - ***Type 1:*** \
+  - ***State Machine:*** Campaign police chase level.\
     
-  - ***Type 2:*** \
+  - ***Machine Learning through Unity ML-Agents:*** Campaign 1v1 level.\
     
-  - ***Type 3:*** \ 
+  - ***Pathfinding A*:*** Every non-special racing game modes that have AI opponents.\ 
   
 - **`Supported Controls:`**  
   - Mouse & keyboard;
@@ -48,14 +48,18 @@ MotorMadness is a 3D racing game developed in Unity, featuring a variety of cars
 ### Images
 - **Menus:**
 
-<img src=https://github.com/user-attachments/assets/3752bc8e-a341-457f-8250-131df953ebe3 alt="Main Menu" width="400"/> <img src=https://github.com/user-attachments/assets/3e062d4a-a004-424f-8775-c35b28ab4961 alt="Choose Character" width="400"/> \
+<p align="center">
+<img src=https://github.com/user-attachments/assets/3752bc8e-a341-457f-8250-131df953ebe3 alt="Main Menu" width="400"/> <img src=https://github.com/user-attachments/assets/3e062d4a-a004-424f-8775-c35b28ab4961 alt="Choose Character" width="400"/> 
 <img src=https://github.com/user-attachments/assets/61a2384d-7e7a-4209-86f2-679d6bd9ca78 alt="Choose Track" width="400"/> <img src=https://github.com/user-attachments/assets/9a7a78cc-edb1-4550-9a73-d9879fc53abb alt="Garage" width="400"/><br>
 <br>
+</p>
 
 - **In-game:**
 
-<img src=https://github.com/user-attachments/assets/fe358909-5797-415d-b44c-6a2209cbb3da alt="Industrial" width="400"/> <img src=https://github.com/user-attachments/assets/81e2d538-dec5-4da8-9c84-ad9a791a7b34 alt="Country Side" width="400"/> \
-<img src=https://github.com/user-attachments/assets/213a1c6e-6636-4f13-8d3e-a5c35ecb8752 alt="City" width="400"/> <img src=https://github.com/user-attachments/assets/959480f1-69ce-4343-8b41-c45c6bf8792c alt="Spain" width="400"/> 
+<p align="center">
+<img src=https://github.com/user-attachments/assets/fe358909-5797-415d-b44c-6a2209cbb3da alt="Industrial" width="400"/> <img src=https://github.com/user-attachments/assets/81e2d538-dec5-4da8-9c84-ad9a791a7b34 alt="Country Side" width="400"/>
+<img src=https://github.com/user-attachments/assets/213a1c6e-6636-4f13-8d3e-a5c35ecb8752 alt="City" width="400"/> <img src=https://github.com/user-attachments/assets/959480f1-69ce-4343-8b41-c45c6bf8792c alt="Spain" width="400"/>
+</p>
 
 ---
 
@@ -78,5 +82,5 @@ Be aware, the project contains a `.zip` file that needs to be extracted before r
 ---
 
 #### [Youtube Video](https://www.youtube.com/watch?v=ehFc2QCBKNk)
-This project was developed for academic purposes as part of the *3nd Year ***Applied Project*, *Artificial Intelligence Applied to Games*, *Programming for Network Video Games*** and ***Computer Graphics Techniques for Visual Effects**** class at IPCA, 2023/2024.
+This project was developed for academic purposes as part of the *3nd Year ***Applied Project*, *Artificial Intelligence Applied to Games*, *Programming for Network Video Games*** and ***Computer Graphics Techniques for Visual Effects**** classes at IPCA, 2023/2024.
 
