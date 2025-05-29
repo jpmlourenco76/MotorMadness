@@ -4,46 +4,75 @@ MotorMadness is a 3D racing game developed in Unity, featuring a variety of cars
 
 ---
 
-## Features
+### Features
+- **`Cars, Maps & Tracks:`**
+  - 14 unique cars with custom liveries for each Campaign character;
+  - 10 playable tracks across 4 diverse environments.
 
 - **`Visuals:`**
-  - ***Environments & Tracks:*** \
-  MotorMadness features four distinct environments, three of which include three unique track layouts, resulting in 10 playable tracks. \
-  Key visual elements include:
+  - ***Environments & Tracks:***   
     - **Time of Day:** All maps are set to different day times;
-    - **Weather & Atmosphere:** Fog, raing and industrial air pollution;
-    - **Lightting:** Dim lights, neon-lit roads and simple industrial lights.
+    - **Weather & Atmosphere:** Fog, rain and industrial air pollution;
+    - **Lighting:** Dim lights, neon-lit roads and simple industrial lights.
 
-  - ***Cars:***<br>
- The project contains 14 different cars, each with unique visuals, customizable liveries, and distinct performance and maneuverability settings.  
- Key visual elements include:  
+  - ***Cars:***    
     - **Lights:** Functional brake lights, headlights, and taillights;  
     - **Effects:** Smoke and tire marks while drifting and backfire during gear changes.  
 
-  - ***Events:***<br>
-  
-- **`Gameplay Mechanics:`**
+  - ***Events:*** 
+    - Industrial silo explosion.
 
 - **`Game Modes:`**
+  - ***Campaign:*** Story-driven races against AI opponents, featuring championship points and in-game currency to buy and upgrade cars;
+  
+  - ***Multiplayer:*** LAN only;
+    
+  - ***Quick Play:*** Allows choosing the track and car to race against AI opponents;
+    
+  - ***Time Trial:*** Endless mode to try to achieve the best time.
+    
 
-- **`Artifical Inteligence:`**
-
+- **`Artifical Intelligence:`**
+  - ***Type 1:*** \
+    
+  - ***Type 2:*** \
+    
+  - ***Type 3:*** \ 
+  
+- **`Supported Controls:`**  
+  - Mouse & keyboard;
+  - Console controller.
 
 ---
 
-## Controls
-This game can be played using a mouse and keyboard, as well as a console controller.
+### Images
+- **Menus:**
+
+<img src=https://github.com/user-attachments/assets/67bda7ac-7c0b-4e92-9e14-b4cdefd208f9 alt="Main Menu" width="500"/> <img src=https://github.com/user-attachments/assets/3e062d4a-a004-424f-8775-c35b28ab4961 alt="Choose Character" width="500"/> \
+<img src=https://github.com/user-attachments/assets/61a2384d-7e7a-4209-86f2-679d6bd9ca78 alt="Choose Track" width="500"/> <img src=https://github.com/user-attachments/assets/19743caa-dabf-4a8c-b34a-e23bb368196b alt="Garage" width="500"/>
+
+- **In-game:**
+
+<img src=https://github.com/user-attachments/assets/fe358909-5797-415d-b44c-6a2209cbb3da alt="Industrial" width="500"/> <img src=https://github.com/user-attachments/assets/81e2d538-dec5-4da8-9c84-ad9a791a7b34 alt="Country Side" width="500"/> \
+<img src=https://github.com/user-attachments/assets/213a1c6e-6636-4f13-8d3e-a5c35ecb8752 alt="City" width="500"/> <img src=https://github.com/user-attachments/assets/b30de3b4-822e-4431-8626-7adde6434bca alt="Spain" width="500"/> 
 
 ---
 
-## Images
-
----
-
-## Dev Team
+### Dev Team
 - [Ademar Valente](https://github.com/ademar1k82)
 - [Henrique Azevedo](https://github.com/rkt2902)
 - [José Lourenço](https://github.com/jpmlourenco76)
+
+---
+
+### Built on
+*Unity (2021.3.23f1)* \
+*Only for Windows*
+
+---
+
+### Note
+Be aware, the project contains a `.zip` file that needs to be extracted before running!
 
 ---
 
