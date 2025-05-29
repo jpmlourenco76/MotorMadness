@@ -49,7 +49,7 @@ MotorMadness is a 3D racing game developed in Unity, featuring a variety of cars
 - **Menus:**
 
 <p align="center">
-<img src=https://github.com/user-attachments/assets/3752bc8e-a341-457f-8250-131df953ebe3 alt="Main Menu" width="400"/> <img src=https://github.com/user-attachments/assets/3e062d4a-a004-424f-8775-c35b28ab4961 alt="Choose Character" width="400"/> \
+<img src=https://github.com/user-attachments/assets/3752bc8e-a341-457f-8250-131df953ebe3 alt="Main Menu" width="400"/> <img src=https://github.com/user-attachments/assets/3e062d4a-a004-424f-8775-c35b28ab4961 alt="Choose Character" width="400"/> 
 <img src=https://github.com/user-attachments/assets/61a2384d-7e7a-4209-86f2-679d6bd9ca78 alt="Choose Track" width="400"/> <img src=https://github.com/user-attachments/assets/9a7a78cc-edb1-4550-9a73-d9879fc53abb alt="Garage" width="400"/><br>
 <br>
 </p>
@@ -57,8 +57,8 @@ MotorMadness is a 3D racing game developed in Unity, featuring a variety of cars
 - **In-game:**
 
 <p align="center">
-<img src=https://github.com/user-attachments/assets/fe358909-5797-415d-b44c-6a2209cbb3da alt="Industrial" width="400"/> <img src=https://github.com/user-attachments/assets/81e2d538-dec5-4da8-9c84-ad9a791a7b34 alt="Country Side" width="400"/> \
-<img src=https://github.com/user-attachments/assets/213a1c6e-6636-4f13-8d3e-a5c35ecb8752 alt="City" width="400"/> <img src=https://github.com/user-attachments/assets/959480f1-69ce-4343-8b41-c45c6bf8792c alt="Spain" width="400"/> 
+<img src=https://github.com/user-attachments/assets/fe358909-5797-415d-b44c-6a2209cbb3da alt="Industrial" width="400"/> <img src=https://github.com/user-attachments/assets/81e2d538-dec5-4da8-9c84-ad9a791a7b34 alt="Country Side" width="400"/>
+<img src=https://github.com/user-attachments/assets/213a1c6e-6636-4f13-8d3e-a5c35ecb8752 alt="City" width="400"/> <img src=https://github.com/user-attachments/assets/959480f1-69ce-4343-8b41-c45c6bf8792c alt="Spain" width="400"/>
 </p>
 
 ---
